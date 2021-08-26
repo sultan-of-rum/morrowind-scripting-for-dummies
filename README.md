@@ -1,6 +1,6 @@
 # Morrowind Scripting for Dummies -- 2021 edition
 
-Some conditions to this work, as stated by Yacoby, the main author of the 9th version:
+Some conditions to this work, as stated by Yacoby, the main contributor to the 9th version:
 
 > * Please keep the forward to the 8th edition intact (from what I recall this was requested by GhanBuriGhan back in the day, can be waived if you get his permission to do so).
 > * Please keep GhanBuriGhan as the primary author (I can't remember if he requested this, but still did the majority of the work on this document)
