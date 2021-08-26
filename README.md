@@ -1,6 +1,10 @@
-# Morrowind Scripting for Dummies -- 2021 edition
+# Morrowind Scripting for Dummies -- 10th edition
 
-Some conditions to this work, as stated by Yacoby, the main contributor to the 9th version:
+An update to the venerable Morrowind Scripting for Dummies, still the most comprehensive and beloved guide to MWScript. Authored by GhanBuriGhan, 9th edition updates by Yacoby and melian.
+
+This in-progress version aims to incorporate the [errata and additional tips gathered by the Tamriel Rebuilt team](https://www.tamriel-rebuilt.org/content/tutorial-morrowind-scripting-dummies), as well as other improvements, while converting the book to LaTeX for future-proofing and to facilitate collaborative editing.
+
+Some conditions to this work, as stated by Yacoby:
 
 > * Please keep the forward to the 8th edition intact (from what I recall this was requested by GhanBuriGhan back in the day, can be waived if you get his permission to do so).
 > * Please keep GhanBuriGhan as the primary author (I can't remember if he requested this, but still did the majority of the work on this document)
