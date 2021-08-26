@@ -1,6 +1,6 @@
 # Morrowind Scripting for Dummies -- 10th edition
 
-An update to the venerable Morrowind Scripting for Dummies, still the most comprehensive and beloved guide to MWScript. Authored by GhanBuriGhan, 9th edition updates by Yacoby and melian.
+An update to the venerable [Morrowind Scripting for Dummies](https://www.nexusmods.com/morrowind/mods/13969), still the most comprehensive and beloved guide to MWScript. Authored by GhanBuriGhan, Yacoby and melian.
 
 This in-progress version aims to incorporate the [errata and additional tips gathered by the Tamriel Rebuilt team](https://www.tamriel-rebuilt.org/content/tutorial-morrowind-scripting-dummies), as well as other improvements, while converting the book to LaTeX for future-proofing and to facilitate collaborative editing.
 
