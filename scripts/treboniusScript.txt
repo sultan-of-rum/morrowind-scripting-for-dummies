@@ -1,0 +1,28 @@
+Begin treboniusScript
+;if you're both in the Arena
+;and if the guildmaster quest is active...
+;sets a journal and raises the player's rank
+;when trebonius dies.
+short doOnce
+short nolore
+
+if ( doOnce == 1 )
+	Return
+endif
+if ( GetJournalIndex MG_Guildmaster < 50 )
+	Return
+endif
+if ( GetPCCell "Vivec, Arena" == 0 )
+	Return
+endif
+if ( duelActive == 0 )
+	Return
+endif
+if ( OnDeath == 1 )
+	Set DuelActive to 0
+	Set doOnce to 1
+	PCRaiseRank "Mages Guild"
+	PCRaiseRank "Mages Guild"
+	Journal MG_Guildmaster 100
+endif
+End

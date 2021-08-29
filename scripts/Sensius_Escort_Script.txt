@@ -1,0 +1,34 @@
+Begin Sensius_Escort_Script
+Short EscortOnce
+Float Timer
+;In my theory, a load door is simply a PositionCell function referencing to the PlayerSaveGame once the door is
+;activated. (By the player.) For an NPC to activate a load door would, as this "door script" seems hard-coded
+;strictly to the player, would call an error that would cause a CTD. This script creates an artificial load door, by
+;replacing the "Player" function references to the NPC in question. As this is concerning a REAL load door, I cannot
+;have the NPC activate it. Rather, the NPC teleports when they are close enough to the door for activation, and
+;a certain variable is set, accompanied by a 3D sound to finalize the effect. NPC load doors are possible. The only
+;problem is that the NPC disappears rather than shows an animation of entering the door - but it's not much worse
+;than in Oblivion, when the NPC just fades.
+
+If ( MenuMode == 1 )
+Return
+Endif
+
+If ( EscortOnce == 0 )
+"Sensius Tanarii"->AiTravel 4990.000 5200.000 15456.000
+Set EscortOnce to 1
+Endif
+
+If ( EscortOnce == 1 )
+If ( "Sensius Tanarii"->GetPos, X <= 5060 ) ;I am "boxing in" the coordinates. When he stands in this area, the door is activated.
+If ( "Sensius Tanarii"->GetPos, X >= 4930 )
+If ( "Sensius Tanarii"->GetPos, Y <= 5360 )
+If ( "Sensius Tanarii"->GetPos, Y >= 5177 )
+"Sensius Tanarii"->PlaySound3D "Door Latched Two Open" ;
+"Sensius Tanarii"->PositionCell 3186 5191 15050 0 "Dragonhold Keep - Main Entry Hall"
+Set EscortOnce to 2
+Endif
+Endif
+Endif
+Endif
+Endif

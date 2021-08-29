@@ -1,0 +1,29 @@
+begin randomnumber
+
+;this script works out a random number between 0 and 10000
+
+short spare
+short number
+
+;works out how many thousands there are
+set number to random, 10 
+set number to ( number * 1000 )
+
+;how many hundrerds
+set spare to random, 10
+set spare to ( spare * 100 )
+set number to ( number + spare )
+
+;and how many tens
+set spare to random, 10
+set spare to ( spare * 10 )
+set number to ( number + spare )
+
+;this has to be random, 11, rather than random, 10 as if it was random 10,
+;it would only be 0 - 9999
+set spare to random, 11
+set number to ( number + spare )
+
+;the variable number now contains a random number between 0 and 10,000 that you can use
+
+end

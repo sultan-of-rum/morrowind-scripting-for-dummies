@@ -1,0 +1,60 @@
+Begin TravelLoop
+
+short state
+float timer
+
+if ( menumode == 1 ) ; if menu is open don't process
+	return
+endif
+
+;start walking 
+if ( state == 0 )
+	if ( player->GetDistance HB_adros_darani < 5000 )
+		set state to 5
+	endif
+
+;******************* He begins his trip
+elseif ( state == 5 )
+	SetHello 0
+	AITravel -8144, -19409, 728 ;new co-ords point 1
+	set state to 10
+
+elseif ( state == 10 )
+
+	if ( GetAIPackageDone == 1 )		;he's reached point 1
+		set state to 40
+	endif
+
+elseif ( State == 40 )
+
+	AITravel -9147, -19459, 720 ; new co-ords point 2
+	set State to 50
+	
+elseif ( state == 50 )
+
+	if ( GetAIPackageDone == 1 )		;he's reached the point 2
+		set state to 60         
+	endif
+
+elseif ( state == 60 )
+	AITravel -8144, -19409, 728 ;new co-ords point 1
+	set state to 70
+
+elseif ( state == 70 )
+
+	if ( GetAIPackageDone == 1 )		;he's reached point 1
+		set state to 80
+	endif
+
+elseif ( state == 80 )
+	AITravel -6640, -18496, 1040 ;new co-ords point 0
+	set state to 90
+
+elseif ( state == 90 )
+	if ( GetAIPackageDone == 1 )		;he's reached point 0
+		set state to 0
+	endif
+
+endif
+
+End TravelLoop

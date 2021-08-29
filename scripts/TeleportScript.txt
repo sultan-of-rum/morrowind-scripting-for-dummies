@@ -1,0 +1,33 @@
+Begin TeleportScript
+;Attached e.g. to a ring
+
+short status
+short button
+short OnPCEquip
+
+if ( MenuMode == 1 )
+	return
+endif
+
+if ( OnPCEquip == 1 ) 
+Set Status to 10
+Set OnPCEquip to 0
+Endif
+
+If ( status == 10 ); Display menu
+MessageBox "Teleport me to", "Balmora", "Vivec", "Cancel"
+	Set Status to 20
+Elseif ( status == 20 ); wait for response
+	Set button to GetButtonPressed
+	If ( button == -1 ) ; no answer yet
+		Return
+	Elseif ( button == 0 ); selected Balmora
+		Player->PositionCell -21278, -17613, 534, 0, "Balmora (-3, -3)"
+	Elseif ( button == 1 ); Selected Vivec
+		Player->Position 29872, -82108, 578, 180
+	Elseif ( button >= 2 )	; selected cancel
+		Set status to 0	
+	Endif
+Endif
+
+End

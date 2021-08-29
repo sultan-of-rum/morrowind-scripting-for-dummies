@@ -1,0 +1,138 @@
+Begin trapProjScript
+
+short range
+short initialized
+short distance
+short detonate
+short triggered
+
+float targx
+float targy
+float targz
+float shiftx
+float shifty
+float shiftz
+float currshift
+float currx
+float curry
+float currz
+float totaldist
+float rate
+
+float killtimer
+
+if ( triggered == 1 )
+	if ( killtimer < 4 )
+		set killtimer to ( killtimer + GetSecondsPassed )
+	else
+		SetDelete 1
+	endif
+	return
+endif
+
+if ( MenuMode == 1 )
+	return
+endif
+
+if ( initialized == 0 )
+	set initialized to 1
+	set range to 150
+	set rate to 300
+	set targx to ( player->GetPos X )
+	set targy to ( player->GetPos Y )
+	set targz to ( player->GetPos Z )
+	set shiftx to ( targx - GetPos X )
+	set shifty to ( targy - GetPos Y )
+	set shiftz to ( targz - GetPos Z )
+	set totaldist to ( ( shiftx * shiftx ) + ( shifty * shifty ) + ( shiftz * shiftz ) )
+	set totaldist to GetSquareRoot totaldist
+	if ( totaldist != 0 )
+		set shiftx to ( shiftx / totaldist )
+		set shiftx to ( shiftx * rate )
+		set shifty to ( shifty / totaldist )
+		set shifty to ( shifty * rate )
+		set shiftz to ( shiftz / totaldist )
+		set shiftz to ( shiftz * rate )
+	else
+		set triggered to 1
+		return
+	endif
+endif
+
+set distance to GetDistance "player"
+if ( distance < range )
+	set detonate to 1
+else
+	set currx to GetPos X
+	set curry to GetPos Y
+	set currz to GetPos Z
+
+	set currshift to ( shiftx * GetSecondsPassed )
+	set currx to ( currx + currshift )
+
+	set currshift to ( shifty * GetSecondsPassed )
+	set curry to ( curry + currshift )
+
+	set currshift to ( shiftz * GetSecondsPassed )
+	set currz to ( currz + currshift )
+
+	if ( shiftx < 0 )
+		if ( currx < targx )
+			set detonate to 1
+			set currx to targx
+		else
+			set detonate to 0
+		endif
+	else
+		if ( currx > targx )
+			set detonate to 1
+			set currx to targx
+		else
+			set detonate to 0
+		endif
+	endif
+
+	if ( shifty < 0 )
+		if ( curry < targy )
+			set detonate to 1
+			set curry to targy
+		else
+			set detonate to 0
+		endif
+	else
+		if ( curry > targy )
+			set detonate to 1
+			set curry to targy
+		else
+			set detonate to 0
+		endif
+	endif
+
+	if ( shiftz < 0 )
+		if ( currz < targz )
+			set detonate to 1
+			set currz to targz
+		else
+			set detonate to 0
+		endif
+	else
+		if ( currz > targz )
+			set detonate to 1
+			set currz to targz
+		else
+			set detonate to 0
+		endif
+	endif
+
+	SetPos X currx
+	SetPos Y curry
+	SetPos Z currz
+endif
+
+if ( detonate == 1 )
+	ExplodeSpell "proj_trap_spell"
+	set triggered to 1
+	disable
+endif
+
+end

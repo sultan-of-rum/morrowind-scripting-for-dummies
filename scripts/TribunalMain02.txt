@@ -1,0 +1,34 @@
+Begin TribunalMain
+
+short disablestate
+short newstate
+
+;by default, enable teleport and levitate
+set newstate to 0
+
+;only need to check cells in interiors
+if ( GetInterior )
+	if ( GetPCCell "Sotha Sil," == 1 )
+		;disable teleport and levitate here
+		set newstate to 1
+	elseif ( GetPCCell "Mournhold" == 1 )
+		;disable levitate only here
+		set newstate to 2
+	endif
+endif
+
+;if state should change
+if ( disablestate != newstate )
+	if ( newstate == 1 )
+		DisableTeleporting
+		DisableLevitation
+	elseif ( newstate == 2 )
+		DisableLevitation
+	elseif ( newstate == 0 )
+		EnableTeleporting
+		EnableLevitation
+	endif
+	set disablestate to newstate
+endif
+
+end

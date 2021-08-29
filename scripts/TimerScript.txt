@@ -1,0 +1,13 @@
+Begin TimerScript
+
+Float timer
+Short state
+
+Set timer to (timer + GetSecondsPassed)
+
+If (timer > 10)
+	MessageBox "Displayed every 10 seconds"
+	Set timer to 0
+Endif
+
+End TimerScript

@@ -1,0 +1,23 @@
+; Script split into two scripts to handle the two different mannequin genders. 
+
+Begin rsn_man_f_holder_script 
+
+short OnPCDrop 
+float fDeleteTimer
+
+if ( GetDisabled == 1 )
+; if holder has been disabled then we need to wait some time then delete this reference
+Set fDeleteTimer to ( fDeleteTimer + GetSecondsPassed )
+if ( fDeleteTimer > 5 )
+SetDelete 1
+endif
+return
+endif
+
+if ( OnPCDrop == 1 ) 
+Disable 
+; This is the NPC with 0 health that is really just a standing corpse. 
+PlaceAtPC, "_rsn_mannequin_female", 1, 0, 0 
+Set OnPCDrop to 0 
+endif 
+end 

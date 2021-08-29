@@ -1,0 +1,30 @@
+Begin scr_thing 
+
+short button 
+short OnPcEquip 
+short state
+
+if ( MenuMode == 1 ) 
+	return
+endif
+
+if ( OnPCEquip == 1 )      ; when the item is equipped
+	set state to 1
+	set OnPCEquip to 0     ; do this once per equip event…
+endif
+if ( state ==1 )
+	MessageBox "recycle?" , "yes", "no"
+	set state to 2
+elseif ( state == 2 )
+	set button to GetButtonPressed
+	if ( button == 0 ) 
+		PlaySound "mysticism cast" 
+		player->RemoveItem "item_a", 1 ;this line crashes the game!!!
+		player->AddItem "item_b", 1 
+		set state to 0
+	elseif ( button == 1 ) 
+		set state to 0        ; once done, reset everything
+	endif
+endif 
+
+end 

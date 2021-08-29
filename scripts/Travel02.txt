@@ -1,0 +1,9 @@
+Begin Travel
+Short do_once
+
+If ( do_once == 0 )
+AiTravel, 1359, 2700, 1045
+Set do_once to 1
+endif
+
+End Travel

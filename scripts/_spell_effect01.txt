@@ -1,0 +1,9 @@
+Begin _spell_effect
+float timer 
+rotate y 120 ; crash caused by this 
+if ( timer < 3 )	
+	set timer to ( timer + GetSecondsPassed )
+else	
+	disable	
+	setdelete 1
+endIf

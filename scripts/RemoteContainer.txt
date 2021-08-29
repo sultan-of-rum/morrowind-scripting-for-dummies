@@ -1,0 +1,9 @@
+begin RemoteContainer
+   short OnPCEquip
+
+   if ( OnPCEquip == 1 )
+      set OnPCEquip to 0
+      "dh_remote_chest_01"->Activate, player
+   endif
+
+end
