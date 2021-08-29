@@ -1,7 +1,0 @@
-Begin my_first_script
-
-If ( OnActivate == 1 )
-	; here we will enter what happens when the chest is opened
-endif
-
-End
