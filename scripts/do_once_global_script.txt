@@ -1,0 +1,7 @@
+Begin do_once_global_script
+
+[your code here]
+
+StopScript "do_once_global_script"
+
+End

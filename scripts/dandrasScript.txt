@@ -1,0 +1,26 @@
+Begin dandrasScript
+
+short deathbed
+float dandrasHealth
+
+if ( deathbed == -1 )
+	return
+endif
+
+set dandrasHealth to GetHealth
+
+if ( dandrasHealth <= 50 )
+	if ( dandrasHealth < 1 )
+		Resurrect
+		ModHealth 100
+	endif
+	set deathbed to 1
+endif
+
+if ( deathbed == 1 )
+	ForceGreeting
+endif
+
+
+
+End dandrasScript

@@ -1,0 +1,11 @@
+Begin DrothPost
+
+if ( GetJournalIndex "MS_EstateSale" >= 70 )
+	if ( GetPCCell "Mournhold, Geon Auline's House" ==  0 )
+		"Geon Auline"->RemoveItem "silver dagger_droth_unique" 1
+		Journal MS_EstateSale 80
+		StopScript DrothPost
+	endif
+endif
+
+End DrothPost

@@ -1,0 +1,51 @@
+Begin crank
+
+short changelevel
+float direction
+float waterlift
+short crankturn
+short currcrank
+float newwaterlevel
+
+if ( MenuMode )
+	return
+endif
+
+if ( OnActivate == 1 )
+	if ( changelevel == 0 )
+		if ( direction == 1 )
+			set direction to -1
+		else 
+			set direction to 1
+		endif
+		set changelevel to 1
+	endif
+endif
+if ( changelevel == 0 )
+	return
+endif
+
+set crankturn to 360 * GetSecondsPassed
+set crankturn to crankturn * direction
+set currcrank to GetAngle X
+set crankturn to currcrank + crankturn
+SetAngle X crankturn
+
+set waterlift to 120 * GetSecondsPassed
+set waterlift to waterlift * direction
+ModWaterLevel waterlift
+
+set newwaterlevel to GetWaterLevel
+if ( direction == 1 )
+	if ( newwaterlevel >= 600 )
+		SetWaterLevel 600
+		set changelevel to 0
+	endif
+else
+	if ( newwaterlevel <= 0 )
+		SetWaterLevel 0
+		set changelevel to 0
+	endif
+endif
+
+end crank

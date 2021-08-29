@@ -1,0 +1,74 @@
+begin floatAboveStartHeight
+
+float 	timer
+float	swingTime
+float	startAngle
+float	startHeight
+float	currangle
+float	xvalue
+float	zvalue
+float 	zoffset
+float 	tmpoffset
+float	weightoffset
+float	waterlevel
+
+short 	reset
+short initialized
+
+if ( initialized == 0 ); this section stores the starting height and facing of the object
+	set startAngle to GetAngle, X
+	set startHeight to GetPos, Z
+	set swingTime to 1
+	set initialized to 1
+endif
+
+if ( MenuMode == 0 )
+	set waterlevel to GetWaterLevel
+	if ( waterlevel > startHeight )
+		if ( timer == 0 )
+			if ( reset == 0 )
+				set timer to Random 100
+				set timer to timer / 4
+			endif
+		endif
+
+		set timer to ( timer + GetSecondsPassed )
+		set currangle to GetAngle X
+		;These set the amount to move or rotate depending on framerate:
+		set xvalue to 10 * GetSecondsPassed
+		set zvalue to 5 * GetSecondsPassed
+		; the crate sways around its x axis:
+		;rotate up
+		if ( timer < swingTime )
+			set currangle to currangle + xvalue 
+			SetAngle X currangle
+			set zoffset to zoffset + zvalue 
+		;rotate down
+		elseif ( timer < (swingTime * 3) )
+			set currangle to currangle - xvalue 
+			SetAngle X currangle
+			set zoffset to zoffset - zvalue 
+		;up again
+		elseif (timer < (swingTime * 4 ) )
+			set currangle to currangle + xvalue 
+			SetAngle X currangle
+			set zoffset to zoffset + zvalue 
+		;reset timer to zero
+		else
+			set timer to 0
+			set reset to 1
+			set zoffset to 0
+			SetAngle, x, startangle
+		endif
+
+		set tmpoffset to waterlevel
+		set tmpoffset to tmpoffset + zoffset
+		; The crate bobs up and down
+		SetPos Z tmpoffset
+	Else ; Waterlevel is normal
+		SetAngle, X, startAngle
+		SetPos Z startHeight
+	endif
+endif
+
+end

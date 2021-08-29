@@ -1,0 +1,10 @@
+Begin DT_Test_BalmoraTrap
+
+If ( GetPCCell, "Balmora" == 1 )
+	Return
+Endif
+
+MessageBox "Off to Balmora with you!"
+Player->PositionCell, -21278, -17613, 534, 0, "Balmora (-3, -3)"
+
+End DT_Test_BalmoraTrap

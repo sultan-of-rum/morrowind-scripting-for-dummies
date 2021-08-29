@@ -1,0 +1,8 @@
+Begin doubling_fix
+
+Player->Additem "Item ID", 1
+Player->RemoveItem "Item ID", 1
+
+StopScript doubling_fix
+
+End

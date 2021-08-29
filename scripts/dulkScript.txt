@@ -1,0 +1,27 @@
+Begin dulkScript
+
+short doOnce
+short playerwolf
+short AllowWerewolfForceGreeting
+
+if ( GetJournalIndex BM_FrostGiant2 == 10 )
+	if ( doOnce == 0 )
+		if ( GetDistance Player <= 512 )
+			if ( Player->IsWerewolf == 1 )
+				ForceGreeting
+				set doOnce to 1
+			endif
+		endif
+	endif
+elseif ( GetJournalIndex BM_FrostGiant2 == 70 )
+	if ( doOnce == 1 )
+		if ( GetDistance Player <= 512 )
+			;if ( Player->IsWerewolf == 1 )
+				ForceGreeting
+				set doOnce to 2
+			;endif
+		endif
+	endif	
+endif
+
+End dulkScript

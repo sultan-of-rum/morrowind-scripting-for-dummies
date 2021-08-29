@@ -1,0 +1,14 @@
+Begin diseaseAscended
+
+DontSaveObject
+
+;ascended sleeper has all the blight diseases for some reason...
+if ( CellChanged == 0 )
+	return
+endif
+AddSpell "ash woe blight"
+AddSpell "black-heart blight"
+AddSpell "chanthrax blight"
+AddSpell "ash-chancre"
+
+End
