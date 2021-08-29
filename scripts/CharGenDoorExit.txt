@@ -1,0 +1,23 @@
+Begin CharGenDoorExit
+
+;this is the door that exits the first part of the census building
+;safety check for all menus on
+
+short done
+
+if (done == 1)
+	return
+endif
+
+if ( OnActivate == 1 )
+	enablestatsmenu
+	enableinventorymenu
+	enablemagicmenu
+	enablemapmenu
+	enableplayerfighting
+	enableplayermagic
+	set done to 1
+	Activate
+endif
+
+End

@@ -1,0 +1,13 @@
+Begin araraUvulasScript
+
+short noLore
+
+if ( CellChanged == 0 )
+	return
+endif
+
+if ( GetDeadCount "Neloth" > 0 )
+	Disable
+endif
+
+End

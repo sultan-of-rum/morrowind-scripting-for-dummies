@@ -1,0 +1,67 @@
+Begin AthleteControl
+
+short questionAsked
+short button
+short isrunning
+short isjumping
+
+if ( MenuMode )
+	return
+endif
+
+if ( OnActivate == 1 )
+	set isrunning to ( Athlete->GetForceRun )
+	set isjumping to ( Athlete->GetForceMoveJump )
+	if ( questionAsked == 0 )
+		if ( isrunning )
+			MessageBox, "Make Athelete stop running? "  "Yes"  "No"
+		else
+			MessageBox, "Make Athelete run? "  "Yes"  "No"
+		endif
+		set questionAsked to 1
+	endif
+endif
+
+if ( questionAsked == 1 )
+	set button to GetButtonPressed
+	if ( button == -1 )
+	else
+		if ( isrunning == 0 )
+			if ( button == 0 )
+				Athlete->ClearForceMoveJump
+				Athlete->ForceRun
+			endif
+		else
+			if ( button == 0 )
+				Athlete->ClearForceRun
+			endif
+		endif
+		if ( isjumping )
+			MessageBox, "Make Athelete stop jumping? "  "Yes"  "No"
+		else
+			MessageBox, "Make Athelete jump? "  "Yes"  "No"
+		endif
+		set questionAsked to 2
+		set button to -1
+	endif
+endif
+
+if ( questionAsked == 2 )
+	set button to GetButtonPressed
+	if ( button == -1 )
+	else
+		if ( isjumping == 0 )
+			if ( button == 0 )
+				Athlete->ClearForceRun
+				Athlete->ForceMoveJump
+			endif
+		else
+			if ( button == 0 )
+				Athlete->ClearForceMoveJump
+			endif
+		endif
+		set questionAsked to 0
+		set button to -1
+	endif
+endif
+end

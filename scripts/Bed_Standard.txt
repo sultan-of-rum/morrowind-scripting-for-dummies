@@ -1,0 +1,11 @@
+begin Bed_Standard
+
+;used for standard beds the player can activate and sleep in
+
+if ( MenuMode == 0 )
+	if ( OnActivate == 1 )
+		ShowRestMenu
+	endif
+endif
+
+end

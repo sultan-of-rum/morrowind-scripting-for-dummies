@@ -1,0 +1,54 @@
+Begin Animtest
+
+float timer
+short count
+set timer to ( timer + GetSecondsPassed )
+ 
+if ( timer > 10 )
+	set timer to 0
+	set count to ( count + 1 )
+	if ( count >= 18 )
+		set count to 0
+	endif 
+endif
+
+if ( count == 1 ) 
+	AIWander 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0
+	MessageBox "Idle 1 , 100"
+	set count to ( count + 1 )
+elseif ( count == 3 )
+	AIWander 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0
+	MessageBox "Idle 2 , 100"
+	set count to ( count + 1 )
+elseif ( count == 5 )
+	AIWander 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0
+	MessageBox "Idle 3 , 100"
+	set count to ( count + 1 )
+elseif ( count == 7 )
+	AIWander 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0
+	MessageBox "Idle 4 , 100"
+	set count to ( count + 1 )
+elseif ( count == 9 )
+	AIWander 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0
+	MessageBox "Idle 5 , 100"
+	set count to ( count + 1 )
+elseif ( count == 11 )
+	AIWander 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0
+	MessageBox "Idle 6 , 100"
+	set count to ( count + 1 )
+elseif ( count == 13 )
+	AIWander 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0
+	MessageBox "Idle 7 , 100"
+	set count to ( count + 1 )
+elseif ( count == 15 )
+	AIWander 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0
+	MessageBox "Idle 8 , 100"
+	set count to ( count + 1 )
+elseif ( count == 17 )
+	AIWander 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100
+	MessageBox "Idle 9 , 100"
+	set timer to 0
+	set count to ( count + 1 )
+endif
+
+End

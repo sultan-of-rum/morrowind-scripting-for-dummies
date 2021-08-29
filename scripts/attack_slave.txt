@@ -1,0 +1,17 @@
+Begin attack_slave
+
+short nolore
+
+If ( GetDeadCount "Vorar Helas" > 0 )
+	return
+endif
+
+if ( GetJournalIndex "MV_SlaveMule" < 102 ); if PC has not yet reached a certain point
+	If ( GetDistance, "Rabinna" < 512 )
+		Rabinna->AiWander 0 0 0 0 0 0 0		
+		StartCombat, "Rabinna"	
+		Journal "MV_SlaveMule", 102  ; add journal entry
+	endif
+endif
+
+End

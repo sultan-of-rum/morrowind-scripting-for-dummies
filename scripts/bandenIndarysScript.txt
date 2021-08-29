@@ -1,0 +1,11 @@
+Begin bandenIndarysScript
+if ( CellChanged == 0 )
+	Return
+endif
+
+if ( GetPCRank "Redoran" == -1 )
+	Enable
+else
+	Disable
+endif
+End

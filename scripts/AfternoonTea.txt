@@ -1,0 +1,14 @@
+Begin AfternoonTea
+
+If ( GameHour >= 17 )
+	If ( GameHour <= 19 )
+		"Cup of Tea"->Enable 
+	endif
+elseif ( GameHour < 17 )
+	if ( GameHour > 19 )
+		"Cup of Tea"->Disable
+	endif
+endif
+
+
+End AfternoonTea
