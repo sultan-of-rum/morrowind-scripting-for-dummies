@@ -1,0 +1,109 @@
+Begin PCLookAtMe
+
+float fPCX
+float fPCY
+float fPCAngle
+float fdx
+float fdy
+float fRatio
+
+short sPCLookAtMe
+
+set sPCLookAtMe to 1
+
+;you could probably also add a GetLOS check in here
+; however i could never get GetLOS to work properly...although i didn't try very hard
+
+;is PC really far away
+if ( GetDistance, Player > 8000 )
+        set sPCLookAtMe to 0
+else
+        
+;yay trigonometry
+;this basically does a rough calculation of the PCs direction relative
+;to the Actor, it only uses 45 degree chunks, though
+	
+ 
+        set fPCX to ( player->GetPos, X )
+        set fPCY to ( player->GetPos, Y )
+        set fPCAngle to ( player->GetAngle, Z )
+        
+        set fdx to GetPos, X
+        set fdy to GetPos, Y
+        
+        set fdx to ( fdx - fPCX )
+        set fdy to ( fdy - fPCY )
+        
+        set fRatio to ( fdx / fdy )
+        
+        
+        if ( fdx > 0 )
+                if ( fdy > 0 )
+                        if ( fRatio > 1 )
+                                if ( fPCAngle < -45 )
+                                        set sPCLookAtMe to 0
+                                endif
+                        else
+                                if ( fPCAngle < -90 )
+                                        set sPCLookAtMe to 0
+                                endif
+                                
+                                if ( fPCAngle > 135 )
+                                        set sPCLookAtMe to 0
+                                endif
+                        endif
+                else
+                        if ( fRatio < -1 )
+                                if ( fPCAngle < 0 )
+                                        if ( fPCAngle > -135 )
+                                                set sPCLookAtMe to 0
+                                        endif
+                                endif
+                        else
+                                if ( fPCAngle < 45 )
+                                        if ( fPCAngle > -90 )
+                                                set sPCLookAtMe to 0
+                                        endif
+                                endif
+                        endif
+                endif
+        else
+                if ( fdy > 0 )
+                        if ( fRatio < -1 )
+                                if ( fPCAngle > 45 )
+                                        set sPCLookAtMe to 0
+                                endif
+                        else
+                                if ( fPCAngle > 90 )
+                                        set sPCLookAtMe to 0
+                                endif
+        
+                                if ( fPCAngle < -135 )
+                                        set sPCLookAtMe to 0
+                                endif
+                        endif
+                else
+                        if ( fRatio > 1 )
+                                if ( fPCAngle > 0 )
+                                        if ( fPCAngle < 135 )
+                                                set sPCLookAtMe to 0
+                                        endif
+                                endif
+                        else
+                                 if ( fPCAngle > -35 )
+                                        if ( fPCAngle < 90 )
+                                                set sPCLookAtMe to 0
+                                        endif
+                                endif
+                        endif
+                endif
+        
+        endif
+
+endif
+
+if ( sPCLookAtMe == 0 )
+;do something while the PC is not looking
+endif
+
+End

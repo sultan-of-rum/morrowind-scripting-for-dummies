@@ -1,0 +1,35 @@
+Begin platform_script 
+
+Short PlatformMoving
+Short ActivateMe
+Float Timer 
+
+If ( GetStandingPC == 1 )
+	Set ActivateMe to 1
+Endif
+
+If ( ActivateMe == 1 )
+	If ( PlatformMoving == 0 )
+		Set Timer to Timer + GetSecondsPassed
+		If ( Timer <= 15 )
+			"floating_platform_01"->MoveWorld X 10
+		Else
+			Set Timer to 0
+			Set PlatformMoving to -1
+		Endif
+	Endif
+	If ( PlatformMoving == -1 )
+		Set Timer to Timer + GetSecondsPassed
+		If ( Timer <= 15 )
+			"floating_platform_01"->MoveWorld X -10
+		Else
+			Set Timer to 0
+			Set PlatformMoving to 0
+			Set ActivateMe to -1
+		Endif
+	Endif
+Else
+	"floating_platform_01"->SetAtStart	
+Endif
+
+End platform_script 

@@ -1,0 +1,24 @@
+begin OutsideBanner
+
+;this script is for a banner object outside that 
+;animates in the wind. 
+;Idle is still, Idle2 is a little breeze, and Idle3 is a large breeze
+
+short ran
+
+if ( MenuMode == 0 )
+	set ran to random 100
+	if ( ran < 30 )	;30% chance the flag does something new
+		if (GetCurrentWeather  >= 5 )			;thunder, ash, or blight
+			LoopGroup, Idle3, 5
+		endif
+		;the last anim called in this script is the one it will play
+		if ( ran <= 10 )
+			PlayGroup, Idle
+		elseif ( GetCurrentWeather < 5 )
+			PlayGroup, Idle2
+		endif
+	endif
+endif
+
+end OutsideBanner

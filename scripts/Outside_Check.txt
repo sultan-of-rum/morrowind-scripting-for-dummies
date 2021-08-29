@@ -1,0 +1,36 @@
+Begin Outside_Check 
+short doonce 
+
+if (MenuMode == 1) 
+Return 
+EndIf 
+
+if (doOnce == 0) ;if you’re in some brand new cell 
+;or it just started 
+
+if ( GetInterior == 1 ) 
+MessageBox "1: inside" 
+elseif ( GetInterior == 0 ) 
+MessageBox "0: outside" 
+else 
+MessageBox "mystery else" 
+endif 
+
+set doOnce to 1 
+Return 
+endif 
+
+if (doOnce == 1) 
+if (CellChanged == 0) Return 
+else ;if the player changes cells that frame.. 
+set doOnce to 2 ;it waits an extra frame 
+endif 
+Return 
+endif 
+
+if (doOnce == 2) ;then starts over and prints 
+set doOnce to 0 
+Return 
+endif 
+
+End Outside_Check

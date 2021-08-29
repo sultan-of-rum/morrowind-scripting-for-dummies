@@ -1,0 +1,11 @@
+begin personScript
+
+if ( OnDeath )
+messagebox "1"
+endif
+
+if ( OnDeath )
+messagebox "2"
+endif
+
+end

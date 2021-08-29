@@ -1,0 +1,12 @@
+Begin my_first_script
+
+Short controlvar
+
+If ( OnActivate == 1 )
+If ( controlvar == 0)
+		MessageBox "Voiceless it cries, wingless flutters, toothless bites, mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
+	Set controlvar to 1
+endif
+endif
+
+End

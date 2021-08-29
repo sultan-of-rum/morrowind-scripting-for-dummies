@@ -1,0 +1,23 @@
+Begin non_equippable
+
+; keeps lycantrophic PC's from equipping werewolf hunter items for balancing reasons
+; if the PC equips these before becoming a werwolf, he can wear them until he takes them off
+; but then can't reequip them. So after the first transform he can't equip them again
+
+short PCSkipEquip
+short OnPCEquip
+
+if ( PCWerewolf != 1 ); if player is not a ww, he can use the armor
+	set PCSkipEquip to 0
+	return
+else
+	set PCSkipEquip to 1
+endif
+
+
+if ( OnPCEquip == 1 )
+	MessageBox "This item is enchanted with werewolf bane-spells. You can not wear it!"
+	set OnPCEquip to 0
+endif
+
+End

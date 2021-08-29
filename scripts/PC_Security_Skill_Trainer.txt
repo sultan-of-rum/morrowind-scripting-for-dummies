@@ -1,0 +1,18 @@
+Begin PC_Security_Skill_Trainer
+
+float timer
+
+if ( menumode == 1 )
+return
+endif
+
+set timer to timer + GetSecondsPassed
+if ( timer > 10 )
+set timer to 0
+endif
+
+if ( timer == 0 ) ;using a timer to relock after 10 seconds pass
+"Storm_Chest_Trainer"->Lock 50
+endif
+
+End
