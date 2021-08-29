@@ -1,0 +1,33 @@
+begin marksmanToggle
+
+short counter
+short myMarksman
+
+if ( MenuMode == 1 )
+	return
+endif
+
+if ( counter < 20 )
+	Set counter to counter + 1
+	Return
+endif
+if ( myMarksman == 0 )
+	set myMarksman to GetMarksman
+endif
+if ( GetMarksman > 0 )
+	if ( GetDistance Player < 400 )
+		SetMarksman 0
+	endif
+else
+	if ( GetDistance Player > 600 )
+		SetMarksman myMarksman
+	endif
+endif
+
+;for level designers... forces AI to do what it ought to do
+;when they are near, they use melee weapons
+;when they are far, they use missile weapons
+;checks every 20 frames for speed
+;Note: does not affect spellcasting AI
+
+End

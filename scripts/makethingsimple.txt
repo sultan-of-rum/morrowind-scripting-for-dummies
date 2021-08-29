@@ -1,0 +1,38 @@
+Begin makethingsimple
+
+short questionAsked
+short button
+float myX
+float myY
+float myZ
+
+if ( MenuMode )
+	return
+endif
+
+if ( OnActivate == 1 )
+		if ( questionAsked == 0 )
+			MessageBox, "Create new..."  "...Pot"  "...Key"
+			set questionAsked to 1
+			set myX to GetPos X
+			set myY to GetPos Y
+			set myZ to GetPos Z + 100
+		endif
+endif
+
+if ( questionAsked != 0 )
+	if ( questionAsked == 1 )
+		set button to GetButtonPressed
+		if ( button == -1 )
+		else
+			if ( button == 0 )
+				PlaceItem "Misc_pot_redware_01" myX myY myZ 45
+			elseif ( button == 1 )
+				PlaceItemCell "misc key" "key room" myX myY myZ 45	
+			endif
+			set questionAsked to 0
+			set button to -1
+		endif
+	endif
+endif
+end

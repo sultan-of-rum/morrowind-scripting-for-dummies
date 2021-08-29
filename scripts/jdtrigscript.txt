@@ -1,0 +1,601 @@
+begin jdtrigscript 
+; by JDGBOLT
+; edited and commented for MSFD by GhanBuriGhan
+; simultaneous calculation of sine and cosine for three angles (e.g. three different axes)
+
+; for intermediate results of sine and cosine
+float ax1 
+float ax2 
+float ay1 
+float ay2 
+
+; main angle variable
+float angle 
+ 
+;temp storage for angle:
+float angle_source ;contains angle (loaded from global)
+float angle_temp 
+float angle_temp2 
+
+short angleshort ; short variable to take up angle - for tab values
+float angledec ; for decimal portion of angle
+
+short anglequad ;quadrant
+
+float axfinal ; for final result sine
+float ayfinal ; for final result cosine
+
+float angconvx1 ; for calculating decimal portion of sine and cosine
+float angconvy1 
+float angconvx2 
+float angconvy2 
+ 
+short objnum ;counter to calculate all three angles
+
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+while ( objnum <= 3 ) ; this script calculates sine and cosine for all three axis in one frame
+;exporting results: 
+if ( objnum == 1 ) 
+	set Z_sin to axfinal ; assign to global var. Z_sin to free axfinal for next axis
+	set Z_cos to ayfinal ; ditto
+endif 
+if ( objnum == 2 ) 
+	set X_sin to axfinal ;ditto
+	set X_cos to ayfinal ;ditto
+endif 
+if ( objnum == 3 ) 
+	set Y_sin to axfinal ;ditto
+	set Y_cos to ayfinal ;ditto
+	;MessageBox "sine of Z: %.3f  cosine of Z: %.3f", Z_sin, Z_cos
+	;MessageBox "sine of X: %.3f  cosine of X: %.3f", X_sin, X_cos
+	;MessageBox "sine of Y: %.3f  cosine of Y: %.3f", Y_sin, Y_cos
+	Set objnum to 0
+	StopScript jdtrigscript
+	Return
+endif 
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+set objnum to ( objnum + 1 ) ;count up to do all three angles one by one
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+; obtain the angles from global variables. 
+if ( objnum == 1 ) 
+	set angle_source to Z_input_angle 
+endif 
+if ( objnum == 2 ) 
+	set angle_source to X_input_angle 
+endif 
+if ( objnum == 3 ) 
+	set angle_source to Y_input_angle 
+endif 
+
+;GetAngle returns values from -180 to +180, so we need to compensate for calculation to get
+;values from 0 to 360°C:
+if ( angle_source < 0 ) 
+	set angle_source to ( 360 + angle_source ) 
+endif 
+
+set angle to angle_source 
+
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+;determine quadrant. This way we need to calculate sine and cosine only for 0-90°
+if ( angle <= 90 ) 
+	set angle_temp2 to angle 
+	set anglequad to 1 
+elseif ( angle <= 180 ) 
+	set angle_temp2 to ( 180 - angle ) 
+	set anglequad to 2 
+elseif ( angle <= 270 ) 
+	set angle_temp2 to ( angle - 180 ) 
+	set anglequad to 3 
+elseif ( angle <= 360 ) 
+	set angle_temp2 to ( 360 - angle ) 
+	set anglequad to 4 
+endif 
+
+; obtain the decimal part of the angle
+set angleshort to angle_temp2 
+set angledec to ( angle_temp2 - angleshort ) ; the difference between the float and the short is the decimal part
+set angle_temp to angleshort 
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+; These are pre-calculated values for sine and cosine:
+if ( angle_temp <= 10 ) ; angles arranged in chunks of 10 for speed (and if block limits?)
+	if ( angle_temp == 0 ) 
+		set ax1 to 0.000000 ; sine
+		set ay1 to 1.000000 ;cosine
+		set ax2 to 0.017452 ; sine of angletemp+1
+		set ay2 to 0.999847 ;cosine of angletemp+1
+	elseif ( angle_temp == 1 ) 
+		set ax1 to 0.017452 
+		set ay1 to 0.999847 
+		set ax2 to 0.034899 
+		set ay2 to 0.999390 
+	elseif ( angle_temp == 2 ) 
+		set ax1 to 0.034899 
+		set ay1 to 0.999390 
+		set ax2 to 0.052333 
+		set ay2 to 0.998629 
+	elseif ( angle_temp == 3 ) 
+		set ax1 to 0.052333 
+		set ay1 to 0.998629 
+		set ax2 to 0.069756 
+		set ay2 to 0.997564 
+	elseif ( angle_temp == 4 ) 
+		set ax1 to 0.069756 
+		set ay1 to 0.997564 
+		set ax2 to 0.087155 
+		set ay2 to 0.996194 
+	elseif ( angle_temp == 5 ) 
+		set ax1 to 0.087155 
+		set ay1 to 0.996194 
+		set ax2 to 0.104528 
+		set ay2 to 0.994521 
+	elseif ( angle_temp == 6 ) 
+		set ax1 to 0.104528 
+		set ay1 to 0.994521 
+		set ax2 to 0.121869 
+		set ay2 to 0.992546 
+	elseif ( angle_temp == 7 ) 
+		set ax1 to 0.121869 
+		set ay1 to 0.992546 
+		set ax2 to 0.139173 
+		set ay2 to 0.990268 
+	elseif ( angle_temp == 8 ) 
+		set ax1 to 0.139173 
+		set ay1 to 0.990268 
+		set ax2 to 0.156434 
+		set ay2 to 0.987688 
+	elseif ( angle_temp == 9 ) 
+		set ax1 to 0.156434 
+		set ay1 to 0.987688 
+		set ax2 to 0.173648 
+		set ay2 to 0.984807 
+	elseif ( angle_temp == 10 ) 
+		set ax1 to 0.173648 
+		set ay1 to 0.984807 
+		set ax2 to 0.190808 
+		set ay2 to 0.981627 
+	endif 
+elseif ( angle_temp <= 20 ) ; and so on…
+if ( angle == 11 ) 
+set ax1 to 0.190808 
+set ay1 to 0.981627 
+set ax2 to 0.207911 
+set ay2 to 0.978147 
+elseif ( angle_temp == 12 ) 
+set ax1 to 0.207911 
+set ay1 to 0.978147 
+set ax2 to 0.224951 
+set ay2 to 0.974370 
+elseif ( angle_temp == 13 ) 
+set ax1 to 0.224951 
+set ay1 to 0.974370 
+set ax2 to 0.241921 
+set ay2 to 0.970295 
+elseif ( angle_temp == 14 ) 
+set ax1 to 0.241921 
+set ay1 to 0.970295 
+set ax2 to 0.258819 
+set ay2 to 0.965925 
+elseif ( angle_temp == 15 ) 
+set ax1 to 0.258819 
+set ay1 to 0.965925 
+set ax2 to 0.275637 
+set ay2 to 0.961261 
+elseif ( angle_temp == 16 ) 
+set ax1 to 0.275637 
+set ay1 to 0.961261 
+set ax2 to 0.292371 
+set ay2 to 0.956304 
+elseif ( angle_temp == 17 ) 
+set ax1 to 0.292371 
+set ay1 to 0.956304 
+set ax2 to 0.309016 
+set ay2 to 0.951056 
+elseif ( angle_temp == 18 ) 
+set ax1 to 0.309016 
+set ay1 to 0.951056 
+set ax2 to 0.325568 
+set ay2 to 0.945518 
+elseif ( angle_temp == 19 ) 
+set ax1 to 0.325568 
+set ay1 to 0.945518 
+set ax2 to 0.342020 
+set ay2 to 0.939692 
+elseif ( angle_temp == 20 ) 
+set ax1 to 0.342020 
+set ay1 to 0.939692 
+set ax2 to 0.358367 
+set ay2 to 0.933580 
+endif 
+elseif ( angle_temp <= 30 ) 
+if ( angle_temp == 21 ) 
+set ax1 to 0.358367 
+set ay1 to 0.933580 
+set ax2 to 0.374606 
+set ay2 to 0.927183 
+elseif ( angle_temp == 22 ) 
+set ax1 to 0.374606 
+set ay1 to 0.927183 
+set ax2 to 0.390731 
+set ay2 to 0.920504 
+elseif ( angle_temp == 23 ) 
+set ax1 to 0.390731 
+set ay1 to 0.920504 
+set ax2 to 0.406736 
+set ay2 to 0.913545 
+elseif ( angle_temp == 24 ) 
+set ax1 to 0.406736 
+set ay1 to 0.913545 
+set ax2 to 0.422618 
+set ay2 to 0.906307 
+elseif ( angle_temp == 25 ) 
+set ax1 to 0.422618 
+set ay1 to 0.906307 
+set ax2 to 0.438371 
+set ay2 to 0.898794 
+elseif ( angle_temp == 26 ) 
+set ax1 to 0.438371 
+set ay1 to 0.898794 
+set ax2 to 0.453990 
+set ay2 to 0.891006 
+elseif ( angle_temp == 27 ) 
+set ax1 to 0.453990 
+set ay1 to 0.891006 
+set ax2 to 0.469471 
+set ay2 to 0.882947 
+elseif ( angle_temp == 28 ) 
+set ax1 to 0.469471 
+set ay1 to 0.882947 
+set ax2 to 0.484809 
+set ay2 to 0.874619 
+elseif ( angle_temp == 29 ) 
+set ax1 to 0.484809 
+set ay1 to 0.874619 
+set ax2 to 0.500000 
+set ay2 to 0.866025 
+elseif ( angle_temp == 30 ) 
+set ax1 to 0.500000 
+set ay1 to 0.866025 
+set ax2 to 0.515038 
+set ay2 to 0.857167 
+endif 
+elseif ( angle_temp <= 40 ) 
+if ( angle_temp == 31 ) 
+set ax1 to 0.515038 
+set ay1 to 0.857167 
+set ax2 to 0.529919 
+set ay2 to 0.848048 
+elseif ( angle_temp == 32 ) 
+set ax1 to 0.529919 
+set ay1 to 0.848048 
+set ax2 to 0.544639 
+set ay2 to 0.838670 
+elseif ( angle_temp == 33 ) 
+set ax1 to 0.544639 
+set ay1 to 0.838670 
+set ax2 to 0.559192 
+set ay2 to 0.829037 
+elseif ( angle_temp == 34 ) 
+set ax1 to 0.559192 
+set ay1 to 0.829037 
+set ax2 to 0.573576 
+set ay2 to 0.819152 
+elseif ( angle_temp == 35 ) 
+set ax1 to 0.573576 
+set ay1 to 0.819152 
+set ax2 to 0.587785 
+set ay2 to 0.809016 
+elseif ( angle_temp == 36 ) 
+set ax1 to 0.587785 
+set ay1 to 0.809016 
+set ax2 to 0.601815 
+set ay2 to 0.798635 
+elseif ( angle_temp == 37 ) 
+set ax1 to 0.601815 
+set ay1 to 0.798635 
+set ax2 to 0.615661 
+set ay2 to 0.788010 
+elseif ( angle_temp == 38 ) 
+set ax1 to 0.615661 
+set ay1 to 0.788010 
+set ax2 to 0.629320 
+set ay2 to 0.777145 
+elseif ( angle_temp == 39 ) 
+set ax1 to 0.629320 
+set ay1 to 0.777145 
+set ax2 to 0.642787 
+set ay2 to 0.766044 
+elseif ( angle_temp == 40 ) 
+set ax1 to 0.642787 
+set ay1 to 0.766044 
+set ax2 to 0.656059 
+set ay2 to 0.754709 
+endif 
+elseif ( angle_temp <= 50 ) 
+if ( angle_temp == 41 ) 
+set ax1 to 0.656059 
+set ay1 to 0.754709 
+set ax2 to 0.669130 
+set ay2 to 0.743144 
+elseif ( angle_temp == 42 ) 
+set ax1 to 0.669130 
+set ay1 to 0.743144 
+set ax2 to 0.681998 
+set ay2 to 0.731353 
+elseif ( angle_temp == 43 ) 
+set ax1 to 0.681998 
+set ay1 to 0.731353 
+set ax2 to 0.694658 
+set ay2 to 0.719339 
+elseif ( angle_temp == 44 ) 
+set ax1 to 0.694658 
+set ay1 to 0.719339 
+set ax2 to 0.707106 
+set ay2 to 0.707106 
+elseif ( angle_temp == 45 ) 
+set ax1 to 0.707106 
+set ay1 to 0.707106 
+set ax2 to 0.719339 
+set ay2 to 0.694658 
+elseif ( angle_temp == 46 ) 
+set ax1 to 0.719339 
+set ay1 to 0.694658 
+set ax2 to 0.731353 
+set ay2 to 0.681998 
+elseif ( angle_temp == 47 ) 
+set ax1 to 0.731353 
+set ay1 to 0.681998 
+set ax2 to 0.743144 
+set ay2 to 0.669130 
+elseif ( angle_temp == 48 ) 
+set ax1 to 0.743144 
+set ay1 to 0.669130 
+set ax2 to 0.754709 
+set ay2 to 0.656059 
+elseif ( angle_temp == 49 ) 
+set ax1 to 0.754709 
+set ay1 to 0.656059 
+set ax2 to 0.766044 
+set ay2 to 0.642787 
+elseif ( angle_temp == 50 ) 
+set ax1 to 0.766044 
+set ay1 to 0.642787 
+set ax2 to 0.777145 
+set ay2 to 0.629320 
+endif 
+elseif ( angle_temp <= 60 ) 
+if ( angle == 51 ) 
+set ax1 to 0.777145 
+set ay1 to 0.629320 
+set ax2 to 0.788010 
+set ay2 to 0.615661 
+elseif ( angle_temp == 52 ) 
+set ax1 to 0.788010 
+set ay1 to 0.615661 
+set ax2 to 0.798635 
+set ay2 to 0.601815 
+elseif ( angle_temp == 53 ) 
+set ax1 to 0.798635 
+set ay1 to 0.601815 
+set ax2 to 0.809016 
+set ay2 to 0.587785 
+elseif ( angle_temp == 54 ) 
+set ax1 to 0.809016 
+set ay1 to 0.587785 
+set ax2 to 0.819152 
+set ay2 to 0.573576 
+elseif ( angle_temp == 55 ) 
+set ax1 to 0.819152 
+set ay1 to 0.573576 
+set ax2 to 0.829037 
+set ay2 to 0.559192 
+elseif ( angle_temp == 56 ) 
+set ax1 to 0.829037 
+set ay1 to 0.559192 
+set ax2 to 0.838670 
+set ay2 to 0.544639 
+elseif ( angle_temp == 57 ) 
+set ax1 to 0.838670 
+set ay1 to 0.544639 
+set ax2 to 0.848048 
+set ay2 to 0.529919 
+elseif ( angle_temp == 58 ) 
+set ax1 to 0.848048 
+set ay1 to 0.529919 
+set ax2 to 0.857167 
+set ay2 to 0.515038 
+elseif ( angle_temp == 59 ) 
+set ax1 to 0.857167 
+set ay1 to 0.515038 
+set ax2 to 0.866025 
+set ay2 to 0.500000 
+elseif ( angle_temp == 60 ) 
+set ax1 to 0.866025 
+set ay1 to 0.500000 
+set ax2 to 0.874619 
+set ay2 to 0.484809 
+endif 
+elseif ( angle_temp <= 70 ) 
+if ( angle_temp == 61 ) 
+set ax1 to 0.874619 
+set ay1 to 0.484809 
+set ax2 to 0.882947 
+set ay2 to 0.469471 
+elseif ( angle_temp == 62 ) 
+set ax1 to 0.882947 
+set ay1 to 0.469471 
+set ax2 to 0.891006 
+set ay2 to 0.453990 
+elseif ( angle_temp == 63 ) 
+set ax1 to 0.891006 
+set ay1 to 0.453990 
+set ax2 to 0.898794 
+set ay2 to 0.438371 
+elseif ( angle_temp == 64 ) 
+set ax1 to 0.898794 
+set ay1 to 0.438371 
+set ax2 to 0.906307 
+set ay2 to 0.422618 
+elseif ( angle_temp == 65 ) 
+set ax1 to 0.906307 
+set ay1 to 0.422618 
+set ax2 to 0.913545 
+set ay2 to 0.406736 
+elseif ( angle_temp == 66 ) 
+set ax1 to 0.913545 
+set ay1 to 0.406736 
+set ax2 to 0.920504 
+set ay2 to 0.390731 
+elseif ( angle_temp == 67 ) 
+set ax1 to 0.920504 
+set ay1 to 0.390731 
+set ax2 to 0.927183 
+set ay2 to 0.374606 
+elseif ( angle_temp == 68 ) 
+set ax1 to 0.927183 
+set ay1 to 0.374606 
+set ax2 to 0.933580 
+set ay2 to 0.358367 
+elseif ( angle_temp == 69 ) 
+set ax1 to 0.933580 
+set ay1 to 0.358367 
+set ax2 to 0.939692 
+set ay2 to 0.342020 
+elseif ( angle_temp == 70 ) 
+set ax1 to 0.939692 
+set ay1 to 0.342020 
+set ax2 to 0.945518 
+set ay2 to 0.325568 
+endif 
+elseif ( angle_temp <= 80 ) 
+if ( angle_temp == 71 ) 
+set ax1 to 0.945518 
+set ay1 to 0.325568 
+set ax2 to 0.951056 
+set ay2 to 0.309016 
+elseif ( angle_temp == 72 ) 
+set ax1 to 0.951056 
+set ay1 to 0.309016 
+set ax2 to 0.956304 
+set ay2 to 0.292371 
+elseif ( angle_temp == 73 ) 
+set ax1 to 0.956304 
+set ay1 to 0.292371 
+set ax2 to 0.961261 
+set ay2 to 0.275637 
+elseif ( angle_temp == 74 ) 
+set ax1 to 0.961261 
+set ay1 to 0.275637 
+set ax2 to 0.965925 
+set ay2 to 0.258819 
+elseif ( angle_temp == 75 ) 
+set ax1 to 0.965925 
+set ay1 to 0.258819 
+set ax2 to 0.970295 
+set ay2 to 0.241921 
+elseif ( angle_temp == 76 ) 
+set ax1 to 0.970295 
+set ay1 to 0.241921 
+set ax2 to 0.974370 
+set ay2 to 0.224951 
+elseif ( angle_temp == 77 ) 
+set ax1 to 0.974370 
+set ay1 to 0.224951 
+set ax2 to 0.978147 
+set ay2 to 0.207911 
+elseif ( angle_temp == 78 ) 
+set ax1 to 0.978147 
+set ay1 to 0.207911 
+set ax2 to 0.981627 
+set ay2 to 0.190808 
+elseif ( angle_temp == 79 ) 
+set ax1 to 0.981627 
+set ay1 to 0.190808 
+set ax2 to 0.984807 
+set ay2 to 0.173648 
+elseif ( angle_temp == 80 ) 
+set ax1 to 0.984807 
+set ay1 to 0.173648 
+set ax2 to 0.987688 
+set ay2 to 0.156434 
+endif 
+elseif ( angle_temp <= 90 ) 
+if ( angle_temp == 81 ) 
+set ax1 to 0.987688 
+set ay1 to 0.156434 
+set ax2 to 0.990268 
+set ay2 to 0.139173 
+elseif ( angle_temp == 82 ) 
+set ax1 to 0.990268 
+set ay1 to 0.139173 
+set ax2 to 0.992546 
+set ay2 to 0.121869 
+elseif ( angle_temp == 83 ) 
+set ax1 to 0.992546 
+set ay1 to 0.121869 
+set ax2 to 0.994521 
+set ay2 to 0.104528 
+elseif ( angle_temp == 84 ) 
+set ax1 to 0.994521 
+set ay1 to 0.104528 
+set ax2 to 0.996194 
+set ay2 to 0.087155 
+elseif ( angle_temp == 85 ) 
+set ax1 to 0.996194 
+set ay1 to 0.087155 
+set ax2 to 0.997564 
+set ay2 to 0.069756 
+elseif ( angle_temp == 86 ) 
+set ax1 to 0.997564 
+set ay1 to 0.069756 
+set ax2 to 0.998629 
+set ay2 to 0.052335 
+elseif ( angle_temp == 87 ) 
+set ax1 to 0.998629 
+set ay1 to 0.052335 
+set ax2 to 0.999390 
+set ay2 to 0.034899 
+elseif ( angle_temp == 88 ) 
+set ax1 to 0.999390 
+set ay1 to 0.034899 
+set ax2 to 0.999847 
+set ay2 to 0.017452 
+elseif ( angle_temp == 89 ) 
+set ax1 to 0.999847 
+set ay1 to 0.017452 
+set ax2 to 1.000000 
+set ay2 to 0.000000 
+elseif ( angle_temp == 90 ) 
+set ax1 to 1.000000 
+set ay1 to 0.000000 
+set ax2 to 0.999847 
+set ay2 to 0.017452 
+endif 
+endif 
+
+;Use simple linear extrapolation to approximate a decimal value for sine and cosine:
+set angconvx1 to ( ax2 - ax1 ) ; calculate distance sin(angle) and sin(angle+1)
+set angconvy1 to ( ay2 - ay1 ) ; same for cos
+set angconvx2 to ( angconvx1 * angledec ) ;calculate a fraction by the decimal residue
+set angconvy2 to ( angconvy1 * angledec ) ; same for cos
+set axfinal to ( ax1 + angconvx2 ) ; set final result to result + fraction
+set ayfinal to ( ay1 + angconvy2 ) ; set final result to result + fraction
+
+;correct for quadrant:
+if ( anglequad == 1 ) 
+	set axfinal to ( axfinal * 1 ) ; holds final sine
+	set ayfinal to ( ayfinal * 1 ) ; holds final cosine
+elseif ( anglequad == 2 ) 
+	set axfinal to ( axfinal * 1 ) ; holds final sine
+	set ayfinal to ( ayfinal * -1 ) ; holds final cosine
+elseif ( anglequad == 3 ) 
+	set axfinal to ( axfinal * -1 ) ; holds final sine
+	set ayfinal to ( ayfinal * -1 ) ; holds final cosine
+elseif ( anglequad == 4 ) 
+	set axfinal to ( axfinal * -1 ) ; holds final sine
+	set ayfinal to ( ayfinal * 1 ) ; holds final cosine
+endif 
+
+endwhile ; loop for all three axis
+
+;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+end jdtrigscript

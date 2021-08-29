@@ -1,0 +1,31 @@
+Begin jeanneScript
+
+float timer
+short nolore
+
+if ( GetJournalIndex "EB_Bone" < 20 )
+	Return
+endif
+
+if ( GetJournalIndex EB_Bone >= 40 )
+	Return
+endif
+
+Set timer to ( timer + GetSecondsPassed )
+
+if ( timer < 5 ) ;this makes sure GetDetected is only called every 5 seconds
+	Return
+endif
+
+Set timer to 0
+
+if ( GetDistance Player <= 1024 )
+	if ( player->GetDistance "com_chest_02 " <=128 )
+		if ( GetDetected Player == 1 )
+			ForceGreeting ;The player has been caught and will be punished
+			Journal EB_Bone 50
+		endif
+	endif
+endif
+
+End jeanneScript

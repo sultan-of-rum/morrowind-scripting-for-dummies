@@ -1,0 +1,10 @@
+begin KeepVarsScript
+
+if ( ScriptRunning, MyScript == 0 )
+set MyScript.KeepVars to 1
+StartScript MyScript
+endif
+
+StopScript KeepVarsScript
+
+end

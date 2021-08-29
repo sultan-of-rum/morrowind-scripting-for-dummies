@@ -1,0 +1,30 @@
+begin Item_Cast 
+
+short OnPCEquip 
+short CurseAdded 
+float Timer 
+
+ 
+if ( CurseAdded ) 
+set Timer to ( Timer + GetSecondsPassed ) 
+	if ( Timer >= 25 ) ; after 25 s remove the spell. 25 damage done.
+		set Timer to 0 
+		Player->RemoveSpell "ItemFlame" 
+	set CurseAdded to 0
+	endif 
+endif 
+
+if ( OnPCEquip );when item is equipped
+	if ( MenuMode ) 
+		return 
+	elseif ( CurseAdded == 0 ) 
+		Player->AddSpell "ItemFlame" ; a spell of type curse!
+;custom spell one point of fire damage / s
+		set Timer to 0 
+		set CurseAdded to 1 
+	elseif ( CurseAdded ) ; Add the spell only once
+		Player->RemoveSpell "ItemFlame" 
+		set CurseAdded to 0 
+endif 
+
+end Item_Cast

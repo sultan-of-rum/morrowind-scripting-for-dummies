@@ -1,0 +1,15 @@
+begin lava
+
+if ( menumode == 1 )
+	return
+endif
+
+if ( CellChanged == 0 )
+	if ( GetSoundPlaying "lava layer" == 0 )
+		PlayLoopSound3DVP "lava layer", 1.0, 1.0
+	endif
+endif
+
+HurtStandingActor, 20.0		;20 pts of damage a sec
+
+end lava

@@ -1,0 +1,7 @@
+Begin HBHallLighting
+
+if ( GetStandingPC == 1 )
+	set HB_hallfire to 1
+endif
+
+end
