@@ -1,0 +1,38 @@
+begin CharGenBoatNPC
+;this is the guard on boat who says to move along
+
+short state
+float timer
+
+if ( menumode == 1)
+	return
+endif
+
+if ( GetDisabled == 1 )
+	return
+endif
+
+if ( OnActivate == 1 )
+	return
+endif
+
+if ( GetDistance, Player < 180 )
+	if ( SayDone == 1)	
+		;first greeting
+		if ( state == 0 )
+			if ( timer == 0 )	;using a timer so he doesn't talk ALL the time
+				say, "vo\Misc\CharGenBoat1.wav", "This is where they want you. Head down to the dock and he'll show you to the Census Office."
+				set state to 10
+			endif
+		;all other times after first
+		else
+			set timer to timer + GetSecondsPassed
+			if ( timer > 6 )
+				set timer to 0
+				say, "vo\Misc\CharGenBoat2.wav", "Let's go. Move it along."
+			endif
+		endif
+	endif
+endif
+
+end CharGenBoatNPC

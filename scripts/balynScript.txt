@@ -1,0 +1,22 @@
+Begin balynScript
+float timer
+short doOnce
+[…]; references to journal settings
+Set timer to ( timer + GetSecondsPassed )
+if ( timer < 5 ); A timer to avoid testing to often (avoids performance problems)
+	Return
+endif
+Set timer to 0
+if ( doOnce == 0 )
+	if ( GetDistance Player <= 1024 )
+		if ( player->GetDistance "hlaalu_loaddoor_ 02_balyn" <= 256 )
+			if ( GetLOS Player == 1 )
+				ForceGreeting
+				Journal DA_Mephala 55
+				set doOnce to -1
+			endif
+		endif
+	endif
+endif
+
+End

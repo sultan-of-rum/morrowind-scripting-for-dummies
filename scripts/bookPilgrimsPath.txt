@@ -1,0 +1,17 @@
+Begin bookPilgrimsPath
+
+if ( GetJournalIndex TT_PilgrimsPath >= 100 )
+	Return
+endif
+
+if ( OnActivate == 1 )
+	Journal TT_PilgrimsPath 100
+	ShowMap "Gnisis"
+	ShowMap "Vivec"
+	ShowMap "Ghostgate"
+	ShowMap "Koal Cave Entrance"
+	ShowMap "Fields of Kummu"
+	Activate
+endif
+
+End

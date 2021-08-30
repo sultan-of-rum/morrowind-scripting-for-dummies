@@ -1,0 +1,29 @@
+Begin Magictest
+
+short var_1
+short var_2
+short var_3
+
+if ( Player->GetSpell, "hearth heal" )
+	set var_1 to 1
+else
+	set var_1 to 0
+endif
+
+if ( Player->GetSpellEffects, "hearth heal" )
+	set var_2 to 1
+else
+	set var_2 to 0
+endif
+
+if ( Player->GetEffect, sEffectRestoreHealth )
+	Player->RemoveEffects, 75  ;delete this line to see what happens normally
+
+	set var_3 to 1
+else
+	set var_3 to 0
+endif
+
+MessageBox "GetSpell: %.0f   GetSpellEffects, %.0f   GetEffect: %.0f ", var_1, var_2, var_3
+
+End

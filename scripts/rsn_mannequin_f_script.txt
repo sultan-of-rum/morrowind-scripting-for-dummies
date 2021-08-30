@@ -1,0 +1,152 @@
+Begin rsn_mannequin_f_script 
+
+short button 
+short questionState 
+short nEquipType 
+short nStillEquipped
+float fDeleteTimer
+
+SkipAnim ;GBG: This is essential, it makes the Mannequin, which is an NPC, stand still
+
+if ( menumode == 1 ) 
+return 
+endif 
+
+if ( GetDisabled == 1 )
+; if mannequin has been disabled then we need to wait some time then delete this reference
+Set fDeleteTimer to ( fDeleteTimer + GetSecondsPassed )
+if ( fDeleteTimer > 5 )
+SetDelete 1
+endif
+return
+endif
+
+if ( OnActivate == 0 ) 
+if ( questionState == 0 ) 
+return 
+endif 
+endif 
+
+if ( questionState == 0 ) 
+MessageBox, "Armor Mannequin", "Move Mannequin", "Add/Remove Armor" 
+set questionState to 1 
+endif 
+
+if ( questionState == 1 ) 
+set button to GetButtonPressed 
+
+if ( button == 0 ) 
+set questionState to 10 
+elseif ( button == 1 ) 
+set questionState to 0 
+Activate 
+endif 
+endif 
+
+if ( questionState == 10 ) 
+  ; This section is split into two groups of nested ifs because of nested if limits of 
+  ; the scripting language. 
+  Set nStillEquipped to 0 
+  ; Here we check to see if a weapon is equipped (put in mainly for if anyone can figure 
+  ; out how to get a mannequin to show a weapon) 
+  Set nEquipType to ( GetWeaponType ) 
+  if ( nEquipType == -1 ) 
+    ; Here we check to see if any armor is equipped (NOTE: there are 10 different possible 
+    ; pieces of armor so we need to check each individually) 
+    Set nEquipType to ( GetArmorType 0 ) 
+    if ( nEquipType == -1 ) 
+      Set nEquipType to ( GetArmorType 1 ) 
+      if ( nEquipType == -1 ) 
+        Set nEquipType to ( GetArmorType 2 ) 
+        if ( nEquipType == -1 ) 
+          Set nEquipType to ( GetArmorType 3 ) 
+          if ( nEquipType == -1 ) 
+            Set nEquipType to ( GetArmorType 4 ) 
+            if ( nEquipType == -1 ) 
+              Set nEquipType to ( GetArmorType 5 ) 
+              if ( nEquipType != -1 ) 
+                Set nStillEquipped to 1 ;GBG: Set to 1 if there is still some armor equipped
+              endif 
+            else 
+              Set nStillEquipped to 1 
+            endif 
+          else 
+            Set nStillEquipped to 1 
+          endif 
+        else 
+          Set nStillEquipped to 1 
+        endif 
+      else 
+        Set nStillEquipped to 1 
+      endif 
+    else 
+      Set nStillEquipped to 1 
+    endif 
+  else 
+    Set nStillEquipped to 1 
+  endif 
+
+if ( nStillEquipped != 1 ) ;We only want to process if we haven't found any equipment. 
+  Set nEquipType to ( GetArmorType 6 ) 
+  if ( nEquipType == -1 ) 
+    Set nEquipType to ( GetArmorType 7 ) 
+    if ( nEquipType == -1 ) 
+      Set nEquipType to ( GetArmorType 8 ) 
+      if ( nEquipType == -1 ) 
+        Set nEquipType to ( GetArmorType 9 ) 
+        if ( nEquipType == -1 ) 
+          Set nEquipType to ( GetArmorType 10 ) 
+          If ( nEquipType == -1 ) 
+            ;Only show this question if the mannequin doesn't have weapons or armor equipped. 
+            MessageBox "Did you remove all items from the mannequin?", "Yes", "No" 
+          else 
+            Set nStillEquipped to 1 
+          endif 
+        else 
+          Set nStillEquipped to 1 
+        endif 
+      else 
+        Set nStillEquipped to 1 
+      endif 
+    else 
+      Set nStillEquipped to 1 
+    endif 
+  else 
+    Set nStillEquipped to 1 
+  endif 
+endif 
+
+; Now we need to go to the next stage of processing (either wait for user choice or immediately activate) 
+set questionState to 20 
+endif 
+
+if ( questionState == 20 ) 
+if ( nStillEquipped != 1 ) 
+set button to GetButtonPressed 
+else 
+; Mannequin still has weapons or armor equipped so we want activate it and warn 
+; the user instead of allowing pick-up. 
+		MessageBox "You haven't removed your equipment." 
+		Set button to 1 ;says that there are still items on the Mannequin 
+	endif 
+
+if ( button == 0 ) 
+		set questionState to 0 
+; Disable the current mannequin
+; and create a new one we wouldn't have to worry about losing items) 
+; GBG: if Mannequins are transported a lot 
+; a SetDelete function might be a good idea
+		Disable 
+; This is the item that contains the script 
+; to generate a new mannequin when dropped. 
+; GBG: for a "female" mannequin this would be a different item
+player->addItem, "_rsn_man_f_holder", 1 
+playSound "Item Misc Up" 
+elseif ( button == 1 ) 
+; There are still items on the mannequin (either from checks or user response) 
+set questionState to 0 
+Activate 
+endif 
+endif 
+
+end

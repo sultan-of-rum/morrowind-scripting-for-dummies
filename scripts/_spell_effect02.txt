@@ -1,0 +1,18 @@
+Begin _spell_effect
+
+DontSaveObject
+
+float timer
+	
+if ( GetDisabled == 1 )
+	setdelete 1
+	return
+endIf	
+
+rotate y 120
+
+if ( timer < 3 )
+	set timer to ( timer + GetSecondsPassed )
+else
+	disable
+endIf

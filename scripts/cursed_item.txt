@@ -1,0 +1,13 @@
+Begin cursed_item
+
+short state
+short OnPCEquip
+
+
+if ( OnPCEquip == 0 ) ; item is not equipped
+	if ( state == 0 ); if club has never been equipped, don't do anything yet.
+		return
+	else
+		Player->Equip, "cursed_club" ; reequip the item!
+		MessageBox "The item is cursed, it doesn't leave your hand" ;taunt the player
+	endif

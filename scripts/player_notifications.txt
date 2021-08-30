@@ -1,0 +1,30 @@
+Begin player_notifications
+
+short weapstate
+short spelstate
+
+if ( player->GetWeaponDrawn )
+	if ( weapstate != 1 )
+		set weapstate to 1
+		MessageBox "The player's weapon is drawn."
+	Endif
+else
+	if ( weapstate != 0 )
+		set weapstate to 0
+		MessageBox "The player's weapon is sheathed."
+	Endif
+endif
+
+if ( player->GetSpellReadied )
+	if ( spelstate != 1 )
+		set spelstate to 1
+		MessageBox "The player's spell is readied."
+	Endif
+else
+	if ( spelstate != 0 )
+		set spelstate to 0
+		MessageBox "The player's spell is put away."
+	Endif
+endif
+
+end

@@ -1,0 +1,14 @@
+Begin uupse_Bagrum
+
+short doOnce
+
+if ( doOnce == 0 )
+	if ( "yagrum bagarn"->GetAttacked == 1 )
+		StartCombat player
+		SetFight 90
+		SetDisposition 0
+		set doOnce to 1
+	endif
+endif
+
+end uupse_Bagrum

@@ -1,0 +1,29 @@
+begin RaceCheck
+
+;global script that gets run once to check the PC's race, so it can be used in dialogue
+
+if ( Player->GetRace "Argonian" == 1 )
+	set PCRace to 1
+elseif ( Player->GetRace "Breton" == 1 )
+	set PCRace to 2
+elseif ( Player->GetRace "Dark Elf" == 1 )
+	set PCRace to 3
+elseif ( Player->GetRace "High Elf" == 1 )
+	set PCRace to 4
+elseif ( Player->GetRace "Imperial" == 1 )
+	set PCRace to 5
+elseif ( Player->GetRace "Khajiit" == 1 )
+	set PCRace to 6
+elseif ( Player->GetRace "Nord" == 1 )
+	set PCRace to 7
+elseif ( Player->GetRace "Orc" == 1 )
+	set PCRace to 8
+elseif ( Player->GetRace "Redguard" == 1 )
+	set PCRace to 9
+elseif ( Player->GetRace "Wood Elf" == 1 )
+	set PCRace to 10
+endif
+
+StopScript RaceCheck
+
+end

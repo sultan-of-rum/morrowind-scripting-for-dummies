@@ -1,0 +1,43 @@
+Begin expelledMG
+
+;this is just a model
+;it is supposed to be on an item in each of the Mages Guilds.
+
+short myDay
+short temp
+
+if ( PCExpelled "Mages Guild" == 0 )
+	return
+endif
+
+if ( ExpMagesGuild == 0 )
+	Set ExpMagesGuild to 1
+endif
+
+if ( myDay == 0 )
+	Set myDay to Day
+endif
+
+if ( myDay == Day )
+	return
+endif
+
+if ( Day > myDay )
+	Set temp to ( Day - myDay )
+else
+	Set temp to ( myDay - Day )
+endif
+
+Set myDay to Day
+
+Set temp to ( temp + 2 )
+
+Set ExpMagesGuild to ( ExpMagesGuild + temp )
+
+if ( ExpMagesGuild > 30 )
+	Set ExpMagesGuild to 0
+	PCClearExpelled "Mages Guild"
+	return
+endif
+
+End

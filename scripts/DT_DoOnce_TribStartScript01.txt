@@ -1,0 +1,41 @@
+begin DT_DoOnce_TribStartScript01
+
+;script to demonstrate a 'DoOnce' Tribunal Start Script
+; by DinkumThinkum
+
+;script executes 'Do Once' code section once, when the mod is loaded
+; with a saved game that does not include the mod (or with a new game)
+
+;script executes 'Reload' code section once, each time a save game
+; made with the mod is reloaded with the mod enabled
+
+;either code section can be omitted, but all the control structures will still be needed
+
+;Note: BOTH 'StopScripts' are necessary. Trust me... 
+
+;DT_DoOnce_TSS01 - Global variable, won't be reset by StopScript (initialized to 0)
+
+if ( DT_DoOnce_TSS01 == 1 )
+
+;start of 'Reload' code, to be run once each time mod is reloaded
+
+MessageBox, "You have loaded this mod with a saved game made with the mod enabled.", "OK"
+
+;end of 'Reload' code
+
+StopScript DT_DoOnce_TribStartScript01
+Return
+endif
+
+
+;start of 'Do Once' code, to be run only when the mod is first loaded.
+
+MessageBox, "You have loaded this mod with a saved game that was made without this mod enabled.", "OK"
+
+;end of 'Do Once' code.
+
+
+set DT_DoOnce_TSS01 to 1
+StopScript DT_DoOnce_TribStartScript01
+
+end DT_DoOnce_TribStartScript01

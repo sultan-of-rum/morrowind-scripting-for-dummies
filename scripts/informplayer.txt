@@ -1,0 +1,13 @@
+Begin informplayer
+Short OnPCEquip
+
+if ( MenuMode == 1 ) 
+	return 
+endif
+
+if (OnPCEquip ==1 ) 
+MessageBox, "The sword vibrates in your hand"
+Set OnPCEquip to 0
+Endif
+
+End informplayer

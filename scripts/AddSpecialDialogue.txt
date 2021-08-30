@@ -1,0 +1,6 @@
+Begin AddSpecialDialogue
+
+;add possibility to ask about travel
+AddTopic, "aren't you getting wet?"
+
+End AddSpecialDialogue

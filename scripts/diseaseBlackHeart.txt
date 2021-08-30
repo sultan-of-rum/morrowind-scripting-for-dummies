@@ -1,0 +1,13 @@
+Begin diseaseBlackHeart
+
+DontSaveObject
+
+if ( CellChanged == 0 )
+	return
+endif
+
+if ( GetBlightDisease == 0 )
+	AddSpell "black-heart blight"
+endif
+
+End

@@ -1,0 +1,28 @@
+Begin HBCaravanGuardAI
+
+; this script makes the AI guard more dangerous by making him switch from bow to sword when the player closes in
+short currentarrows
+short storearrows
+short doonce
+
+set currentarrows to GetItemCount "arrow of wasting flame"
+
+if ( doonce == 0 )
+	set storearrows to currentarrows
+endif
+
+if ( GetDistance, Player < 120 )
+	set currentarrows to GetItemCount "arrow of wasting flame"
+	if ( currentarrows > 0 )
+		RemoveItem "arrow of wasting flame", 1
+		set doonce to 1
+	endif
+elseif ( GetDistance, Player >= 120 )
+	if ( currentarrows < storearrows )
+			AddItem "arrow of wasting flame", 1
+	else
+		set doonce to 0
+	endif
+endif
+
+End

@@ -1,0 +1,30 @@
+Begin pillowScript
+
+short comfy
+
+if ( PCVampire == 1 )
+	return
+endif
+
+if ( comfy == -1 )
+	if ( player->GetItemCount "misc_uni_pillow_unique" > 0 )
+		if ( GetPCSleep == 0 )
+			set comfy to 0
+			return
+		endif
+	endif
+endif
+
+
+if ( comfy == 0 )
+	if ( player->GetItemCount "misc_uni_pillow_unique" > 0 )
+		if ( GetPCSleep == 1 )
+			MessageBox "Your sleep is very restful on your Extra-Comfy Pillow"
+			set comfy to -1
+			return
+		endif
+	endif
+endif
+
+
+End pillowScript

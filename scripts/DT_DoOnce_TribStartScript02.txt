@@ -1,0 +1,19 @@
+begin DT_DoOnce_TribStartScript02
+
+;script to demonstrate a 'DoOnce' Tribunal Start Script that runs once
+; each time a saved game is loaded with the mod enabled
+;by DinkumThinkum
+
+;script executes 'Do Once' code section once
+; each time the mod is loaded as part of a game
+
+;start of 'Do Once' code to be run each time a saved game is loaded with this mod enabled.
+
+MessageBox, "You will see this message everytime you load a saved game with this mod enabled.", "OK"
+
+;end of 'Do Once' code.
+
+
+StopScript DT_DoOnce_TribStartScript02
+
+end DT_DoOnce_TribStartScript02

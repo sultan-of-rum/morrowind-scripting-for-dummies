@@ -1,0 +1,11 @@
+begin AzurasStarScript
+;this is for Azura's Star. A never ending soulgem item. Mucho good. Kids love it.
+
+short OnPCSoulGemUse	
+
+;they use it, so give them a new one
+if ( OnPCSoulGemUse == 1 )
+	Player->additem, "Misc_soulgem_Azura" 1
+endif
+
+end

@@ -1,0 +1,29 @@
+Begin my_first_script
+
+Short controlvar
+Short button
+
+If ( OnActivate == 1 )
+If ( controlvar == 0)
+	MessageBox "Voiceless it cries, wingless flutters, toothless bites, mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
+	Set controlvar to 1
+elseif controlvar > 1
+	activate
+endif
+endif
+
+if (controlvar == 1)
+	set button to GetButtonPressed
+	if ( button == -1 )
+		return
+	elseif ( button == 2)
+		MessageBox "The answer was correct"
+		Activate
+		set controlvar to 2
+	else
+		MessageBox "The answer was wrong"
+		set controlvar to -1
+	endif
+endif
+
+End

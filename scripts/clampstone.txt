@@ -1,0 +1,28 @@
+Begin clampstone
+
+short turnedoff
+short gavemessage
+
+if ( turnedoff == 0 )
+	DisableLevitation
+	if ( gavemessage == 0 )
+		set gavemessage to 1
+		MessageBox "A strange stone in the roof of this room prevents levitation here."
+	Endif
+else
+	EnableLevitation
+	if ( gavemessage == 1 )
+		set gavemessage to 0
+		MessageBox "The stone has been disabled. You can now levitate in this room."
+	Endif
+endif
+
+if ( OnActivate == 1 )
+	if ( turnedoff == 0 )
+		set turnedoff to 1
+	else
+		set turnedoff to 0
+	endif
+endif
+
+end

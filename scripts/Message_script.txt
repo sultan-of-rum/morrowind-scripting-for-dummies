@@ -1,0 +1,5 @@
+Begin Message_script
+
+MessageBox "Thousands of useless Messages"
+
+End Message_script

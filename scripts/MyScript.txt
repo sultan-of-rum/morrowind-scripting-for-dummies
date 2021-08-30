@@ -1,0 +1,13 @@
+begin MyScript
+
+short KeepVars
+
+if ( KeepVars == 1 )
+	set KeepVars to 0
+StopScript MyScript
+	return
+endif
+
+;main body of script goes here
+
+end

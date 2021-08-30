@@ -1,0 +1,24 @@
+Begin _HB_Scheduled fire
+
+short control_fire
+
+; The script is attached to an NPC that guards the fire.
+;******* this controls the fires schedule:
+if ( GetDistance, "HB_Furn_De_Firepit_camp" < 600 )
+	If ( GameHour < 17 )
+		if ( HB_Light_Fire_camp->GetPos Z >= 400 )
+			HB_Light_Fire_camp->MoveWorld z, -0.1 ; Move fire down
+		else	
+			HB_Light_Fire_camp->disable 
+		endif
+	elseif ( GameHour >= 17)
+		HB_Light_Fire_camp->enable
+		if ( HB_Light_Fire_camp->GetPos Z < 511 )
+			HB_Light_Fire_camp->MoveWorld z, 0.1 ; move fire up
+		else	
+			HB_Light_Fire_camp->enable
+		endif
+	endif
+endif
+
+end

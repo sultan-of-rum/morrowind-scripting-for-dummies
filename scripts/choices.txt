@@ -1,0 +1,24 @@
+Begin choices
+
+Short button
+Short status
+Short OnPCEquip ;declare as variable – otherwise there will be errors
+
+if ( OnPCEquip ==1 ) 
+MessageBox, "The sword vibrates in your hand. Do you want to equip it?", "yes", "no"
+Set OnPCEquip to 0 ;display the Message Box only once
+Set status to 1
+Endif
+If ( status == 1); wait for player decision
+Set button to GetButtonPressed
+If ( button == -1 ); no button selected yet: do nothing
+	return
+Elseif ( button == 0 ); continue normally
+		Set status to 0 ; reset for next time
+Elseif ( button == 1 )
+	Player->drop, "power_sword" ; makes the player drop the item 
+	Set status to 0
+Endif
+Endif
+
+End

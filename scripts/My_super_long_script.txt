@@ -1,0 +1,11 @@
+Begin My_super_long_script
+
+Short framecounter
+If ( framecounter < 10 )
+	set framecounter to ( framecounter + 1 )
+	Return
+Endif
+set framecounter to 0
+
+[super long script goes here]
+end

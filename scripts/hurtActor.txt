@@ -1,0 +1,11 @@
+Begin hurtActor
+
+if ( GetCollidingPC == 1 )
+	MessageBox "You scream in pain as you touch the rock."
+Elseif ( GetCollidingActor == 1 )
+	MessageBox "Nearby someone screams in pain."
+Endif
+
+HurtCollidingActor 100
+
+End

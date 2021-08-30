@@ -1,0 +1,6 @@
+Begin Script_launcher
+If  ( ScriptRunning, My_Script == 0 )
+	StartScript, My_Script
+	; MessageBox "MyScript was activated" ; tell the player if you like
+endif
+End

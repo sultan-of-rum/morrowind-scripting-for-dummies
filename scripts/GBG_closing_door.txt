@@ -1,0 +1,24 @@
+Begin GBG_closing_door
+
+Short done
+
+if ( OnActivate == 1 )
+	MessageBox "Thank you for activating"
+endif
+
+if ( done == 0 )
+If ( GetDistance, Player < 100 )
+		set done to 1
+		MessageBox "Player close" 
+endif
+endif
+
+if ( done == 1 )
+If ( GetDistance, Player > 200 )
+	MessageBox "Sesame"
+	Activate
+	set done to 0
+endif
+endIf
+
+End

@@ -1,0 +1,44 @@
+Begin my_first_script
+
+Short controlvar
+Short button
+Float timer
+
+If ( MenuMode == 1 )
+	Return
+Endif
+
+If ( OnActivate == 1 )
+If ( controlvar == 0 )
+	MessageBox "Voiceless it cries, wingless flutters, toothless bites, mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
+	Set controlvar to 1
+elseif ( controlvar > 1 )
+	activate
+endif
+endif
+
+if ( controlvar == 1 )
+	set button to GetButtonPressed
+	if ( button == -1 )
+		return
+	elseif ( button == 2 )
+		MessageBox "The answer was correct"
+		Activate
+		set controlvar to 2
+	else
+		MessageBox "The answer was wrong"
+		Player->AddSpell, "Frost_Curse"
+		set controlvar to -1
+	Endif
+elseif ( controlvar == 2 )
+	Activate
+	Set controlvar to 3
+elseif ( controlvar == -1 )
+	Set timer to ( timer + GetSecondsPassed )
+	if timer > 10
+		Player->RemoveSpell, "Frost_Curse"
+		set controlvar to -2
+	endif
+endif
+
+End

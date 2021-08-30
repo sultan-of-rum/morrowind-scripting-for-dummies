@@ -1,0 +1,18 @@
+begin RedoranCouncilor
+
+;no lore...
+short noLore
+
+;for HT_Monopoly
+short mageMonopolyVote
+
+;for Hortator dialogue...
+if ( OnDeath == 1 )
+	if ( OnMurder == 1 )
+		Set RedoranMurdered to 2
+	else
+		Set RedoranMurdered to 1
+	endif
+endif
+
+End

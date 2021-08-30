@@ -1,0 +1,68 @@
+Begin BankLetter10
+
+short button
+short messageOn
+short invoke
+short gone
+short goneway
+short testdist
+short PCSkipEquip
+short OnPCEquip
+
+set PCSkipEquip to 1
+; disable if used  (a 1 use item)
+if ( gone == 1 )
+	if ( goneway == 1 ) 	; activated as external item
+		Disable
+	else					; equipped from inventory
+		startscript BankLetter10Remove
+	endif
+	set gone to 0
+	return
+endif
+
+if ( OnActivate == 1 )
+	Set messageOn to 2
+	set goneway to 1
+endif
+
+If ( OnPCEquip == 1)
+	Set messageOn to 2
+	Set OnPCEquip to 0	
+	set goneway to 2
+endif
+
+if ( messageOn == 0 )
+	return
+endif
+
+if ( messageOn == 2 )
+	MessageBox "Do you want to invoke the Letter of Credit?" "Yes" "No"
+	Set messageOn to 1
+	return
+endif
+
+ 
+
+if ( messageOn == 1 )
+	set button to GetButtonPressed
+	if ( button == 0 )
+		Set invoke to 1
+		Set messageOn to 0
+;		return
+	endif
+	if ( button == 1 )
+		Activate
+		Set messageOn to 0
+		return
+	endif
+endif
+
+if ( invoke == 1 )
+	PlaySound "Item Gold Up"
+	Player->AddItem, Gold_001, 10000
+	set gone to 1
+	set invoke to 0
+endif		
+
+End

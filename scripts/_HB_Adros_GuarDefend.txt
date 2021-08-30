@@ -1,0 +1,24 @@
+Begin _HB_Adros_GuarDefend
+
+float timer
+short attackstate
+short OnPCHitMe
+
+if ( OnPCHitMe == 1 )
+	set attackstate to 1
+	set OnPCHitMe to 0
+endif
+
+if (attackstate == 1)
+	StartCombat, player
+	set timer to ( timer + GetSecondsPassed)
+	if ( timer >= 1 )
+		set timer to 0
+		if ( GetLOS, HB_adros_darani	== 1)
+			HB_adros_darani->StartCombat, Player
+			set attackstate to 0
+		endif
+	endif
+endif
+
+End

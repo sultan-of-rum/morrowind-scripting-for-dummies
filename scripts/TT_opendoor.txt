@@ -1,0 +1,23 @@
+Begin TT_opendoor
+
+short doonce
+short AIState
+
+
+if ( doonce == 0 )
+	if ( GetDistance, Player < 400 )
+		AIActivate TT_door
+		set doonce to 1
+	endif
+elseif ( doonce == 1 )
+	set AIState to GetCurrentAIPackage
+	MessageBox "Package = %g", AIState
+	if ( TT_door->GetAngle, z != 180 ); As soon as door starts rotating
+		MessageBox "Done"
+		AIWander 30, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0
+		set doonce to 2
+	endif
+endif
+
+
+end

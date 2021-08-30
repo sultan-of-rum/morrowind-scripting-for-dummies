@@ -1,0 +1,15 @@
+Begin test1
+
+short var_1
+long var_2
+float var_3
+; GameHour is a global float variable
+
+set var_1 to 1
+set var_2 to 2
+set var_3 to 3
+
+
+MessageBox "^PCName, you have %g head, %G hands, and %.5f gold. One could say the hour is getting late in ^cell. It's the ^GameHour hour or more exactly the %.2f hour!", var_1, var_2, var_3, GameHour
+
+End

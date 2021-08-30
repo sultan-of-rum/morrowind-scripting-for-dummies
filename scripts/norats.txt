@@ -1,0 +1,21 @@
+Begin norats
+
+short norats
+
+if ( OnActivate == 1 )
+	if ( norats == 0 )
+		set norats to 1
+		RemoveFromLevCreature "rat_scamp_crab" "rat" -1
+		RemoveFromLevCreature "rat_scamp_crab" "rat-fast" -1
+		RemoveFromLevItem "lev_meat" "rat_meat" -1
+		MessageBox "No more rats."
+	Else
+		set norats to 0
+		AddToLevCreature "rat_scamp_crab" "rat" 1
+		AddToLevCreature "rat_scamp_crab" "rat-fast" 1
+		AddToLevItem "lev_meat" "rat_meat" 1
+		MessageBox "The rats return."
+	Endif
+endif
+
+end

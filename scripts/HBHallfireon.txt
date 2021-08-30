@@ -1,0 +1,15 @@
+Begin HBHallfireon
+
+if ( HB_hallfire == 1 )
+
+	if ( GetPos, z, < -736 )
+		MoveWorld, z, 3 ; fire rises, until its reached full height
+		if ( GetPos, z, > -780 )
+			enable
+		endif
+	endif
+else
+	disable
+endif
+
+end

@@ -1,0 +1,21 @@
+Begin Holiday_script
+
+Short OnPCEquip
+Short message
+
+if ( OnPCEquip == 1 )
+	if ( MenuMode==1 )
+		return
+	else
+     Set message to Random 2		
+		if ( message==0 )	
+			MessageBox "The holiday pants contain a mighty enchantment of happiness. Lots of happiness. When the guards found you doing the Can-Can on top of the nearest silt strider port, they were not very amused.", "ok"
+		elseif ( message==1 )
+			MessageBox "The holiday pants make you scream and shout with joy as you relive the happiest days of your childhood. The guard that brings you back to your senses is in stark contrast to this experience", "ok"
+		endif
+	Player->GoToJail
+	endif
+Set OnPCEquip to 0
+endif
+
+End holiday_script

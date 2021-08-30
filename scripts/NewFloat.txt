@@ -1,0 +1,76 @@
+Begin NewFloat
+
+float timer
+float	swingTime
+float	startAngle
+float	currangle
+short 	reset
+
+float	xvalue
+float	zvalue
+float 	zoffset
+float 	tmpoffset
+float	weightoffset
+
+set startAngle to GetStartingAngle, x
+
+if ( MenuMode == 0 )
+
+	if ( timer == 0 )
+		if ( reset == 0 )
+			set timer to Random 100
+			set timer to timer / 4
+		endif
+	endif
+
+	set swingTime to 1
+
+	set timer to ( timer + GetSecondsPassed )
+	set currangle to GetAngle X
+	set xvalue to 10 * GetSecondsPassed
+	set zvalue to 5 * GetSecondsPassed
+
+
+	if ( GetStandingPC )
+		set zoffset to -30
+		SetAngle X 0
+	else
+		;rotate up
+		if ( timer < swingTime )
+
+			set currangle to currangle + xvalue 
+			SetAngle X currangle
+			set zoffset to zoffset + zvalue 
+
+		;rotate down
+		elseif ( timer < (swingTime * 3) )
+
+				set currangle to currangle - xvalue 
+				SetAngle X currangle
+				set zoffset to zoffset - zvalue 
+
+		;up again
+		elseif (timer < (swingTime * 4 ) )
+
+			set currangle to currangle + xvalue 
+			SetAngle X currangle
+			set zoffset to zoffset + zvalue 
+
+		;reset timer to zero
+		else
+			set timer to 0
+			set reset to 1
+			set zoffset to 0
+			SetAngle, x, startangle
+
+		endif
+	endif
+
+	set tmpoffset to GetWaterLevel
+	set tmpoffset to tmpoffset + zoffset
+
+	SetPos Z tmpoffset
+
+endif
+
+end NewFloat

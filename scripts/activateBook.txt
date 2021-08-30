@@ -1,0 +1,34 @@
+Begin activateBook
+
+short OnPCEquip
+short PCSkipEquip
+short doOnce
+short actionFlag
+
+if ( actionFlag == 1 )
+	if ( doOnce == 0 )
+		; insert your custom code here
+		set doOnce to 1
+	endif
+	set actionFlag to 0
+endif
+
+; PCSkipEquip is set to 1 every time the book is equipped from your inventory
+if ( PCSkipEquip == 1 )
+	set PCSkipEquip to 0
+	set actionFlag to 1
+	return
+endif
+
+; these lines are important, otherwise the book can't be picked up from the ground
+if ( MenuMode == 1 )
+	return
+endif
+
+; for activating the book when it is placed in the game world
+if ( OnActivate == 1 )
+	set actionFlag to 1
+	Activate
+endif
+
+End

@@ -1,0 +1,20 @@
+Begin TribunalMain
+
+;check for teleporting
+if ( GetPCCell "Sotha Sil," == 1 )
+	DisableTeleporting
+else
+	EnableTeleporting
+endif
+
+;check levitate
+if ( GetPCCell "Sotha Sil," == 1 )
+	DisableLevitation
+elseif ( GetPCCell "Mournhold" == 1 )
+	DisableLevitation
+else
+	EnableLevitation ; This is why teleporting was always on outside Mournhold
+endif
+
+
+end

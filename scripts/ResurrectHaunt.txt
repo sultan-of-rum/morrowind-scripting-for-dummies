@@ -1,0 +1,13 @@
+Begin ResurrectHaunt
+
+;town_Sadrith quest
+;gateway_haunt resurrects until journal town_Sadrith >= 35
+
+
+if ( CellChanged == 1 )
+	if ( gateway_haunt->GetHealth < 1 )
+		gateway_haunt->Resurrect
+	endif
+endif
+
+end ResurrectHaunt

@@ -1,0 +1,52 @@
+Begin script_PlacePC
+;Global Float Start_PCX
+;Global Float Start_PCY
+;Global Float Start_PCZ
+Float xpos
+Float ypos
+Float zpos
+Float timer
+Short step
+
+If ( OnActivate )
+	Set step to 1
+Endif
+
+If ( step == 1 )
+	FadeOut 0.1
+	ToggleMenus
+	Set step to 2
+	Return
+Elseif ( step == 2 )
+	Set timer to ( timer + GetSecondsPassed )
+	If ( timer > 0.2 )
+		Set timer to 0
+		Set step to 3
+	Endif
+	Return
+Elseif ( step == 3 )
+	Set step to 0
+	Player->COE 0 0
+
+	Set xpos to Start_PCX
+	Set ypos to Start_PCY
+	Set zpos to Start_PCZ
+
+	ToggleMenus
+	MenuTest
+	MenuTest
+
+	Player->SetPos x xpos
+	Player->SetPos y ypos
+	Player->SetPos z zpos
+
+	FixMe
+
+	Player->SetPos x xpos
+	Player->SetPos y ypos
+	Player->SetPos z zpos
+
+	FadeIn 0.1
+Endif
+
+End

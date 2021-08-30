@@ -1,0 +1,16 @@
+Begin Trap_script 
+
+short done 
+
+if ( OnActivate == 1 ) 
+	if ( done == 1 ) ;do-once condition
+		Activate 
+		return 
+	else 
+		Cast, "flame", Player ;damage to player
+		set done to 1 
+		Activate ; Call standard action: the chest opens
+	endif 
+endif 
+
+End trap_script

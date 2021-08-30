@@ -1,0 +1,28 @@
+Begin momscript
+
+short warn
+
+if ( player->HasItemEquipped "scissors" )
+	if ( warn != 1 )
+		if ( GetPCRunning )
+			MessageBox "Don’t run with scissors!" 
+			set warn to 1
+		endif
+	endif
+	if ( warn != 2 )
+		if ( GetPCJumping )
+			MessageBox "Don't jump with those scissors! You'll put your eye out!" 
+			set warn to 2
+		endif
+	endif
+	if ( warn != 3 )
+		if ( GetPCSneaking )
+			MessageBox "You can't hide those scissors from me!" 
+			set warn to 3
+		endif
+	endif
+else
+	set warn to 0
+endif
+
+end

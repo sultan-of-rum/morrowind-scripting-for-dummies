@@ -1,0 +1,67 @@
+Begin breakme
+
+float hitsleft
+float hitpercent
+short damage
+short tempdamage
+short weapon
+short doOnce
+short shieldType
+short hasHammer
+short hitRock
+
+if ( doOnce == 0 )
+	set hitsleft to 10000
+	set doOnce to 1
+endif
+
+if ( OnActivate )
+	set hasHammer to ( player->HasItemEquipped "RockSplitter" )
+	if ( hasHammer == 1 )
+		MessageBox "Rock Splitter unleashes its mighty force..."
+		set hitsLeft to 0
+	else
+		MessageBox "You hit the rock with your current weapon..."
+		set weapon to ( player->GetWeaponType )
+		set damage to ( player->getstrength )
+		set tempdamage to 5
+
+		if ( weapon == -1 )
+			set tempdamage to 1
+		endif
+		if ( weapon >= 9 )
+			set tempdamage to 2
+		endif
+		if ( weapon == 4 )
+			set tempdamage to 10 
+		endif
+		if ( weapon == 8 )
+			set tempdamage to 8
+		endif
+	
+		set damage to damage * tempdamage
+
+		set hitsleft to hitsleft - damage
+	endif
+
+	if ( hitsleft <= 0 )
+		disable
+		set shieldType to ( player->GetArmorType 8 )
+		if ( shieldType == -1 )
+			set shieldType to ( player->GetArmorType 0 )
+			if ( shieldType == -1 )
+				MessageBox "...and the rock shatters sending jagged shards into your eyes."
+				Player->ModHealth -50
+			else
+				MessageBox "...and the rock shatters, deadly shards glancing off your helmet."
+			Endif
+		else
+			MessageBox "...and the rock shatters, deadly shards glancing off your shield."
+		Endif
+	else
+		set hitpercent to hitsleft / 100
+		set hitpercent to 100 - hitpercent
+		MessageBox "...and the rock is %.2f percent damaged but remains intact.", hitpercent
+	endif
+
+endif

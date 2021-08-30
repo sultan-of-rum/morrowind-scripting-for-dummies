@@ -1,0 +1,9 @@
+Begin enable_lev_on_exit
+
+if ( OnActivate == 1 )
+	MessageBox "You leave the presence of the stone..."
+	EnableLevitation
+	Activate
+endif
+
+end
