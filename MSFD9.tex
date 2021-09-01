@@ -126,661 +126,664 @@
 
 \clearpage
 
-Table of Contents
-
-\protect\hyperlink{foreword-to-the-ninth-edition}{Foreword to the ninth
-edition 9}
-
-\protect\hyperlink{foreword-to-eighth-edition}{Foreword to eighth
-edition 10}
-
-\protect\hyperlink{_Toc53412549}{Introduction 11}
-
-\protect\hyperlink{using-this-guide.}{Using this guide. 11}
-
-\protect\hyperlink{what-is-a-script}{What is a script? 11}
-
-\protect\hyperlink{what-can-scripts-do}{What can scripts do? 12}
-
-\protect\hyperlink{what-scripts-cant-do}{What scripts can't do: 12}
-
-\protect\hyperlink{_Toc53412554}{Scripting tutorial 13}
-
-\protect\hyperlink{lets-get-going}{Let's get going! 13}
-
-\protect\hyperlink{the-scripting-window}{The scripting window 13}
-
-\protect\hyperlink{what-do-we-want}{What do we want? 14}
-
-\protect\hyperlink{writing-a-script}{Writing a script 14}
-
-\protect\hyperlink{naming-a-script-begin-and-end}{Naming a script: Begin
-and End 14}
-
-\protect\hyperlink{detecting-an-action-by-the-player}{Detecting an
-action by the player 15}
-
-\protect\hyperlink{writing-text-and-obtaining-decisions-from-the-player}{Writing
-text and obtaining decisions from the player 15}
-
-\protect\hyperlink{how-local-scripts-are-executed}{How local scripts are
-executed 16}
-
-\protect\hyperlink{your-first-bug}{Your first bug 19}
-
-\protect\hyperlink{putting-a-spell-on-the-player}{Putting a spell on the
-player 19}
-
-\protect\hyperlink{how-to-learn-more}{How to learn more 22}
-
-\protect\hyperlink{general-information-scripts-commands-and-syntax}{General
-Information: Scripts, Commands and Syntax 23}
-
-\protect\hyperlink{types-of-scripts}{Types of scripts 23}
-
-\protect\hyperlink{local-scripts}{Local scripts 23}
-
-\protect\hyperlink{global-scripts}{Global scripts 23}
-
-\protect\hyperlink{syntax}{Syntax 25}
-
-\protect\hyperlink{beginning-and-ending-scripts}{Beginning and ending
-scripts 25}
-
-\protect\hyperlink{general-syntax-for-functions}{General syntax for
-functions: 25}
-
-\protect\hyperlink{general-syntax-commas-parentheses-and-spaces}{General
-syntax: Commas, parentheses and spaces 26}
-
-\protect\hyperlink{comments}{Comments 26}
-
-\protect\hyperlink{indentation-using-tabstops}{Indentation / using
-tabstops 26}
-
-\protect\hyperlink{variables}{Variables 27}
-
-\protect\hyperlink{types-of-variables}{Types of variables 27}
-
-\protect\hyperlink{_Toc182634499}{Local variables 28}
-
-\protect\hyperlink{global-variables}{Global variables 29}
-
-\protect\hyperlink{referencing-variables-on-other-objects-and-scripts}{Referencing
-variables on other objects and scripts 29}
-
-\protect\hyperlink{using-variables-in-functions}{Using variables in
-functions 30}
-
-\protect\hyperlink{section}{Operators / mathematical calculations 30}
-
-\protect\hyperlink{_Toc182634504}{Testing conditions 31}
-
-\protect\hyperlink{use-of-if-elseif-conditions}{Use of if\ldots{} elseif
-conditions 31}
-
-\protect\hyperlink{while-conditions}{While conditions 33}
-
-\protect\hyperlink{constructing-boolean-operations-in-tes-script}{Constructing
-Boolean operations in TES Script 34}
-
-\protect\hyperlink{_Toc53412583}{List of TES-script functions 35}
-
-\protect\hyperlink{explanation-of-the-format}{Explanation of the format
-35}
-
-\protect\hyperlink{working-with-objects}{Working with objects 36}
-
-\protect\hyperlink{working-with-inventory-items}{Working with inventory
-items 36}
-
-\protect\hyperlink{adding-and-removing-items-from-the-inventory}{Adding
-and removing items from the inventory 36}
-
-\protect\hyperlink{dropping-items-to-the-floor}{Dropping items to the
-floor 38}
-
-\protect\hyperlink{monitoring-inventory-activities-adding-dropping-items-and-using-soul-gems}{Monitoring
-inventory activities: Adding, dropping items and using soul gems 39}
-
-\protect\hyperlink{force-equipping-an-item}{Force-equipping an Item 40}
-
-\protect\hyperlink{detecting-if-an-item-has-been-equipped}{Detecting if
-an item has been equipped 41}
-
-\protect\hyperlink{disabling-ability-to-equip-an-item}{Disabling ability
-to equip an item 42}
-
-\protect\hyperlink{_Toc182634518}{Checking for presence of items in
-inventory 43}
-
-\protect\hyperlink{repairing-objects}{Repairing objects 43}
-
-\protect\hyperlink{worn-equipped-object-information}{Worn / equipped
-object information 43}
-
-\protect\hyperlink{usedonme-function}{UsedOnMe function 46}
-
-\protect\hyperlink{moving-and-placing-objects}{Moving and placing
-objects 46}
-
-\protect\hyperlink{moving-along-an-objects-axis}{Moving along an objects
-axis 46}
-
-\protect\hyperlink{moving-along-the-world-axis}{Moving along the world
-axis 47}
-
-\protect\hyperlink{cellupdate}{CellUpdate 48}
-
-\protect\hyperlink{setting-position-the-other-way-to-do-movement}{Setting
-position (the other way to do movement) 48}
-
-\protect\hyperlink{positioning-an-object-in-the-world-or-in-an-interior-cell}{Positioning
-an object in the world or in an interior cell 50}
-
-\protect\hyperlink{resetting-an-object-to-its-original-position}{Resetting
-an object to its original position 51}
-
-\protect\hyperlink{placing-an-item-near-the-pc}{Placing an item near the
-PC 51}
-
-\protect\hyperlink{place-items-near-an-object}{Place items near an
-object 52}
-
-\protect\hyperlink{creating-new-object-references-with-placeitem}{Creating
-new object-references with PlaceItem 52}
-
-\protect\hyperlink{rotation-and-angles}{Rotation and angles 54}
-
-\protect\hyperlink{making-an-object-spin}{Making an object spin 54}
-
-\protect\hyperlink{setting-angles}{Setting Angles 54}
-
-\protect\hyperlink{scale-functions}{Scale Functions 56}
-
-\protect\hyperlink{determining-location-relative-position-and-movement}{Determining
-location, relative position and movement 58}
-
-\protect\hyperlink{detecting-if-player-is-indoors-or-outdoors}{Detecting
-if player is indoors or outdoors 58}
-
-\protect\hyperlink{determining-the-players-cell}{Determining the players
-cell 58}
-
-\protect\hyperlink{distance-of-one-object-to-another}{Distance of one
-object to another 59}
-
-\protect\hyperlink{determining-an-objects-position-and-facing}{Determining
-an objects position and facing 59}
-
-\protect\hyperlink{line-of-sight}{Line of Sight 60}
-
-\protect\hyperlink{_Toc182634542}{Determine whether an Actor is detected
-by another Actor 62}
-
-\protect\hyperlink{determining-when-the-pc-leaves-a-cell}{Determining
-when the PC leaves a cell 62}
-
-\protect\hyperlink{detect-player-traveling}{Detect player traveling 63}
-
-\protect\hyperlink{triggers-for-actors-standing-on-an-object}{Triggers
-for Actors standing on an object 64}
-
-\protect\hyperlink{hurting-an-actor-standing-on-an-object}{Hurting an
-Actor standing on an object 65}
-
-\protect\hyperlink{_Toc182634547}{Object Collision Functions 65}
-
-\protect\hyperlink{checking-activation-of-an-item-and-activating-it}{Checking
-activation of an item and activating it 66}
-
-\protect\hyperlink{locking-and-unlocking-doors-or-chests}{Locking and
-Unlocking doors or chests 69}
-
-\protect\hyperlink{animating-objects}{Animating objects 69}
-
-\protect\hyperlink{enabling-and-disabling-objects}{Enabling and
-disabling objects 71}
-
-\protect\hyperlink{deleting-a-reference-completely}{Deleting a reference
-completely 72}
-
-\protect\hyperlink{dont-save-changes-to-an-object}{Don't save changes to
-an object 74}
-
-\protect\hyperlink{scripting-npcs-ai-and-movement}{Scripting NPC's: AI
-and Movement 75}
-
-\protect\hyperlink{make-an-npc-walk-to-a-new-location}{Make an NPC walk
-to a new location 75}
-
-\protect\hyperlink{checking-whether-an-npc-has-performed-his-movement}{Checking
-whether an NPC has performed his movement 75}
-
-\protect\hyperlink{make-an-actor-turn-or-face-a-certain-direction}{Make
-an Actor turn or face a certain direction 77}
-
-\protect\hyperlink{define-random-actor-movement}{Define random Actor
-movement 77}
-
-\protect\hyperlink{making-actors-activate-objects}{Making Actors
-activate objects 79}
-
-\protect\hyperlink{following-and-escorting}{Following and Escorting 80}
-
-\protect\hyperlink{checking-which-ai-package-is-currently-executed}{Checking
-which AI package is currently executed 81}
-
-\protect\hyperlink{forcing-sneak-movement}{Forcing sneak movement 83}
-
-\protect\hyperlink{forcing-running-and-jumping-tribunal-npc-movement-functions}{Forcing
-running and jumping: Tribunal NPC Movement Functions 85}
-
-\protect\hyperlink{detecting-players-action-running-jumping-sneaking}{Detecting
-players action: running, jumping, sneaking? 86}
-
-\protect\hyperlink{detect-combat-readiness}{Detect combat readiness 87}
-
-\protect\hyperlink{section-7}{Making someone fall 88}
-
-\protect\hyperlink{equipment-sharing-and-other-companion-functions}{Equipment
-sharing and other companion functions 88}
-
-\protect\hyperlink{race-faction-and-rank}{Race, Faction and Rank 90}
-
-\protect\hyperlink{determining-race}{Determining Race 90}
-
-\protect\hyperlink{determining-the-pcs-faction-status}{Determining the
-PC's Faction status: 90}
-
-\protect\hyperlink{modifying-faction-standing-and-reaction}{Modifying
-faction standing and reaction 91}
-
-\protect\hyperlink{determining-and-changing-reputation-and-disposition}{Determining
-and changing reputation and disposition 93}
-
-\protect\hyperlink{werewolf-specific-functions}{Werewolf-specific
-functions 94}
-
-\protect\hyperlink{set-the-werewolf-attributes}{Set the werewolf
-attributes 94}
-
-\protect\hyperlink{change-the-color-of-secunda}{Change the color of
-Secunda 94}
-
-\protect\hyperlink{determine-how-many-kills-a-werewolf-has}{Determine
-how many kills a werewolf has 94}
-
-\protect\hyperlink{check-to-see-if-the-creature-is-in-werewolf-form}{Check
-to see if the creature is in werewolf form 95}
-
-\protect\hyperlink{change-to-a-werewolf}{Change to a werewolf 95}
-
-\protect\hyperlink{section-8}{Special werewolf global variables 96}
-
-\protect\hyperlink{text-and-dialogue}{Text and Dialogue 97}
-
-\protect\hyperlink{brief-dialogue-how-to}{Brief dialogue how-to 97}
-
-\protect\hyperlink{the-concept-of-mw-dialogue}{The concept of MW
-dialogue 97}
-
-\protect\hyperlink{how-dialogue-works}{How dialogue works 98}
-
-\protect\hyperlink{a-few-golden-rules}{A few golden rules 101}
-
-\protect\hyperlink{dialogue-101}{Dialogue 101 101}
-
-\protect\hyperlink{dialogue-related-functions}{Dialogue-related
-functions 103}
-
-\protect\hyperlink{displaying-messages}{Displaying messages 103}
-
-\protect\hyperlink{_Toc182634588}{Displaying variables and text defines
-in a message box 105}
-
-\protect\hyperlink{adding-a-dialogue-topic}{Adding a dialogue topic 106}
-
-\protect\hyperlink{initiating-and-ending-dialogue}{Initiating and ending
-dialogue 107}
-
-\protect\hyperlink{allowing-forced-dialogue-with-werewolf-player-bloodmoon}{Allowing
-forced Dialogue with Werewolf player (Bloodmoon) 108}
-
-\protect\hyperlink{multiple-choice-asking-questions}{Multiple choice --
-asking questions 109}
-
-\protect\hyperlink{adding-to-the-journal-and-testing-journal-entries}{Adding
-to the journal and testing journal entries 110}
-
-\protect\hyperlink{special-dialogue-only-functions}{Special
-dialogue-only functions 111}
-
-\protect\hyperlink{changing-the-hello-setting}{Changing the Hello
-setting 112}
-
-\protect\hyperlink{useful-dialogue-variables}{Useful dialogue variables
-112}
-
-\protect\hyperlink{changing-and-testing-skills-attributes-and-other-stats}{Changing
-and testing Skills, Attributes, and other Stats 113}
-
-\protect\hyperlink{get-set-and-modify-stats---general-remarks}{Get, Set,
-and Modify stats - general remarks 113}
-
-\protect\hyperlink{determining-and-changing-actor-and-player-stats}{Determining
-and changing Actor and player stats: 114}
-
-\protect\hyperlink{determining-and-changing-attributes}{Determining and
-changing Attributes: 114}
-
-\protect\hyperlink{determining-and-changing-health-magicka-fatigue}{Determining
-and changing Health, Magicka, Fatigue: 114}
-
-\protect\hyperlink{determining-and-changing-skills}{Determining and
-changing Skills: 115}
-
-\protect\hyperlink{determining-and-changing-level}{Determining and
-changing Level 115}
-
-\protect\hyperlink{_Toc182634604}{GetStat, ModStat and SetStat: A
-concerned modder's guide. - Galsiah 116}
-
-\protect\hyperlink{combat}{Combat 120}
-
-\protect\hyperlink{initiating-and-ending-combat}{Initiating and ending
-combat 120}
-
-\protect\hyperlink{detecting-attack}{Detecting Attack 120}
-
-\protect\hyperlink{combat-related-getmodset-ai-functions-fight-flee-alarm}{Combat
-related Get/Mod/Set AI functions: Fight, Flee, Alarm 122}
-
-\protect\hyperlink{keeping-track-of-kills-and-knockouts}{Keeping track
-of kills and knockouts 123}
-
-\protect\hyperlink{resurrecting-a-dead-actor}{Resurrecting a dead Actor
-125}
-
-\protect\hyperlink{crime}{Crime 126}
-
-\protect\hyperlink{determining-and-changing-crime-level}{Determining and
-changing Crime Level 126}
-
-\protect\hyperlink{jailing-the-pc}{Jailing the PC 126}
-
-\protect\hyperlink{clearing-the-pc-of-crime}{Clearing the PC of crime
-126}
-
-\protect\hyperlink{detecting-crime}{Detecting crime 126}
-
-\protect\hyperlink{useful-global-variables}{Useful global variables 128}
-
-\protect\hyperlink{magic}{Magic 129}
-
-\protect\hyperlink{limiting-the-use-of-teleport}{Limiting the use of
-teleport 129}
-
-\protect\hyperlink{limiting-the-use-of-levitation}{Limiting the use of
-levitation 130}
-
-\protect\hyperlink{checking-and-managing-souls-and-soulgems}{Checking
-and managing souls and soulgems 131}
-
-\protect\hyperlink{adding-and-removing-spells-and-cursing}{Adding and
-removing spells and cursing 133}
-
-\protect\hyperlink{casting-spells}{Casting spells 134}
-
-\protect\hyperlink{managing-and-testing-for-spells}{Managing and testing
-for spells 135}
-
-\protect\hyperlink{managing-and-testing-spell-effects}{Managing and
-testing spell effects 136}
-
-\protect\hyperlink{testing-disease}{Testing disease 137}
-
-\protect\hyperlink{explosion}{Explosion 138}
-
-\protect\hyperlink{magic-getmodset-effects-functions}{Magic Get/Mod/Set
-effects functions: 138}
-
-\protect\hyperlink{sound}{Sound 140}
-
-\protect\hyperlink{make-actors-speak-an-audio-file}{Make Actors speak an
-audio file 140}
-
-\protect\hyperlink{playing-music}{Playing music 140}
-
-\protect\hyperlink{playing-sounds}{Playing sounds 141}
-
-\protect\hyperlink{controlling-sound}{Controlling sound 141}
-
-\protect\hyperlink{sound-file-formats}{Sound file formats 142}
-
-\protect\hyperlink{keeping-track-of-time}{Keeping track of time 143}
-
-\protect\hyperlink{timer}{Timer 143}
-
-\protect\hyperlink{morrowinds-time-related-global-variables}{Morrowind's
-time related global variables 143}
-
-\protect\hyperlink{keeping-track-of-days-passed}{Keeping track of days
-passed 144}
-
-\protect\hyperlink{moon-phases}{Moon phases 144}
-
-\protect\hyperlink{weather}{Weather 146}
-
-\protect\hyperlink{changing-weather}{Changing weather 146}
-
-\protect\hyperlink{changing-weather-settings-for-a-region}{Changing
-weather settings for a region 146}
-
-\protect\hyperlink{determining-current-weather}{Determining current
-weather 147}
-
-\protect\hyperlink{detecting-wind-speed}{Detecting wind speed 147}
-
-\protect\hyperlink{player-sleeping}{Player sleeping 148}
-
-\protect\hyperlink{enabling-and-disabling-player-control-and-interface}{Enabling
-and disabling player control and interface 149}
-
-\protect\hyperlink{disable-player-control-functions}{Disable player
-control functions 149}
-
-\protect\hyperlink{enable-player-control-functions}{Enable player
-control functions 149}
-
-\protect\hyperlink{check-player-control-status}{Check player control
-status 150}
-
-\protect\hyperlink{force-first-or-third-person-view}{Force first or
-third person view 150}
-
-\protect\hyperlink{functions-for-character-generation-menus}{Functions
-for character generation menus 150}
-
-\protect\hyperlink{determining-if-player-has-menus-open}{Determining if
-player has menus open 151}
-
-\protect\hyperlink{using-menutest-to-open-and-close-menus}{Using
-MenuTest to open and close menus 152}
-
-\protect\hyperlink{miscellaneous-functions-and-variables}{Miscellaneous
-functions and variables 153}
-
-\protect\hyperlink{breaking-of-script-processing}{Breaking of script
-processing 153}
-
-\protect\hyperlink{controlling-global-scripts}{Controlling global
-scripts 153}
-
-\protect\hyperlink{fading-the-screen-in-and-out}{Fading the screen in
-and out 154}
-
-\protect\hyperlink{adding-a-location-to-the-map}{Adding a location to
-the map 154}
-
-\protect\hyperlink{assigning-random-values-to-variables}{Assigning
-random values to variables 154}
-
-\protect\hyperlink{playing-videos}{Playing videos 155}
-
-\protect\hyperlink{_Toc182634660}{Levelled List functions 156}
-
-\protect\hyperlink{square-root}{Square root 157}
-
-\protect\hyperlink{water-level-functions}{Water Level Functions 157}
-
-\protect\hyperlink{tips-and-tricks}{Tips and tricks 160}
-
-\protect\hyperlink{little-helpers-text-search-copy-paste}{Little
-helpers: Text search, copy, paste 160}
-
-\protect\hyperlink{alternative-scripting-editors}{Alternative scripting
-editors 160}
-
-\protect\hyperlink{script-extenders}{Script Extenders 161}
-
-\protect\hyperlink{script-with-style-for-safer-scripting}{Script with
-style for safer scripting 162}
-
-\protect\hyperlink{cleaning-up-your-mod}{Cleaning up your mod 163}
-
-\protect\hyperlink{on-references-persist}{On References Persist 165}
-
-\protect\hyperlink{the-72-hours-bug-a-brief-explanation}{The "72-Hours
-Bug": A Brief Explanation 165}
-
-\protect\hyperlink{limits-of-the-script-editor}{Limits of the Script
-Editor 166}
-
-\protect\hyperlink{pitfalls}{Pitfalls 167}
-
-\protect\hyperlink{saving-cpu-time}{Saving CPU time 168}
-
-\protect\hyperlink{targeted-scripts-running-global-scripts-tied-to-an-object}{Targeted
-scripts: running "global" scripts tied to an object 170}
-
-\protect\hyperlink{detecting-when-the-player-does-a-load-from-saved-game}{Detecting
-when the player does a load from saved game: 171}
-
-\protect\hyperlink{uses-of-the-chargenstate-variable---disabling-saving-and-menus}{Uses
-of the CharGenState variable - Disabling saving and menus 173}
-
-\protect\hyperlink{detecting-use-of-scrolls-or-books}{Detecting use of
-scrolls or books 174}
-
-\protect\hyperlink{making-actors-switch-between-weapons}{Making Actors
-switch between weapons 176}
-
-\protect\hyperlink{_Toc182634679}{Making NPCs switch between spell
-"sets" 177}
-
-\protect\hyperlink{making-actors-lie-down}{Making Actors lie down 177}
-
-\protect\hyperlink{scripted-teleporting}{Scripted teleporting 181}
-
-\protect\hyperlink{interaction-between-mods}{Interaction between mods
-183}
-
-\protect\hyperlink{safely-starting-global-scripts--avoiding-the-main-script}{Safely
-starting global scripts- avoiding the main script 184}
-
-\protect\hyperlink{use-sound-to-detect-events}{Use sound to detect
-events 185}
-
-\protect\hyperlink{large-battles}{Large battles 185}
-
-\protect\hyperlink{a-guide-to-making-ridable-objects}{A guide to making
-ridable objects 186}
-
-\protect\hyperlink{selecting-objects}{Selecting objects 186}
-
-\protect\hyperlink{creatingdeleting-objects}{Creating/Deleting objects
-186}
-
-\protect\hyperlink{falling-off-from-objects}{Falling off from objects
-187}
-
-\protect\hyperlink{collision-detection}{Collision detection 188}
-
-\protect\hyperlink{savegame-issue}{Savegame issue 188}
-
-\protect\hyperlink{trigonometry-script---fast-sine-and-cosine}{Trigonometry
-script - fast sine and cosine 189}
-
-\protect\hyperlink{mannequins}{Mannequins 198}
-
-\protect\hyperlink{is-she-looking-at-me}{Is she looking at me? 201}
-
-\protect\hyperlink{cinematic-sequence}{Cinematic sequence 203}
-
-\protect\hyperlink{troubleshooting}{Troubleshooting 204}
-
-\protect\hyperlink{general-hints}{General hints 204}
-
-\protect\hyperlink{the-console}{The Console 204}
-
-\protect\hyperlink{using-the-console-to-check-variables}{Using the
-Console to check variables: 204}
-
-\protect\hyperlink{using-the-console-to-quickly-test-scripts}{Using the
-Console to quickly test scripts: 204}
-
-\protect\hyperlink{error-messages-malfunctions-and-common-causes}{Error
-messages, malfunctions and common causes 205}
-
-\protect\hyperlink{in-the-editor}{In the editor 205}
-
-\protect\hyperlink{in-game-error-messages}{In game error messages: 205}
-
-\protect\hyperlink{appendix}{Appendix 208}
-
-\protect\hyperlink{new-functions-that-come-with-tribunal}{New functions
-that come with TRIBUNAL 208}
-
-\protect\hyperlink{changes-fixes-to-morrowind-scripting}{Changes / fixes
-to Morrowind scripting: 208}
-
-\protect\hyperlink{index-of-new-tribunal-script-functions}{Index of new
-Tribunal Script Functions: 208}
-
-\protect\hyperlink{new-functions-that-come-with-bloodmoon}{New functions
-that come with BLOODMOON 209}
-
-\protect\hyperlink{index-of-new-bloodmoon-script-functions-and-variables}{Index
-of new Bloodmoon Script Functions and variables: 209}
-
-\protect\hyperlink{previously-undocumented-functions}{Previously
-undocumented functions 210}
-
-\protect\hyperlink{variable-type-functions}{Variable-type functions:
-211}
-
-\protect\hyperlink{local-variables-that-get-set-by-the-game}{Local
-variables that get set by the game: 211}
-
-\protect\hyperlink{local-variables-that-you-can-set-as-a-flag}{Local
-variables that you can set as a flag: 211}
-
-\protect\hyperlink{special-globals}{Special Globals 211}
-
-\protect\hyperlink{game-units}{Game units: 213}
-
-\protect\hyperlink{derived-attribute-calculations}{Derived attribute
-calculations: 213}
-
-\protect\hyperlink{_Toc53412751}{Magic Effect List 215}
-
-\protect\hyperlink{list-of-console-commands}{List of console commands
-216}
-
-\protect\hyperlink{game-settings}{Game Settings 219}
-
-\protect\hyperlink{index}{Index 226}
+\tableofcontents
+\addtocontents{toc}
+
+%Table of Contents
+%
+%\protect\hyperlink{foreword-to-the-ninth-edition}{Foreword to the ninth
+%edition 9}
+%
+%\protect\hyperlink{foreword-to-eighth-edition}{Foreword to eighth
+%edition 10}
+%
+%\protect\hyperlink{_Toc53412549}{Introduction 11}
+%
+%\protect\hyperlink{using-this-guide.}{Using this guide. 11}
+%
+%\protect\hyperlink{what-is-a-script}{What is a script? 11}
+%
+%\protect\hyperlink{what-can-scripts-do}{What can scripts do? 12}
+%
+%\protect\hyperlink{what-scripts-cant-do}{What scripts can't do: 12}
+%
+%\protect\hyperlink{_Toc53412554}{Scripting tutorial 13}
+%
+%\protect\hyperlink{lets-get-going}{Let's get going! 13}
+%
+%\protect\hyperlink{the-scripting-window}{The scripting window 13}
+%
+%\protect\hyperlink{what-do-we-want}{What do we want? 14}
+%
+%\protect\hyperlink{writing-a-script}{Writing a script 14}
+%
+%\protect\hyperlink{naming-a-script-begin-and-end}{Naming a script: Begin
+%and End 14}
+%
+%\protect\hyperlink{detecting-an-action-by-the-player}{Detecting an
+%action by the player 15}
+%
+%\protect\hyperlink{writing-text-and-obtaining-decisions-from-the-player}{Writing
+%text and obtaining decisions from the player 15}
+%
+%\protect\hyperlink{how-local-scripts-are-executed}{How local scripts are
+%executed 16}
+%
+%\protect\hyperlink{your-first-bug}{Your first bug 19}
+%
+%\protect\hyperlink{putting-a-spell-on-the-player}{Putting a spell on the
+%player 19}
+%
+%\protect\hyperlink{how-to-learn-more}{How to learn more 22}
+%
+%\protect\hyperlink{general-information-scripts-commands-and-syntax}{General
+%Information: Scripts, Commands and Syntax 23}
+%
+%\protect\hyperlink{types-of-scripts}{Types of scripts 23}
+%
+%\protect\hyperlink{local-scripts}{Local scripts 23}
+%
+%\protect\hyperlink{global-scripts}{Global scripts 23}
+%
+%\protect\hyperlink{syntax}{Syntax 25}
+%
+%\protect\hyperlink{beginning-and-ending-scripts}{Beginning and ending
+%scripts 25}
+%
+%\protect\hyperlink{general-syntax-for-functions}{General syntax for
+%functions: 25}
+%
+%\protect\hyperlink{general-syntax-commas-parentheses-and-spaces}{General
+%syntax: Commas, parentheses and spaces 26}
+%
+%\protect\hyperlink{comments}{Comments 26}
+%
+%\protect\hyperlink{indentation-using-tabstops}{Indentation / using
+%tabstops 26}
+%
+%\protect\hyperlink{variables}{Variables 27}
+%
+%\protect\hyperlink{types-of-variables}{Types of variables 27}
+%
+%\protect\hyperlink{_Toc182634499}{Local variables 28}
+%
+%\protect\hyperlink{global-variables}{Global variables 29}
+%
+%\protect\hyperlink{referencing-variables-on-other-objects-and-scripts}{Referencing
+%variables on other objects and scripts 29}
+%
+%\protect\hyperlink{using-variables-in-functions}{Using variables in
+%functions 30}
+%
+%\protect\hyperlink{section}{Operators / mathematical calculations 30}
+%
+%\protect\hyperlink{_Toc182634504}{Testing conditions 31}
+%
+%\protect\hyperlink{use-of-if-elseif-conditions}{Use of if\ldots{} elseif
+%conditions 31}
+%
+%\protect\hyperlink{while-conditions}{While conditions 33}
+%
+%\protect\hyperlink{constructing-boolean-operations-in-tes-script}{Constructing
+%Boolean operations in TES Script 34}
+%
+%\protect\hyperlink{_Toc53412583}{List of TES-script functions 35}
+%
+%\protect\hyperlink{explanation-of-the-format}{Explanation of the format
+%35}
+%
+%\protect\hyperlink{working-with-objects}{Working with objects 36}
+%
+%\protect\hyperlink{working-with-inventory-items}{Working with inventory
+%items 36}
+%
+%\protect\hyperlink{adding-and-removing-items-from-the-inventory}{Adding
+%and removing items from the inventory 36}
+%
+%\protect\hyperlink{dropping-items-to-the-floor}{Dropping items to the
+%floor 38}
+%
+%\protect\hyperlink{monitoring-inventory-activities-adding-dropping-items-and-using-soul-gems}{Monitoring
+%inventory activities: Adding, dropping items and using soul gems 39}
+%
+%\protect\hyperlink{force-equipping-an-item}{Force-equipping an Item 40}
+%
+%\protect\hyperlink{detecting-if-an-item-has-been-equipped}{Detecting if
+%an item has been equipped 41}
+%
+%\protect\hyperlink{disabling-ability-to-equip-an-item}{Disabling ability
+%to equip an item 42}
+%
+%\protect\hyperlink{_Toc182634518}{Checking for presence of items in
+%inventory 43}
+%
+%\protect\hyperlink{repairing-objects}{Repairing objects 43}
+%
+%\protect\hyperlink{worn-equipped-object-information}{Worn / equipped
+%object information 43}
+%
+%\protect\hyperlink{usedonme-function}{UsedOnMe function 46}
+%
+%\protect\hyperlink{moving-and-placing-objects}{Moving and placing
+%objects 46}
+%
+%\protect\hyperlink{moving-along-an-objects-axis}{Moving along an objects
+%axis 46}
+%
+%\protect\hyperlink{moving-along-the-world-axis}{Moving along the world
+%axis 47}
+%
+%\protect\hyperlink{cellupdate}{CellUpdate 48}
+%
+%\protect\hyperlink{setting-position-the-other-way-to-do-movement}{Setting
+%position (the other way to do movement) 48}
+%
+%\protect\hyperlink{positioning-an-object-in-the-world-or-in-an-interior-cell}{Positioning
+%an object in the world or in an interior cell 50}
+%
+%\protect\hyperlink{resetting-an-object-to-its-original-position}{Resetting
+%an object to its original position 51}
+%
+%\protect\hyperlink{placing-an-item-near-the-pc}{Placing an item near the
+%PC 51}
+%
+%\protect\hyperlink{place-items-near-an-object}{Place items near an
+%object 52}
+%
+%\protect\hyperlink{creating-new-object-references-with-placeitem}{Creating
+%new object-references with PlaceItem 52}
+%
+%\protect\hyperlink{rotation-and-angles}{Rotation and angles 54}
+%
+%\protect\hyperlink{making-an-object-spin}{Making an object spin 54}
+%
+%\protect\hyperlink{setting-angles}{Setting Angles 54}
+%
+%\protect\hyperlink{scale-functions}{Scale Functions 56}
+%
+%\protect\hyperlink{determining-location-relative-position-and-movement}{Determining
+%location, relative position and movement 58}
+%
+%\protect\hyperlink{detecting-if-player-is-indoors-or-outdoors}{Detecting
+%if player is indoors or outdoors 58}
+%
+%\protect\hyperlink{determining-the-players-cell}{Determining the players
+%cell 58}
+%
+%\protect\hyperlink{distance-of-one-object-to-another}{Distance of one
+%object to another 59}
+%
+%\protect\hyperlink{determining-an-objects-position-and-facing}{Determining
+%an objects position and facing 59}
+%
+%\protect\hyperlink{line-of-sight}{Line of Sight 60}
+%
+%\protect\hyperlink{_Toc182634542}{Determine whether an Actor is detected
+%by another Actor 62}
+%
+%\protect\hyperlink{determining-when-the-pc-leaves-a-cell}{Determining
+%when the PC leaves a cell 62}
+%
+%\protect\hyperlink{detect-player-traveling}{Detect player traveling 63}
+%
+%\protect\hyperlink{triggers-for-actors-standing-on-an-object}{Triggers
+%for Actors standing on an object 64}
+%
+%\protect\hyperlink{hurting-an-actor-standing-on-an-object}{Hurting an
+%Actor standing on an object 65}
+%
+%\protect\hyperlink{_Toc182634547}{Object Collision Functions 65}
+%
+%\protect\hyperlink{checking-activation-of-an-item-and-activating-it}{Checking
+%activation of an item and activating it 66}
+%
+%\protect\hyperlink{locking-and-unlocking-doors-or-chests}{Locking and
+%Unlocking doors or chests 69}
+%
+%\protect\hyperlink{animating-objects}{Animating objects 69}
+%
+%\protect\hyperlink{enabling-and-disabling-objects}{Enabling and
+%disabling objects 71}
+%
+%\protect\hyperlink{deleting-a-reference-completely}{Deleting a reference
+%completely 72}
+%
+%\protect\hyperlink{dont-save-changes-to-an-object}{Don't save changes to
+%an object 74}
+%
+%\protect\hyperlink{scripting-npcs-ai-and-movement}{Scripting NPC's: AI
+%and Movement 75}
+%
+%\protect\hyperlink{make-an-npc-walk-to-a-new-location}{Make an NPC walk
+%to a new location 75}
+%
+%\protect\hyperlink{checking-whether-an-npc-has-performed-his-movement}{Checking
+%whether an NPC has performed his movement 75}
+%
+%\protect\hyperlink{make-an-actor-turn-or-face-a-certain-direction}{Make
+%an Actor turn or face a certain direction 77}
+%
+%\protect\hyperlink{define-random-actor-movement}{Define random Actor
+%movement 77}
+%
+%\protect\hyperlink{making-actors-activate-objects}{Making Actors
+%activate objects 79}
+%
+%\protect\hyperlink{following-and-escorting}{Following and Escorting 80}
+%
+%\protect\hyperlink{checking-which-ai-package-is-currently-executed}{Checking
+%which AI package is currently executed 81}
+%
+%\protect\hyperlink{forcing-sneak-movement}{Forcing sneak movement 83}
+%
+%\protect\hyperlink{forcing-running-and-jumping-tribunal-npc-movement-functions}{Forcing
+%running and jumping: Tribunal NPC Movement Functions 85}
+%
+%\protect\hyperlink{detecting-players-action-running-jumping-sneaking}{Detecting
+%players action: running, jumping, sneaking? 86}
+%
+%\protect\hyperlink{detect-combat-readiness}{Detect combat readiness 87}
+%
+%\protect\hyperlink{section-7}{Making someone fall 88}
+%
+%\protect\hyperlink{equipment-sharing-and-other-companion-functions}{Equipment
+%sharing and other companion functions 88}
+%
+%\protect\hyperlink{race-faction-and-rank}{Race, Faction and Rank 90}
+%
+%\protect\hyperlink{determining-race}{Determining Race 90}
+%
+%\protect\hyperlink{determining-the-pcs-faction-status}{Determining the
+%PC's Faction status: 90}
+%
+%\protect\hyperlink{modifying-faction-standing-and-reaction}{Modifying
+%faction standing and reaction 91}
+%
+%\protect\hyperlink{determining-and-changing-reputation-and-disposition}{Determining
+%and changing reputation and disposition 93}
+%
+%\protect\hyperlink{werewolf-specific-functions}{Werewolf-specific
+%functions 94}
+%
+%\protect\hyperlink{set-the-werewolf-attributes}{Set the werewolf
+%attributes 94}
+%
+%\protect\hyperlink{change-the-color-of-secunda}{Change the color of
+%Secunda 94}
+%
+%\protect\hyperlink{determine-how-many-kills-a-werewolf-has}{Determine
+%how many kills a werewolf has 94}
+%
+%\protect\hyperlink{check-to-see-if-the-creature-is-in-werewolf-form}{Check
+%to see if the creature is in werewolf form 95}
+%
+%\protect\hyperlink{change-to-a-werewolf}{Change to a werewolf 95}
+%
+%\protect\hyperlink{section-8}{Special werewolf global variables 96}
+%
+%\protect\hyperlink{text-and-dialogue}{Text and Dialogue 97}
+%
+%\protect\hyperlink{brief-dialogue-how-to}{Brief dialogue how-to 97}
+%
+%\protect\hyperlink{the-concept-of-mw-dialogue}{The concept of MW
+%dialogue 97}
+%
+%\protect\hyperlink{how-dialogue-works}{How dialogue works 98}
+%
+%\protect\hyperlink{a-few-golden-rules}{A few golden rules 101}
+%
+%\protect\hyperlink{dialogue-101}{Dialogue 101 101}
+%
+%\protect\hyperlink{dialogue-related-functions}{Dialogue-related
+%functions 103}
+%
+%\protect\hyperlink{displaying-messages}{Displaying messages 103}
+%
+%\protect\hyperlink{_Toc182634588}{Displaying variables and text defines
+%in a message box 105}
+%
+%\protect\hyperlink{adding-a-dialogue-topic}{Adding a dialogue topic 106}
+%
+%\protect\hyperlink{initiating-and-ending-dialogue}{Initiating and ending
+%dialogue 107}
+%
+%\protect\hyperlink{allowing-forced-dialogue-with-werewolf-player-bloodmoon}{Allowing
+%forced Dialogue with Werewolf player (Bloodmoon) 108}
+%
+%\protect\hyperlink{multiple-choice-asking-questions}{Multiple choice --
+%asking questions 109}
+%
+%\protect\hyperlink{adding-to-the-journal-and-testing-journal-entries}{Adding
+%to the journal and testing journal entries 110}
+%
+%\protect\hyperlink{special-dialogue-only-functions}{Special
+%dialogue-only functions 111}
+%
+%\protect\hyperlink{changing-the-hello-setting}{Changing the Hello
+%setting 112}
+%
+%\protect\hyperlink{useful-dialogue-variables}{Useful dialogue variables
+%112}
+%
+%\protect\hyperlink{changing-and-testing-skills-attributes-and-other-stats}{Changing
+%and testing Skills, Attributes, and other Stats 113}
+%
+%\protect\hyperlink{get-set-and-modify-stats---general-remarks}{Get, Set,
+%and Modify stats - general remarks 113}
+%
+%\protect\hyperlink{determining-and-changing-actor-and-player-stats}{Determining
+%and changing Actor and player stats: 114}
+%
+%\protect\hyperlink{determining-and-changing-attributes}{Determining and
+%changing Attributes: 114}
+%
+%\protect\hyperlink{determining-and-changing-health-magicka-fatigue}{Determining
+%and changing Health, Magicka, Fatigue: 114}
+%
+%\protect\hyperlink{determining-and-changing-skills}{Determining and
+%changing Skills: 115}
+%
+%\protect\hyperlink{determining-and-changing-level}{Determining and
+%changing Level 115}
+%
+%\protect\hyperlink{_Toc182634604}{GetStat, ModStat and SetStat: A
+%concerned modder's guide. - Galsiah 116}
+%
+%\protect\hyperlink{combat}{Combat 120}
+%
+%\protect\hyperlink{initiating-and-ending-combat}{Initiating and ending
+%combat 120}
+%
+%\protect\hyperlink{detecting-attack}{Detecting Attack 120}
+%
+%\protect\hyperlink{combat-related-getmodset-ai-functions-fight-flee-alarm}{Combat
+%related Get/Mod/Set AI functions: Fight, Flee, Alarm 122}
+%
+%\protect\hyperlink{keeping-track-of-kills-and-knockouts}{Keeping track
+%of kills and knockouts 123}
+%
+%\protect\hyperlink{resurrecting-a-dead-actor}{Resurrecting a dead Actor
+%125}
+%
+%\protect\hyperlink{crime}{Crime 126}
+%
+%\protect\hyperlink{determining-and-changing-crime-level}{Determining and
+%changing Crime Level 126}
+%
+%\protect\hyperlink{jailing-the-pc}{Jailing the PC 126}
+%
+%\protect\hyperlink{clearing-the-pc-of-crime}{Clearing the PC of crime
+%126}
+%
+%\protect\hyperlink{detecting-crime}{Detecting crime 126}
+%
+%\protect\hyperlink{useful-global-variables}{Useful global variables 128}
+%
+%\protect\hyperlink{magic}{Magic 129}
+%
+%\protect\hyperlink{limiting-the-use-of-teleport}{Limiting the use of
+%teleport 129}
+%
+%\protect\hyperlink{limiting-the-use-of-levitation}{Limiting the use of
+%levitation 130}
+%
+%\protect\hyperlink{checking-and-managing-souls-and-soulgems}{Checking
+%and managing souls and soulgems 131}
+%
+%\protect\hyperlink{adding-and-removing-spells-and-cursing}{Adding and
+%removing spells and cursing 133}
+%
+%\protect\hyperlink{casting-spells}{Casting spells 134}
+%
+%\protect\hyperlink{managing-and-testing-for-spells}{Managing and testing
+%for spells 135}
+%
+%\protect\hyperlink{managing-and-testing-spell-effects}{Managing and
+%testing spell effects 136}
+%
+%\protect\hyperlink{testing-disease}{Testing disease 137}
+%
+%\protect\hyperlink{explosion}{Explosion 138}
+%
+%\protect\hyperlink{magic-getmodset-effects-functions}{Magic Get/Mod/Set
+%effects functions: 138}
+%
+%\protect\hyperlink{sound}{Sound 140}
+%
+%\protect\hyperlink{make-actors-speak-an-audio-file}{Make Actors speak an
+%audio file 140}
+%
+%\protect\hyperlink{playing-music}{Playing music 140}
+%
+%\protect\hyperlink{playing-sounds}{Playing sounds 141}
+%
+%\protect\hyperlink{controlling-sound}{Controlling sound 141}
+%
+%\protect\hyperlink{sound-file-formats}{Sound file formats 142}
+%
+%\protect\hyperlink{keeping-track-of-time}{Keeping track of time 143}
+%
+%\protect\hyperlink{timer}{Timer 143}
+%
+%\protect\hyperlink{morrowinds-time-related-global-variables}{Morrowind's
+%time related global variables 143}
+%
+%\protect\hyperlink{keeping-track-of-days-passed}{Keeping track of days
+%passed 144}
+%
+%\protect\hyperlink{moon-phases}{Moon phases 144}
+%
+%\protect\hyperlink{weather}{Weather 146}
+%
+%\protect\hyperlink{changing-weather}{Changing weather 146}
+%
+%\protect\hyperlink{changing-weather-settings-for-a-region}{Changing
+%weather settings for a region 146}
+%
+%\protect\hyperlink{determining-current-weather}{Determining current
+%weather 147}
+%
+%\protect\hyperlink{detecting-wind-speed}{Detecting wind speed 147}
+%
+%\protect\hyperlink{player-sleeping}{Player sleeping 148}
+%
+%\protect\hyperlink{enabling-and-disabling-player-control-and-interface}{Enabling
+%and disabling player control and interface 149}
+%
+%\protect\hyperlink{disable-player-control-functions}{Disable player
+%control functions 149}
+%
+%\protect\hyperlink{enable-player-control-functions}{Enable player
+%control functions 149}
+%
+%\protect\hyperlink{check-player-control-status}{Check player control
+%status 150}
+%
+%\protect\hyperlink{force-first-or-third-person-view}{Force first or
+%third person view 150}
+%
+%\protect\hyperlink{functions-for-character-generation-menus}{Functions
+%for character generation menus 150}
+%
+%\protect\hyperlink{determining-if-player-has-menus-open}{Determining if
+%player has menus open 151}
+%
+%\protect\hyperlink{using-menutest-to-open-and-close-menus}{Using
+%MenuTest to open and close menus 152}
+%
+%\protect\hyperlink{miscellaneous-functions-and-variables}{Miscellaneous
+%functions and variables 153}
+%
+%\protect\hyperlink{breaking-of-script-processing}{Breaking of script
+%processing 153}
+%
+%\protect\hyperlink{controlling-global-scripts}{Controlling global
+%scripts 153}
+%
+%\protect\hyperlink{fading-the-screen-in-and-out}{Fading the screen in
+%and out 154}
+%
+%\protect\hyperlink{adding-a-location-to-the-map}{Adding a location to
+%the map 154}
+%
+%\protect\hyperlink{assigning-random-values-to-variables}{Assigning
+%random values to variables 154}
+%
+%\protect\hyperlink{playing-videos}{Playing videos 155}
+%
+%\protect\hyperlink{_Toc182634660}{Levelled List functions 156}
+%
+%\protect\hyperlink{square-root}{Square root 157}
+%
+%\protect\hyperlink{water-level-functions}{Water Level Functions 157}
+%
+%\protect\hyperlink{tips-and-tricks}{Tips and tricks 160}
+%
+%\protect\hyperlink{little-helpers-text-search-copy-paste}{Little
+%helpers: Text search, copy, paste 160}
+%
+%\protect\hyperlink{alternative-scripting-editors}{Alternative scripting
+%editors 160}
+%
+%\protect\hyperlink{script-extenders}{Script Extenders 161}
+%
+%\protect\hyperlink{script-with-style-for-safer-scripting}{Script with
+%style for safer scripting 162}
+%
+%\protect\hyperlink{cleaning-up-your-mod}{Cleaning up your mod 163}
+%
+%\protect\hyperlink{on-references-persist}{On References Persist 165}
+%
+%\protect\hyperlink{the-72-hours-bug-a-brief-explanation}{The "72-Hours
+%Bug": A Brief Explanation 165}
+%
+%\protect\hyperlink{limits-of-the-script-editor}{Limits of the Script
+%Editor 166}
+%
+%\protect\hyperlink{pitfalls}{Pitfalls 167}
+%
+%\protect\hyperlink{saving-cpu-time}{Saving CPU time 168}
+%
+%\protect\hyperlink{targeted-scripts-running-global-scripts-tied-to-an-object}{Targeted
+%scripts: running "global" scripts tied to an object 170}
+%
+%\protect\hyperlink{detecting-when-the-player-does-a-load-from-saved-game}{Detecting
+%when the player does a load from saved game: 171}
+%
+%\protect\hyperlink{uses-of-the-chargenstate-variable---disabling-saving-and-menus}{Uses
+%of the CharGenState variable - Disabling saving and menus 173}
+%
+%\protect\hyperlink{detecting-use-of-scrolls-or-books}{Detecting use of
+%scrolls or books 174}
+%
+%\protect\hyperlink{making-actors-switch-between-weapons}{Making Actors
+%switch between weapons 176}
+%
+%\protect\hyperlink{_Toc182634679}{Making NPCs switch between spell
+%"sets" 177}
+%
+%\protect\hyperlink{making-actors-lie-down}{Making Actors lie down 177}
+%
+%\protect\hyperlink{scripted-teleporting}{Scripted teleporting 181}
+%
+%\protect\hyperlink{interaction-between-mods}{Interaction between mods
+%183}
+%
+%\protect\hyperlink{safely-starting-global-scripts--avoiding-the-main-script}{Safely
+%starting global scripts- avoiding the main script 184}
+%
+%\protect\hyperlink{use-sound-to-detect-events}{Use sound to detect
+%events 185}
+%
+%\protect\hyperlink{large-battles}{Large battles 185}
+%
+%\protect\hyperlink{a-guide-to-making-ridable-objects}{A guide to making
+%ridable objects 186}
+%
+%\protect\hyperlink{selecting-objects}{Selecting objects 186}
+%
+%\protect\hyperlink{creatingdeleting-objects}{Creating/Deleting objects
+%186}
+%
+%\protect\hyperlink{falling-off-from-objects}{Falling off from objects
+%187}
+%
+%\protect\hyperlink{collision-detection}{Collision detection 188}
+%
+%\protect\hyperlink{savegame-issue}{Savegame issue 188}
+%
+%\protect\hyperlink{trigonometry-script---fast-sine-and-cosine}{Trigonometry
+%script - fast sine and cosine 189}
+%
+%\protect\hyperlink{mannequins}{Mannequins 198}
+%
+%\protect\hyperlink{is-she-looking-at-me}{Is she looking at me? 201}
+%
+%\protect\hyperlink{cinematic-sequence}{Cinematic sequence 203}
+%
+%\protect\hyperlink{troubleshooting}{Troubleshooting 204}
+%
+%\protect\hyperlink{general-hints}{General hints 204}
+%
+%\protect\hyperlink{the-console}{The Console 204}
+%
+%\protect\hyperlink{using-the-console-to-check-variables}{Using the
+%Console to check variables: 204}
+%
+%\protect\hyperlink{using-the-console-to-quickly-test-scripts}{Using the
+%Console to quickly test scripts: 204}
+%
+%\protect\hyperlink{error-messages-malfunctions-and-common-causes}{Error
+%messages, malfunctions and common causes 205}
+%
+%\protect\hyperlink{in-the-editor}{In the editor 205}
+%
+%\protect\hyperlink{in-game-error-messages}{In game error messages: 205}
+%
+%\protect\hyperlink{appendix}{Appendix 208}
+%
+%\protect\hyperlink{new-functions-that-come-with-tribunal}{New functions
+%that come with TRIBUNAL 208}
+%
+%\protect\hyperlink{changes-fixes-to-morrowind-scripting}{Changes / fixes
+%to Morrowind scripting: 208}
+%
+%\protect\hyperlink{index-of-new-tribunal-script-functions}{Index of new
+%Tribunal Script Functions: 208}
+%
+%\protect\hyperlink{new-functions-that-come-with-bloodmoon}{New functions
+%that come with BLOODMOON 209}
+%
+%\protect\hyperlink{index-of-new-bloodmoon-script-functions-and-variables}{Index
+%of new Bloodmoon Script Functions and variables: 209}
+%
+%\protect\hyperlink{previously-undocumented-functions}{Previously
+%undocumented functions 210}
+%
+%\protect\hyperlink{variable-type-functions}{Variable-type functions:
+%211}
+%
+%\protect\hyperlink{local-variables-that-get-set-by-the-game}{Local
+%variables that get set by the game: 211}
+%
+%\protect\hyperlink{local-variables-that-you-can-set-as-a-flag}{Local
+%variables that you can set as a flag: 211}
+%
+%\protect\hyperlink{special-globals}{Special Globals 211}
+%
+%\protect\hyperlink{game-units}{Game units: 213}
+%
+%\protect\hyperlink{derived-attribute-calculations}{Derived attribute
+%calculations: 213}
+%
+%\protect\hyperlink{_Toc53412751}{Magic Effect List 215}
+%
+%\protect\hyperlink{list-of-console-commands}{List of console commands
+%216}
+%
+%\protect\hyperlink{game-settings}{Game Settings 219}
+%
+%\protect\hyperlink{index}{Index 226}
 
 \hypertarget{foreword-to-the-ninth-edition}{%
 \subsubsection{\texorpdfstring{\hfill\break
