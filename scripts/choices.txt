@@ -2,7 +2,7 @@ Begin choices
 
 Short button
 Short status
-Short OnPCEquip ;declare as variable – otherwise there will be errors
+Short OnPCEquip ;declare as variable - otherwise there will be errors
 
 if ( OnPCEquip ==1 ) 
 MessageBox, "The sword vibrates in your hand. Do you want to equip it?", "yes", "no"
