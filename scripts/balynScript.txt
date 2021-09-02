@@ -1,7 +1,7 @@
 Begin balynScript
 float timer
 short doOnce
-[…]; references to journal settings
+[]; references to journal settings
 Set timer to ( timer + GetSecondsPassed )
 if ( timer < 5 ); A timer to avoid testing to often (avoids performance problems)
 	Return
