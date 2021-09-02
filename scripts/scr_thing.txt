@@ -10,7 +10,7 @@ endif
 
 if ( OnPCEquip == 1 )      ; when the item is equipped
 	set state to 1
-	set OnPCEquip to 0     ; do this once per equip event…
+	set OnPCEquip to 0     ; do this once per equip event
 endif
 if ( state ==1 )
 	MessageBox "recycle?" , "yes", "no"
