@@ -5,7 +5,7 @@ short warn
 if ( player->HasItemEquipped "scissors" )
 	if ( warn != 1 )
 		if ( GetPCRunning )
-			MessageBox "Don’t run with scissors!" 
+			MessageBox "Don't run with scissors!" 
 			set warn to 1
 		endif
 	endif
