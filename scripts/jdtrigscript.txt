@@ -68,7 +68,7 @@ if ( objnum == 3 )
 endif 
 
 ;GetAngle returns values from -180 to +180, so we need to compensate for calculation to get
-;values from 0 to 360°C:
+;values from 0 to 360 C:
 if ( angle_source < 0 ) 
 	set angle_source to ( 360 + angle_source ) 
 endif 
@@ -76,7 +76,7 @@ endif
 set angle to angle_source 
 
 ;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
-;determine quadrant. This way we need to calculate sine and cosine only for 0-90°
+;determine quadrant. This way we need to calculate sine and cosine only for 0-90
 if ( angle <= 90 ) 
 	set angle_temp2 to angle 
 	set anglequad to 1 
@@ -154,7 +154,7 @@ if ( angle_temp <= 10 ) ; angles arranged in chunks of 10 for speed (and if bloc
 		set ax2 to 0.190808 
 		set ay2 to 0.981627 
 	endif 
-elseif ( angle_temp <= 20 ) ; and so on…
+elseif ( angle_temp <= 20 ) ; and so on
 if ( angle == 11 ) 
 set ax1 to 0.190808 
 set ay1 to 0.981627 

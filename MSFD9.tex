@@ -126,661 +126,664 @@
 
 \clearpage
 
-Table of Contents
-
-\protect\hyperlink{foreword-to-the-ninth-edition}{Foreword to the ninth
-edition 9}
-
-\protect\hyperlink{foreword-to-eighth-edition}{Foreword to eighth
-edition 10}
-
-\protect\hyperlink{_Toc53412549}{Introduction 11}
-
-\protect\hyperlink{using-this-guide.}{Using this guide. 11}
-
-\protect\hyperlink{what-is-a-script}{What is a script? 11}
-
-\protect\hyperlink{what-can-scripts-do}{What can scripts do? 12}
-
-\protect\hyperlink{what-scripts-cant-do}{What scripts can't do: 12}
-
-\protect\hyperlink{_Toc53412554}{Scripting tutorial 13}
-
-\protect\hyperlink{lets-get-going}{Let's get going! 13}
-
-\protect\hyperlink{the-scripting-window}{The scripting window 13}
-
-\protect\hyperlink{what-do-we-want}{What do we want? 14}
-
-\protect\hyperlink{writing-a-script}{Writing a script 14}
-
-\protect\hyperlink{naming-a-script-begin-and-end}{Naming a script: Begin
-and End 14}
-
-\protect\hyperlink{detecting-an-action-by-the-player}{Detecting an
-action by the player 15}
-
-\protect\hyperlink{writing-text-and-obtaining-decisions-from-the-player}{Writing
-text and obtaining decisions from the player 15}
-
-\protect\hyperlink{how-local-scripts-are-executed}{How local scripts are
-executed 16}
-
-\protect\hyperlink{your-first-bug}{Your first bug 19}
-
-\protect\hyperlink{putting-a-spell-on-the-player}{Putting a spell on the
-player 19}
-
-\protect\hyperlink{how-to-learn-more}{How to learn more 22}
-
-\protect\hyperlink{general-information-scripts-commands-and-syntax}{General
-Information: Scripts, Commands and Syntax 23}
-
-\protect\hyperlink{types-of-scripts}{Types of scripts 23}
-
-\protect\hyperlink{local-scripts}{Local scripts 23}
-
-\protect\hyperlink{global-scripts}{Global scripts 23}
-
-\protect\hyperlink{syntax}{Syntax 25}
-
-\protect\hyperlink{beginning-and-ending-scripts}{Beginning and ending
-scripts 25}
-
-\protect\hyperlink{general-syntax-for-functions}{General syntax for
-functions: 25}
-
-\protect\hyperlink{general-syntax-commas-parentheses-and-spaces}{General
-syntax: Commas, parentheses and spaces 26}
-
-\protect\hyperlink{comments}{Comments 26}
-
-\protect\hyperlink{indentation-using-tabstops}{Indentation / using
-tabstops 26}
-
-\protect\hyperlink{variables}{Variables 27}
-
-\protect\hyperlink{types-of-variables}{Types of variables 27}
-
-\protect\hyperlink{_Toc182634499}{Local variables 28}
-
-\protect\hyperlink{global-variables}{Global variables 29}
-
-\protect\hyperlink{referencing-variables-on-other-objects-and-scripts}{Referencing
-variables on other objects and scripts 29}
-
-\protect\hyperlink{using-variables-in-functions}{Using variables in
-functions 30}
-
-\protect\hyperlink{section}{Operators / mathematical calculations 30}
-
-\protect\hyperlink{_Toc182634504}{Testing conditions 31}
-
-\protect\hyperlink{use-of-if-elseif-conditions}{Use of if\ldots{} elseif
-conditions 31}
-
-\protect\hyperlink{while-conditions}{While conditions 33}
-
-\protect\hyperlink{constructing-boolean-operations-in-tes-script}{Constructing
-Boolean operations in TES Script 34}
-
-\protect\hyperlink{_Toc53412583}{List of TES-script functions 35}
-
-\protect\hyperlink{explanation-of-the-format}{Explanation of the format
-35}
-
-\protect\hyperlink{working-with-objects}{Working with objects 36}
-
-\protect\hyperlink{working-with-inventory-items}{Working with inventory
-items 36}
-
-\protect\hyperlink{adding-and-removing-items-from-the-inventory}{Adding
-and removing items from the inventory 36}
-
-\protect\hyperlink{dropping-items-to-the-floor}{Dropping items to the
-floor 38}
-
-\protect\hyperlink{monitoring-inventory-activities-adding-dropping-items-and-using-soul-gems}{Monitoring
-inventory activities: Adding, dropping items and using soul gems 39}
-
-\protect\hyperlink{force-equipping-an-item}{Force-equipping an Item 40}
-
-\protect\hyperlink{detecting-if-an-item-has-been-equipped}{Detecting if
-an item has been equipped 41}
-
-\protect\hyperlink{disabling-ability-to-equip-an-item}{Disabling ability
-to equip an item 42}
-
-\protect\hyperlink{_Toc182634518}{Checking for presence of items in
-inventory 43}
-
-\protect\hyperlink{repairing-objects}{Repairing objects 43}
-
-\protect\hyperlink{worn-equipped-object-information}{Worn / equipped
-object information 43}
-
-\protect\hyperlink{usedonme-function}{UsedOnMe function 46}
-
-\protect\hyperlink{moving-and-placing-objects}{Moving and placing
-objects 46}
-
-\protect\hyperlink{moving-along-an-objects-axis}{Moving along an objects
-axis 46}
-
-\protect\hyperlink{moving-along-the-world-axis}{Moving along the world
-axis 47}
-
-\protect\hyperlink{cellupdate}{CellUpdate 48}
-
-\protect\hyperlink{setting-position-the-other-way-to-do-movement}{Setting
-position (the other way to do movement) 48}
-
-\protect\hyperlink{positioning-an-object-in-the-world-or-in-an-interior-cell}{Positioning
-an object in the world or in an interior cell 50}
-
-\protect\hyperlink{resetting-an-object-to-its-original-position}{Resetting
-an object to its original position 51}
-
-\protect\hyperlink{placing-an-item-near-the-pc}{Placing an item near the
-PC 51}
-
-\protect\hyperlink{place-items-near-an-object}{Place items near an
-object 52}
-
-\protect\hyperlink{creating-new-object-references-with-placeitem}{Creating
-new object-references with PlaceItem 52}
-
-\protect\hyperlink{rotation-and-angles}{Rotation and angles 54}
-
-\protect\hyperlink{making-an-object-spin}{Making an object spin 54}
-
-\protect\hyperlink{setting-angles}{Setting Angles 54}
-
-\protect\hyperlink{scale-functions}{Scale Functions 56}
-
-\protect\hyperlink{determining-location-relative-position-and-movement}{Determining
-location, relative position and movement 58}
-
-\protect\hyperlink{detecting-if-player-is-indoors-or-outdoors}{Detecting
-if player is indoors or outdoors 58}
-
-\protect\hyperlink{determining-the-players-cell}{Determining the players
-cell 58}
-
-\protect\hyperlink{distance-of-one-object-to-another}{Distance of one
-object to another 59}
-
-\protect\hyperlink{determining-an-objects-position-and-facing}{Determining
-an objects position and facing 59}
-
-\protect\hyperlink{line-of-sight}{Line of Sight 60}
-
-\protect\hyperlink{_Toc182634542}{Determine whether an Actor is detected
-by another Actor 62}
-
-\protect\hyperlink{determining-when-the-pc-leaves-a-cell}{Determining
-when the PC leaves a cell 62}
-
-\protect\hyperlink{detect-player-traveling}{Detect player traveling 63}
-
-\protect\hyperlink{triggers-for-actors-standing-on-an-object}{Triggers
-for Actors standing on an object 64}
-
-\protect\hyperlink{hurting-an-actor-standing-on-an-object}{Hurting an
-Actor standing on an object 65}
-
-\protect\hyperlink{_Toc182634547}{Object Collision Functions 65}
-
-\protect\hyperlink{checking-activation-of-an-item-and-activating-it}{Checking
-activation of an item and activating it 66}
-
-\protect\hyperlink{locking-and-unlocking-doors-or-chests}{Locking and
-Unlocking doors or chests 69}
-
-\protect\hyperlink{animating-objects}{Animating objects 69}
-
-\protect\hyperlink{enabling-and-disabling-objects}{Enabling and
-disabling objects 71}
-
-\protect\hyperlink{deleting-a-reference-completely}{Deleting a reference
-completely 72}
-
-\protect\hyperlink{dont-save-changes-to-an-object}{Don't save changes to
-an object 74}
-
-\protect\hyperlink{scripting-npcs-ai-and-movement}{Scripting NPC's: AI
-and Movement 75}
-
-\protect\hyperlink{make-an-npc-walk-to-a-new-location}{Make an NPC walk
-to a new location 75}
-
-\protect\hyperlink{checking-whether-an-npc-has-performed-his-movement}{Checking
-whether an NPC has performed his movement 75}
-
-\protect\hyperlink{make-an-actor-turn-or-face-a-certain-direction}{Make
-an Actor turn or face a certain direction 77}
-
-\protect\hyperlink{define-random-actor-movement}{Define random Actor
-movement 77}
-
-\protect\hyperlink{making-actors-activate-objects}{Making Actors
-activate objects 79}
-
-\protect\hyperlink{following-and-escorting}{Following and Escorting 80}
-
-\protect\hyperlink{checking-which-ai-package-is-currently-executed}{Checking
-which AI package is currently executed 81}
-
-\protect\hyperlink{forcing-sneak-movement}{Forcing sneak movement 83}
-
-\protect\hyperlink{forcing-running-and-jumping-tribunal-npc-movement-functions}{Forcing
-running and jumping: Tribunal NPC Movement Functions 85}
-
-\protect\hyperlink{detecting-players-action-running-jumping-sneaking}{Detecting
-players action: running, jumping, sneaking? 86}
-
-\protect\hyperlink{detect-combat-readiness}{Detect combat readiness 87}
-
-\protect\hyperlink{section-7}{Making someone fall 88}
-
-\protect\hyperlink{equipment-sharing-and-other-companion-functions}{Equipment
-sharing and other companion functions 88}
-
-\protect\hyperlink{race-faction-and-rank}{Race, Faction and Rank 90}
-
-\protect\hyperlink{determining-race}{Determining Race 90}
-
-\protect\hyperlink{determining-the-pcs-faction-status}{Determining the
-PC's Faction status: 90}
-
-\protect\hyperlink{modifying-faction-standing-and-reaction}{Modifying
-faction standing and reaction 91}
-
-\protect\hyperlink{determining-and-changing-reputation-and-disposition}{Determining
-and changing reputation and disposition 93}
-
-\protect\hyperlink{werewolf-specific-functions}{Werewolf-specific
-functions 94}
-
-\protect\hyperlink{set-the-werewolf-attributes}{Set the werewolf
-attributes 94}
-
-\protect\hyperlink{change-the-color-of-secunda}{Change the color of
-Secunda 94}
-
-\protect\hyperlink{determine-how-many-kills-a-werewolf-has}{Determine
-how many kills a werewolf has 94}
-
-\protect\hyperlink{check-to-see-if-the-creature-is-in-werewolf-form}{Check
-to see if the creature is in werewolf form 95}
-
-\protect\hyperlink{change-to-a-werewolf}{Change to a werewolf 95}
-
-\protect\hyperlink{section-8}{Special werewolf global variables 96}
-
-\protect\hyperlink{text-and-dialogue}{Text and Dialogue 97}
-
-\protect\hyperlink{brief-dialogue-how-to}{Brief dialogue how-to 97}
-
-\protect\hyperlink{the-concept-of-mw-dialogue}{The concept of MW
-dialogue 97}
-
-\protect\hyperlink{how-dialogue-works}{How dialogue works 98}
-
-\protect\hyperlink{a-few-golden-rules}{A few golden rules 101}
-
-\protect\hyperlink{dialogue-101}{Dialogue 101 101}
-
-\protect\hyperlink{dialogue-related-functions}{Dialogue-related
-functions 103}
-
-\protect\hyperlink{displaying-messages}{Displaying messages 103}
-
-\protect\hyperlink{_Toc182634588}{Displaying variables and text defines
-in a message box 105}
-
-\protect\hyperlink{adding-a-dialogue-topic}{Adding a dialogue topic 106}
-
-\protect\hyperlink{initiating-and-ending-dialogue}{Initiating and ending
-dialogue 107}
-
-\protect\hyperlink{allowing-forced-dialogue-with-werewolf-player-bloodmoon}{Allowing
-forced Dialogue with Werewolf player (Bloodmoon) 108}
-
-\protect\hyperlink{multiple-choice-asking-questions}{Multiple choice --
-asking questions 109}
-
-\protect\hyperlink{adding-to-the-journal-and-testing-journal-entries}{Adding
-to the journal and testing journal entries 110}
-
-\protect\hyperlink{special-dialogue-only-functions}{Special
-dialogue-only functions 111}
-
-\protect\hyperlink{changing-the-hello-setting}{Changing the Hello
-setting 112}
-
-\protect\hyperlink{useful-dialogue-variables}{Useful dialogue variables
-112}
-
-\protect\hyperlink{changing-and-testing-skills-attributes-and-other-stats}{Changing
-and testing Skills, Attributes, and other Stats 113}
-
-\protect\hyperlink{get-set-and-modify-stats---general-remarks}{Get, Set,
-and Modify stats - general remarks 113}
-
-\protect\hyperlink{determining-and-changing-actor-and-player-stats}{Determining
-and changing Actor and player stats: 114}
-
-\protect\hyperlink{determining-and-changing-attributes}{Determining and
-changing Attributes: 114}
-
-\protect\hyperlink{determining-and-changing-health-magicka-fatigue}{Determining
-and changing Health, Magicka, Fatigue: 114}
-
-\protect\hyperlink{determining-and-changing-skills}{Determining and
-changing Skills: 115}
-
-\protect\hyperlink{determining-and-changing-level}{Determining and
-changing Level 115}
-
-\protect\hyperlink{_Toc182634604}{GetStat, ModStat and SetStat: A
-concerned modder's guide. - Galsiah 116}
-
-\protect\hyperlink{combat}{Combat 120}
-
-\protect\hyperlink{initiating-and-ending-combat}{Initiating and ending
-combat 120}
-
-\protect\hyperlink{detecting-attack}{Detecting Attack 120}
-
-\protect\hyperlink{combat-related-getmodset-ai-functions-fight-flee-alarm}{Combat
-related Get/Mod/Set AI functions: Fight, Flee, Alarm 122}
-
-\protect\hyperlink{keeping-track-of-kills-and-knockouts}{Keeping track
-of kills and knockouts 123}
-
-\protect\hyperlink{resurrecting-a-dead-actor}{Resurrecting a dead Actor
-125}
-
-\protect\hyperlink{crime}{Crime 126}
-
-\protect\hyperlink{determining-and-changing-crime-level}{Determining and
-changing Crime Level 126}
-
-\protect\hyperlink{jailing-the-pc}{Jailing the PC 126}
-
-\protect\hyperlink{clearing-the-pc-of-crime}{Clearing the PC of crime
-126}
-
-\protect\hyperlink{detecting-crime}{Detecting crime 126}
-
-\protect\hyperlink{useful-global-variables}{Useful global variables 128}
-
-\protect\hyperlink{magic}{Magic 129}
-
-\protect\hyperlink{limiting-the-use-of-teleport}{Limiting the use of
-teleport 129}
-
-\protect\hyperlink{limiting-the-use-of-levitation}{Limiting the use of
-levitation 130}
-
-\protect\hyperlink{checking-and-managing-souls-and-soulgems}{Checking
-and managing souls and soulgems 131}
-
-\protect\hyperlink{adding-and-removing-spells-and-cursing}{Adding and
-removing spells and cursing 133}
-
-\protect\hyperlink{casting-spells}{Casting spells 134}
-
-\protect\hyperlink{managing-and-testing-for-spells}{Managing and testing
-for spells 135}
-
-\protect\hyperlink{managing-and-testing-spell-effects}{Managing and
-testing spell effects 136}
-
-\protect\hyperlink{testing-disease}{Testing disease 137}
-
-\protect\hyperlink{explosion}{Explosion 138}
-
-\protect\hyperlink{magic-getmodset-effects-functions}{Magic Get/Mod/Set
-effects functions: 138}
-
-\protect\hyperlink{sound}{Sound 140}
-
-\protect\hyperlink{make-actors-speak-an-audio-file}{Make Actors speak an
-audio file 140}
-
-\protect\hyperlink{playing-music}{Playing music 140}
-
-\protect\hyperlink{playing-sounds}{Playing sounds 141}
-
-\protect\hyperlink{controlling-sound}{Controlling sound 141}
-
-\protect\hyperlink{sound-file-formats}{Sound file formats 142}
-
-\protect\hyperlink{keeping-track-of-time}{Keeping track of time 143}
-
-\protect\hyperlink{timer}{Timer 143}
-
-\protect\hyperlink{morrowinds-time-related-global-variables}{Morrowind's
-time related global variables 143}
-
-\protect\hyperlink{keeping-track-of-days-passed}{Keeping track of days
-passed 144}
-
-\protect\hyperlink{moon-phases}{Moon phases 144}
-
-\protect\hyperlink{weather}{Weather 146}
-
-\protect\hyperlink{changing-weather}{Changing weather 146}
-
-\protect\hyperlink{changing-weather-settings-for-a-region}{Changing
-weather settings for a region 146}
-
-\protect\hyperlink{determining-current-weather}{Determining current
-weather 147}
-
-\protect\hyperlink{detecting-wind-speed}{Detecting wind speed 147}
-
-\protect\hyperlink{player-sleeping}{Player sleeping 148}
-
-\protect\hyperlink{enabling-and-disabling-player-control-and-interface}{Enabling
-and disabling player control and interface 149}
-
-\protect\hyperlink{disable-player-control-functions}{Disable player
-control functions 149}
-
-\protect\hyperlink{enable-player-control-functions}{Enable player
-control functions 149}
-
-\protect\hyperlink{check-player-control-status}{Check player control
-status 150}
-
-\protect\hyperlink{force-first-or-third-person-view}{Force first or
-third person view 150}
-
-\protect\hyperlink{functions-for-character-generation-menus}{Functions
-for character generation menus 150}
-
-\protect\hyperlink{determining-if-player-has-menus-open}{Determining if
-player has menus open 151}
-
-\protect\hyperlink{using-menutest-to-open-and-close-menus}{Using
-MenuTest to open and close menus 152}
-
-\protect\hyperlink{miscellaneous-functions-and-variables}{Miscellaneous
-functions and variables 153}
-
-\protect\hyperlink{breaking-of-script-processing}{Breaking of script
-processing 153}
-
-\protect\hyperlink{controlling-global-scripts}{Controlling global
-scripts 153}
-
-\protect\hyperlink{fading-the-screen-in-and-out}{Fading the screen in
-and out 154}
-
-\protect\hyperlink{adding-a-location-to-the-map}{Adding a location to
-the map 154}
-
-\protect\hyperlink{assigning-random-values-to-variables}{Assigning
-random values to variables 154}
-
-\protect\hyperlink{playing-videos}{Playing videos 155}
-
-\protect\hyperlink{_Toc182634660}{Levelled List functions 156}
-
-\protect\hyperlink{square-root}{Square root 157}
-
-\protect\hyperlink{water-level-functions}{Water Level Functions 157}
-
-\protect\hyperlink{tips-and-tricks}{Tips and tricks 160}
-
-\protect\hyperlink{little-helpers-text-search-copy-paste}{Little
-helpers: Text search, copy, paste 160}
-
-\protect\hyperlink{alternative-scripting-editors}{Alternative scripting
-editors 160}
-
-\protect\hyperlink{script-extenders}{Script Extenders 161}
-
-\protect\hyperlink{script-with-style-for-safer-scripting}{Script with
-style for safer scripting 162}
-
-\protect\hyperlink{cleaning-up-your-mod}{Cleaning up your mod 163}
-
-\protect\hyperlink{on-references-persist}{On References Persist 165}
-
-\protect\hyperlink{the-72-hours-bug-a-brief-explanation}{The "72-Hours
-Bug": A Brief Explanation 165}
-
-\protect\hyperlink{limits-of-the-script-editor}{Limits of the Script
-Editor 166}
-
-\protect\hyperlink{pitfalls}{Pitfalls 167}
-
-\protect\hyperlink{saving-cpu-time}{Saving CPU time 168}
-
-\protect\hyperlink{targeted-scripts-running-global-scripts-tied-to-an-object}{Targeted
-scripts: running "global" scripts tied to an object 170}
-
-\protect\hyperlink{detecting-when-the-player-does-a-load-from-saved-game}{Detecting
-when the player does a load from saved game: 171}
-
-\protect\hyperlink{uses-of-the-chargenstate-variable---disabling-saving-and-menus}{Uses
-of the CharGenState variable - Disabling saving and menus 173}
-
-\protect\hyperlink{detecting-use-of-scrolls-or-books}{Detecting use of
-scrolls or books 174}
-
-\protect\hyperlink{making-actors-switch-between-weapons}{Making Actors
-switch between weapons 176}
-
-\protect\hyperlink{_Toc182634679}{Making NPCs switch between spell
-"sets" 177}
-
-\protect\hyperlink{making-actors-lie-down}{Making Actors lie down 177}
-
-\protect\hyperlink{scripted-teleporting}{Scripted teleporting 181}
-
-\protect\hyperlink{interaction-between-mods}{Interaction between mods
-183}
-
-\protect\hyperlink{safely-starting-global-scripts--avoiding-the-main-script}{Safely
-starting global scripts- avoiding the main script 184}
-
-\protect\hyperlink{use-sound-to-detect-events}{Use sound to detect
-events 185}
-
-\protect\hyperlink{large-battles}{Large battles 185}
-
-\protect\hyperlink{a-guide-to-making-ridable-objects}{A guide to making
-ridable objects 186}
-
-\protect\hyperlink{selecting-objects}{Selecting objects 186}
-
-\protect\hyperlink{creatingdeleting-objects}{Creating/Deleting objects
-186}
-
-\protect\hyperlink{falling-off-from-objects}{Falling off from objects
-187}
-
-\protect\hyperlink{collision-detection}{Collision detection 188}
-
-\protect\hyperlink{savegame-issue}{Savegame issue 188}
-
-\protect\hyperlink{trigonometry-script---fast-sine-and-cosine}{Trigonometry
-script - fast sine and cosine 189}
-
-\protect\hyperlink{mannequins}{Mannequins 198}
-
-\protect\hyperlink{is-she-looking-at-me}{Is she looking at me? 201}
-
-\protect\hyperlink{cinematic-sequence}{Cinematic sequence 203}
-
-\protect\hyperlink{troubleshooting}{Troubleshooting 204}
-
-\protect\hyperlink{general-hints}{General hints 204}
-
-\protect\hyperlink{the-console}{The Console 204}
-
-\protect\hyperlink{using-the-console-to-check-variables}{Using the
-Console to check variables: 204}
-
-\protect\hyperlink{using-the-console-to-quickly-test-scripts}{Using the
-Console to quickly test scripts: 204}
-
-\protect\hyperlink{error-messages-malfunctions-and-common-causes}{Error
-messages, malfunctions and common causes 205}
-
-\protect\hyperlink{in-the-editor}{In the editor 205}
-
-\protect\hyperlink{in-game-error-messages}{In game error messages: 205}
-
-\protect\hyperlink{appendix}{Appendix 208}
-
-\protect\hyperlink{new-functions-that-come-with-tribunal}{New functions
-that come with TRIBUNAL 208}
-
-\protect\hyperlink{changes-fixes-to-morrowind-scripting}{Changes / fixes
-to Morrowind scripting: 208}
-
-\protect\hyperlink{index-of-new-tribunal-script-functions}{Index of new
-Tribunal Script Functions: 208}
-
-\protect\hyperlink{new-functions-that-come-with-bloodmoon}{New functions
-that come with BLOODMOON 209}
-
-\protect\hyperlink{index-of-new-bloodmoon-script-functions-and-variables}{Index
-of new Bloodmoon Script Functions and variables: 209}
-
-\protect\hyperlink{previously-undocumented-functions}{Previously
-undocumented functions 210}
-
-\protect\hyperlink{variable-type-functions}{Variable-type functions:
-211}
-
-\protect\hyperlink{local-variables-that-get-set-by-the-game}{Local
-variables that get set by the game: 211}
-
-\protect\hyperlink{local-variables-that-you-can-set-as-a-flag}{Local
-variables that you can set as a flag: 211}
-
-\protect\hyperlink{special-globals}{Special Globals 211}
-
-\protect\hyperlink{game-units}{Game units: 213}
-
-\protect\hyperlink{derived-attribute-calculations}{Derived attribute
-calculations: 213}
-
-\protect\hyperlink{_Toc53412751}{Magic Effect List 215}
-
-\protect\hyperlink{list-of-console-commands}{List of console commands
-216}
-
-\protect\hyperlink{game-settings}{Game Settings 219}
-
-\protect\hyperlink{index}{Index 226}
+\tableofcontents
+\addtocontents{toc}
+
+%Table of Contents
+%
+%\protect\hyperlink{foreword-to-the-ninth-edition}{Foreword to the ninth
+%edition 9}
+%
+%\protect\hyperlink{foreword-to-eighth-edition}{Foreword to eighth
+%edition 10}
+%
+%\protect\hyperlink{_Toc53412549}{Introduction 11}
+%
+%\protect\hyperlink{using-this-guide.}{Using this guide. 11}
+%
+%\protect\hyperlink{what-is-a-script}{What is a script? 11}
+%
+%\protect\hyperlink{what-can-scripts-do}{What can scripts do? 12}
+%
+%\protect\hyperlink{what-scripts-cant-do}{What scripts can't do: 12}
+%
+%\protect\hyperlink{_Toc53412554}{Scripting tutorial 13}
+%
+%\protect\hyperlink{lets-get-going}{Let's get going! 13}
+%
+%\protect\hyperlink{the-scripting-window}{The scripting window 13}
+%
+%\protect\hyperlink{what-do-we-want}{What do we want? 14}
+%
+%\protect\hyperlink{writing-a-script}{Writing a script 14}
+%
+%\protect\hyperlink{naming-a-script-begin-and-end}{Naming a script: Begin
+%and End 14}
+%
+%\protect\hyperlink{detecting-an-action-by-the-player}{Detecting an
+%action by the player 15}
+%
+%\protect\hyperlink{writing-text-and-obtaining-decisions-from-the-player}{Writing
+%text and obtaining decisions from the player 15}
+%
+%\protect\hyperlink{how-local-scripts-are-executed}{How local scripts are
+%executed 16}
+%
+%\protect\hyperlink{your-first-bug}{Your first bug 19}
+%
+%\protect\hyperlink{putting-a-spell-on-the-player}{Putting a spell on the
+%player 19}
+%
+%\protect\hyperlink{how-to-learn-more}{How to learn more 22}
+%
+%\protect\hyperlink{general-information-scripts-commands-and-syntax}{General
+%Information: Scripts, Commands and Syntax 23}
+%
+%\protect\hyperlink{types-of-scripts}{Types of scripts 23}
+%
+%\protect\hyperlink{local-scripts}{Local scripts 23}
+%
+%\protect\hyperlink{global-scripts}{Global scripts 23}
+%
+%\protect\hyperlink{syntax}{Syntax 25}
+%
+%\protect\hyperlink{beginning-and-ending-scripts}{Beginning and ending
+%scripts 25}
+%
+%\protect\hyperlink{general-syntax-for-functions}{General syntax for
+%functions: 25}
+%
+%\protect\hyperlink{general-syntax-commas-parentheses-and-spaces}{General
+%syntax: Commas, parentheses and spaces 26}
+%
+%\protect\hyperlink{comments}{Comments 26}
+%
+%\protect\hyperlink{indentation-using-tabstops}{Indentation / using
+%tabstops 26}
+%
+%\protect\hyperlink{variables}{Variables 27}
+%
+%\protect\hyperlink{types-of-variables}{Types of variables 27}
+%
+%\protect\hyperlink{_Toc182634499}{Local variables 28}
+%
+%\protect\hyperlink{global-variables}{Global variables 29}
+%
+%\protect\hyperlink{referencing-variables-on-other-objects-and-scripts}{Referencing
+%variables on other objects and scripts 29}
+%
+%\protect\hyperlink{using-variables-in-functions}{Using variables in
+%functions 30}
+%
+%\protect\hyperlink{section}{Operators / mathematical calculations 30}
+%
+%\protect\hyperlink{_Toc182634504}{Testing conditions 31}
+%
+%\protect\hyperlink{use-of-if-elseif-conditions}{Use of if\ldots{} elseif
+%conditions 31}
+%
+%\protect\hyperlink{while-conditions}{While conditions 33}
+%
+%\protect\hyperlink{constructing-boolean-operations-in-tes-script}{Constructing
+%Boolean operations in TES Script 34}
+%
+%\protect\hyperlink{_Toc53412583}{List of TES-script functions 35}
+%
+%\protect\hyperlink{explanation-of-the-format}{Explanation of the format
+%35}
+%
+%\protect\hyperlink{working-with-objects}{Working with objects 36}
+%
+%\protect\hyperlink{working-with-inventory-items}{Working with inventory
+%items 36}
+%
+%\protect\hyperlink{adding-and-removing-items-from-the-inventory}{Adding
+%and removing items from the inventory 36}
+%
+%\protect\hyperlink{dropping-items-to-the-floor}{Dropping items to the
+%floor 38}
+%
+%\protect\hyperlink{monitoring-inventory-activities-adding-dropping-items-and-using-soul-gems}{Monitoring
+%inventory activities: Adding, dropping items and using soul gems 39}
+%
+%\protect\hyperlink{force-equipping-an-item}{Force-equipping an Item 40}
+%
+%\protect\hyperlink{detecting-if-an-item-has-been-equipped}{Detecting if
+%an item has been equipped 41}
+%
+%\protect\hyperlink{disabling-ability-to-equip-an-item}{Disabling ability
+%to equip an item 42}
+%
+%\protect\hyperlink{_Toc182634518}{Checking for presence of items in
+%inventory 43}
+%
+%\protect\hyperlink{repairing-objects}{Repairing objects 43}
+%
+%\protect\hyperlink{worn-equipped-object-information}{Worn / equipped
+%object information 43}
+%
+%\protect\hyperlink{usedonme-function}{UsedOnMe function 46}
+%
+%\protect\hyperlink{moving-and-placing-objects}{Moving and placing
+%objects 46}
+%
+%\protect\hyperlink{moving-along-an-objects-axis}{Moving along an objects
+%axis 46}
+%
+%\protect\hyperlink{moving-along-the-world-axis}{Moving along the world
+%axis 47}
+%
+%\protect\hyperlink{cellupdate}{CellUpdate 48}
+%
+%\protect\hyperlink{setting-position-the-other-way-to-do-movement}{Setting
+%position (the other way to do movement) 48}
+%
+%\protect\hyperlink{positioning-an-object-in-the-world-or-in-an-interior-cell}{Positioning
+%an object in the world or in an interior cell 50}
+%
+%\protect\hyperlink{resetting-an-object-to-its-original-position}{Resetting
+%an object to its original position 51}
+%
+%\protect\hyperlink{placing-an-item-near-the-pc}{Placing an item near the
+%PC 51}
+%
+%\protect\hyperlink{place-items-near-an-object}{Place items near an
+%object 52}
+%
+%\protect\hyperlink{creating-new-object-references-with-placeitem}{Creating
+%new object-references with PlaceItem 52}
+%
+%\protect\hyperlink{rotation-and-angles}{Rotation and angles 54}
+%
+%\protect\hyperlink{making-an-object-spin}{Making an object spin 54}
+%
+%\protect\hyperlink{setting-angles}{Setting Angles 54}
+%
+%\protect\hyperlink{scale-functions}{Scale Functions 56}
+%
+%\protect\hyperlink{determining-location-relative-position-and-movement}{Determining
+%location, relative position and movement 58}
+%
+%\protect\hyperlink{detecting-if-player-is-indoors-or-outdoors}{Detecting
+%if player is indoors or outdoors 58}
+%
+%\protect\hyperlink{determining-the-players-cell}{Determining the players
+%cell 58}
+%
+%\protect\hyperlink{distance-of-one-object-to-another}{Distance of one
+%object to another 59}
+%
+%\protect\hyperlink{determining-an-objects-position-and-facing}{Determining
+%an objects position and facing 59}
+%
+%\protect\hyperlink{line-of-sight}{Line of Sight 60}
+%
+%\protect\hyperlink{_Toc182634542}{Determine whether an Actor is detected
+%by another Actor 62}
+%
+%\protect\hyperlink{determining-when-the-pc-leaves-a-cell}{Determining
+%when the PC leaves a cell 62}
+%
+%\protect\hyperlink{detect-player-traveling}{Detect player traveling 63}
+%
+%\protect\hyperlink{triggers-for-actors-standing-on-an-object}{Triggers
+%for Actors standing on an object 64}
+%
+%\protect\hyperlink{hurting-an-actor-standing-on-an-object}{Hurting an
+%Actor standing on an object 65}
+%
+%\protect\hyperlink{_Toc182634547}{Object Collision Functions 65}
+%
+%\protect\hyperlink{checking-activation-of-an-item-and-activating-it}{Checking
+%activation of an item and activating it 66}
+%
+%\protect\hyperlink{locking-and-unlocking-doors-or-chests}{Locking and
+%Unlocking doors or chests 69}
+%
+%\protect\hyperlink{animating-objects}{Animating objects 69}
+%
+%\protect\hyperlink{enabling-and-disabling-objects}{Enabling and
+%disabling objects 71}
+%
+%\protect\hyperlink{deleting-a-reference-completely}{Deleting a reference
+%completely 72}
+%
+%\protect\hyperlink{dont-save-changes-to-an-object}{Don't save changes to
+%an object 74}
+%
+%\protect\hyperlink{scripting-npcs-ai-and-movement}{Scripting NPC's: AI
+%and Movement 75}
+%
+%\protect\hyperlink{make-an-npc-walk-to-a-new-location}{Make an NPC walk
+%to a new location 75}
+%
+%\protect\hyperlink{checking-whether-an-npc-has-performed-his-movement}{Checking
+%whether an NPC has performed his movement 75}
+%
+%\protect\hyperlink{make-an-actor-turn-or-face-a-certain-direction}{Make
+%an Actor turn or face a certain direction 77}
+%
+%\protect\hyperlink{define-random-actor-movement}{Define random Actor
+%movement 77}
+%
+%\protect\hyperlink{making-actors-activate-objects}{Making Actors
+%activate objects 79}
+%
+%\protect\hyperlink{following-and-escorting}{Following and Escorting 80}
+%
+%\protect\hyperlink{checking-which-ai-package-is-currently-executed}{Checking
+%which AI package is currently executed 81}
+%
+%\protect\hyperlink{forcing-sneak-movement}{Forcing sneak movement 83}
+%
+%\protect\hyperlink{forcing-running-and-jumping-tribunal-npc-movement-functions}{Forcing
+%running and jumping: Tribunal NPC Movement Functions 85}
+%
+%\protect\hyperlink{detecting-players-action-running-jumping-sneaking}{Detecting
+%players action: running, jumping, sneaking? 86}
+%
+%\protect\hyperlink{detect-combat-readiness}{Detect combat readiness 87}
+%
+%\protect\hyperlink{section-7}{Making someone fall 88}
+%
+%\protect\hyperlink{equipment-sharing-and-other-companion-functions}{Equipment
+%sharing and other companion functions 88}
+%
+%\protect\hyperlink{race-faction-and-rank}{Race, Faction and Rank 90}
+%
+%\protect\hyperlink{determining-race}{Determining Race 90}
+%
+%\protect\hyperlink{determining-the-pcs-faction-status}{Determining the
+%PC's Faction status: 90}
+%
+%\protect\hyperlink{modifying-faction-standing-and-reaction}{Modifying
+%faction standing and reaction 91}
+%
+%\protect\hyperlink{determining-and-changing-reputation-and-disposition}{Determining
+%and changing reputation and disposition 93}
+%
+%\protect\hyperlink{werewolf-specific-functions}{Werewolf-specific
+%functions 94}
+%
+%\protect\hyperlink{set-the-werewolf-attributes}{Set the werewolf
+%attributes 94}
+%
+%\protect\hyperlink{change-the-color-of-secunda}{Change the color of
+%Secunda 94}
+%
+%\protect\hyperlink{determine-how-many-kills-a-werewolf-has}{Determine
+%how many kills a werewolf has 94}
+%
+%\protect\hyperlink{check-to-see-if-the-creature-is-in-werewolf-form}{Check
+%to see if the creature is in werewolf form 95}
+%
+%\protect\hyperlink{change-to-a-werewolf}{Change to a werewolf 95}
+%
+%\protect\hyperlink{section-8}{Special werewolf global variables 96}
+%
+%\protect\hyperlink{text-and-dialogue}{Text and Dialogue 97}
+%
+%\protect\hyperlink{brief-dialogue-how-to}{Brief dialogue how-to 97}
+%
+%\protect\hyperlink{the-concept-of-mw-dialogue}{The concept of MW
+%dialogue 97}
+%
+%\protect\hyperlink{how-dialogue-works}{How dialogue works 98}
+%
+%\protect\hyperlink{a-few-golden-rules}{A few golden rules 101}
+%
+%\protect\hyperlink{dialogue-101}{Dialogue 101 101}
+%
+%\protect\hyperlink{dialogue-related-functions}{Dialogue-related
+%functions 103}
+%
+%\protect\hyperlink{displaying-messages}{Displaying messages 103}
+%
+%\protect\hyperlink{_Toc182634588}{Displaying variables and text defines
+%in a message box 105}
+%
+%\protect\hyperlink{adding-a-dialogue-topic}{Adding a dialogue topic 106}
+%
+%\protect\hyperlink{initiating-and-ending-dialogue}{Initiating and ending
+%dialogue 107}
+%
+%\protect\hyperlink{allowing-forced-dialogue-with-werewolf-player-bloodmoon}{Allowing
+%forced Dialogue with Werewolf player (Bloodmoon) 108}
+%
+%\protect\hyperlink{multiple-choice-asking-questions}{Multiple choice --
+%asking questions 109}
+%
+%\protect\hyperlink{adding-to-the-journal-and-testing-journal-entries}{Adding
+%to the journal and testing journal entries 110}
+%
+%\protect\hyperlink{special-dialogue-only-functions}{Special
+%dialogue-only functions 111}
+%
+%\protect\hyperlink{changing-the-hello-setting}{Changing the Hello
+%setting 112}
+%
+%\protect\hyperlink{useful-dialogue-variables}{Useful dialogue variables
+%112}
+%
+%\protect\hyperlink{changing-and-testing-skills-attributes-and-other-stats}{Changing
+%and testing Skills, Attributes, and other Stats 113}
+%
+%\protect\hyperlink{get-set-and-modify-stats---general-remarks}{Get, Set,
+%and Modify stats - general remarks 113}
+%
+%\protect\hyperlink{determining-and-changing-actor-and-player-stats}{Determining
+%and changing Actor and player stats: 114}
+%
+%\protect\hyperlink{determining-and-changing-attributes}{Determining and
+%changing Attributes: 114}
+%
+%\protect\hyperlink{determining-and-changing-health-magicka-fatigue}{Determining
+%and changing Health, Magicka, Fatigue: 114}
+%
+%\protect\hyperlink{determining-and-changing-skills}{Determining and
+%changing Skills: 115}
+%
+%\protect\hyperlink{determining-and-changing-level}{Determining and
+%changing Level 115}
+%
+%\protect\hyperlink{_Toc182634604}{GetStat, ModStat and SetStat: A
+%concerned modder's guide. - Galsiah 116}
+%
+%\protect\hyperlink{combat}{Combat 120}
+%
+%\protect\hyperlink{initiating-and-ending-combat}{Initiating and ending
+%combat 120}
+%
+%\protect\hyperlink{detecting-attack}{Detecting Attack 120}
+%
+%\protect\hyperlink{combat-related-getmodset-ai-functions-fight-flee-alarm}{Combat
+%related Get/Mod/Set AI functions: Fight, Flee, Alarm 122}
+%
+%\protect\hyperlink{keeping-track-of-kills-and-knockouts}{Keeping track
+%of kills and knockouts 123}
+%
+%\protect\hyperlink{resurrecting-a-dead-actor}{Resurrecting a dead Actor
+%125}
+%
+%\protect\hyperlink{crime}{Crime 126}
+%
+%\protect\hyperlink{determining-and-changing-crime-level}{Determining and
+%changing Crime Level 126}
+%
+%\protect\hyperlink{jailing-the-pc}{Jailing the PC 126}
+%
+%\protect\hyperlink{clearing-the-pc-of-crime}{Clearing the PC of crime
+%126}
+%
+%\protect\hyperlink{detecting-crime}{Detecting crime 126}
+%
+%\protect\hyperlink{useful-global-variables}{Useful global variables 128}
+%
+%\protect\hyperlink{magic}{Magic 129}
+%
+%\protect\hyperlink{limiting-the-use-of-teleport}{Limiting the use of
+%teleport 129}
+%
+%\protect\hyperlink{limiting-the-use-of-levitation}{Limiting the use of
+%levitation 130}
+%
+%\protect\hyperlink{checking-and-managing-souls-and-soulgems}{Checking
+%and managing souls and soulgems 131}
+%
+%\protect\hyperlink{adding-and-removing-spells-and-cursing}{Adding and
+%removing spells and cursing 133}
+%
+%\protect\hyperlink{casting-spells}{Casting spells 134}
+%
+%\protect\hyperlink{managing-and-testing-for-spells}{Managing and testing
+%for spells 135}
+%
+%\protect\hyperlink{managing-and-testing-spell-effects}{Managing and
+%testing spell effects 136}
+%
+%\protect\hyperlink{testing-disease}{Testing disease 137}
+%
+%\protect\hyperlink{explosion}{Explosion 138}
+%
+%\protect\hyperlink{magic-getmodset-effects-functions}{Magic Get/Mod/Set
+%effects functions: 138}
+%
+%\protect\hyperlink{sound}{Sound 140}
+%
+%\protect\hyperlink{make-actors-speak-an-audio-file}{Make Actors speak an
+%audio file 140}
+%
+%\protect\hyperlink{playing-music}{Playing music 140}
+%
+%\protect\hyperlink{playing-sounds}{Playing sounds 141}
+%
+%\protect\hyperlink{controlling-sound}{Controlling sound 141}
+%
+%\protect\hyperlink{sound-file-formats}{Sound file formats 142}
+%
+%\protect\hyperlink{keeping-track-of-time}{Keeping track of time 143}
+%
+%\protect\hyperlink{timer}{Timer 143}
+%
+%\protect\hyperlink{morrowinds-time-related-global-variables}{Morrowind's
+%time related global variables 143}
+%
+%\protect\hyperlink{keeping-track-of-days-passed}{Keeping track of days
+%passed 144}
+%
+%\protect\hyperlink{moon-phases}{Moon phases 144}
+%
+%\protect\hyperlink{weather}{Weather 146}
+%
+%\protect\hyperlink{changing-weather}{Changing weather 146}
+%
+%\protect\hyperlink{changing-weather-settings-for-a-region}{Changing
+%weather settings for a region 146}
+%
+%\protect\hyperlink{determining-current-weather}{Determining current
+%weather 147}
+%
+%\protect\hyperlink{detecting-wind-speed}{Detecting wind speed 147}
+%
+%\protect\hyperlink{player-sleeping}{Player sleeping 148}
+%
+%\protect\hyperlink{enabling-and-disabling-player-control-and-interface}{Enabling
+%and disabling player control and interface 149}
+%
+%\protect\hyperlink{disable-player-control-functions}{Disable player
+%control functions 149}
+%
+%\protect\hyperlink{enable-player-control-functions}{Enable player
+%control functions 149}
+%
+%\protect\hyperlink{check-player-control-status}{Check player control
+%status 150}
+%
+%\protect\hyperlink{force-first-or-third-person-view}{Force first or
+%third person view 150}
+%
+%\protect\hyperlink{functions-for-character-generation-menus}{Functions
+%for character generation menus 150}
+%
+%\protect\hyperlink{determining-if-player-has-menus-open}{Determining if
+%player has menus open 151}
+%
+%\protect\hyperlink{using-menutest-to-open-and-close-menus}{Using
+%MenuTest to open and close menus 152}
+%
+%\protect\hyperlink{miscellaneous-functions-and-variables}{Miscellaneous
+%functions and variables 153}
+%
+%\protect\hyperlink{breaking-of-script-processing}{Breaking of script
+%processing 153}
+%
+%\protect\hyperlink{controlling-global-scripts}{Controlling global
+%scripts 153}
+%
+%\protect\hyperlink{fading-the-screen-in-and-out}{Fading the screen in
+%and out 154}
+%
+%\protect\hyperlink{adding-a-location-to-the-map}{Adding a location to
+%the map 154}
+%
+%\protect\hyperlink{assigning-random-values-to-variables}{Assigning
+%random values to variables 154}
+%
+%\protect\hyperlink{playing-videos}{Playing videos 155}
+%
+%\protect\hyperlink{_Toc182634660}{Levelled List functions 156}
+%
+%\protect\hyperlink{square-root}{Square root 157}
+%
+%\protect\hyperlink{water-level-functions}{Water Level Functions 157}
+%
+%\protect\hyperlink{tips-and-tricks}{Tips and tricks 160}
+%
+%\protect\hyperlink{little-helpers-text-search-copy-paste}{Little
+%helpers: Text search, copy, paste 160}
+%
+%\protect\hyperlink{alternative-scripting-editors}{Alternative scripting
+%editors 160}
+%
+%\protect\hyperlink{script-extenders}{Script Extenders 161}
+%
+%\protect\hyperlink{script-with-style-for-safer-scripting}{Script with
+%style for safer scripting 162}
+%
+%\protect\hyperlink{cleaning-up-your-mod}{Cleaning up your mod 163}
+%
+%\protect\hyperlink{on-references-persist}{On References Persist 165}
+%
+%\protect\hyperlink{the-72-hours-bug-a-brief-explanation}{The "72-Hours
+%Bug": A Brief Explanation 165}
+%
+%\protect\hyperlink{limits-of-the-script-editor}{Limits of the Script
+%Editor 166}
+%
+%\protect\hyperlink{pitfalls}{Pitfalls 167}
+%
+%\protect\hyperlink{saving-cpu-time}{Saving CPU time 168}
+%
+%\protect\hyperlink{targeted-scripts-running-global-scripts-tied-to-an-object}{Targeted
+%scripts: running "global" scripts tied to an object 170}
+%
+%\protect\hyperlink{detecting-when-the-player-does-a-load-from-saved-game}{Detecting
+%when the player does a load from saved game: 171}
+%
+%\protect\hyperlink{uses-of-the-chargenstate-variable---disabling-saving-and-menus}{Uses
+%of the CharGenState variable - Disabling saving and menus 173}
+%
+%\protect\hyperlink{detecting-use-of-scrolls-or-books}{Detecting use of
+%scrolls or books 174}
+%
+%\protect\hyperlink{making-actors-switch-between-weapons}{Making Actors
+%switch between weapons 176}
+%
+%\protect\hyperlink{_Toc182634679}{Making NPCs switch between spell
+%"sets" 177}
+%
+%\protect\hyperlink{making-actors-lie-down}{Making Actors lie down 177}
+%
+%\protect\hyperlink{scripted-teleporting}{Scripted teleporting 181}
+%
+%\protect\hyperlink{interaction-between-mods}{Interaction between mods
+%183}
+%
+%\protect\hyperlink{safely-starting-global-scripts--avoiding-the-main-script}{Safely
+%starting global scripts- avoiding the main script 184}
+%
+%\protect\hyperlink{use-sound-to-detect-events}{Use sound to detect
+%events 185}
+%
+%\protect\hyperlink{large-battles}{Large battles 185}
+%
+%\protect\hyperlink{a-guide-to-making-ridable-objects}{A guide to making
+%ridable objects 186}
+%
+%\protect\hyperlink{selecting-objects}{Selecting objects 186}
+%
+%\protect\hyperlink{creatingdeleting-objects}{Creating/Deleting objects
+%186}
+%
+%\protect\hyperlink{falling-off-from-objects}{Falling off from objects
+%187}
+%
+%\protect\hyperlink{collision-detection}{Collision detection 188}
+%
+%\protect\hyperlink{savegame-issue}{Savegame issue 188}
+%
+%\protect\hyperlink{trigonometry-script---fast-sine-and-cosine}{Trigonometry
+%script - fast sine and cosine 189}
+%
+%\protect\hyperlink{mannequins}{Mannequins 198}
+%
+%\protect\hyperlink{is-she-looking-at-me}{Is she looking at me? 201}
+%
+%\protect\hyperlink{cinematic-sequence}{Cinematic sequence 203}
+%
+%\protect\hyperlink{troubleshooting}{Troubleshooting 204}
+%
+%\protect\hyperlink{general-hints}{General hints 204}
+%
+%\protect\hyperlink{the-console}{The Console 204}
+%
+%\protect\hyperlink{using-the-console-to-check-variables}{Using the
+%Console to check variables: 204}
+%
+%\protect\hyperlink{using-the-console-to-quickly-test-scripts}{Using the
+%Console to quickly test scripts: 204}
+%
+%\protect\hyperlink{error-messages-malfunctions-and-common-causes}{Error
+%messages, malfunctions and common causes 205}
+%
+%\protect\hyperlink{in-the-editor}{In the editor 205}
+%
+%\protect\hyperlink{in-game-error-messages}{In game error messages: 205}
+%
+%\protect\hyperlink{appendix}{Appendix 208}
+%
+%\protect\hyperlink{new-functions-that-come-with-tribunal}{New functions
+%that come with TRIBUNAL 208}
+%
+%\protect\hyperlink{changes-fixes-to-morrowind-scripting}{Changes / fixes
+%to Morrowind scripting: 208}
+%
+%\protect\hyperlink{index-of-new-tribunal-script-functions}{Index of new
+%Tribunal Script Functions: 208}
+%
+%\protect\hyperlink{new-functions-that-come-with-bloodmoon}{New functions
+%that come with BLOODMOON 209}
+%
+%\protect\hyperlink{index-of-new-bloodmoon-script-functions-and-variables}{Index
+%of new Bloodmoon Script Functions and variables: 209}
+%
+%\protect\hyperlink{previously-undocumented-functions}{Previously
+%undocumented functions 210}
+%
+%\protect\hyperlink{variable-type-functions}{Variable-type functions:
+%211}
+%
+%\protect\hyperlink{local-variables-that-get-set-by-the-game}{Local
+%variables that get set by the game: 211}
+%
+%\protect\hyperlink{local-variables-that-you-can-set-as-a-flag}{Local
+%variables that you can set as a flag: 211}
+%
+%\protect\hyperlink{special-globals}{Special Globals 211}
+%
+%\protect\hyperlink{game-units}{Game units: 213}
+%
+%\protect\hyperlink{derived-attribute-calculations}{Derived attribute
+%calculations: 213}
+%
+%\protect\hyperlink{_Toc53412751}{Magic Effect List 215}
+%
+%\protect\hyperlink{list-of-console-commands}{List of console commands
+%216}
+%
+%\protect\hyperlink{game-settings}{Game Settings 219}
+%
+%\protect\hyperlink{index}{Index 226}
 
 \hypertarget{foreword-to-the-ninth-edition}{%
 \subsubsection{\texorpdfstring{\hfill\break
@@ -1177,11 +1180,7 @@ This is the reason why the following script spits out a continuous
 stream of messages (if attached to an Object or NPC in the same cell as
 the player). Try it, if you want:
 
-Begin Message\_script
-
-MessageBox "Thousands of useless Messages"
-
-End Message\_script
+\lstinputlisting{scripts/Message_script.txt}
 
 This example is relatively harmless, but imagine what happens if you
 would use a line of code that adds an item to the players inventory, or
@@ -1193,24 +1192,7 @@ let's go on with our tutorial script: we need to declare a variable and
 use it to make sure the message is only displayed once. \textbf{Change
 the script to the following:}
 
-Begin my\_first\_script
-
-Short controlvar
-
-If ( OnActivate == 1 )
-
-If ( controlvar == 0)
-
-MessageBox "Voiceless it cries, wingless flutters, toothless bites,
-mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
-
-Set controlvar to 1
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/my_first_script02.txt}
 
 (Please note that the MessageBox command should be in one line in the
 editor!)
@@ -1288,56 +1270,7 @@ not always be necessary, but it's safe.
 
 Please edit the script to the following:
 
-Begin my\_first\_script
-
-Short controlvar
-
-Short button
-
-If ( OnActivate == 1 )
-
-If ( controlvar == 0)
-
-MessageBox "Voiceless it cries, wingless flutters, toothless bites,
-mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
-
-Set controlvar to 1
-
-elseif controlvar \textgreater{} 1
-
-activate
-
-endif
-
-endif
-
-if (controlvar == 1)
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-return
-
-elseif ( button == 2)
-
-MessageBox "The answer was correct"
-
-Activate
-
-set controlvar to 2
-
-else
-
-MessageBox "The answer was wrong"
-
-set controlvar to -1
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/my_first_script03.txt}
 
 Take a look at the part that starts with "\emph{if (controlvar == 1)}".
 We have set controlvar to 1 as soon as the chest got activated. Now we
@@ -1358,6 +1291,8 @@ answer, so we can use the "\emph{else}" command here. In this case we
 tell the player what a fool he was and the chest is not activated.
 
 Now look at the little addition at the top of the script:
+
+% Excerpt from external script.
 
 If ( OnActivate == 1 )
 
@@ -1392,6 +1327,8 @@ not quite -- what we wanted. After clicking the correct answer, the
 chests inventory doesn't open as intended. Now, the logic above seemed
 fine, so what is wrong? \textbf{Let's try the following (change the
 corresponding part of your script according to the fragment below):}
+
+% Excerpt from external script.
 
 if (controlvar == 1)
 
@@ -1435,6 +1372,8 @@ commands each time the script is processed (every frame)! That's why we
 can't close the inventory -- it gets reopened immediately. \textbf{So
 change the following part of the script:}
 
+% Excerpt from external script.
+
 elseif ( controlvar == 2 )
 
 Activate
@@ -1470,78 +1409,7 @@ Now, we need to put this curse on the player. For this we use the
 using the \emph{RemoveSpell} function, for this we need to make a timer.
 Edit your script again:
 
-Begin my\_first\_script
-
-Short controlvar
-
-Short button
-
-Float timer
-
-If ( OnActivate == 1 )
-
-If ( controlvar == 0)
-
-MessageBox "Voiceless it cries, wingless flutters, toothless bites,
-mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
-
-Set controlvar to 1
-
-elseif controlvar \textgreater{} 1
-
-activate
-
-endif
-
-endif
-
-if (controlvar == 1)
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-return
-
-elseif ( button == 2)
-
-MessageBox "The answer was correct"
-
-Activate
-
-set controlvar to 2
-
-else
-
-MessageBox "The answer was wrong"
-
-Player-\textgreater AddSpell, "Frost\_Curse"
-
-set controlvar to -1
-
-Endif
-
-elseif ( controlvar == 2 )
-
-Activate
-
-Set controlvar to 3
-
-elseif ( controlvar == -1 )
-
-Set timer to ( timer + GetSecondsPassed )
-
-if timer \textgreater{} 10
-
-Player-\textgreater RemoveSpell, "Frost\_Curse"
-
-set controlvar to -2
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/my_first_script04.txt}
 
 Let's go over this. Player-\textgreater AddSpell, "Frost\_Curse" puts
 the curse we created earlier on the player. Note how we need to use
@@ -1549,6 +1417,8 @@ the curse we created earlier on the player. Note how we need to use
 Otherwise we would curse the chest (which is the default object, because
 the script is attached to it), which wouldn't make a lot of
 sense\ldots{}
+
+% Excerpt from external script.
 
 This bit:
 
@@ -1601,84 +1471,7 @@ removed again? How would you fix this?
 
 This is the final script:
 
-Begin my\_first\_script
-
-Short controlvar
-
-Short button
-
-Float timer
-
-If ( MenuMode == 1 )
-
-Return
-
-Endif
-
-If ( OnActivate == 1 )
-
-If ( controlvar == 0 )
-
-MessageBox "Voiceless it cries, wingless flutters, toothless bites,
-mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
-
-Set controlvar to 1
-
-elseif ( controlvar \textgreater{} 1 )
-
-activate
-
-endif
-
-endif
-
-if ( controlvar == 1 )
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-return
-
-elseif ( button == 2 )
-
-MessageBox "The answer was correct"
-
-Activate
-
-set controlvar to 2
-
-else
-
-MessageBox "The answer was wrong"
-
-Player-\textgreater AddSpell, "Frost\_Curse"
-
-set controlvar to -1
-
-Endif
-
-elseif ( controlvar == 2 )
-
-Activate
-
-Set controlvar to 3
-
-elseif ( controlvar == -1 )
-
-Set timer to ( timer + GetSecondsPassed )
-
-if timer \textgreater{} 10
-
-Player-\textgreater RemoveSpell, "Frost\_Curse"
-
-set controlvar to -2
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/my_first_script05.txt}
 
 \hypertarget{how-to-learn-more}{%
 \section{How to learn more}\label{how-to-learn-more}}
@@ -1764,39 +1557,7 @@ A simple way to ensure variables are saved is to use a startscript (only
 available with expansions); so for example the startscript might look
 something like this:
 
-begin KeepVarsScript
-
-if ( ScriptRunning, MyScript == 0 )
-
-set MyScript.KeepVars to 1
-
-StartScript MyScript
-
-endif
-
-StopScript KeepVarsScript
-
-end
-
-\ldots and the script "MyScript" might look like this:
-
-begin MyScript
-
-short KeepVars
-
-if ( KeepVars == 1 )
-
-set KeepVars to 0
-
-StopScript MyScript
-
-return
-
-endif
-
-;main body of script goes here
-
-end
+\lstinputlisting{scripts/KeepVarsScript.txt}
 
 It is possible to use the StartScript function to run global scripts
 that are tied to an object or Actor. These are called "targeted
@@ -2859,58 +2620,7 @@ who first made it). It was supposed to ask the player if he wanted to
 recycle an item when it was equipped, and then replace that item with
 the "recycled" version.
 
-Begin scr\_thing
-
-short button
-
-short OnPcEquip
-
-short state
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-if ( OnPCEquip == 1 ) ; when the item is equipped
-
-set state to 1
-
-set OnPCEquip to 0 ; do this once per equip event\ldots{}
-
-endif
-
-if ( state ==1 )
-
-MessageBox "recycle?" , "yes", "no"
-
-set state to 2
-
-elseif ( state == 2 )
-
-set button to GetButtonPressed
-
-if ( button == 0 )
-
-PlaySound "mysticism cast"
-
-player-\textgreater{}\textbf{RemoveItem} "item\_a", 1 ;this line crashes
-the game!!!
-
-player-\textgreater AddItem "item\_b", 1
-
-set state to 0
-
-elseif ( button == 1 )
-
-set state to 0 ; once done, reset everything
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/scr_thing.txt}
 
 It worked nice enough without the \emph{RemoveItem} function in it, but
 with that line it would crash. The reason was that this script was
@@ -2999,22 +2709,7 @@ multiple use (set OnPCSoulGemUse to 0 ).
 
 Example: this is how Azura's star becomes an inexhaustible soulgem:
 
-begin AzurasStarScript
-
-;this is for Azura's Star. A never ending soulgem item. Mucho good. Kids
-love it.
-
-short OnPCSoulGemUse
-
-;they use it, so give them a new one
-
-if ( \textbf{OnPCSoulGemUse} == 1 )
-
-Player-\textgreater additem, "Misc\_soulgem\_Azura" 1
-
-endif
-
-end
+\lstinputlisting{scripts/AzurasStarScript.txt}
 
 \hypertarget{force-equipping-an-item}{%
 \subsubsection{\texorpdfstring{\hfill\break
@@ -3073,39 +2768,7 @@ quick-keys. Bugger! Now you have to fight with a chitin club to the end
 of your days, which will probably come soon The player can still use
 magic however.
 
-Begin cursed\_item
-
-short state
-
-\textbf{short OnPCEquip}
-
-if ( \textbf{OnPCEquip} == 0 ) ; item is not equipped
-
-if ( state == 0 ); if club has never been equipped, don't do anything
-yet.
-
-return
-
-else
-
-Player-\textgreater{}\textbf{Equip}, "cursed\_club" ; reequip the item!
-
-MessageBox "The item is cursed, it doesn't leave your hand" ;taunt the
-player
-
-endif
-
-else
-
-if ( state == 0 ) ;first time equipped. The trap snaps shut
-
-set state to 1
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/cursed_item.txt}
 
 \hypertarget{detecting-if-an-item-has-been-equipped}{%
 \subsubsection{Detecting if an item has been
@@ -3229,56 +2892,12 @@ script itself, as this causes a crash (see RemoveItem function). If you
 have a lot of SkipEquip items, make the item call a global script
 (StartScript) that adds and removes the item, e.g.:
 
-Begin doubling\_fix
-
-Player-\textgreater Additem "Item ID", 1
-
-Player-\textgreater RemoveItem "Item ID", 1
-
-StopScript doubling\_fix
-
-End
+\lstinputlisting{scripts/doubling_fix.txt}
 
 \textbf{Sample Script:} Here is a short script I made for a werewolf
 mod, it makes an item non-equippable under certain conditions:
 
-Begin non\_equippable
-
-; keeps lycantrophic PC's from equipping werewolf hunter items for
-balancing reasons
-
-; if the PC equips these before becoming a werwolf, he can wear them
-until he takes them off
-
-; but then can't reequip them. So after the first transform he can't
-equip them again
-
-\textbf{short PCSkipEquip}
-
-\textbf{short OnPCEquip}
-
-if ( PCWerewolf != 1 ); if player is not a ww, he can use the armor
-
-set \textbf{PCSkipEquip} to 0
-
-return
-
-else
-
-set \textbf{PCSkipEquip} to 1
-
-endif
-
-if ( \textbf{OnPCEquip} == 1 )
-
-MessageBox "This item is enchanted with werewolf bane-spells. You can
-not wear it!"
-
-set \textbf{OnPCEquip} to 0
-
-endif
-
-End
+\lstinputlisting{scripts/non_equippable.txt}
 
 \hypertarget{checking-for-presence-of-items-in-inventory}{%
 \subsubsection{Checking for presence of items in
@@ -3435,128 +3054,9 @@ object is fully damaged in one hit. When the object is fully damaged, it
 explodes sending shards into the PC's face unless he has a shield or a
 helmet equipped.
 
-Begin breakme
+% Bug here? no end
 
-float hitsleft
-
-float hitpercent
-
-short damage
-
-short tempdamage
-
-short weapon
-
-short doOnce
-
-short shieldType
-
-short hasHammer
-
-short hitRock
-
-if ( doOnce == 0 )
-
-set hitsleft to 10000
-
-set doOnce to 1
-
-endif
-
-if ( OnActivate )
-
-set hasHammer to ( player-\textgreater{}\textbf{HasItemEquipped}
-"RockSplitter" )
-
-if ( hasHammer == 1 )
-
-MessageBox "Rock Splitter unleashes its mighty force..."
-
-set hitsLeft to 0
-
-else
-
-MessageBox "You hit the rock with your current weapon..."
-
-set weapon to ( player-\textgreater{}\textbf{GetWeaponType} )
-
-set damage to ( player-\textgreater getstrength )
-
-set tempdamage to 5
-
-if ( weapon == -1 )
-
-set tempdamage to 1
-
-endif
-
-if ( weapon \textgreater= 9 )
-
-set tempdamage to 2
-
-endif
-
-if ( weapon == 4 )
-
-set tempdamage to 10
-
-endif
-
-if ( weapon == 8 )
-
-set tempdamage to 8
-
-endif
-
-set damage to damage * tempdamage
-
-set hitsleft to hitsleft - damage
-
-endif
-
-if ( hitsleft \textless= 0 )
-
-disable
-
-set shieldType to ( player-\textgreater{}\textbf{GetArmorType 8} )
-
-if ( shieldType == -1 )
-
-set shieldType to ( player-\textgreater{}\textbf{GetArmorType 0} )
-
-if ( shieldType == -1 )
-
-MessageBox "...and the rock shatters sending jagged shards into your
-eyes."
-
-Player-\textgreater ModHealth -50
-
-else
-
-MessageBox "...and the rock shatters, deadly shards glancing off your
-helmet."
-
-Endif
-
-else
-
-MessageBox "...and the rock shatters, deadly shards glancing off your
-shield."
-
-Endif
-
-else
-
-set hitpercent to hitsleft / 100
-
-set hitpercent to 100 - hitpercent
-
-MessageBox "...and the rock is \%.2f percent damaged but remains
-intact.", hitpercent
-
-endif
-
-endif
+\lstinputlisting{scripts/breakme.txt}
 
 \hypertarget{usedonme-function}{%
 \subsubsection{UsedOnMe function}\label{usedonme-function}}
@@ -3642,67 +3142,7 @@ This is an \textbf{example} after a script I once picked up on the
 forums that makes a platform slowly move out and back once the player
 stands on it:
 
-Begin platform\_script
-
-Short PlatformMoving
-
-Short ActivateMe
-
-Float Timer
-
-If ( GetStandingPC == 1 )
-
-Set ActivateMe to 1
-
-Endif
-
-If ( ActivateMe == 1 )
-
-If ( PlatformMoving == 0 )
-
-Set Timer to Timer + GetSecondsPassed
-
-If ( Timer \textless= 15 )
-
-"floating\_platform\_01"-\textgreater{}\textbf{MoveWorld} X 10
-
-Else
-
-Set Timer to 0
-
-Set PlatformMoving to -1
-
-Endif
-
-Endif
-
-If ( PlatformMoving == -1 )
-
-Set Timer to Timer + GetSecondsPassed
-
-If ( Timer \textless= 15 )
-
-"floating\_platform\_01"-\textgreater{}\textbf{MoveWorld} X -10
-
-Else
-
-Set Timer to 0
-
-Set PlatformMoving to 0
-
-Set ActivateMe to -1
-
-Endif
-
-Endif
-
-Else
-
-"floating\_platform\_01"-\textgreater SetAtStart
-
-Endif
-
-End platform\_script
+\lstinputlisting{scripts/platform_script.txt}
 
 \hypertarget{cellupdate}{%
 \subsubsection{CellUpdate}\label{cellupdate}}
@@ -3759,140 +3199,7 @@ Mournhold sewer (Tribunal). It demonstrates how \emph{SetPos} and
 \emph{SetAngle} can be used instead of \emph{MoveWorld} and
 \emph{Rotate} to produce fluid movements:
 
-begin floatAboveStartHeight
-
-float timer
-
-float swingTime
-
-float startAngle
-
-float startHeight
-
-float currangle
-
-float xvalue
-
-float zvalue
-
-float zoffset
-
-float tmpoffset
-
-float weightoffset
-
-float waterlevel
-
-short reset
-
-short initialized
-
-if ( initialized == 0 ); this section stores the starting height and
-facing of the object
-
-set startAngle to \textbf{GetAngle, X}
-
-set startHeight to \textbf{GetPos, Z}
-
-set swingTime to 1
-
-set initialized to 1
-
-endif
-
-if ( MenuMode == 0 )
-
-set waterlevel to GetWaterLevel
-
-if ( waterlevel \textgreater{} startHeight )
-
-if ( timer == 0 )
-
-if ( reset == 0 )
-
-set timer to Random 100
-
-set timer to timer / 4
-
-endif
-
-endif
-
-set timer to ( timer + GetSecondsPassed )
-
-set currangle to \textbf{GetAngle} X
-
-;These set the amount to move or rotate depending on framerate:
-
-set xvalue to 10 * GetSecondsPassed
-
-set zvalue to 5 * GetSecondsPassed
-
-; the crate sways around its x axis:
-
-;rotate up
-
-if ( timer \textless{} swingTime )
-
-set currangle to currangle + xvalue
-
-\textbf{SetAngle} X currangle
-
-set zoffset to zoffset + zvalue
-
-;rotate down
-
-elseif ( timer \textless{} (swingTime * 3) )
-
-set currangle to currangle - xvalue
-
-\textbf{SetAngle} X currangle
-
-set zoffset to zoffset - zvalue
-
-;up again
-
-elseif (timer \textless{} (swingTime * 4 ) )
-
-set currangle to currangle + xvalue
-
-\textbf{SetAngle} X currangle
-
-set zoffset to zoffset + zvalue
-
-;reset timer to zero
-
-else
-
-set timer to 0
-
-set reset to 1
-
-set zoffset to 0
-
-\textbf{SetAngle}, x, startangle
-
-endif
-
-set tmpoffset to waterlevel
-
-set tmpoffset to tmpoffset + zoffset
-
-; The crate bobs up and down
-
-\textbf{SetPos} Z tmpoffset
-
-Else ; Waterlevel is normal
-
-\textbf{SetAngle}, X, startAngle
-
-\textbf{SetPos} Z startHeight
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/floatAboveStartHeight.txt}
 
 \hypertarget{positioning-an-object-in-the-world-or-in-an-interior-cell}{%
 \subsubsection{Positioning an object in the world or in an interior
@@ -3949,62 +3256,7 @@ Monica21)
 
 \textbf{Sample Script:} A simple teleport ring could look like this:
 
-Begin TeleportScript
-
-;Attached e.g. to a ring
-
-short status
-
-short button
-
-short OnPCEquip
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-if ( OnPCEquip == 1 )
-
-Set Status to 10
-
-Set OnPCEquip to 0
-
-Endif
-
-If ( status == 10 ); Display menu
-
-MessageBox "Teleport me to", "Balmora", "Vivec", "Cancel"
-
-Set Status to 20
-
-Elseif ( status == 20 ); wait for response
-
-Set button to GetButtonPressed
-
-If ( button == -1 ) ; no answer yet
-
-Return
-
-Elseif ( button == 0 ); selected Balmora
-
-\textbf{Player-\textgreater PositionCell -21278, -17613, 534, 0,
-"Balmora (-3, -3)"}
-
-Elseif ( button == 1 ); Selected Vivec
-
-\textbf{Player-\textgreater Position 29872, -82108, 578, 180}
-
-Elseif ( button \textgreater= 2 ) ; selected cancel
-
-Set status to 0
-
-Endif
-
-Endif
-
-End
+\lstinputlisting{scripts/TeleportScript.txt}
 
 Note that both targets are outdoor cells and the different formats used.
 If you try to teleport to an unsafe place (clipping with an object or
@@ -4194,73 +3446,7 @@ object at 100 units above the activated reference with 45 degree Z
 rotation. If the key is selected, it is created at that same coordinate
 and rotation in the cell ``key room'' rather than the current cell.
 
-Begin makethingsimple
-
-short questionAsked
-
-short button
-
-float myX
-
-float myY
-
-float myZ
-
-if ( MenuMode )
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-if ( questionAsked == 0 )
-
-MessageBox, "Create new..." "...Pot" "...Key"
-
-set questionAsked to 1
-
-set myX to GetPos X
-
-set myY to GetPos Y
-
-set myZ to GetPos Z + 100
-
-endif
-
-endif
-
-if ( questionAsked != 0 )
-
-if ( questionAsked == 1 )
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-else
-
-if ( button == 0 )
-
-\textbf{PlaceItem} "Misc\_pot\_redware\_01" myX myY myZ 45
-
-elseif ( button == 1 )
-
-\textbf{PlaceItemCell} "misc key" "key room" myX myY myZ 45
-
-endif
-
-set questionAsked to 0
-
-set button to -1
-
-endif
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/makethingsimple.txt}
 
 \hypertarget{rotation-and-angles}{%
 \subsection{\texorpdfstring{Rotation and angles
@@ -4426,93 +3612,7 @@ object.
 When this script is placed on a reference, activating that reference
 gives the user the ability to change that reference's scale.
 
-Begin scalescript
-
-short questionAsked
-
-short button
-
-float direction
-
-float currscale
-
-float tempscale
-
-if ( MenuMode )
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-if ( questionAsked == 0 )
-
-MessageBox, "Make this object..." "...Grow" "...Shrink"
-
-set questionAsked to 1
-
-endif
-
-endif
-
-if ( questionAsked == 1 )
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-else
-
-if ( button == 0 )
-
-set direction to 1
-
-elseif ( button == 1 )
-
-set direction to -1
-
-endif
-
-set questionAsked to 0
-
-set button to 0
-
-endif
-
-endif
-
-if ( direction != 0 )
-
-set tempscale to .3 * GetSecondsPassed
-
-set tempscale to tempscale * direction
-
-\textbf{ModScale} tempscale
-
-set currscale to \textbf{GetScale}
-
-if ( direction == -1 )
-
-if ( currscale \textless= .5 )
-
-set direction to 0
-
-endif
-
-else
-
-if ( currscale \textgreater= 2 )
-
-set direction to 0
-
-endif
-
-endif
-
-endif
-
-end scalescript
+\lstinputlisting{scripts/scalescript.txt}
 
 \hypertarget{determining-location-relative-position-and-movement}{%
 \subsection{\texorpdfstring{\hfill\break
@@ -4537,62 +3637,7 @@ fake exterior).
 The following is a global sample script by Killgore. If you want to try
 it out start it by typing "StartScript Outside\_Check" in the console.
 
-Begin Outside\_Check
-
-short doonce
-
-if (MenuMode == 1)
-
-Return
-
-EndIf
-
-if (doOnce == 0) ;if you're in some brand new cell\\
-;or it just started
-
-if ( \textbf{GetInterior} == 1 )
-
-MessageBox "1: inside"
-
-elseif ( \textbf{GetInterior} == 0 )
-
-MessageBox "0: outside"
-
-else
-
-MessageBox "mystery else"
-
-endif
-
-set doOnce to 1
-
-Return
-
-endif
-
-if (doOnce == 1)
-
-if (CellChanged == 0) Return
-
-else ;if the player changes cells that frame..
-
-set doOnce to 2 ;it waits an extra frame
-
-endif
-
-Return
-
-endif
-
-if (doOnce == 2) ;then starts over and prints
-
-set doOnce to 0
-
-Return
-
-endif
-
-End Outside\_Check
+\lstinputlisting{scripts/Outside_Check.txt}
 
 \hypertarget{determining-the-players-cell}{%
 \subsubsection{Determining the players
@@ -4617,23 +3662,7 @@ Sample Script:
 This small Bethesda script checks for the PC leaving a certain area
 until removing a certain item from an NPC:
 
-Begin DrothPost
-
-if ( GetJournalIndex "MS\_EstateSale" \textgreater= 70 )
-
-if ( \textbf{GetPCCell} "Mournhold, Geon Auline's House" == 0 )
-
-"Geon Auline"-\textgreater RemoveItem "silver dagger\_droth\_unique" 1
-
-Journal MS\_EstateSale 80
-
-StopScript DrothPost
-
-endif
-
-endif
-
-End DrothPost
+\lstinputlisting{scripts/DrothPost.txt}
 
 \hypertarget{distance-of-one-object-to-another}{%
 \subsubsection{Distance of one object to
@@ -4716,49 +3745,7 @@ fire) to make a fire pit where the flames actually start slowly and die
 down in the evening on a daily schedule -- the fire objects original Z
 position is 511:
 
-Begin \_HB\_Scheduled fire
-
-short control\_fire
-
-; The script is attached to an NPC that guards the fire.
-
-;******* this controls the fires schedule:
-
-if ( GetDistance, "HB\_Furn\_De\_Firepit\_camp" \textless{} 600 )
-
-If ( GameHour \textless{} 17 )
-
-if ( HB\_Light\_Fire\_camp-\textgreater{}\textbf{GetPos Z} \textgreater=
-400 )
-
-HB\_Light\_Fire\_camp-\textgreater MoveWorld z, -0.1 ; Move fire down
-
-else
-
-HB\_Light\_Fire\_camp-\textgreater disable
-
-endif
-
-elseif ( GameHour \textgreater= 17)
-
-HB\_Light\_Fire\_camp-\textgreater enable
-
-if ( HB\_Light\_Fire\_camp-\textgreater{}\textbf{GetPos Z} \textless{}
-511 )
-
-HB\_Light\_Fire\_camp-\textgreater MoveWorld z, 0.1 ; move fire up
-
-else
-
-HB\_Light\_Fire\_camp-\textgreater enable
-
-endif
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/_HB_Scheduled fire.txt}
 
 GetAngle , axis(x/y/z) (returns float)
 
@@ -4793,49 +3780,7 @@ it every frame.
 
 \textbf{Sample Script}:
 
-Begin balynScript
-
-float timer
-
-short doOnce
-
-{[}\ldots{]}; references to journal settings
-
-Set timer to ( timer + GetSecondsPassed )
-
-if ( timer \textless{} 5 \textbf{); A timer to avoid testing to often
-(avoids performance problems)}
-
-Return
-
-endif
-
-Set timer to 0
-
-if ( doOnce == 0 )
-
-if ( GetDistance Player \textless= 1024 )
-
-if ( player-\textgreater GetDistance "hlaalu\_loaddoor\_ 02\_balyn"
-\textless= 256 )
-
-if ( \textbf{GetLOS} Player == 1 )
-
-ForceGreeting
-
-Journal DA\_Mephala 55
-
-set doOnce to -1
-
-endif
-
-endif
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/balynScript.txt}
 
 \hypertarget{section-2}{%
 \subsubsection{}\label{section-2}}
@@ -4861,52 +3806,7 @@ call it every 3 seconds).
 \textbf{Sample script:} The player must approach an object undetected --
 if not he is "caught"
 
-Begin jeanneScript
-
-float timer
-
-short nolore
-
-if ( GetJournalIndex "EB\_Bone" \textless{} 20 )
-
-Return
-
-endif
-
-if ( GetJournalIndex EB\_Bone \textgreater= 40 )
-
-Return
-
-endif
-
-Set timer to ( timer + GetSecondsPassed )
-
-if ( timer \textless{} 5 ) \textbf{;this makes sure GetDetected is only
-called every 5 seconds}
-
-Return
-
-endif
-
-Set timer to 0
-
-if ( GetDistance Player \textless= 1024 )
-
-if ( player-\textgreater GetDistance "com\_chest\_02 " \textless=128 )
-
-if ( \textbf{GetDetected} Player == 1 )
-
-ForceGreeting ;\textbf{The player has been caught and will be punished}
-
-Journal EB\_Bone 50
-
-endif
-
-endif
-
-endif
-
-End jeanneScript
+\lstinputlisting{scripts/jeanneScript.txt}
 
 GetDetected calling an NPC's ID if there's more than one reference in
 the game will return nothing. For example:
@@ -4955,60 +3855,12 @@ particular (and no there wasn't a menumode return in that script).
 in the game, CellChanged is the trigger to disable the slave -- the
 slave has left for a better future:
 
-Begin SlaveScript
-
-{[}\ldots{]}
-
-if ( slaveStatus == 3 )
-
-if ( GetCurrentAIPackage == 3 )
-
-AIWander 512 0 0 0 0 0 0 0 0 0 0 0
-
-endif
-
-if ( GetItemCount Slave\_Bracer\_Left \textgreater{} 0 )
-
-Drop Slave\_Bracer\_Left 1
-
-endif
-
-if ( GetItemCount Slave\_Bracer\_Right \textgreater{} 0 )
-
-Drop Slave\_Bracer\_Right 1
-
-endif
-
-if ( \textbf{CellChanged} == 1 )
-
-Disable
-
-endif
-
-endif
-
-end slaveScript
+\lstinputlisting{scripts/SlaveScript.txt}
 
 another nice example is the Gateway Haunt's script. This spectre always
 comes back just when you are not watching:
 
-Begin ResurrectHaunt
-
-;town\_Sadrith quest
-
-;gateway\_haunt resurrects until journal town\_Sadrith \textgreater= 35
-
-if ( \textbf{CellChanged} == 1 )
-
-if ( gateway\_haunt-\textgreater GetHealth \textless{} 1 )
-
-gateway\_haunt-\textgreater Resurrect
-
-endif
-
-endif
-
-end ResurrectHaunt
+\lstinputlisting{scripts/ResurrectHaunt.txt}
 
 \hypertarget{detect-player-traveling}{%
 \subsubsection{Detect player traveling}\label{detect-player-traveling}}
@@ -5069,42 +3921,12 @@ Actor) steps on that object.
 My sample script is used to light fires in a hall on as soon as the
 player steps on a particular piece of floor:
 
-Begin \emph{HBHall}Lighting
-
-if ( \textbf{GetStandingPC} == 1 )
-
-set HB\_hallfire to 1
-
-endif
-
-end
+\lstinputlisting{scripts/HBHallLighting.txt}
 
 HB\_hallfire is a global variable, used to turn on the fire. This is the
 script for the fire:
 
-Begin \emph{HBHallfire}on
-
-if ( HB\_hallfire == 1 )
-
-if ( GetPos, z, \textless{} -736 )
-
-MoveWorld, z, 3 ; fire rises, until its reached full height
-
-if ( GetPos, z, \textgreater{} -780 )
-
-enable
-
-endif
-
-endif
-
-else
-
-disable
-
-endif
-
-end
+\lstinputlisting{scripts/HBHallfireon.txt}
 
 \hypertarget{hurting-an-actor-standing-on-an-object}{%
 \subsubsection{Hurting an Actor standing on an
@@ -5130,27 +3952,7 @@ accepts float variables.
 \textbf{Sample script:} The effect is probably best known from the lava
 fields:
 
-begin lava
-
-if ( menumode == 1 )
-
-return
-
-endif
-
-if ( CellChanged == 0 )
-
-if ( GetSoundPlaying "lava layer" == 0 )
-
-PlayLoopSound3DVP "lava layer", 1.0, 1.0
-
-endif
-
-endif
-
-\textbf{HurtStandingActor}, 20.0 ;20 pts of damage a sec
-
-end lava
+\lstinputlisting{scripts/lava01.txt}
 
 \hypertarget{object-collision-functions}{%
 \subsubsection{Object Collision
@@ -5187,21 +3989,7 @@ When this script is placed on an object, any Actor touching that object
 will take damage. A different message is given depending on whether the
 Actor is the PC or someone else.
 
-Begin hurtActor
-
-if ( \textbf{GetCollidingPC} == 1 )
-
-MessageBox "You scream in pain as you touch the rock."
-
-Elseif ( \textbf{GetCollidingActor} == 1 )
-
-MessageBox "Nearby someone screams in pain."
-
-Endif
-
-HurtCollidingActor 100
-
-End
+\lstinputlisting{scripts/hurtActor.txt}
 
 \hypertarget{section-3}{%
 \subsection{}\label{section-3}}
@@ -5275,71 +4063,12 @@ The following script demonstrates the use of OnActivate nicely. It is
 attached to a container object, a chest that does NOT advertise its trap
 like the normal in-game ones do:
 
-Begin Trap\_script\\
-\strut \\
-short done\\
-\strut \\
-if ( \textbf{OnActivate} == 1 )\\
-if ( done == 1 ) ;do-once condition\\
-\textbf{Activate}\\
-return\\
-else\\
-Cast, "flame", Player ;damage to player\\
-set done to 1\\
-\textbf{Activate} ; Call standard action: the chest opens\\
-endif\\
-endif\\
-\strut \\
-End trap\_script
+\lstinputlisting{scripts/Trap_script.txt}
 
-\textbf{Notes}: According to my testing, the activate function can not
-be used by itself, without OnActivate in the same script. The OnActivate
-and Activate functions can be in different parts of the script, though.
-However, Activate will not work before OnActivate has not at least been
-called once. There have been reports that the object also must have been
-manually activated at least once within the last 72 hours, so apparently
-the game eventually forgets that OnActivate has been called previously.
-Containers require manual activation each load session (forum info /
-Phaedrus). Play around with this testscript (I had it attached to a
-door) to see for yourself:
+\textbf{Notes}: According to my testing, the activate function can not be used by itself, without OnActivate in the same script. The OnActivate and Activate functions can be in different parts of the script, though. However, Activate will not work before OnActivate has not at least been called once. There have been reports that the object also must have been manually activated at least once within the last 72 hours, so apparently the game eventually forgets that OnActivate has been called previously. Containers require manual activation each load session (forum info / Phaedrus). Play around with this testscript (I had it attached to a door) to
+see for yourself:
 
-Begin GBG\_closing\_door
-
-Short done
-
-if ( \textbf{OnActivate} == 1 )
-
-MessageBox "Thank you for activating"
-
-endif
-
-if ( done == 0 )
-
-If ( GetDistance, Player \textless{} 100 )
-
-set done to 1
-
-MessageBox "Player close"
-
-endif
-
-endif
-
-if ( done == 1 )
-
-If ( GetDistance, Player \textgreater{} 200 )
-
-MessageBox "Sesame"
-
-\textbf{Activate}
-
-set done to 0
-
-endif
-
-endIf
-
-End
+\lstinputlisting{scripts/GBG_closing_door.txt}
 
 There have also been various reports about difficulties with on
 OnActivate in general, in my experience, avoiding to use more than one
@@ -5351,19 +4080,7 @@ the Player icon.
 Info from the UESP: There is an undocumented feature in the Activate
 function by specifying the player after the function, for example:
 
-begin RemoteContainer
-
-short OnPCEquip
-
-if ( OnPCEquip == 1 )
-
-set OnPCEquip to 0
-
-"dh\_remote\_chest\_01"-\textgreater Activate, player
-
-endif
-
-end
+\lstinputlisting{scripts/RemoteContainer.txt}
 
 If the container is persistent (references persist) this script should
 open the container wherever the player is. This is a great way to create
@@ -5402,31 +4119,7 @@ Example script:
 Here is a sample script by qwert, which makes a chest function as a
 security skill-training device by constantly relocking it:
 
-Begin PC\_Security\_Skill\_Trainer
-
-float timer
-
-if ( menumode == 1 )
-
-return
-
-endif
-
-set timer to timer + GetSecondsPassed
-
-if ( timer \textgreater{} 10 )
-
-set timer to 0
-
-endif
-
-if ( timer == 0 ) ;using a timer to relock after 10 seconds pass
-
-"Storm\_Chest\_Trainer"-\textgreater{}\textbf{Lock} 50
-
-endif
-
-End
+\lstinputlisting{scripts/PC_Security_Skill_Trainer.txt}
 
 \hypertarget{animating-objects}{%
 \subsection{Animating objects}\label{animating-objects}}
@@ -5503,45 +4196,7 @@ Example Script:
 This original script is attached to all the outside banners and makes
 them move differently depending on the weather:
 
-begin OutsideBanner
-
-;this script is for a banner object outside that
-
-;animates in the wind.
-
-;Idle is still, Idle2 is a little breeze, and Idle3 is a large breeze
-
-short ran
-
-if ( MenuMode == 0 )
-
-set ran to random 100
-
-if ( ran \textless{} 30 ) ;30\% chance the flag does something new
-
-if (GetCurrentWeather \textgreater= 5 ) ;thunder, ash, or blight
-
-\textbf{LoopGroup}, Idle3, 5
-
-endif
-
-;the last anim called in this script is the one it will play
-
-if ( ran \textless= 10 )
-
-\textbf{PlayGroup}, Idle
-
-elseif ( GetCurrentWeather \textless{} 5 )
-
-\textbf{PlayGroup}, Idle2
-
-endif
-
-endif
-
-endif
-
-end OutsideBanner
+\lstinputlisting{scripts/OutsideBanner.txt}
 
 SkipAnim
 
@@ -5583,45 +4238,7 @@ Example script:
 An example from the game is the SlaveScript that makes freed slaves
 vanish once the player leaves the cell:
 
-begin slaveScript
-
-short slaveStatus
-
-short doOnce
-
-short NoLore
-
-{[}other slaves status checks -- check original script!{]}
-
-if ( slaveStatus == 3 )
-
-if ( GetCurrentAIPackage == 3 )
-
-AIWander 512 0 0 0 0 0 0 0 0 0 0 0
-
-endif
-
-if ( GetItemCount Slave\_Bracer\_Left \textgreater{} 0 )
-
-Drop Slave\_Bracer\_Left 1
-
-endif
-
-if ( GetItemCount Slave\_Bracer\_Right \textgreater{} 0 )
-
-Drop Slave\_Bracer\_Right 1
-
-endif
-
-if ( CellChanged == 1 )
-
-\textbf{Disable} ;****** Make slaves vanish once freed and player leaves
-
-endif
-
-endif
-
-end slaveScript
+\lstinputlisting{scripts/slaveScript.txt}
 
 \textbf{Caution: disabling lights}
 
@@ -5698,45 +4315,12 @@ deleted in the same frame (forum info / JOG).
 
 This Script \textbf{will crash}:
 
-Begin \_spell\_effect
-
-float timer
-
-rotate y 120 ; crash caused by this
-
-if ( timer \textless{} 3 )
-
-set timer to ( timer + GetSecondsPassed )
-
-else
-
-disable
-
-\textbf{setdelete} 1
-
-endIf
+\lstinputlisting{scripts/_spell_effect01.txt}
 
 A solution is to use first disabling the object and then using
 GetDisabled and Return to safely delete the object:
 
-Begin \_spell\_effect\\
-\strut \\
-DontSaveObject\\
-\strut \\
-float timer\\
-\strut \\
-if ( GetDisabled == 1 )\\
-\textbf{setdelete} 1\\
-return\\
-endIf\\
-\strut \\
-rotate y 120\\
-\strut \\
-if ( timer \textless{} 3 )\\
-set timer to ( timer + GetSecondsPassed )\\
-else\\
-disable\\
-endIf
+\lstinputlisting{scripts/_spell_effect02.txt}
 
 Another solution was proposed by Soralis, using a local variable
 "deletobj" as a flag:
@@ -5810,27 +4394,7 @@ following one:
 
 Sample Script:
 
-Begin diseaseAscended
-
-DontSaveObject
-
-;ascended sleeper has all the blight diseases for some reason...
-
-if ( CellChanged == 0 )
-
-return
-
-endif
-
-AddSpell "ash woe blight"
-
-AddSpell "black-heart blight"
-
-AddSpell "chanthrax blight"
-
-AddSpell "ash-chancre"
-
-End
+\lstinputlisting{scripts/diseaseAscended.txt}
 
 \hypertarget{scripting-npcs-ai-and-movement}{%
 \section{\texorpdfstring{\hfill\break
@@ -5858,29 +4422,13 @@ When using this function in scripts it is important to provide
 conditions where the AI package is called only once. Consider the
 following NPC bound script
 
-Begin Travel
-
-\textbf{AiTravel}, 1359, 2700, 1045
-
-End Travel
+\lstinputlisting{scripts/Travel01.txt}
 
 The previous script will not work, as the script ``fires'' continuously,
 and the effect is that the NPC freezes and never performs the desired
 movement.
 
-Begin Travel
-
-Short do\_once
-
-If ( do\_once == 0 )
-
-\textbf{AiTravel}, 1359, 2700, 1045
-
-Set do\_once to 1
-
-endif
-
-End Travel
+\lstinputlisting{scripts/Travel02.txt}
 
 This should work; the NPC will wander to the designated coordinates as
 soon as his script becomes active, meaning as soon as his cell is
@@ -5907,92 +4455,7 @@ following script is an example of how to link several \emph{AITravel}
 commands within one script, using a state variable and an
 \emph{if-elseif} structure:
 
-Begin TravelLoop
-
-short state
-
-float timer
-
-if ( menumode == 1 ) ; if menu is open don't process
-
-return
-
-endif
-
-;start walking
-
-if ( state == 0 )
-
-if ( player-\textgreater GetDistance HB\_adros\_darani \textless{} 5000
-)
-
-set state to 5
-
-endif
-
-;******************* He begins his trip
-
-elseif ( state == 5 )
-
-SetHello 0
-
-\textbf{AITravel} -8144, -19409, 728 ;new co-ords point 1
-
-set state to 10
-
-elseif ( state == 10 )
-
-if ( \textbf{GetAIPackageDone} == 1 ) ;he's reached point 1
-
-set state to 40
-
-endif
-
-elseif ( State == 40 )
-
-\textbf{AITravel} -9147, -19459, 720 ; new co-ords point 2
-
-set State to 50
-
-elseif ( state == 50 )
-
-if ( \textbf{GetAIPackageDone} == 1 ) ;he's reached the point 2
-
-set state to 60
-
-endif
-
-elseif ( state == 60 )
-
-\textbf{AITravel} -8144, -19409, 728 ;new co-ords point 1
-
-set state to 70
-
-elseif ( state == 70 )
-
-if ( \textbf{GetAIPackageDone} == 1 ) ;he's reached point 1
-
-set state to 80
-
-endif
-
-elseif ( state == 80 )
-
-\textbf{AITravel} -6640, -18496, 1040 ;new co-ords point 0
-
-set state to 90
-
-elseif ( state == 90 )
-
-if ( \textbf{GetAIPackageDone} == 1 ) ;he's reached point 0
-
-set state to 0
-
-endif
-
-endif
-
-End TravelLoop
+\lstinputlisting{scripts/TravelLoop.txt}
 
 Good examples of scripting using \emph{AITravel} are also found in the
 ``lookoutscript'' (Fargoth hiding his treasure) and the CharGenWalkNPC
@@ -6007,6 +4470,8 @@ detect the \emph{GetAIPackageDone} signal, meaning your NPC gets stuck
 on its path once you return or finish sleeping. The following simple
 code can be used to get the script going again (this is for the above
 script)
+
+% Excerpt from external script
 
 ; *************** Stalled Script rescue - recovers script after leaving
 a cell or resting
@@ -6110,105 +4575,7 @@ listed wrongly in previous versions (corrected with
 Here is an \textbf{example script} that displays all idles in series
 (this my be useful to check out which ones you want your NPC to use):
 
-Begin Animtest
-
-float timer
-
-short count
-
-set timer to ( timer + GetSecondsPassed )
-
-if ( timer \textgreater{} 10 )
-
-set timer to 0
-
-set count to ( count + 1 )
-
-if ( count \textgreater= 18 )
-
-set count to 0
-
-endif
-
-endif
-
-if ( count == 1 )
-
-\textbf{AIWander} 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0
-
-MessageBox "Idle 1 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 3 )
-
-\textbf{AIWander} 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0
-
-MessageBox "Idle 2 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 5 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0
-
-MessageBox "Idle 3 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 7 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0
-
-MessageBox "Idle 4 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 9 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0
-
-MessageBox "Idle 5 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 11 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0
-
-MessageBox "Idle 6 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 13 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0
-
-MessageBox "Idle 7 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 15 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0
-
-MessageBox "Idle 8 , 100"
-
-set count to ( count + 1 )
-
-elseif ( count == 17 )
-
-\textbf{AIWander} 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100
-
-MessageBox "Idle 9 , 100"
-
-set timer to 0
-
-set count to ( count + 1 )
-
-endif
-
-End
+\lstinputlisting{scripts/Animtest.txt}
 
 \hypertarget{making-actors-activate-objects}{%
 \subsection{\texorpdfstring{\hfill\break
@@ -6274,114 +4641,11 @@ approach and circle underneath it.
 They show how you can set conditions to determine when the NPC has
 finished his action.
 
-Begin TT\_opendoor
+\lstinputlisting{scripts/TT_opendoor.txt}
 
-short doonce
+\lstinputlisting{scripts/TT_pickmace.txt}
 
-short AIState
-
-if ( doonce == 0 )
-
-if ( GetDistance, Player \textless{} 400 )
-
-\textbf{AIActivate} TT\_door
-
-set doonce to 1
-
-endif
-
-elseif ( doonce == 1 )
-
-set AIState to GetCurrentAIPackage
-
-MessageBox "Package = \%g", AIState
-
-if ( TT\_door-\textgreater GetAngle, z != 180 ); As soon as door starts
-rotating
-
-MessageBox "Done"
-
-AIWander 30, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0
-
-set doonce to 2
-
-endif
-
-endif
-
-end
-
-Begin TT\_pickmace
-
-short doonce
-
-short AIState
-
-if ( doonce == 0 )
-
-if ( GetDistance, Player \textless{} 400 )
-
-\textbf{AIActivate} TT\_daedric\_mace
-
-set doonce to 1
-
-endif
-
-elseif ( doonce == 1 )
-
-set AIState to GetCurrentAIPackage
-
-MessageBox "Package = \%g", AIState
-
-if ( GetItemCount, TT\_daedric\_mace \textgreater= 1 ); when NPC has the
-mace in his inventory
-
-MessageBox "Done"
-
-AIWander 512, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0
-
-set doonce to 2
-
-endif
-
-endif
-
-end
-
-Begin TT\_openloaddoor
-
-short doonce
-
-short AIState
-
-if ( doonce == 0 )
-
-if ( GetDistance, Player \textless{} 400 )
-
-\textbf{AIActivate} TT\_door
-
-set doonce to 1
-
-endif
-
-elseif ( doonce == 1 )
-
-set AIState to GetCurrentAIPackage
-
-MessageBox "Package = \%g", AIState
-
-if ( GetPos, y \textgreater{} 2000 ); position has changed. Loaddor
-target is in same cell MessageBox "Done"
-
-AIWander 30, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0
-
-set doonce to 2
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/TT_openloaddoor.txt}
 
 \hypertarget{following-and-escorting}{%
 \subsection{Following and Escorting}\label{following-and-escorting}}
@@ -6544,51 +4808,7 @@ Now we come to the point where the NPC reaches a load door through
 cells. The game will CTD if the NPC activates it. Here is a snippet of
 an "escort" script I wrote, that gets the NPC through a load door.}
 
-Begin Sensius\_Escort\_Script\\
-Short EscortOnce\\
-Float Timer\\
-;In my theory, a load door is simply a PositionCell function referencing
-to the PlayerSaveGame once the door is\\
-;activated. (By the player.) For an NPC to activate a load door would,
-as this "door script" seems hard-coded\\
-;strictly to the player, would call an error that would cause a CTD.
-This script creates an artificial load door, by\\
-;replacing the "Player" function references to the NPC in question. As
-this is concerning a REAL load door, I cannot\\
-;have the NPC activate it. Rather, the NPC teleports when they are close
-enough to the door for activation, and\\
-;a certain variable is set, accompanied by a 3D sound to finalize the
-effect. NPC load doors are possible. The only\\
-;problem is that the NPC disappears rather than shows an animation of
-entering the door - but it's not much worse\\
-;than in Oblivion, when the NPC just fades.\\
-\strut \\
-If ( MenuMode == 1 )\\
-Return\\
-Endif\\
-\strut \\
-If ( EscortOnce == 0 )\\
-"Sensius Tanarii"-\textgreater AiTravel 4990.000 5200.000 15456.000\\
-Set EscortOnce to 1\\
-Endif\\
-\strut \\
-If ( EscortOnce == 1 )\\
-If ( "Sensius Tanarii"-\textgreater GetPos, X \textless= 5060 ) ;I am
-"boxing in" the coordinates. When he stands in this area, the door is
-activated.\\
-If ( "Sensius Tanarii"-\textgreater GetPos, X \textgreater= 4930 )\\
-If ( "Sensius Tanarii"-\textgreater GetPos, Y \textless= 5360 )\\
-If ( "Sensius Tanarii"-\textgreater GetPos, Y \textgreater= 5177 )\\
-"Sensius Tanarii"-\textgreater PlaySound3D "Door Latched Two Open" ;\\
-"Sensius Tanarii"-\textgreater PositionCell 3186 5191 15050 0
-"Dragonhold Keep - Main Entry Hall"\\
-Set EscortOnce to 2\\
-Endif\\
-Endif\\
-Endif\\
-Endif\\
-Endif\\
-\ldots{}
+\lstinputlisting{scripts/Sensius_Escort_Script.txt}
 
 That should explain how it would work. Coordinates are often more
 reliable than a "GetAIPackageDone" function, mainly because that
@@ -6711,129 +4931,7 @@ Sample Script:
 This script lets an object control the movement type of Athlete, an NPC
 set to Travel endlessly in a four-point square.
 
-Begin AthleteControl
-
-short questionAsked
-
-short button
-
-short isrunning
-
-short isjumping
-
-if ( MenuMode )
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-set isrunning to ( Athlete-\textgreater{}\textbf{GetForceRun} )
-
-set isjumping to ( Athlete-\textgreater{}\textbf{GetForceMoveJump} )
-
-if ( questionAsked == 0 )
-
-if ( isrunning )
-
-MessageBox, "Make Athelete stop running? " "Yes" "No"
-
-else
-
-MessageBox, "Make Athelete run? " "Yes" "No"
-
-endif
-
-set questionAsked to 1
-
-endif
-
-endif
-
-if ( questionAsked == 1 )
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-else
-
-if ( isrunning == 0 )
-
-if ( button == 0 )
-
-Athlete-\textgreater{}\textbf{ClearForceMoveJump}
-
-Athlete-\textgreater{}\textbf{ForceRun}
-
-endif
-
-else
-
-if ( button == 0 )
-
-Athlete-\textgreater{}\textbf{ClearForceRun}
-
-endif
-
-endif
-
-if ( isjumping )
-
-MessageBox, "Make Athelete stop jumping? " "Yes" "No"
-
-else
-
-MessageBox, "Make Athelete jump? " "Yes" "No"
-
-endif
-
-set questionAsked to 2
-
-set button to -1
-
-endif
-
-endif
-
-if ( questionAsked == 2 )
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-else
-
-if ( isjumping == 0 )
-
-if ( button == 0 )
-
-Athlete-\textgreater{}\textbf{ClearForceRun}
-
-Athlete-\textgreater{}\textbf{ForceMoveJump}
-
-endif
-
-else
-
-if ( button == 0 )
-
-Athlete-\textgreater{}\textbf{ClearForceMoveJump}
-
-endif
-
-endif
-
-set questionAsked to 0
-
-set button to -1
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/AthleteControl.txt}
 
 \hypertarget{detecting-players-action-running-jumping-sneaking}{%
 \subsection{Detecting players action: running, jumping,
@@ -6862,55 +4960,7 @@ When this script is placed on an NPC, and the player has an item
 equipped called ``scissors'', MessageBox warnings will be given based on
 the player's current actions.
 
-Begin momscript
-
-short warn
-
-if ( player-\textgreater HasItemEquipped "scissors" )
-
-if ( warn != 1 )
-
-if ( \textbf{GetPCRunning} )
-
-MessageBox "Don't run with scissors!"
-
-set warn to 1
-
-endif
-
-endif
-
-if ( warn != 2 )
-
-if ( \textbf{GetPCJumping} )
-
-MessageBox "Don't jump with those scissors! You'll put your eye out!"
-
-set warn to 2
-
-endif
-
-endif
-
-if ( warn != 3 )
-
-if ( \textbf{GetPCSneaking} )
-
-MessageBox "You can't hide those scissors from me!"
-
-set warn to 3
-
-endif
-
-endif
-
-else
-
-set warn to 0
-
-endif
-
-end
+\lstinputlisting{scripts/momscript.txt}
 
 \hypertarget{detect-combat-readiness}{%
 \subsection{Detect combat readiness}\label{detect-combat-readiness}}
@@ -6930,57 +4980,7 @@ casting.
 Sample Script: This global script gives notification messages based on
 the player's weapon and spell states.
 
-Begin player\_notifications
-
-short weapstate
-
-short spelstate
-
-if ( player-\textgreater{}\textbf{GetWeaponDrawn} )
-
-if ( weapstate != 1 )
-
-set weapstate to 1
-
-MessageBox "The player's weapon is drawn."
-
-Endif
-
-else
-
-if ( weapstate != 0 )
-
-set weapstate to 0
-
-MessageBox "The player's weapon is sheathed."
-
-Endif
-
-endif
-
-if ( player-\textgreater{}\textbf{GetSpellReadied} )
-
-if ( spelstate != 1 )
-
-set spelstate to 1
-
-MessageBox "The player's spell is readied."
-
-Endif
-
-else
-
-if ( spelstate != 0 )
-
-set spelstate to 0
-
-MessageBox "The player's spell is put away."
-
-Endif
-
-endif
-
-end
+\lstinputlisting{scripts/player_notifications.txt}
 
 \textbf{Note:} GetWeaponDrawn will return 0 at some unusual times; when
 a lock pick or probe is removed through scripting or when it is broken,
@@ -7114,56 +5114,7 @@ Returns 1 if the object is of the race indicated by RaceID.
 Sample Script: This is a global script Bethesda uses to set a variable
 that can be used to determine the PCs race in dialogue:
 
-begin RaceCheck
-
-;global script that gets run once to check the PC's race, so it can be
-used in dialogue
-
-if ( Player-\textgreater{}\textbf{GetRace} "Argonian" == 1 )
-
-set PCRace to 1
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Breton" == 1 )
-
-set PCRace to 2
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Dark Elf" == 1 )
-
-set PCRace to 3
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "High Elf" == 1 )
-
-set PCRace to 4
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Imperial" == 1 )
-
-set PCRace to 5
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Khajiit" == 1 )
-
-set PCRace to 6
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Nord" == 1 )
-
-set PCRace to 7
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Orc" == 1 )
-
-set PCRace to 8
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Redguard" == 1 )
-
-set PCRace to 9
-
-elseif ( Player-\textgreater{}\textbf{GetRace} "Wood Elf" == 1 )
-
-set PCRace to 10
-
-endif
-
-StopScript RaceCheck
-
-end
+\lstinputlisting{scripts/RaceCheck.txt}
 
 \hypertarget{determining-the-pcs-faction-status}{%
 \subsection{Determining the PC's Faction
@@ -7179,25 +5130,7 @@ if FactionID is not defined. Returns 0-9 and -1 if not a member.
 Sample Script: An Actor/object with the following script is only enabled
 if the PC is not a member of House Redoran:
 
-Begin bandenIndarysScript
-
-if ( CellChanged == 0 )
-
-Return
-
-endif
-
-if ( \textbf{GetPCRank} "Redoran" == -1 )
-
-Enable
-
-else
-
-Disable
-
-endif
-
-End
+\lstinputlisting{scripts/bandenIndarysScript.txt}
 
 {[}no fix?{]} GetPCFacRep, {[}FactionID{]} (returns short?)
 
@@ -7253,59 +5186,7 @@ the faction, it will set the rank to 1.
 
 \textbf{Example Script:}
 
-Begin treboniusScript
-
-;if you're both in the Arena
-
-;and if the guildmaster quest is active...
-
-;sets a journal and raises the player's rank
-
-;when trebonius dies.
-
-short doOnce
-
-short nolore
-
-if ( doOnce == 1 )
-
-Return
-
-endif
-
-if ( GetJournalIndex MG\_Guildmaster \textless{} 50 )
-
-Return
-
-endif
-
-if ( GetPCCell "Vivec, Arena" == 0 )
-
-Return
-
-endif
-
-if ( duelActive == 0 )
-
-Return
-
-endif
-
-if ( OnDeath == 1 )
-
-Set DuelActive to 0
-
-Set doOnce to 1
-
-PCRaiseRank "Mages Guild"
-
-PCRaiseRank "Mages Guild"
-
-Journal MG\_Guildmaster 100
-
-endif
-
-End
+\lstinputlisting{scripts/treboniusScript.txt}
 
 {[}no fix{]} PCExpell {[}"FactionID"{]}
 
@@ -7320,67 +5201,7 @@ Example script:
 A script by Bethesda, which clears the Players expelled status after
 some time:
 
-Begin expelledMG
-
-;this is just a model
-
-;it is supposed to be on an item in each of the Mages Guilds.
-
-short myDay
-
-short temp
-
-if ( \textbf{PCExpelled} "Mages Guild" == 0 )
-
-return
-
-endif
-
-if ( ExpMagesGuild == 0 )
-
-Set ExpMagesGuild to 1
-
-endif
-
-if ( myDay == 0 )
-
-Set myDay to Day
-
-endif
-
-if ( myDay == Day )
-
-return
-
-endif
-
-if ( Day \textgreater{} myDay )
-
-Set temp to ( Day - myDay )
-
-else
-
-Set temp to ( myDay - Day )
-
-endif
-
-Set myDay to Day
-
-Set temp to ( temp + 2 )
-
-Set ExpMagesGuild to ( ExpMagesGuild + temp )
-
-if ( ExpMagesGuild \textgreater{} 30 )
-
-Set ExpMagesGuild to 0
-
-\textbf{PCClearExpelled} "Mages Guild"
-
-return
-
-endif
-
-End
+\lstinputlisting{scripts/expelledMG.txt}
 
 {[}no fix{]} ModPCFacRep, var\_enum, {[}"FactionID"{]}
 
@@ -8155,25 +5976,7 @@ one is just giving out an onscreen message that appears on the bottom of
 the screen for a few seconds, as in the following script that gives out
 a message when the item it's attached to is equipped:
 
-Begin informplayer
-
-Short OnPCEquip
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-if (OnPCEquip ==1 )
-
-MessageBox, "The sword vibrates in your hand"
-
-Set OnPCEquip to 0
-
-Endif
-
-End informplayer
+\lstinputlisting{scripts/informplayer.txt}
 
 The second mode of operation makes the message stay on the screen until
 the player presses a button:
@@ -8248,49 +6051,7 @@ Will return --1 until button is pressed.
 
 Sample Script:
 
-Begin choices
-
-Short button
-
-Short status
-
-Short OnPCEquip ;declare as variable -- otherwise there will be errors
-
-if ( OnPCEquip ==1 )
-
-MessageBox, "The sword vibrates in your hand. Do you want to equip it?",
-"yes", "no"
-
-Set OnPCEquip to 0 ;display the Message Box only once
-
-Set status to 1
-
-Endif
-
-If ( status == 1); wait for player decision
-
-Set button to GetButtonPressed
-
-If ( button == -1 ); no button selected yet: do nothing
-
-return
-
-Elseif ( button == 0 ); continue normally
-
-Set status to 0 ; reset for next time
-
-Elseif ( button == 1 )
-
-Player-\textgreater drop, "power\_sword" ; makes the player drop the
-item
-
-Set status to 0
-
-Endif
-
-Endif
-
-End
+\lstinputlisting{scripts/choices.txt}
 
 \hypertarget{displaying-variables-and-text-defines-in-a-message-box}{%
 \subsubsection{Displaying variables and text defines in a message
@@ -8363,28 +6124,9 @@ name, even if the MessageBox is called from dialogue results.
 possible
 syntax:}\label{example-script-stupid-sample-script-demonstrating-all-possible-syntax}}
 
-Begin test1
+% Bug here
 
-short var\_1
-
-long var\_2
-
-float var\_3
-
-; GameHour is a global float variable
-
-set var\_1 to 1
-
-set var\_2 to 2
-
-set var\_3 to 3
-
-MessageBox "\^{}PCName, you have \%g head, \%G hands, and \%.5f gold.
-One could say the hour is getting late in \^{}cell. It's the
-\^{}GameHour hour or more exactly the \%.2f hour!", var\_1, var\_2,
-var\_3, GameHour
-
-End
+\lstinputlisting{scripts/test1.txt}
 
 \hypertarget{adding-a-dialogue-topic}{%
 \subsubsection{Adding a dialogue topic}\label{adding-a-dialogue-topic}}
@@ -8406,13 +6148,7 @@ topic.
 
 To do that, just attach a small script to the NPC:
 
-Begin AddSpecialDialogue
-
-;add possibility to ask about travel
-
-\textbf{AddTopic}, "aren't you getting wet?"
-
-End AddSpecialDialogue
+\lstinputlisting{scripts/AddSpecialDialogue.txt}
 
 \textbf{Note:} You must already have the topic with this topic ID set up
 before you make this script, otherwise the script compiler will
@@ -8488,58 +6224,7 @@ time before your script runs).
 \textbf{Example Script:} this script shows a nice set of condition being
 checked before initiating the \emph{ForceGreeting} command
 
-Begin balynScript
-
-float timer
-
-short doOnce
-
-if ( GetJournalIndex "DA\_Mephala" \textless{} 40 )
-
-Return
-
-endif
-
-if ( GetJournalIndex DA\_Mephala \textgreater= 60 )
-
-Return
-
-endif
-
-Set timer to ( timer + GetSecondsPassed )
-
-if ( timer \textless{} 5 )
-
-Return
-
-endif
-
-Set timer to 0
-
-if ( doOnce == 0 )
-
-if ( GetDistance Player \textless= 1024 )
-
-if ( player-\textgreater GetDistance "hlaalu\_loaddoor\_ 02\_balyn"
-\textless= 256 )
-
-if ( GetLOS Player == 1 )
-
-\textbf{ForceGreeting}
-
-Journal DA\_Mephala 55
-
-set doOnce to -1
-
-endif
-
-endif
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/balynScript.txt}
 
 \textbf{Note:} If you use ForceGreeting from within an if block, the
 script will continue to execute the remaining elseif/else tests instead
@@ -8596,53 +6281,7 @@ simply has to be declared, not set to a specific value.
 
 \textbf{Example:}
 
-Begin dulkScript
-
-short doOnce
-
-short playerwolf
-
-\textbf{short AllowWerewolfForceGreeting}
-
-if ( GetJournalIndex BM\_FrostGiant2 == 10 )
-
-if ( doOnce == 0 )
-
-if ( GetDistance Player \textless= 512 )
-
-if ( Player-\textgreater IsWerewolf == 1 )
-
-\textbf{ForceGreeting}
-
-set doOnce to 1
-
-endif
-
-endif
-
-endif
-
-elseif ( GetJournalIndex BM\_FrostGiant2 == 70 )
-
-if ( doOnce == 1 )
-
-if ( GetDistance Player \textless= 512 )
-
-;if ( Player-\textgreater IsWerewolf == 1 )
-
-\textbf{ForceGreeting}
-
-set doOnce to 2
-
-;endif
-
-endif
-
-endif
-
-endif
-
-End dulkScript
+\lstinputlisting{scripts/dulkScript.txt}
 
 \hypertarget{multiple-choice-asking-questions}{%
 \subsubsection{Multiple choice -- asking
@@ -8754,32 +6393,7 @@ quest have already been performed.
 Sample Script: Here is a short script demonstrating the use of both
 functions from the game:
 
-Begin attack\_slave
-
-short nolore
-
-If ( GetDeadCount "Vorar Helas" \textgreater{} 0 )
-
-return
-
-endif
-
-if ( \textbf{GetJournalIndex} "MV\_SlaveMule" \textless{} 102 ); if PC
-has not yet reached a certain point
-
-If ( GetDistance, "Rabinna" \textless{} 512 )
-
-Rabinna-\textgreater AiWander 0 0 0 0 0 0 0
-
-StartCombat, "Rabinna"
-
-\textbf{Journal} "MV\_SlaveMule", 102 ; add journal entry
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/attack_slave.txt}
 
 \hypertarget{special-dialogue-only-functions}{%
 \subsubsection{Special dialogue-only
@@ -9556,45 +7170,7 @@ Example Script: An example from my traveling merchants mod, to make a
 guar handler defend his charge while not in AIFollow mode, I attached
 this to the guar:
 
-Begin \_HB\_Adros\_GuarDefend
-
-float timer
-
-short attackstate
-
-short OnPCHitMe
-
-if ( \textbf{OnPCHitMe} == 1 )
-
-set attackstate to 1
-
-set OnPCHitMe to 0
-
-endif
-
-if (attackstate == 1)
-
-\textbf{StartCombat}, player
-
-set timer to ( timer + GetSecondsPassed)
-
-if ( timer \textgreater= 1 )
-
-set timer to 0
-
-if ( GetLOS, HB\_adros\_darani == 1)
-
-HB\_adros\_darani-\textgreater{}\textbf{StartCombat}, Player
-
-set attackstate to 0
-
-endif
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/_HB_Adros_GuarDefend.txt}
 
 GetAttacked (returns Boolean/short)
 
@@ -9605,27 +7181,7 @@ attacked.
 
 \textbf{Example script:} Uupse protects Yagrum Bagarn:
 
-Begin uupse\_Bagrum
-
-short doOnce
-
-if ( doOnce == 0 )
-
-if ( "yagrum bagarn"-\textgreater{}\textbf{GetAttacked} == 1 )
-
-StartCombat player
-
-SetFight 90
-
-SetDisposition 0
-
-set doOnce to 1
-
-endif
-
-endif
-
-end uupse\_Bagrum
+\lstinputlisting{scripts/uupse_Bagrum.txt}
 
 GetTarget, "Actor ID" (returns Boolean/short)
 
@@ -9744,21 +7300,7 @@ An alternative would be to use the GetHealth function. In the following
 script only the first message box will be displayed (forum info /
 Argent, ThePal):
 
-begin personScript
-
-if ( \textbf{OnDeath} )
-
-messagebox "1"
-
-endif
-
-if ( \textbf{OnDeath} )
-
-messagebox "2"
-
-endif
-
-end
+\lstinputlisting{scripts/personScript.txt}
 
 OnMurder (returns Boolean/short)
 
@@ -9774,33 +7316,7 @@ So a murder only happens when you kill someone illegally AND are seen.
 "Redoran Hortator" dialogue topic to determine if the player has killed
 a councilor:
 
-begin RedoranCouncilor
-
-;no lore...
-
-short noLore
-
-;for HT\_Monopoly
-
-short mageMonopolyVote
-
-;for Hortator dialogue...
-
-if ( \textbf{OnDeath} == 1 )
-
-if ( \textbf{OnMurder} == 1 )
-
-Set RedoranMurdered to 2
-
-else
-
-Set RedoranMurdered to 1
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/RedoranCouncilor.txt}
 
 OnKnockout (returns Boolean/short)
 
@@ -9827,23 +7343,7 @@ advisable to use "\textgreater{} 0" in such cases, as you never know if
 another mod might add another instance of that ID, so it's better to
 play it safe.
 
-Begin araraUvulasScript
-
-short noLore
-
-if ( CellChanged == 0 )
-
-return
-
-endif
-
-\textbf{if ( GetDeadCount "Neloth" \textgreater{} 0 )}
-
-Disable
-
-endif
-
-End
+\lstinputlisting{scripts/araraUvulasScript.txt}
 
 \hypertarget{resurrecting-a-dead-actor}{%
 \subsection{\texorpdfstring{\hfill\break
@@ -9866,41 +7366,7 @@ actually never really dies.
 
 \textbf{Sample Script:} some people are just tougher than others\ldots{}
 
-Begin dandrasScript
-
-short deathbed
-
-float dandrasHealth
-
-if ( deathbed == -1 )
-
-return
-
-endif
-
-set dandrasHealth to GetHealth
-
-if ( dandrasHealth \textless= 50 )
-
-if ( dandrasHealth \textless{} 1 )
-
-\textbf{Resurrect}
-
-\textbf{ModHealth} 100
-
-endif
-
-set deathbed to 1
-
-endif
-
-if ( deathbed == 1 )
-
-ForceGreeting
-
-endif
-
-End dandrasScript
+\lstinputlisting{scripts/dandrasScript.txt}
 
 \hypertarget{crime}{%
 \section{\texorpdfstring{\hfill\break
@@ -9929,45 +7395,7 @@ SampleScript:
 Here is a cool little scripted item by B from the Modern Adventurer mod.
 The cursed Holiday Pants that send you to prison:
 
-Begin Holiday\_script
-
-Short OnPCEquip
-
-Short message
-
-if ( OnPCEquip == 1 )
-
-if ( MenuMode==1 )
-
-return
-
-else
-
-Set message to Random 2
-
-if ( message==0 )
-
-MessageBox "The holiday pants contain a mighty enchantment of happiness.
-Lots of happiness. When the guards found you doing the Can-Can on top of
-the nearest silt strider port, they were not very amused.", "ok"
-
-elseif ( message==1 )
-
-MessageBox "The holiday pants make you scream and shout with joy as you
-relive the happiest days of your childhood. The guard that brings you
-back to your senses is in stark contrast to this experience", "ok"
-
-endif
-
-Player-\textgreater{}\textbf{GoToJail}
-
-endif
-
-Set OnPCEquip to 0
-
-endif
-
-End holiday\_script
+\lstinputlisting{scripts/Holiday_script.txt}
 
 \hypertarget{clearing-the-pc-of-crime}{%
 \subsection{Clearing the PC of crime}\label{clearing-the-pc-of-crime}}
@@ -10150,76 +7578,12 @@ all other teleport commands and forces teleporting on except within one
 specific area in Mournhold (thanks to Slink and Riiak for the info).
 Here is the culprit:
 
-Begin TribunalMain
-
-;check for teleporting
-
-if ( GetPCCell "Sotha Sil," == 1 )
-
-\textbf{DisableTeleporting}
-
-else
-
-\textbf{EnableTeleporting}
-
-endif
-
-;check levitate
-
-if ( GetPCCell "Sotha Sil," == 1 )
-
-\textbf{DisableLevitation}
-
-elseif ( GetPCCell "Mournhold" == 1 )
-
-\textbf{DisableLevitation}
-
-else
-
-EnableLevitation ; This is why teleporting was always on outside
-Mournhold
-
-endif
-
-end
+\lstinputlisting{scripts/TribunalMain01.txt}
 
 With one of the updates this problem was fixed. The latest version of
 the script looks like this:
 
-Begin TribunalMain\\
-\strut \\
-short disablestate\\
-short newstate\\
-\strut \\
-;by default, enable teleport and levitate\\
-set newstate to 0\\
-\strut \\
-;only need to check cells in interiors\\
-if ( GetInterior )\\
-if ( GetPCCell "Sotha Sil," == 1 )\\
-;disable teleport and levitate here\\
-set newstate to 1\\
-elseif ( GetPCCell "Mournhold" == 1 )\\
-;disable levitate only here\\
-set newstate to 2\\
-endif\\
-endif\\
-\strut \\
-;if state should change\\
-if ( disablestate != newstate )\\
-if ( newstate == 1 )\\
-\textbf{DisableTeleporting\\
-DisableLevitation}\\
-elseif ( newstate == 2 )\\
-\textbf{DisableLevitation\\
-} elseif ( newstate == 0 )\\
-\textbf{EnableTeleporting\\
-EnableLevitation\\
-} endif\\
-set disablestate to newstate\\
-endif\\
-\strut \\
-end
+\lstinputlisting{scripts/TribunalMain02.txt}
 
 Note: DisableTeleporting does not disable scripted amulets etc. for
 teleporting. DinkumThinkum suggested the following workaround which uses
@@ -10231,17 +7595,7 @@ This wouldn't be exactly the same as blocking the teleports, but it
 should make the area totally inescapable until you've fulfilled the
 modder's conditions for getting out legitimately.
 
-Begin DT\_Test\_BalmoraTrap\\
-\strut \\
-If ( GetPCCell, "Balmora" == 1 )\\
-Return\\
-Endif\\
-\strut \\
-MessageBox "Off to Balmora with you!"\\
-Player-\textgreater PositionCell, -21278, -17613, 534, 0, "Balmora (-3,
--3)"\\
-\strut \\
-End DT\_Test\_BalmoraTrap
+\lstinputlisting{scripts/DT_Test_BalmoraTrap.txt}
 
 \hypertarget{limiting-the-use-of-levitation}{%
 \subsection{Limiting the use of
@@ -10264,71 +7618,11 @@ Sample scripts:
 
 This script is on an object in the room with levitation disabled.
 
-Begin clampstone
-
-short turnedoff
-
-short gavemessage
-
-if ( turnedoff == 0 )
-
-\textbf{DisableLevitation}
-
-if ( gavemessage == 0 )
-
-set gavemessage to 1
-
-MessageBox "A strange stone in the roof of this room prevents levitation
-here."
-
-Endif
-
-else
-
-\textbf{EnableLevitation}
-
-if ( gavemessage == 1 )
-
-set gavemessage to 0
-
-MessageBox "The stone has been disabled. You can now levitate in this
-room."
-
-Endif
-
-endif
-
-if ( OnActivate == 1 )
-
-if ( turnedoff == 0 )
-
-set turnedoff to 1
-
-else
-
-set turnedoff to 0
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/clampstone.txt}
 
 This script is on a door leaving the room.
 
-Begin enable\_lev\_on\_exit
-
-if ( OnActivate == 1 )
-
-MessageBox "You leave the presence of the stone..."
-
-EnableLevitation
-
-Activate
-
-endif
-
-end
+\lstinputlisting{scripts/enable_lev_on_exit.txt}
 
 \hypertarget{checking-and-managing-souls-and-soulgems}{%
 \subsection{Checking and managing souls and
@@ -10582,62 +7876,11 @@ the following example attached to a Container. Note that there is a do
 once condition here, so that the effect is not cast continuously on the
 player.
 
-Begin Trap\_script\\
-\strut \\
-short done\\
-\strut \\
-if ( OnActivate == 1 )\\
-if ( done == 1 ) ;do-once condition\\
-Activate\\
-return\\
-else\\
-\textbf{Cast}, "flame", Player ;damage to player\\
-set done to 1\\
-Activate\\
-endif\\
-endif\\
-\strut \\
-End trap\_script
+\lstinputlisting{scripts/Trap_script.txt}
 
 The next example script uses the \emph{AddSpell} function:
 
-begin Item\_Cast\\
-\strut \\
-short OnPCEquip\\
-short CurseAdded\\
-float Timer\\
-\strut \\
-\strut \\
-if ( CurseAdded )
-
-set Timer to ( Timer + GetSecondsPassed )\\
-if ( Timer \textgreater= 25 ) ; after 25 s remove the spell. 25 damage
-done.\\
-set Timer to 0\\
-Player-\textgreater{}\textbf{RemoveSpell} "ItemFlame"
-
-set CurseAdded to 0\\
-endif\\
-endif\\
-\strut \\
-if ( OnPCEquip );when item is equipped\\
-if ( MenuMode )\\
-return\\
-elseif ( CurseAdded == 0 )\\
-Player-\textgreater{}\textbf{AddSpell} "ItemFlame" ; a spell of type
-curse!
-
-;custom spell one point of fire damage / s\\
-set Timer to 0\\
-set CurseAdded to 1\\
-elseif ( CurseAdded ) ; Add the spell only once\\
-Player-\textgreater{}\textbf{RemoveSpell} "ItemFlame"\\
-set CurseAdded to 0\\
-endif\\
-\strut \\
-end Item\_Cast
-
-(script by Patrin, edited)
+\lstinputlisting{scripts/Item_Cast.txt}
 
 The added spell is a custom-made curse spell doing one point per second
 flame damage. Note that there is again a do once condition implicit in
@@ -10741,51 +7984,7 @@ spell is in inventory, if it's active on the player, if the effect it
 causes is on the player and then removes the effect. Start it in the
 console using "StartScript Magictest" to try it out.
 
-Begin Magictest
-
-short var\_1
-
-short var\_2
-
-short var\_3
-
-if ( Player-\textgreater{}\textbf{GetSpell}, "hearth heal" )
-
-set var\_1 to 1
-
-else
-
-set var\_1 to 0
-
-endif
-
-if ( Player-\textgreater{}\textbf{GetSpellEffects}, "hearth heal" )
-
-set var\_2 to 1
-
-else
-
-set var\_2 to 0
-
-endif
-
-if ( Player-\textgreater{}\textbf{GetEffect}, sEffectRestoreHealth )
-
-Player-\textgreater{}\textbf{RemoveEffects}, 75 ;delete this line to see
-what happens normally
-
-set var\_3 to 1
-
-else
-
-set var\_3 to 0
-
-endif
-
-MessageBox "GetSpell: \%.0f GetSpellEffects, \%.0f GetEffect: \%.0f ",
-var\_1, var\_2, var\_3
-
-End
+\lstinputlisting{scripts/Magictest.txt}
 
 \hypertarget{testing-disease}{%
 \subsubsection{Testing disease}\label{testing-disease}}
@@ -10802,23 +8001,7 @@ diseased or blighted creatures their disease:
 
 Sample Script:
 
-Begin diseaseBlackHeart
-
-DontSaveObject
-
-if ( CellChanged == 0 )
-
-return
-
-endif
-
-if ( \textbf{GetBlightDisease} == 0 )
-
-AddSpell "black-heart blight"
-
-endif
-
-End
+\lstinputlisting{scripts/diseaseBlackHeart.txt}
 
 \hypertarget{testing-player-blight-disease-forum-info-rocket}{%
 \subparagraph{Testing player blight disease (forum info /
@@ -11010,72 +8193,7 @@ Returns true if the calling object is not saying anything.
 
 Sample Script: from character generation:
 
-begin CharGenBoatNPC
-
-;this is the guard on boat who says to move along
-
-short state
-
-float timer
-
-if ( menumode == 1)
-
-return
-
-endif
-
-if ( GetDisabled == 1 )
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-return
-
-endif
-
-if ( GetDistance, Player \textless{} 180 )
-
-if ( \textbf{SayDone} == 1)
-
-;first greeting
-
-if ( state == 0 )
-
-if ( timer == 0 ) ;using a timer so he doesn't talk ALL the time
-
-\textbf{say}, "vo\textbackslash Misc\textbackslash CharGenBoat1.wav",
-"This is where they want you. Head down to the dock and he'll show you
-to the Census Office."
-
-set state to 10
-
-endif
-
-;all other times after first
-
-else
-
-set timer to timer + GetSecondsPassed
-
-if ( timer \textgreater{} 6 )
-
-set timer to 0
-
-\textbf{say}, "vo\textbackslash Misc\textbackslash CharGenBoat2.wav",
-"Let's go. Move it along."
-
-endif
-
-endif
-
-endif
-
-endif
-
-end CharGenBoatNPC
+\lstinputlisting{scripts/CharGenBoatNPC.txt}
 
 \hypertarget{playing-music}{%
 \subsection{Playing music}\label{playing-music}}
@@ -11152,25 +8270,7 @@ e.g. the "Critical Damage" sound or the "Disarm trap" sound.
 \textbf{Sample Script:} This simple script ensures that lava always has
 its rumble sound playing:
 
-begin lava
-
-if ( menumode == 1 )
-
-return
-
-endif
-
-if ( CellChanged == 0 )
-
-if ( \textbf{GetSoundPlaying} "lava layer" == 0 )
-
-\textbf{PlayLoopSound3DVP} "lava layer", 1.0, 1.0
-
-endif
-
-endif
-
-end lava
+\lstinputlisting{scripts/lava02.txt}
 
 \hypertarget{sound-file-formats}{%
 \subsubsection{Sound file formats}\label{sound-file-formats}}
@@ -11208,23 +8308,7 @@ A simple timer can be scripted with the GetSecondsPassed function. It
 returns the seconds passed \emph{since the last frame} as a float value.
 To use this for a timer use something like the following example:
 
-Begin TimerScript
-
-Float timer
-
-Short state
-
-Set timer to (timer + GetSecondsPassed)
-
-If (timer \textgreater{} 10)
-
-MessageBox "Displayed every 10 seconds"
-
-Set timer to 0
-
-Endif
-
-End TimerScript
+\lstinputlisting{scripts/TimerScript.txt}
 
 {[}no fix{]} GetCurrentTime (returns float)
 
@@ -11284,27 +8368,7 @@ Morning Star in the rest menu. So this could be scripted around.
 \textbf{Sample Script:} Checking the time of day with the GameHour
 function:
 
-Begin AfternoonTea
-
-If ( \textbf{GameHour} \textgreater= 17 )
-
-If ( \textbf{GameHour} \textless= 19 )
-
-"Cup of Tea"-\textgreater Enable
-
-endif
-
-elseif ( GameHour \textless{} 17 )
-
-if ( \textbf{GameHour} \textgreater{} 19 )
-
-"Cup of Tea"-\textgreater Disable
-
-endif
-
-endif
-
-End AfternoonTea
+\lstinputlisting{scripts/AfternoonTea.txt}
 
 \hypertarget{keeping-track-of-days-passed}{%
 \subsubsection{Keeping track of days
@@ -11456,46 +8520,7 @@ This returns the weather TypeEnum listed above.
 \textbf{Sample script:} Bethesda used this to make the banners move in
 the wind according to weather type:
 
-begin OutsideBanner
-
-;this script is for a banner object outside that
-
-;animates in the wind.
-
-;Idle is still, Idle2 is a little breeze, and Idle3 is a large breeze
-
-short ran
-
-if ( MenuMode == 0 )
-
-set ran to random 100
-
-if ( ran \textless{} 30 ) ;30\% chance the flag does something new
-
-;this will check the weather in the future
-
-if ( \textbf{GetCurrentWeather} \textgreater= 5 ) ;thunder, ash, or
-blight
-
-LoopGroup, Idle3, 5
-
-endif
-
-;the last anim called in this script is the one it will play
-
-if ( ran \textless= 10 )
-
-PlayGroup, Idle
-
-elseif ( \textbf{GetCurrentWeather} \textless{} 5 )
-
-PlayGroup, Idle2
-
-endif
-
-endif
-
-endif
+\lstinputlisting{scripts/OutsideBanner.txt}
 
 \hypertarget{detecting-wind-speed}{%
 \subsection{Detecting wind speed}\label{detecting-wind-speed}}
@@ -11541,25 +8566,7 @@ for beds in cells where it is otherwise illegal to sleep.
 
 Sample Script: This is the standard script for beds:
 
-begin Bed\_Standard
-
-;used for standard beds the player can activate and sleep in
-
-if ( MenuMode == 0 )
-
-if ( OnActivate == 1 )
-
-ShowRestMenu
-
-endif
-
-endif
-
-end
-
-{[}no fix{]} GetPCSleep (returns Boolean/short)
-
-if ( GetPCSleep == 0 )
+\lstinputlisting{scripts/Bed_Standard.txt}
 
 Returns true (1) if pc is sleeping. \textbf{Note:} The sleep selector
 and counter you see while sleeping counts as a menu. So be aware of
@@ -11569,53 +8576,7 @@ same script!
 The \textbf{example script} seems to come from a fairly useless item,
 but it demonstrates the use\ldots{}
 
-Begin pillowScript
-
-short comfy
-
-if ( PCVampire == 1 )
-
-return
-
-endif
-
-if ( comfy == -1 )
-
-if ( player-\textgreater GetItemCount "misc\_uni\_pillow\_unique"
-\textgreater{} 0 )
-
-if ( \textbf{GetPCSleep} == 0 )
-
-set comfy to 0
-
-return
-
-endif
-
-endif
-
-endif
-
-if ( comfy == 0 )
-
-if ( player-\textgreater GetItemCount "misc\_uni\_pillow\_unique"
-\textgreater{} 0 )
-
-if ( \textbf{GetPCSleep} == 1 )
-
-MessageBox "Your sleep is very restful on your Extra-Comfy Pillow"
-
-set comfy to -1
-
-return
-
-endif
-
-endif
-
-endif
-
-End pillowScript
+\lstinputlisting{scripts/pillowScript.txt}
 
 {[}no fix{]} WakeUpPC
 
@@ -11828,41 +8789,7 @@ the player through character generation. This one is basically a safety
 feature for a player who just runs out the door, without triggering any
 or all of the little tutorials.
 
-Begin CharGenDoorExit
-
-;this is the door that exits the first part of the census building
-
-;safety check for all menus on
-
-short done
-
-if (done == 1)
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-\textbf{enablestatsmenu}
-
-\textbf{enableinventorymenu}
-
-\textbf{enablemagicmenu}
-
-\textbf{enablemapmenu}
-
-\textbf{enableplayerfighting}
-
-\textbf{enableplayermagic}
-
-set done to 1
-
-Activate
-
-endif
-
-End
+\lstinputlisting{scripts/CharGenDoorExit.txt}
 
 \hypertarget{determining-if-player-has-menus-open}{%
 \subsection{Determining if player has menus
@@ -12013,13 +8940,7 @@ don't want the rest of the script to be processed.
 StopScript can also be used to construct do-once conditions for global
 scripts in a very clean way by self-terminating the script:
 
-Begin do-once\_script
-
-{[}\ldots{]}; do stuff here
-
-StopScript do-once\_script
-
-End
+\lstinputlisting{scripts/do-once_script.txt}
 
 \hypertarget{fading-the-screen-in-and-out}{%
 \subsection{Fading the screen in and
@@ -12054,33 +8975,7 @@ the cantons).
 \textbf{Sample Script:} reading this book will indicate all these places
 on the world map:
 
-Begin bookPilgrimsPath
-
-if ( GetJournalIndex TT\_PilgrimsPath \textgreater= 100 )
-
-Return
-
-endif
-
-if ( OnActivate == 1 )
-
-Journal TT\_PilgrimsPath 100
-
-ShowMap "Gnisis"
-
-ShowMap "Vivec"
-
-ShowMap "Ghostgate"
-
-ShowMap "Koal Cave Entrance"
-
-ShowMap "Fields of Kummu"
-
-Activate
-
-endif
-
-End
+\lstinputlisting{scripts/bookPilgrimsPath.txt}
 
 Also see "FillMap" console command.
 
@@ -12237,41 +9132,7 @@ When this script is placed on an object, activating it will toggle the
 existence of rats in the world by removing them from a Leveled Creature
 and removing rat meat from a Leveled Item.
 
-Begin norats
-
-short norats
-
-if ( OnActivate == 1 )
-
-if ( norats == 0 )
-
-set norats to 1
-
-\textbf{RemoveFromLevCreature} "rat\_scamp\_crab" "rat" -1
-
-\textbf{RemoveFromLevCreature} "rat\_scamp\_crab" "rat-fast" -1
-
-\textbf{RemoveFromLevItem} "lev\_meat" "rat\_meat" -1
-
-MessageBox "No more rats."
-
-Else
-
-set norats to 0
-
-\textbf{AddToLevCreature} "rat\_scamp\_crab" "rat" 1
-
-\textbf{AddToLevCreature} "rat\_scamp\_crab" "rat-fast" 1
-
-AddToLevItem "lev\_meat" "rat\_meat" 1
-
-MessageBox "The rats return."
-
-Endif
-
-endif
-
-end
+\lstinputlisting{scripts/norats.txt}
 
 \hypertarget{square-root}{%
 \subsection{Square root}\label{square-root}}
@@ -12318,210 +9179,14 @@ Sample scripts:
 This script goes on a crank to make it raise or lower the water level in
 the room.
 
-Begin crank
-
-short changelevel
-
-float direction
-
-float waterlift
-
-short crankturn
-
-short currcrank
-
-float newwaterlevel
-
-if ( MenuMode )
-
-return
-
-endif
-
-if ( OnActivate == 1 )
-
-if ( changelevel == 0 )
-
-if ( direction == 1 )
-
-set direction to -1
-
-else
-
-set direction to 1
-
-endif
-
-set changelevel to 1
-
-endif
-
-endif
-
-if ( changelevel == 0 )
-
-return
-
-endif
-
-set crankturn to 360 * GetSecondsPassed
-
-set crankturn to crankturn * direction
-
-set currcrank to GetAngle X
-
-set crankturn to currcrank + crankturn
-
-SetAngle X crankturn
-
-set waterlift to 120 * GetSecondsPassed
-
-set waterlift to waterlift * direction
-
-\textbf{ModWaterLevel} waterlift
-
-set newwaterlevel to \textbf{GetWaterLevel}
-
-if ( direction == 1 )
-
-if ( newwaterlevel \textgreater= 600 )
-
-\textbf{SetWaterLevel} 600
-
-set changelevel to 0
-
-endif
-
-else
-
-if ( newwaterlevel \textless= 0 )
-
-\textbf{SetWaterLevel} 0
-
-set changelevel to 0
-
-endif
-
-endif
-
-end crank
+\lstinputlisting{scripts/crank.txt}
 
 This modified ``Float'' script is placed on any object with a centered
 pivot point to make it float on the water's surface regardless of water
 level. It also will make the object stop bobbing if the PC is standing
 on it.
 
-Begin NewFloat
-
-float timer
-
-float swingTime
-
-float startAngle
-
-float currangle
-
-short reset
-
-float xvalue
-
-float zvalue
-
-float zoffset
-
-float tmpoffset
-
-float weightoffset
-
-set startAngle to GetStartingAngle, x
-
-if ( MenuMode == 0 )
-
-if ( timer == 0 )
-
-if ( reset == 0 )
-
-set timer to Random 100
-
-set timer to timer / 4
-
-endif
-
-endif
-
-set swingTime to 1
-
-set timer to ( timer + GetSecondsPassed )
-
-set currangle to GetAngle X
-
-set xvalue to 10 * GetSecondsPassed
-
-set zvalue to 5 * GetSecondsPassed
-
-if ( GetStandingPC )
-
-set zoffset to -30
-
-SetAngle X 0
-
-else
-
-;rotate up
-
-if ( timer \textless{} swingTime )
-
-set currangle to currangle + xvalue
-
-SetAngle X currangle
-
-set zoffset to zoffset + zvalue
-
-;rotate down
-
-elseif ( timer \textless{} (swingTime * 3) )
-
-set currangle to currangle - xvalue
-
-SetAngle X currangle
-
-set zoffset to zoffset - zvalue
-
-;up again
-
-elseif (timer \textless{} (swingTime * 4 ) )
-
-set currangle to currangle + xvalue
-
-SetAngle X currangle
-
-set zoffset to zoffset + zvalue
-
-;reset timer to zero
-
-else
-
-set timer to 0
-
-set reset to 1
-
-set zoffset to 0
-
-SetAngle, x, startangle
-
-endif
-
-endif
-
-set tmpoffset to \textbf{GetWaterLevel}
-
-set tmpoffset to tmpoffset + zoffset
-
-SetPos Z tmpoffset
-
-endif
-
-end NewFloat
+\lstinputlisting{scripts/NewFloat.txt}
 
 \hypertarget{tips-and-tricks}{%
 \section{\texorpdfstring{\hfill\break
@@ -13034,23 +9699,7 @@ number of things you can do here:
 If the script does not have to be executed every frame, \textbf{put a
 little counter in there}:
 
-Begin My\_super\_long\_script
-
-Short framecounter
-
-If ( framecounter \textless{} 10 )
-
-set framecounter to ( framecounter + 1 )
-
-Return
-
-Endif
-
-set framecounter to 0
-
-{[}super long script goes here{]}
-
-end
+\lstinputlisting{scripts/My_super_long_script.txt}
 
 This little piece of code, that should be at the very top of your
 script, will allow your script (or rather the main, CPU power eating
@@ -13093,13 +9742,7 @@ Endif
 all the time until you stop them again with StopScript. You can do
 do-once global scripts by just putting a StopScript command at their end
 
-Begin do\_once\_global\_script
-
-{[}your code here{]}
-
-StopScript "do\_once\_global\_script"
-
-End
+\lstinputlisting{scripts/do_once_global_script.txt}
 
 \textbf{Try to use local scripts} instead of global scripts. With local
 scripts you are sure that they only run when you are in the vicinity.
@@ -13319,80 +9962,9 @@ Endif
 A different option is to use start scripts ( available only with
 Tribunal and Bloodmoon): Here are two examples by Dinkum Thinkum:
 
-begin DT\_DoOnce\_TribStartScript02
+\lstinputlisting{scripts/DT_DoOnce_TribStartScript02.txt}
 
-;script to demonstrate a 'DoOnce' Tribunal Start Script that runs once
-
-; each time a saved game is loaded with the mod enabled
-
-;by DinkumThinkum
-
-;script executes 'Do Once' code section once
-
-; each time the mod is loaded as part of a game
-
-;start of 'Do Once' code to be run each time a saved game is loaded with
-this mod enabled.
-
-MessageBox, "You will see this message everytime you load a saved game
-with this mod enabled.", "OK"
-
-;end of 'Do Once' code.
-
-StopScript DT\_DoOnce\_TribStartScript02
-
-end DT\_DoOnce\_TribStartScript02
-
-begin DT\_DoOnce\_TribStartScript01
-
-;script to demonstrate a 'DoOnce' Tribunal Start Script
-
-; by DinkumThinkum
-
-;script executes 'Do Once' code section once, when the mod is loaded
-
-; with a saved game that does not include the mod (or with a new game)
-
-;script executes 'Reload' code section once, each time a save game
-
-; made with the mod is reloaded with the mod enabled
-
-;either code section can be omitted, but all the control structures will
-still be needed
-
-;Note: BOTH 'StopScripts' are necessary. Trust me...
-\includegraphics{media/image5.png}
-
-;DT\_DoOnce\_TSS01 - Global variable, won't be reset by StopScript
-(initialized to 0)
-
-if ( DT\_DoOnce\_TSS01 == 1 )
-
-;start of 'Reload' code, to be run once each time mod is reloaded
-
-MessageBox, "You have loaded this mod with a saved game made with the
-mod enabled.", "OK"
-
-;end of 'Reload' code
-
-StopScript DT\_DoOnce\_TribStartScript01
-
-Return
-
-endif
-
-;start of 'Do Once' code, to be run only when the mod is first loaded.
-
-MessageBox, "You have loaded this mod with a saved game that was made
-without this mod enabled.", "OK"
-
-;end of 'Do Once' code.
-
-set DT\_DoOnce\_TSS01 to 1
-
-StopScript DT\_DoOnce\_TribStartScript01
-
-end DT\_DoOnce\_TribStartScript01
+\lstinputlisting{scripts/DT_DoOnce_TribStartScript01.txt}
 
 \hypertarget{uses-of-the-chargenstate-variable---disabling-saving-and-menus}{%
 \subsection{Uses of the CharGenState variable - Disabling saving and
@@ -13439,74 +10011,7 @@ This is a surprisingly difficult task, as OnActivate and OnPCEquip are
 both needed AND don't work quite as expected. Kir has found a solution
 as shown in this script for invoking a letter of credit:
 
-Begin BankLetter10\\
-\strut \\
-short button\\
-short messageOn\\
-short invoke\\
-short gone\\
-short goneway\\
-short testdist\\
-short PCSkipEquip\\
-short OnPCEquip\\
-\strut \\
-set PCSkipEquip to 1\\
-; disable if used (a 1 use item)\\
-if ( gone == 1 )\\
-if ( goneway == 1 ) ; activated as external item\\
-Disable\\
-else ; equipped from inventory\\
-startscript BankLetter10Remove\\
-endif\\
-set gone to 0\\
-return\\
-endif\\
-\strut \\
-if ( OnActivate == 1 )\\
-Set messageOn to 2\\
-set goneway to 1\\
-endif\\
-\strut \\
-If ( OnPCEquip == 1)\\
-Set messageOn to 2\\
-Set OnPCEquip to 0\\
-set goneway to 2\\
-endif\\
-\strut \\
-if ( messageOn == 0 )\\
-return\\
-endif\\
-\strut \\
-if ( messageOn == 2 )\\
-MessageBox "Do you want to invoke the Letter of Credit?" "Yes" "No"\\
-Set messageOn to 1\\
-return\\
-endif\\
-\strut \\
-\strut \\
-\strut \\
-if ( messageOn == 1 )\\
-set button to GetButtonPressed\\
-if ( button == 0 )\\
-Set invoke to 1\\
-Set messageOn to 0\\
-; return\\
-endif\\
-if ( button == 1 )\\
-Activate\\
-Set messageOn to 0\\
-return\\
-endif\\
-endif\\
-\strut \\
-if ( invoke == 1 )\\
-PlaySound "Item Gold Up"\\
-Player-\textgreater AddItem, Gold\_001, 10000\\
-set gone to 1\\
-set invoke to 0\\
-endif\\
-\strut \\
-End
+\lstinputlisting{scripts/BankLetter10.txt}
 
 Erstam posted a script with even better features, that also revealed an
 interesting glitch with the scripting variables OnPCEquip / SkipEquip:
@@ -13519,63 +10024,7 @@ PCSkipEquip variable that is set to 1 when the book is dropped on the
 player's portrait, rather than the OnPCEquip variable. This is the code
 I used:"
 
-Begin activateBook
-
-short OnPCEquip
-
-short PCSkipEquip
-
-short doOnce
-
-short actionFlag
-
-if ( actionFlag == 1 )
-
-if ( doOnce == 0 )
-
-; insert your custom code here
-
-set doOnce to 1
-
-endif
-
-set actionFlag to 0
-
-endif
-
-; PCSkipEquip is set to 1 every time the book is equipped from your
-inventory
-
-if ( PCSkipEquip == 1 )
-
-set PCSkipEquip to 0
-
-set actionFlag to 1
-
-return
-
-endif
-
-; these lines are important, otherwise the book can't be picked up from
-the ground
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-; for activating the book when it is placed in the game world
-
-if ( OnActivate == 1 )
-
-set actionFlag to 1
-
-Activate
-
-endif
-
-End
+\lstinputlisting{scripts/activateBook.txt}
 
 It should work without the doOnce condition, in case you want the action
 to take place every time you equip the book, but I haven't tested it
@@ -13591,111 +10040,12 @@ take items away from the Actor, or to modify his skills at runtime.
 
 Here is an example I used to make a guard switch between bow and sword:
 
-Begin \emph{HBCaravanGuard}AI
-
-; this script makes the AI guard more dangerous by making him switch
-from bow to sword when the player closes in
-
-short currentarrows
-
-short storearrows
-
-short doonce
-
-set currentarrows to GetItemCount "arrow of wasting flame"
-
-if ( doonce == 0 )
-
-set storearrows to currentarrows
-
-endif
-
-if ( GetDistance, Player \textless{} 120 )
-
-set currentarrows to GetItemCount "arrow of wasting flame"
-
-if ( currentarrows \textgreater{} 0 )
-
-RemoveItem "arrow of wasting flame", 1
-
-set doonce to 1
-
-endif
-
-elseif ( GetDistance, Player \textgreater= 120 )
-
-if ( currentarrows \textless{} storearrows )
-
-AddItem "arrow of wasting flame", 1
-
-else
-
-set doonce to 0
-
-endif
-
-endif
-
-End
+\lstinputlisting{scripts/HBCaravanGuardAI.txt}
 
 The next example is one by Bethesda, which does the same thing, using
 the skill change method (admittedly more elegant than mine ):
 
-begin marksmanToggle
-
-short counter
-
-short myMarksman
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-if ( counter \textless{} 20 )
-
-Set counter to counter + 1
-
-Return
-
-endif
-
-if ( myMarksman == 0 )
-
-set myMarksman to GetMarksman
-
-endif
-
-if ( GetMarksman \textgreater{} 0 )
-
-if ( GetDistance Player \textless{} 400 )
-
-SetMarksman 0
-
-endif
-
-else
-
-if ( GetDistance Player \textgreater{} 600 )
-
-SetMarksman myMarksman
-
-endif
-
-endif
-
-;for level designers... forces AI to do what it ought to do
-
-;when they are near, they use melee weapons
-
-;when they are far, they use missile weapons
-
-;checks every 20 frames for speed
-
-;Note: does not affect spellcasting AI
-
-End
+\lstinputlisting{scripts/marksmanToggle.txt}
 
 \hypertarget{making-npcs-switch-between-spell-sets}{%
 \subsection{Making NPCs switch between spell
@@ -13884,250 +10234,7 @@ object is ever within range of the player, it explodes (with
 ExplodeSpell) and disables. Once it has detonated, it waits a few frames
 for the spell system to clear, then deletes itself (with SetDelete).
 
-Begin trapProjScript
-
-short range
-
-short initialized
-
-short distance
-
-short detonate
-
-short triggered
-
-float targx
-
-float targy
-
-float targz
-
-float shiftx
-
-float shifty
-
-float shiftz
-
-float currshift
-
-float currx
-
-float curry
-
-float currz
-
-float totaldist
-
-float rate
-
-float killtimer
-
-if ( triggered == 1 )
-
-if ( killtimer \textless{} 4 )
-
-set killtimer to ( killtimer + GetSecondsPassed )
-
-else
-
-SetDelete 1
-
-endif
-
-return
-
-endif
-
-if ( MenuMode == 1 )
-
-return
-
-endif
-
-if ( initialized == 0 )
-
-set initialized to 1
-
-set range to 150
-
-set rate to 300
-
-set targx to ( player-\textgreater GetPos X )
-
-set targy to ( player-\textgreater GetPos Y )
-
-set targz to ( player-\textgreater GetPos Z )
-
-set shiftx to ( targx - GetPos X )
-
-set shifty to ( targy - GetPos Y )
-
-set shiftz to ( targz - GetPos Z )
-
-set totaldist to ( ( shiftx * shiftx ) + ( shifty * shifty ) + ( shiftz
-* shiftz ) )
-
-set totaldist to GetSquareRoot totaldist
-
-if ( totaldist != 0 )
-
-set shiftx to ( shiftx / totaldist )
-
-set shiftx to ( shiftx * rate )
-
-set shifty to ( shifty / totaldist )
-
-set shifty to ( shifty * rate )
-
-set shiftz to ( shiftz / totaldist )
-
-set shiftz to ( shiftz * rate )
-
-else
-
-set triggered to 1
-
-return
-
-endif
-
-endif
-
-set distance to GetDistance "player"
-
-if ( distance \textless{} range )
-
-set detonate to 1
-
-else
-
-set currx to GetPos X
-
-set curry to GetPos Y
-
-set currz to GetPos Z
-
-set currshift to ( shiftx * GetSecondsPassed )
-
-set currx to ( currx + currshift )
-
-set currshift to ( shifty * GetSecondsPassed )
-
-set curry to ( curry + currshift )
-
-set currshift to ( shiftz * GetSecondsPassed )
-
-set currz to ( currz + currshift )
-
-if ( shiftx \textless{} 0 )
-
-if ( currx \textless{} targx )
-
-set detonate to 1
-
-set currx to targx
-
-else
-
-set detonate to 0
-
-endif
-
-else
-
-if ( currx \textgreater{} targx )
-
-set detonate to 1
-
-set currx to targx
-
-else
-
-set detonate to 0
-
-endif
-
-endif
-
-if ( shifty \textless{} 0 )
-
-if ( curry \textless{} targy )
-
-set detonate to 1
-
-set curry to targy
-
-else
-
-set detonate to 0
-
-endif
-
-else
-
-if ( curry \textgreater{} targy )
-
-set detonate to 1
-
-set curry to targy
-
-else
-
-set detonate to 0
-
-endif
-
-endif
-
-if ( shiftz \textless{} 0 )
-
-if ( currz \textless{} targz )
-
-set detonate to 1
-
-set currz to targz
-
-else
-
-set detonate to 0
-
-endif
-
-else
-
-if ( currz \textgreater{} targz )
-
-set detonate to 1
-
-set currz to targz
-
-else
-
-set detonate to 0
-
-endif
-
-endif
-
-SetPos X currx
-
-SetPos Y curry
-
-SetPos Z currz
-
-endif
-
-if ( detonate == 1 )
-
-ExplodeSpell "proj\_trap\_spell"
-
-set triggered to 1
-
-disable
-
-endif
-
-end
+\lstinputlisting{scripts/trapProjScript.txt}
 
 \hypertarget{scripted-teleporting}{%
 \subsection{Scripted teleporting}\label{scripted-teleporting}}
@@ -14168,91 +10275,7 @@ JOG)}\label{example-script-by-nigedo-based-on-the-work-of-aftershock_81-and-jog}
 Note: This script \textbf{must} be a local script. Attach it to an
 activator or door: It will not work as a global script!
 
-Begin script\_PlacePC
-
-;Global Float Start\_PCX
-
-;Global Float Start\_PCY
-
-;Global Float Start\_PCZ
-
-Float xpos
-
-Float ypos
-
-Float zpos
-
-Float timer
-
-Short step
-
-If ( OnActivate )
-
-Set step to 1
-
-Endif
-
-If ( step == 1 )
-
-FadeOut 0.1
-
-ToggleMenus
-
-Set step to 2
-
-Return
-
-Elseif ( step == 2 )
-
-Set timer to ( timer + GetSecondsPassed )
-
-If ( timer \textgreater{} 0.2 )
-
-Set timer to 0
-
-Set step to 3
-
-Endif
-
-Return
-
-Elseif ( step == 3 )
-
-Set step to 0
-
-Player-\textgreater COE 0 0
-
-Set xpos to Start\_PCX
-
-Set ypos to Start\_PCY
-
-Set zpos to Start\_PCZ
-
-ToggleMenus
-
-MenuTest
-
-MenuTest
-
-Player-\textgreater SetPos x xpos
-
-Player-\textgreater SetPos y ypos
-
-Player-\textgreater SetPos z zpos
-
-FixMe
-
-Player-\textgreater SetPos x xpos
-
-Player-\textgreater SetPos y ypos
-
-Player-\textgreater SetPos z zpos
-
-FadeIn 0.1
-
-Endif
-
-End
+\lstinputlisting{scripts/script_PlacePC.txt}
 
 If it is not possible to simply attach the script to an activate-able
 item, one alternative is to have another script (global or local) place
@@ -14368,17 +10391,7 @@ census office with the following attached script will make sure the
 script is started during character creation (assuming no alternative
 char gen mods are used alongside your mod):
 
-Begin Script\_launcher
-
-If ( ScriptRunning, My\_Script == 0 )
-
-StartScript, My\_Script
-
-; MessageBox "MyScript was activated" ; tell the player if you like
-
-endif
-
-End
+\lstinputlisting{scripts/Script_launcher.txt}
 
 To make sure a global script is started in an already running game you
 can use a similar method, and place activators in commonly visited
@@ -14708,1185 +10721,7 @@ results will be available after one frame.
 (Extra thanks to JDGBOLT for sharing his script! By the way, this is the
 colored script output from MWEdit, see the tip on alternative editors.)
 
-begin jdtrigscript
-
-; by JDGBOLT
-
-; edited and commented for MSFD by GhanBuriGhan
-
-; simultaneous calculation of sine and cosine for three angles (e.g.
-three different axes)
-
-; for intermediate results of sine and cosine
-
-float ax1
-
-float ax2
-
-float ay1
-
-float ay2
-
-; main angle variable
-
-float angle
-
-;temp storage for angle:
-
-float angle\_source ;contains angle (loaded from global)
-
-float angle\_temp
-
-float angle\_temp2
-
-short angleshort ; short variable to take up angle - for tab values
-
-float angledec ; for decimal portion of angle
-
-short anglequad ;quadrant
-
-float axfinal ; for final result sine
-
-float ayfinal ; for final result cosine
-
-float angconvx1 ; for calculating decimal portion of sine and cosine
-
-float angconvy1
-
-float angconvx2
-
-float angconvy2
-
-short objnum ;counter to calculate all three angles
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-while ( objnum \textless= 3 ) ; this script calculates sine and cosine
-for all three axis in one frame
-
-;exporting results:
-
-if ( objnum == 1 )
-
-set Z\_sin to axfinal ; assign to global var. Z\_sin to free axfinal for
-next axis
-
-set Z\_cos to ayfinal ; ditto
-
-endif
-
-if ( objnum == 2 )
-
-set X\_sin to axfinal ;ditto
-
-set X\_cos to ayfinal ;ditto
-
-endif
-
-if ( objnum == 3 )
-
-set Y\_sin to axfinal ;ditto
-
-set Y\_cos to ayfinal ;ditto
-
-;MessageBox "sine of Z: \%.3f cosine of Z: \%.3f", Z\_sin, Z\_cos
-
-;MessageBox "sine of X: \%.3f cosine of X: \%.3f", X\_sin, X\_cos
-
-;MessageBox "sine of Y: \%.3f cosine of Y: \%.3f", Y\_sin, Y\_cos
-
-Set objnum to 0
-
-StopScript jdtrigscript
-
-Return
-
-endif
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-set objnum to ( objnum + 1 ) ;count up to do all three angles one by one
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-; obtain the angles from global variables.
-
-if ( objnum == 1 )
-
-set angle\_source to Z\_input\_angle
-
-endif
-
-if ( objnum == 2 )
-
-set angle\_source to X\_input\_angle
-
-endif
-
-if ( objnum == 3 )
-
-set angle\_source to Y\_input\_angle
-
-endif
-
-;GetAngle returns values from -180 to +180, so we need to compensate for
-calculation to get
-
-;values from 0 to 360°C:
-
-if ( angle\_source \textless{} 0 )
-
-set angle\_source to ( 360 + angle\_source )
-
-endif
-
-set angle to angle\_source
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-;determine quadrant. This way we need to calculate sine and cosine only
-for 0-90°
-
-if ( angle \textless= 90 )
-
-set angle\_temp2 to angle
-
-set anglequad to 1
-
-elseif ( angle \textless= 180 )
-
-set angle\_temp2 to ( 180 - angle )
-
-set anglequad to 2
-
-elseif ( angle \textless= 270 )
-
-set angle\_temp2 to ( angle - 180 )
-
-set anglequad to 3
-
-elseif ( angle \textless= 360 )
-
-set angle\_temp2 to ( 360 - angle )
-
-set anglequad to 4
-
-endif
-
-; obtain the decimal part of the angle
-
-set angleshort to angle\_temp2
-
-set angledec to ( angle\_temp2 - angleshort ) ; the difference between
-the float and the short is the decimal part
-
-set angle\_temp to angleshort
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-; These are pre-calculated values for sine and cosine:
-
-if ( angle\_temp \textless= 10 ) ; angles arranged in chunks of 10 for
-speed (and if block limits?)
-
-if ( angle\_temp == 0 )
-
-set ax1 to 0.000000 ; sine
-
-set ay1 to 1.000000 ;cosine
-
-set ax2 to 0.017452 ; sine of angletemp+1
-
-set ay2 to 0.999847 ;cosine of angletemp+1
-
-elseif ( angle\_temp == 1 )
-
-set ax1 to 0.017452
-
-set ay1 to 0.999847
-
-set ax2 to 0.034899
-
-set ay2 to 0.999390
-
-elseif ( angle\_temp == 2 )
-
-set ax1 to 0.034899
-
-set ay1 to 0.999390
-
-set ax2 to 0.052333
-
-set ay2 to 0.998629
-
-elseif ( angle\_temp == 3 )
-
-set ax1 to 0.052333
-
-set ay1 to 0.998629
-
-set ax2 to 0.069756
-
-set ay2 to 0.997564
-
-elseif ( angle\_temp == 4 )
-
-set ax1 to 0.069756
-
-set ay1 to 0.997564
-
-set ax2 to 0.087155
-
-set ay2 to 0.996194
-
-elseif ( angle\_temp == 5 )
-
-set ax1 to 0.087155
-
-set ay1 to 0.996194
-
-set ax2 to 0.104528
-
-set ay2 to 0.994521
-
-elseif ( angle\_temp == 6 )
-
-set ax1 to 0.104528
-
-set ay1 to 0.994521
-
-set ax2 to 0.121869
-
-set ay2 to 0.992546
-
-elseif ( angle\_temp == 7 )
-
-set ax1 to 0.121869
-
-set ay1 to 0.992546
-
-set ax2 to 0.139173
-
-set ay2 to 0.990268
-
-elseif ( angle\_temp == 8 )
-
-set ax1 to 0.139173
-
-set ay1 to 0.990268
-
-set ax2 to 0.156434
-
-set ay2 to 0.987688
-
-elseif ( angle\_temp == 9 )
-
-set ax1 to 0.156434
-
-set ay1 to 0.987688
-
-set ax2 to 0.173648
-
-set ay2 to 0.984807
-
-elseif ( angle\_temp == 10 )
-
-set ax1 to 0.173648
-
-set ay1 to 0.984807
-
-set ax2 to 0.190808
-
-set ay2 to 0.981627
-
-endif
-
-elseif ( angle\_temp \textless= 20 ) ; and so on\ldots{}
-
-if ( angle == 11 )
-
-set ax1 to 0.190808
-
-set ay1 to 0.981627
-
-set ax2 to 0.207911
-
-set ay2 to 0.978147
-
-elseif ( angle\_temp == 12 )
-
-set ax1 to 0.207911
-
-set ay1 to 0.978147
-
-set ax2 to 0.224951
-
-set ay2 to 0.974370
-
-elseif ( angle\_temp == 13 )
-
-set ax1 to 0.224951
-
-set ay1 to 0.974370
-
-set ax2 to 0.241921
-
-set ay2 to 0.970295
-
-elseif ( angle\_temp == 14 )
-
-set ax1 to 0.241921
-
-set ay1 to 0.970295
-
-set ax2 to 0.258819
-
-set ay2 to 0.965925
-
-elseif ( angle\_temp == 15 )
-
-set ax1 to 0.258819
-
-set ay1 to 0.965925
-
-set ax2 to 0.275637
-
-set ay2 to 0.961261
-
-elseif ( angle\_temp == 16 )
-
-set ax1 to 0.275637
-
-set ay1 to 0.961261
-
-set ax2 to 0.292371
-
-set ay2 to 0.956304
-
-elseif ( angle\_temp == 17 )
-
-set ax1 to 0.292371
-
-set ay1 to 0.956304
-
-set ax2 to 0.309016
-
-set ay2 to 0.951056
-
-elseif ( angle\_temp == 18 )
-
-set ax1 to 0.309016
-
-set ay1 to 0.951056
-
-set ax2 to 0.325568
-
-set ay2 to 0.945518
-
-elseif ( angle\_temp == 19 )
-
-set ax1 to 0.325568
-
-set ay1 to 0.945518
-
-set ax2 to 0.342020
-
-set ay2 to 0.939692
-
-elseif ( angle\_temp == 20 )
-
-set ax1 to 0.342020
-
-set ay1 to 0.939692
-
-set ax2 to 0.358367
-
-set ay2 to 0.933580
-
-endif
-
-elseif ( angle\_temp \textless= 30 )
-
-if ( angle\_temp == 21 )
-
-set ax1 to 0.358367
-
-set ay1 to 0.933580
-
-set ax2 to 0.374606
-
-set ay2 to 0.927183
-
-elseif ( angle\_temp == 22 )
-
-set ax1 to 0.374606
-
-set ay1 to 0.927183
-
-set ax2 to 0.390731
-
-set ay2 to 0.920504
-
-elseif ( angle\_temp == 23 )
-
-set ax1 to 0.390731
-
-set ay1 to 0.920504
-
-set ax2 to 0.406736
-
-set ay2 to 0.913545
-
-elseif ( angle\_temp == 24 )
-
-set ax1 to 0.406736
-
-set ay1 to 0.913545
-
-set ax2 to 0.422618
-
-set ay2 to 0.906307
-
-elseif ( angle\_temp == 25 )
-
-set ax1 to 0.422618
-
-set ay1 to 0.906307
-
-set ax2 to 0.438371
-
-set ay2 to 0.898794
-
-elseif ( angle\_temp == 26 )
-
-set ax1 to 0.438371
-
-set ay1 to 0.898794
-
-set ax2 to 0.453990
-
-set ay2 to 0.891006
-
-elseif ( angle\_temp == 27 )
-
-set ax1 to 0.453990
-
-set ay1 to 0.891006
-
-set ax2 to 0.469471
-
-set ay2 to 0.882947
-
-elseif ( angle\_temp == 28 )
-
-set ax1 to 0.469471
-
-set ay1 to 0.882947
-
-set ax2 to 0.484809
-
-set ay2 to 0.874619
-
-elseif ( angle\_temp == 29 )
-
-set ax1 to 0.484809
-
-set ay1 to 0.874619
-
-set ax2 to 0.500000
-
-set ay2 to 0.866025
-
-elseif ( angle\_temp == 30 )
-
-set ax1 to 0.500000
-
-set ay1 to 0.866025
-
-set ax2 to 0.515038
-
-set ay2 to 0.857167
-
-endif
-
-elseif ( angle\_temp \textless= 40 )
-
-if ( angle\_temp == 31 )
-
-set ax1 to 0.515038
-
-set ay1 to 0.857167
-
-set ax2 to 0.529919
-
-set ay2 to 0.848048
-
-elseif ( angle\_temp == 32 )
-
-set ax1 to 0.529919
-
-set ay1 to 0.848048
-
-set ax2 to 0.544639
-
-set ay2 to 0.838670
-
-elseif ( angle\_temp == 33 )
-
-set ax1 to 0.544639
-
-set ay1 to 0.838670
-
-set ax2 to 0.559192
-
-set ay2 to 0.829037
-
-elseif ( angle\_temp == 34 )
-
-set ax1 to 0.559192
-
-set ay1 to 0.829037
-
-set ax2 to 0.573576
-
-set ay2 to 0.819152
-
-elseif ( angle\_temp == 35 )
-
-set ax1 to 0.573576
-
-set ay1 to 0.819152
-
-set ax2 to 0.587785
-
-set ay2 to 0.809016
-
-elseif ( angle\_temp == 36 )
-
-set ax1 to 0.587785
-
-set ay1 to 0.809016
-
-set ax2 to 0.601815
-
-set ay2 to 0.798635
-
-elseif ( angle\_temp == 37 )
-
-set ax1 to 0.601815
-
-set ay1 to 0.798635
-
-set ax2 to 0.615661
-
-set ay2 to 0.788010
-
-elseif ( angle\_temp == 38 )
-
-set ax1 to 0.615661
-
-set ay1 to 0.788010
-
-set ax2 to 0.629320
-
-set ay2 to 0.777145
-
-elseif ( angle\_temp == 39 )
-
-set ax1 to 0.629320
-
-set ay1 to 0.777145
-
-set ax2 to 0.642787
-
-set ay2 to 0.766044
-
-elseif ( angle\_temp == 40 )
-
-set ax1 to 0.642787
-
-set ay1 to 0.766044
-
-set ax2 to 0.656059
-
-set ay2 to 0.754709
-
-endif
-
-elseif ( angle\_temp \textless= 50 )
-
-if ( angle\_temp == 41 )
-
-set ax1 to 0.656059
-
-set ay1 to 0.754709
-
-set ax2 to 0.669130
-
-set ay2 to 0.743144
-
-elseif ( angle\_temp == 42 )
-
-set ax1 to 0.669130
-
-set ay1 to 0.743144
-
-set ax2 to 0.681998
-
-set ay2 to 0.731353
-
-elseif ( angle\_temp == 43 )
-
-set ax1 to 0.681998
-
-set ay1 to 0.731353
-
-set ax2 to 0.694658
-
-set ay2 to 0.719339
-
-elseif ( angle\_temp == 44 )
-
-set ax1 to 0.694658
-
-set ay1 to 0.719339
-
-set ax2 to 0.707106
-
-set ay2 to 0.707106
-
-elseif ( angle\_temp == 45 )
-
-set ax1 to 0.707106
-
-set ay1 to 0.707106
-
-set ax2 to 0.719339
-
-set ay2 to 0.694658
-
-elseif ( angle\_temp == 46 )
-
-set ax1 to 0.719339
-
-set ay1 to 0.694658
-
-set ax2 to 0.731353
-
-set ay2 to 0.681998
-
-elseif ( angle\_temp == 47 )
-
-set ax1 to 0.731353
-
-set ay1 to 0.681998
-
-set ax2 to 0.743144
-
-set ay2 to 0.669130
-
-elseif ( angle\_temp == 48 )
-
-set ax1 to 0.743144
-
-set ay1 to 0.669130
-
-set ax2 to 0.754709
-
-set ay2 to 0.656059
-
-elseif ( angle\_temp == 49 )
-
-set ax1 to 0.754709
-
-set ay1 to 0.656059
-
-set ax2 to 0.766044
-
-set ay2 to 0.642787
-
-elseif ( angle\_temp == 50 )
-
-set ax1 to 0.766044
-
-set ay1 to 0.642787
-
-set ax2 to 0.777145
-
-set ay2 to 0.629320
-
-endif
-
-elseif ( angle\_temp \textless= 60 )
-
-if ( angle == 51 )
-
-set ax1 to 0.777145
-
-set ay1 to 0.629320
-
-set ax2 to 0.788010
-
-set ay2 to 0.615661
-
-elseif ( angle\_temp == 52 )
-
-set ax1 to 0.788010
-
-set ay1 to 0.615661
-
-set ax2 to 0.798635
-
-set ay2 to 0.601815
-
-elseif ( angle\_temp == 53 )
-
-set ax1 to 0.798635
-
-set ay1 to 0.601815
-
-set ax2 to 0.809016
-
-set ay2 to 0.587785
-
-elseif ( angle\_temp == 54 )
-
-set ax1 to 0.809016
-
-set ay1 to 0.587785
-
-set ax2 to 0.819152
-
-set ay2 to 0.573576
-
-elseif ( angle\_temp == 55 )
-
-set ax1 to 0.819152
-
-set ay1 to 0.573576
-
-set ax2 to 0.829037
-
-set ay2 to 0.559192
-
-elseif ( angle\_temp == 56 )
-
-set ax1 to 0.829037
-
-set ay1 to 0.559192
-
-set ax2 to 0.838670
-
-set ay2 to 0.544639
-
-elseif ( angle\_temp == 57 )
-
-set ax1 to 0.838670
-
-set ay1 to 0.544639
-
-set ax2 to 0.848048
-
-set ay2 to 0.529919
-
-elseif ( angle\_temp == 58 )
-
-set ax1 to 0.848048
-
-set ay1 to 0.529919
-
-set ax2 to 0.857167
-
-set ay2 to 0.515038
-
-elseif ( angle\_temp == 59 )
-
-set ax1 to 0.857167
-
-set ay1 to 0.515038
-
-set ax2 to 0.866025
-
-set ay2 to 0.500000
-
-elseif ( angle\_temp == 60 )
-
-set ax1 to 0.866025
-
-set ay1 to 0.500000
-
-set ax2 to 0.874619
-
-set ay2 to 0.484809
-
-endif
-
-elseif ( angle\_temp \textless= 70 )
-
-if ( angle\_temp == 61 )
-
-set ax1 to 0.874619
-
-set ay1 to 0.484809
-
-set ax2 to 0.882947
-
-set ay2 to 0.469471
-
-elseif ( angle\_temp == 62 )
-
-set ax1 to 0.882947
-
-set ay1 to 0.469471
-
-set ax2 to 0.891006
-
-set ay2 to 0.453990
-
-elseif ( angle\_temp == 63 )
-
-set ax1 to 0.891006
-
-set ay1 to 0.453990
-
-set ax2 to 0.898794
-
-set ay2 to 0.438371
-
-elseif ( angle\_temp == 64 )
-
-set ax1 to 0.898794
-
-set ay1 to 0.438371
-
-set ax2 to 0.906307
-
-set ay2 to 0.422618
-
-elseif ( angle\_temp == 65 )
-
-set ax1 to 0.906307
-
-set ay1 to 0.422618
-
-set ax2 to 0.913545
-
-set ay2 to 0.406736
-
-elseif ( angle\_temp == 66 )
-
-set ax1 to 0.913545
-
-set ay1 to 0.406736
-
-set ax2 to 0.920504
-
-set ay2 to 0.390731
-
-elseif ( angle\_temp == 67 )
-
-set ax1 to 0.920504
-
-set ay1 to 0.390731
-
-set ax2 to 0.927183
-
-set ay2 to 0.374606
-
-elseif ( angle\_temp == 68 )
-
-set ax1 to 0.927183
-
-set ay1 to 0.374606
-
-set ax2 to 0.933580
-
-set ay2 to 0.358367
-
-elseif ( angle\_temp == 69 )
-
-set ax1 to 0.933580
-
-set ay1 to 0.358367
-
-set ax2 to 0.939692
-
-set ay2 to 0.342020
-
-elseif ( angle\_temp == 70 )
-
-set ax1 to 0.939692
-
-set ay1 to 0.342020
-
-set ax2 to 0.945518
-
-set ay2 to 0.325568
-
-endif
-
-elseif ( angle\_temp \textless= 80 )
-
-if ( angle\_temp == 71 )
-
-set ax1 to 0.945518
-
-set ay1 to 0.325568
-
-set ax2 to 0.951056
-
-set ay2 to 0.309016
-
-elseif ( angle\_temp == 72 )
-
-set ax1 to 0.951056
-
-set ay1 to 0.309016
-
-set ax2 to 0.956304
-
-set ay2 to 0.292371
-
-elseif ( angle\_temp == 73 )
-
-set ax1 to 0.956304
-
-set ay1 to 0.292371
-
-set ax2 to 0.961261
-
-set ay2 to 0.275637
-
-elseif ( angle\_temp == 74 )
-
-set ax1 to 0.961261
-
-set ay1 to 0.275637
-
-set ax2 to 0.965925
-
-set ay2 to 0.258819
-
-elseif ( angle\_temp == 75 )
-
-set ax1 to 0.965925
-
-set ay1 to 0.258819
-
-set ax2 to 0.970295
-
-set ay2 to 0.241921
-
-elseif ( angle\_temp == 76 )
-
-set ax1 to 0.970295
-
-set ay1 to 0.241921
-
-set ax2 to 0.974370
-
-set ay2 to 0.224951
-
-elseif ( angle\_temp == 77 )
-
-set ax1 to 0.974370
-
-set ay1 to 0.224951
-
-set ax2 to 0.978147
-
-set ay2 to 0.207911
-
-elseif ( angle\_temp == 78 )
-
-set ax1 to 0.978147
-
-set ay1 to 0.207911
-
-set ax2 to 0.981627
-
-set ay2 to 0.190808
-
-elseif ( angle\_temp == 79 )
-
-set ax1 to 0.981627
-
-set ay1 to 0.190808
-
-set ax2 to 0.984807
-
-set ay2 to 0.173648
-
-elseif ( angle\_temp == 80 )
-
-set ax1 to 0.984807
-
-set ay1 to 0.173648
-
-set ax2 to 0.987688
-
-set ay2 to 0.156434
-
-endif
-
-elseif ( angle\_temp \textless= 90 )
-
-if ( angle\_temp == 81 )
-
-set ax1 to 0.987688
-
-set ay1 to 0.156434
-
-set ax2 to 0.990268
-
-set ay2 to 0.139173
-
-elseif ( angle\_temp == 82 )
-
-set ax1 to 0.990268
-
-set ay1 to 0.139173
-
-set ax2 to 0.992546
-
-set ay2 to 0.121869
-
-elseif ( angle\_temp == 83 )
-
-set ax1 to 0.992546
-
-set ay1 to 0.121869
-
-set ax2 to 0.994521
-
-set ay2 to 0.104528
-
-elseif ( angle\_temp == 84 )
-
-set ax1 to 0.994521
-
-set ay1 to 0.104528
-
-set ax2 to 0.996194
-
-set ay2 to 0.087155
-
-elseif ( angle\_temp == 85 )
-
-set ax1 to 0.996194
-
-set ay1 to 0.087155
-
-set ax2 to 0.997564
-
-set ay2 to 0.069756
-
-elseif ( angle\_temp == 86 )
-
-set ax1 to 0.997564
-
-set ay1 to 0.069756
-
-set ax2 to 0.998629
-
-set ay2 to 0.052335
-
-elseif ( angle\_temp == 87 )
-
-set ax1 to 0.998629
-
-set ay1 to 0.052335
-
-set ax2 to 0.999390
-
-set ay2 to 0.034899
-
-elseif ( angle\_temp == 88 )
-
-set ax1 to 0.999390
-
-set ay1 to 0.034899
-
-set ax2 to 0.999847
-
-set ay2 to 0.017452
-
-elseif ( angle\_temp == 89 )
-
-set ax1 to 0.999847
-
-set ay1 to 0.017452
-
-set ax2 to 1.000000
-
-set ay2 to 0.000000
-
-elseif ( angle\_temp == 90 )
-
-set ax1 to 1.000000
-
-set ay1 to 0.000000
-
-set ax2 to 0.999847
-
-set ay2 to 0.017452
-
-endif
-
-endif
-
-;Use simple linear extrapolation to approximate a decimal value for sine
-and cosine:
-
-set angconvx1 to ( ax2 - ax1 ) ; calculate distance sin(angle) and
-sin(angle+1)
-
-set angconvy1 to ( ay2 - ay1 ) ; same for cos
-
-set angconvx2 to ( angconvx1 * angledec ) ;calculate a fraction by the
-decimal residue
-
-set angconvy2 to ( angconvy1 * angledec ) ; same for cos
-
-set axfinal to ( ax1 + angconvx2 ) ; set final result to result +
-fraction
-
-set ayfinal to ( ay1 + angconvy2 ) ; set final result to result +
-fraction
-
-;correct for quadrant:
-
-if ( anglequad == 1 )
-
-set axfinal to ( axfinal * 1 ) ; holds final sine
-
-set ayfinal to ( ayfinal * 1 ) ; holds final cosine
-
-elseif ( anglequad == 2 )
-
-set axfinal to ( axfinal * 1 ) ; holds final sine
-
-set ayfinal to ( ayfinal * -1 ) ; holds final cosine
-
-elseif ( anglequad == 3 )
-
-set axfinal to ( axfinal * -1 ) ; holds final sine
-
-set ayfinal to ( ayfinal * -1 ) ; holds final cosine
-
-elseif ( anglequad == 4 )
-
-set axfinal to ( axfinal * -1 ) ; holds final sine
-
-set ayfinal to ( ayfinal * 1 ) ; holds final cosine
-
-endif
-
-endwhile ; loop for all three axis
-
-;-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_-\_
-
-end jdtrigscript
+\lstinputlisting{scripts/jdtrigscript.txt}
 
 \hypertarget{mannequins}{%
 \subsection{\texorpdfstring{\hfill\break
@@ -15909,292 +10744,7 @@ is in reality a normal NPC with 0 health or corpse (health set to 0 in
 TES CS). For this version you simply activate it to give it items, and
 it will equip armor you give it.
 
-Begin \emph{rsn\_mannequin\_f\_}script
-
-short button
-
-short questionState
-
-short nEquipType
-
-short nStillEquipped
-
-float fDeleteTimer
-
-SkipAnim \emph{;GBG: This is essential, it makes the Mannequin, which is
-an NPC, stand still}
-
-if ( menumode == 1 )
-
-return
-
-endif
-
-if ( GetDisabled == 1 )
-
-; if mannequin has been disabled then we need to wait some time then
-delete this reference
-
-Set fDeleteTimer to ( fDeleteTimer + GetSecondsPassed )
-
-if ( fDeleteTimer \textgreater{} 5 )
-
-SetDelete 1
-
-endif
-
-return
-
-endif
-
-if ( OnActivate == 0 )
-
-if ( questionState == 0 )
-
-return
-
-endif
-
-endif
-
-if ( questionState == 0 )
-
-MessageBox, "Armor Mannequin", "Move Mannequin", "Add/Remove Armor"
-
-set questionState to 1
-
-endif
-
-if ( questionState == 1 )
-
-set button to GetButtonPressed
-
-if ( button == 0 )
-
-set questionState to 10
-
-elseif ( button == 1 )
-
-set questionState to 0
-
-Activate
-
-endif
-
-endif
-
-if ( questionState == 10 )
-
-; This section is split into two groups of nested ifs because of nested
-if limits of
-
-; the scripting language.
-
-Set nStillEquipped to 0
-
-; Here we check to see if a weapon is equipped (put in mainly for if
-anyone can figure
-
-; out how to get a mannequin to show a weapon)
-
-Set nEquipType to ( GetWeaponType )
-
-if ( nEquipType == -1 )
-
-; Here we check to see if any armor is equipped (NOTE: there are 10
-different possible
-
-; pieces of armor so we need to check each individually)
-
-Set nEquipType to ( GetArmorType 0 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 1 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 2 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 3 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 4 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 5 )
-
-if ( nEquipType != -1 )
-
-Set nStillEquipped to 1 ;\emph{GBG: Set to 1 if there is still some
-armor equipped}
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-if ( nStillEquipped != 1 ) ;We only want to process if we haven't found
-any equipment.
-
-Set nEquipType to ( GetArmorType 6 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 7 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 8 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 9 )
-
-if ( nEquipType == -1 )
-
-Set nEquipType to ( GetArmorType 10 )
-
-If ( nEquipType == -1 )
-
-;Only show this question if the mannequin doesn't have weapons or armor
-equipped.
-
-MessageBox "Did you remove all items from the mannequin?", "Yes", "No"
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-else
-
-Set nStillEquipped to 1
-
-endif
-
-endif
-
-; Now we need to go to the next stage of processing (either wait for
-user choice or immediately activate)
-
-set questionState to 20
-
-endif
-
-if ( questionState == 20 )
-
-if ( nStillEquipped != 1 )
-
-set button to GetButtonPressed
-
-else
-
-; Mannequin still has weapons or armor equipped so we want activate it
-and warn
-
-; the user instead of allowing pick-up.
-
-MessageBox "You haven't removed your equipment."
-
-Set button to 1 ;says that there are still items on the Mannequin
-
-endif
-
-if ( button == 0 )
-
-set questionState to 0
-
-; Disable the current mannequin
-
-; and create a new one we wouldn't have to worry about losing items)
-
-; GBG: if Mannequins are transported a lot
-
-; a SetDelete function might be a good idea
-
-Disable
-
-; This is the item that contains the script
-
-; to generate a new mannequin when dropped.
-
-; GBG: for a "female" mannequin this would be a different item
-
-player-\textgreater addItem, "\_rsn\_man\_f\_holder", 1
-
-playSound "Item Misc Up"
-
-elseif ( button == 1 )
-
-; There are still items on the mannequin (either from checks or user
-response)
-
-set questionState to 0
-
-Activate
-
-endif
-
-endif
-
-end
+\lstinputlisting{scripts/rsn_mannequin_f_script.txt}
 
 The following script goes on the item that's added to our inventory when
 we move the mannequin. When you drop it, a new mannequin is created at
@@ -16204,231 +10754,9 @@ otherwise:
 ; Script split into two scripts to handle the two different mannequin
 genders.
 
-Begin \emph{rsn\_man\_f\_holder\_}script
+% External .txt file misspelled. extra space
 
-short OnPCDrop
-
-float fDeleteTimer
-
-if ( GetDisabled == 1 )
-
-; if holder has been disabled then we need to wait some time then delete
-this reference
-
-Set fDeleteTimer to ( fDeleteTimer + GetSecondsPassed )
-
-if ( fDeleteTimer \textgreater{} 5 )
-
-SetDelete 1
-
-endif
-
-return
-
-endif
-
-if ( OnPCDrop == 1 )
-
-Disable
-
-; This is the NPC with 0 health that is really just a standing corpse.
-
-PlaceAtPC, "\_rsn\_mannequin\_female", 1, 0, 0
-
-Set OnPCDrop to 0
-
-endif
-
-end
-
-\hypertarget{is-she-looking-at-me}{%
-\subsection{\texorpdfstring{\hfill\break
-Is she looking at
-me?}{ Is she looking at me?}}\label{is-she-looking-at-me}}
-
-Here is a beautiful script by Horatio that allows to detect whether an
-Actor looks towards the player:
-
-Begin PCLookAtMe
-
-float fPCX
-
-float fPCY
-
-float fPCAngle
-
-float fdx
-
-float fdy
-
-float fRatio
-
-short sPCLookAtMe
-
-set sPCLookAtMe to 1
-
-;you could probably also add a GetLOS check in here
-
-; however i could never get GetLOS to work properly...although i didn't
-try very hard
-
-;is PC really far away
-
-if ( GetDistance, Player \textgreater{} 8000 )
-
-set sPCLookAtMe to 0
-
-else
-
-;yay trigonometry
-
-;this basically does a rough calculation of the PCs direction relative
-
-;to the Actor, it only uses 45 degree chunks, though
-
-set fPCX to ( player-\textgreater GetPos, X )
-
-set fPCY to ( player-\textgreater GetPos, Y )
-
-set fPCAngle to ( player-\textgreater GetAngle, Z )
-
-set fdx to GetPos, X
-
-set fdy to GetPos, Y
-
-set fdx to ( fdx - fPCX )
-
-set fdy to ( fdy - fPCY )
-
-set fRatio to ( fdx / fdy )
-
-if ( fdx \textgreater{} 0 )
-
-if ( fdy \textgreater{} 0 )
-
-if ( fRatio \textgreater{} 1 )
-
-if ( fPCAngle \textless{} -45 )
-
-set sPCLookAtMe to 0
-
-endif
-
-else
-
-if ( fPCAngle \textless{} -90 )
-
-set sPCLookAtMe to 0
-
-endif
-
-if ( fPCAngle \textgreater{} 135 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-else
-
-if ( fRatio \textless{} -1 )
-
-if ( fPCAngle \textless{} 0 )
-
-if ( fPCAngle \textgreater{} -135 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-else
-
-if ( fPCAngle \textless{} 45 )
-
-if ( fPCAngle \textgreater{} -90 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-endif
-
-endif
-
-else
-
-if ( fdy \textgreater{} 0 )
-
-if ( fRatio \textless{} -1 )
-
-if ( fPCAngle \textgreater{} 45 )
-
-set sPCLookAtMe to 0
-
-endif
-
-else
-
-if ( fPCAngle \textgreater{} 90 )
-
-set sPCLookAtMe to 0
-
-endif
-
-if ( fPCAngle \textless{} -135 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-else
-
-if ( fRatio \textgreater{} 1 )
-
-if ( fPCAngle \textgreater{} 0 )
-
-if ( fPCAngle \textless{} 135 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-else
-
-if ( fPCAngle \textgreater{} -35 )
-
-if ( fPCAngle \textless{} 90 )
-
-set sPCLookAtMe to 0
-
-endif
-
-endif
-
-endif
-
-endif
-
-endif
-
-endif
-
-if ( sPCLookAtMe == 0 )
-
-;do something while the PC is not looking
-
-endif
-
-End
+\lstinputlisting{scripts/rsn_man_f_holder_script .txt}
 
 \hypertarget{cinematic-sequence}{%
 \subsection{\texorpdfstring{\hfill\break

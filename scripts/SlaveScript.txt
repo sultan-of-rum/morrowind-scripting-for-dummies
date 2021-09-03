@@ -1,5 +1,5 @@
 Begin SlaveScript
-[…]
+[]
 if ( slaveStatus == 3 )
 	if ( GetCurrentAIPackage == 3 )
 		AIWander 512 0 0 0 0 0 0 0 0 0 0 0
