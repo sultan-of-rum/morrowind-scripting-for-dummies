@@ -4065,6 +4065,11 @@ like the normal in-game ones do:
 
 \lstinputlisting{scripts/Trap_script.txt}
 
+\textbf{Notes}: According to my testing, the activate function can not be used by itself, without OnActivate in the same script. The OnActivate and Activate functions can be in different parts of the script, though. However, Activate will not work before OnActivate has not at least been called once. There have been reports that the object also must have been manually activated at least once within the last 72 hours, so apparently the game eventually forgets that OnActivate has been called previously. Containers require manual activation each load session (forum info / Phaedrus). Play around with this testscript (I had it attached to a door) to
+see for yourself:
+
+\lstinputlisting{scripts/GBG_closing_door.txt}
+
 There have also been various reports about difficulties with on
 OnActivate in general, in my experience, avoiding to use more than one
 OnActivate in a script is the safest way to go. Also be aware that for
@@ -4637,6 +4642,8 @@ They show how you can set conditions to determine when the NPC has
 finished his action.
 
 \lstinputlisting{scripts/TT_opendoor.txt}
+
+\lstinputlisting{scripts/TT_pickmace.txt}
 
 \lstinputlisting{scripts/TT_openloaddoor.txt}
 
