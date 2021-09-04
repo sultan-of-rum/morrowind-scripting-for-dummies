@@ -1,0 +1,938 @@
+\hypertarget{general-information-scripts-commands-and-syntax}{%
+\section{\texorpdfstring{\hfill\break
+General Information: Scripts, Commands and
+Syntax}{ General Information: Scripts, Commands and Syntax}}\label{general-information-scripts-commands-and-syntax}}
+
+\hypertarget{types-of-scripts}{%
+\subsection{Types of scripts}\label{types-of-scripts}}
+
+\hypertarget{local-scripts}{%
+\subsubsection{Local scripts}\label{local-scripts}}
+
+Any script that is running on an object or Actor in the game (assigned
+in the script-dropdown field of the object or Actors object window) is a
+local script. Local scripts are only active if the cell is loaded --
+this is the current interior cell, or the current and all directly
+neighboring exterior cells. When the object is outside of this range the
+script is not running, but the local variables are saved. You cannot
+stop a local script using Stopscript.
+
+\hypertarget{global-scripts}{%
+\subsubsection{Global scripts}\label{global-scripts}}
+
+Any script that is not attached to any object is a global script, and is
+by default not executed until you call it (see below). Note that there
+is no default object for a global script to work on, so objects must
+always be specified: while the following will work in a local script
+attached to an NPC:
+
+AITravel 1150, 8899, 1110
+
+You will have to specify the NPC in a global script:
+
+"NPC\_ID"-\textgreater AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
+unique identifier for
+
+\begin{quote}
+;each object in the editor
+\end{quote}
+
+Global scripts are active all the time once they have been activated and
+until they are specifically terminated. Thus, once activated, they will
+be processed every frame as described for locals scripts above. That is
+why they should be used with caution, as too many, or too complicated
+global scripts can easily slow the game down a lot.
+
+The command to start a non-active script is:
+
+StartScript, "Script ID"
+
+With Tribunal and Bloodmoon you also have the option to make a script
+start automatically with the game. In the TESCS under the menu
+Gameplay/Edit starting Scripts/ you can add any script to the list of
+automatically started scripts.
+
+The function to terminate a global script is:
+
+StopScript, "Script ID"
+
+Variables local to a global script will be saved temporarily when the
+script is stopped and restarted. In order to ensure that variables are
+always saved, the script must be run at least once every load session.
+If you need to be sure the variables are reset, you should reset them
+yourself: don't rely on it happening automatically.
+
+A simple way to ensure variables are saved is to use a startscript (only
+available with expansions); so for example the startscript might look
+something like this:
+
+begin KeepVarsScript
+
+if ( ScriptRunning, MyScript == 0 )
+
+set MyScript.KeepVars to 1
+
+StartScript MyScript
+
+endif
+
+StopScript KeepVarsScript
+
+end
+
+\ldots and the script "MyScript" might look like this:
+
+begin MyScript
+
+short KeepVars
+
+if ( KeepVars == 1 )
+
+set KeepVars to 0
+
+StopScript MyScript
+
+return
+
+endif
+
+;main body of script goes here
+
+end
+
+It is possible to use the StartScript function to run global scripts
+that are tied to an object or Actor. These are called "targeted
+scripts".
+
+"Object\_ID"-\textgreater StartScript "Script\_ ID"
+
+These scripts resemble both local scripts (in that the functions called
+always default to the object or Actor the script targets) and global
+scripts (in that they are always running and can be terminated with
+StopScript).
+
+\textbf{Note:} read more on the special case of "targeted scripts" in
+the Tips and Tricks section.
+
+\hypertarget{syntax}{%
+\subsection{\texorpdfstring{\hfill\break
+Syntax}{ Syntax}}\label{syntax}}
+
+There are some unique features in TES script that should be explained
+before we go into more detail.
+
+\hypertarget{beginning-and-ending-scripts}{%
+\subsubsection{Beginning and ending
+scripts}\label{beginning-and-ending-scripts}}
+
+Begin Script\_ID
+
+End
+
+End Script\_ID
+
+Every script must have the Begin and End tags. The specified name will
+also be the ID you will reference the script by (be it from other
+scripts or inside the TES CS object windows). A script may start out
+with comments, but the first line of real code must be "Begin
+xxxxxxxxx".
+
+As with other objects, it is recommended that you give your scripts a
+unique tag. I usually use GBG\_Scriptname. This ensures that your
+scripts are easily identified, they all are neatly listed in one block
+in the scripts list, and there is little danger of conflicts with other
+mods using the same name. Using leading underscores e.g. \_Scriptname is
+not recommended.
+
+If you want your scripts to appear at the top of the list of scripts,
+put a 1 in front, for example, 1YAC\_ScriptName
+
+\hypertarget{general-syntax-for-functions}{%
+\subsubsection{\texorpdfstring{General syntax for functions:
+}{General syntax for functions: }}\label{general-syntax-for-functions}}
+
+Functions are not case sensitive, but using the case sensitive form as
+suggested by Bethesda (e.g. GetSpellEffects instead of getspelleffects)
+makes scripts easier to read, so it's recommended to keep it that way.
+
+"Object\_ID"-\textgreater Function, {[}parameters{]}
+
+This is the format for all functions that act on or refer to a
+specifiable object in the game world. The "arrow" or "fix" designates
+which object a function will be performed on. The "object\_ID" is the
+unique ID that is given to each object in the editor (usually the first
+field in any object window). You need this ID, not the Name! If you call
+a function without a designated Object-ID, the function will be
+performed on the default object, which is the object the script is
+attached to.
+
+This is not to say that there might not be another object referenced as
+a parameter:
+
+"Object\_ID1"-\textgreater Function, "Object\_ID2"
+
+\textbf{Notes:}
+
+Functions with a "fix" will only compile if the object has already been
+placed into the game world in the editor (with at least one reference),
+otherwise the script will not compile. If you compile the script and
+then delete all references, the game will give errors on load and CTD.
+
+More than one function may be used in a \emph{set} expression, but the
+functions always apply to the same reference. For example:
+
+set SomeVar to ( player-\textgreater GetStrength ) + (
+player-\textgreater GetEndurance )
+
+and
+
+set SomeVar to ( player-\textgreater GetStrength ) + ( GetEndurance )
+
+will both have the same effect, and specifying different references will
+not work.
+
+Referencing non-unique items with the "fix" will usually perform the
+function only on the first reference of the object! So using this in a
+global script:
+
+"cliff racer"-\textgreater ModCurrentHealth -1000
+
+will not have the desired effect, it will only kill one of the annoying
+bastards. However attaching a script to the creature with just
+
+ModCurrentHealth -1000
+
+Would do the trick, because every reference of the cliff racer will have
+the script running, and apply the function to itself. Note that this
+does not apply to all functions (e.g. SetHealth in the above example
+would affect all references the player has not yet encountered).
+
+A number of functions refer only to the player or not to an object at
+all, and are therefore using the fix is meaningless or may produce
+errors. E.g.:
+
+If ( GetPCRank == 0 )
+
+If ( CellChanged == 0 )
+
+FadeOut, 2
+
+\hypertarget{general-syntax-commas-parentheses-and-spaces}{%
+\subsubsection{General syntax: Commas, parentheses and
+spaces}\label{general-syntax-commas-parentheses-and-spaces}}
+
+TES Script is not too picky about syntax. Case mostly doesn't matter,
+commas can be left out, and spaces are mostly ignored. Nevertheless I
+would advise adhering to the following principles:
+
+\begin{itemize}
+\item
+  Either avoid commas, or always use commas: inconsistent usage can
+  cause problems.
+\item
+  If the ID contains a space or begins with an underscore, you must use
+  quotation marks: "Object ID" or "\_Object\_ID". Better to avoid spaces
+  altogether: Object\_ID
+\item
+  Get used to \textbf{always} leaving spaces around parentheses and
+  operators, sometimes it seems to cause problems if you don't: if (
+  variable == 1 ), not: if (variable==1).\\
+  While this doesn't matter most of the time it generates weird and
+  almost untraceable errors sometimes, so you are much better off always
+  leaving a space.
+\item
+  The fix (-\textgreater) is a little more complicated. If IDs are
+  contained in quotes, you should \textbf{not} leave spaces around the
+  fix:
+\end{itemize}
+
+\begin{quote}
+"Sirollus Saccus"-\textgreater GetItemCount netch\_leather\_greaves
+\end{quote}
+
+The above will work, but spaces around the fix would cause problems.
+(Thanks to Simpleton and DinkumThinkum for this info.) However, since it
+has also been reported that a \emph{lack} of quotation marks can cause
+problems in combination with spaces round the fix, I'm going to
+recommend that you don't leave spaces round the fix at all (should be
+fine in all cases).
+
+\hypertarget{comments}{%
+\subsubsection{Comments}\label{comments}}
+
+Comments are marked by a semicolon ;. Comments can be added in their own
+lines or behind lines with code
+
+\textbf{;} enter sneak mode
+
+Fargoth-\textgreater ForceSneak
+
+Fargoth-\textgreater AiTravel -11468.595,-71511.531,173.728
+\textbf{;}goes to tree
+
+\hypertarget{indentation-using-tabstops}{%
+\subsubsection{Indentation / using
+tabstops}\label{indentation-using-tabstops}}
+
+For your own sake, use proper indentation (tabstops) for if-elseif
+constructs -- makes it much easier to keep track of them, so you don't
+forget an endif at the end. In the tips and tricks section you will find
+a link to an external EMACS editor mode for TES script that will do
+automatic indentation.
+
+If ( variable1 )
+
+If ( variable2 )
+
+{[}do something{]}
+
+endif
+
+endif
+
+is better than
+
+If ( variable1 )
+
+If ( variable2 )
+
+{[}do something{]}
+
+endif
+
+endif
+
+\hypertarget{variables}{%
+\subsection{Variables}\label{variables}}
+
+\hypertarget{types-of-variables}{%
+\subsubsection{Types of variables}\label{types-of-variables}}
+
+There are three types of variables in the TES script language: short,
+long and float. According to the manual these cover the following data
+ranges:
+
+Short -32,768 to 32,767 (signed integer)
+
+Long -2,147,483,648 to 2,147,483,647 ( long signed integer)
+
+Float 3.4E +/- 38 (float, 7 digits)
+
+Apparently the boundaries for Long given here are only partly correct,
+in the TES-CS you can assign a maximum value of 2147483520 (Forum info /
+Argent).
+
+Theoretically there should be string variables too, but to my knowledge
+these are not implemented. Unfortunately there are also no data types to
+store Object\_Id's, which limits the power of the scripting language to
+a certain extent.
+
+Variables can be grouped into \emph{local} variables (valid only in the
+script that declares them) and \emph{global} variables (valid in every
+script).
+
+\textbf{Note}: A long global is effectively a float! In a script, local
+to that script a long will have a full 32 bits of precision. But used as
+a global, the number of bits of precision drops to 24, as when it exists
+globally a long \emph{is} a float. Mental Elf discovered this when
+attempting to use "bit packing" to get 32 flags into a global long
+(forum info / mental elf).
+
+\textbf{A Note about Floats:}
+
+Floating point numbers in a computer are stored in a format similar to
+that used for scientific or engineering notation. The number is rounded
+off to a fixed number of significant digits, any leading or trailing
+zeros are dropped, and an exponent is added to indicate the correct
+location of the decimal or binary point.
+
+The number 2385901045 would be stored similar to this:
+
+2.385901x10\textsuperscript{9}
+
+In fitting the number into a fixed number of bytes, we have lost the end
+3 digits, so the number is no longer quite what you set it to.
+
+If you set a float to a small number, like 5.5, it would still be stored
+as 5.5, because as it doesn't take up much room, no numbers need to be
+cut off.\\
+\strut \\
+The advantage of this format is that a wide range of values can be
+expressed using a relatively small number of digits or bytes. The
+disadvantage is that the rounding off means floating point numbers don't
+have the precision of an integer, so they shouldn't be used when you
+need to make exact comparisons or keep track of exact counts.\\
+\strut \\
+For example, a floating point variable is fine if you just need to check
+if a distance is greater or less than a certain value. But if you need
+to check if the player has specific number of some item in their
+inventory, then you want to use a long or short integer variable for the
+count.
+
+(Forum info / DinkumThinkum)
+
+An example by BungaDunga shows that when doing math with floats, the
+answer isn't always what you expect:
+
+\textbf{Float num1}
+
+\textbf{Float num2}
+
+\textbf{Float num3}
+
+\textbf{Set num1 to ( 1 / 3 )}
+
+\textbf{;num1 is now 0.3333333}
+
+\textbf{Set num2 to 3}
+
+\textbf{;num2 is now 3\\
+\strut \\
+set num3 to num1 * num2}
+
+\textbf{;num3 is now 0.9999999, rather than what you would expect, 1.\\
+\strut \\
+if ( num3 == 1 )\\
+; Never happens.\\
+endif}
+
+A lot of functions return float values (e.g. GetDistance, GetScale,
+GetSecondsPassed\ldots): the same thing applies. Test a range, not an
+exact value! E.g.:
+
+if ( ( GetPos x ) == 500 )
+
+;will be false if it's 499.9999, or 500.0001, etc
+
+endif
+
+but this will work:
+
+if ( ( GetPos x ) \textgreater{} 499.5 )
+
+if ( ( GetPos x ) \textless{} 500.5 )
+
+;it's close enough for me
+
+endif
+
+endif
+
+\protect\hypertarget{_Toc182634499}{}{}
+
+Another common mistake is to check if the GameHour is an exact number.
+As the Gamehour variable is increased every frame, and every frame is a
+slightly diffrent length, the Gamehour variable soon ends up with a
+value like this, 10.12853. So never test if the gamehour is exatly equal
+to a value, as it is very unlikley to happen, test if it is greater than
+or equal to a value.
+
+\hypertarget{local-variables}{%
+\subsubsection{Local variables}\label{local-variables}}
+
+Local variables these have to be declared in the script:
+
+Float floatvarname
+
+Short shortvarname
+
+Long longvarname
+
+Local variables are unique to a specific instance of a local script.
+This means that the local variables in multiple objects with the same
+script do not influence each other. The names you use for variables are
+pretty much up to you as long as they start with a letter, but you have
+to avoid using function names (this will result in errors during
+runtime) and reserved characters (e.g. - + / * = " )( etc.) which will
+result in compiler errors. E.g. "variable-1" will not work as a variable
+name. Underscores as in "my\_variable" are ok, but avoid leading
+underscores. A dot has a reserved meaning as well (see
+"\emph{Referencing variables in other local scripts}" below).
+
+\hypertarget{global-variables}{%
+\subsubsection{Global variables}\label{global-variables}}
+
+To declare a global variable go to the Gameplay menu and select Globals.
+Right click for "new", name it, and set the type and starting value for
+the new global variable, if one is needed. By default it will be 0.
+Global variables are very useful for involved quests when you need to
+keep track of things over an extended time and space. They are also a
+simple way to share information between different scripts
+
+\textbf{Note}: if you declare a local variable with the same name as a
+global variable, the global variable will become invisible for this
+script. Do NOT declare a global variable as a local!
+
+\hypertarget{referencing-variables-on-other-objects-and-scripts}{%
+\subsubsection{Referencing variables on other objects and
+scripts}\label{referencing-variables-on-other-objects-and-scripts}}
+
+Set \ldots{} to
+
+If a unique object has a local script running on it you can change
+variables from outside the script in the following way:
+
+Set MyObject.variable to 100
+
+or
+
+Set MyObject.variable to local\_variable
+
+This method changes a local variable in the object's script. The object
+must have a script on it for this to be valid. The object does not have
+to be in an active cell when setting the variable, but it will only work
+if the cell containing the target object/(script) has previously loaded
+-(Cyran0). \textbf{Note:} The scripting system looks at the first object
+in the database, thus you should only reference objects that are unique
+(exist only once).
+
+Note that the reverse does \textbf{not} work:
+
+Set local\_variable to MyObject.variable ;this doesn't work!
+
+Use a global variable to transfer information in this way, or set
+local\_variable from the \textbf{other} script using the syntax above.
+
+if ( anotherobject.x \textgreater{} 0 )
+
+apparently works.
+
+Furthermore I realized only recently that this syntax also works for
+global scripts:\\
+\strut \\
+set Global\_script\_name.variable to 1\\
+\strut \\
+This is useful to avoid using more global variables then necessary or
+also as a console command to debug global scripts.
+
+\textbf{Note:} If your object or global script starts with a number, you
+need to put quotes around it.
+
+"11NPC01".RemoteVar ;-\/-\/-Good\\
+"11NPC01.RemoteVar" ;-\/-\/-BAD
+
+11NPC01.RemoteVar ;-\/-\/-BAD
+
+A caution when setting variables from outside the script
+(DinkumThinkum):
+
+\emph{If you recompile the target script (i.e., the local script on
+'MyObject'), it's a good idea to also recompile any scripts that
+reference variables in that script. Reason: if the target 'variable'
+winds up in a different position in the target script's list of
+variables, then any scripts trying to set that variable will break if
+they're not recompiled.}
+
+I.e., if 'variable' is the 14th variable declared in the local script on
+'MyObject', and you add a new variable ahead of it so that 'variable' is
+now the 15th variable declared, other scripts will need to be recompiled
+in order to find 'variable' in its new position, otherwise the script
+will end up changing the wrong variable, leading to very strange bugs.
+
+\emph{One way to reduce the chances of this tripping you up is declare
+variables referenced by other scripts first,} before \emph{other
+variables that aren't referenced externally. Then just be careful to
+only add or remove variables} after \emph{the block of externally
+referenced variables. However (to be safe), it's still a good idea to
+recompile scripts that reference variables in other scripts any time
+you've added or removed variables in the other scripts.}
+
+\hypertarget{using-variables-in-functions}{%
+\subsubsection{Using variables in
+functions}\label{using-variables-in-functions}}
+
+Unfortunately it is one of the limitations of TES script that only
+certain functions accept variables as parameters, which poses some
+definite limits. The type of arguments functions accept is indicated in
+the list of functions below.
+
+\textbf{Note:} For some functions where both a Get-Function and a
+Set-Function exist, a workaround can be constructed by using the while
+function (see below).
+
+\hypertarget{section}{%
+\subsubsection{}\label{section}}
+
+\hypertarget{operators-mathematical-calculations}{%
+\subsubsection{\texorpdfstring{Operators / mathematical calculations
+}{Operators / mathematical calculations }}\label{operators-mathematical-calculations}}
+
+You can use the standard operators to do calculations in scripts:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.82}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.18}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Addition:
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
++
+\end{minipage} \\
+\midrule
+\endhead
+Subtraction: & - \\
+Multiplication: & * \\
+Division: & / \\
+\bottomrule
+\end{longtable}
+
+The syntax is as follows:
+
+Set result\_var to (var\_a + var\_b)
+
+Instead of variables, literal values are also allowed. I assume that
+standard operator precedence applies ( * and / are calculated before +/-
+). Since it has not been properly tested I usually always use
+parentheses to be on the safe side. You can use parentheses according to
+standard mathematical rules:
+
+set ln to ( ln + ( k10 * math\_ln10 ) + ( k2 * math\_ln2 ) )
+
+A warning: There are different opinions on the forums on the use of
+several operators in one line. Some people report a lot of problems with
+this, I myself have successfully used at least four operators and
+variables in a single line. There appears to be an issue with very long
+additions (e.g. adding up more than 20 variables in one line of code)
+that causes a mod to crash the game upon loading. If this happens, split
+the calculations to several lines.
+
+\hypertarget{notes-by-dinkumthinkum}{%
+\subparagraph{Notes by DinkumThinkum:}\label{notes-by-dinkumthinkum}}
+
+\hypertarget{eleven-variables-in-a-single-set-statement-will-cause-the-following-error-when-loading-the-game-followed-by-a-crash-to-desktop}{%
+\subparagraph{\texorpdfstring{\emph{Eleven variables in a single set
+statement will cause the following error when loading the game, followed
+by a crash to
+desktop:}}{Eleven variables in a single set statement will cause the following error when loading the game, followed by a crash to desktop:}}\label{eleven-variables-in-a-single-set-statement-will-cause-the-following-error-when-loading-the-game-followed-by-a-crash-to-desktop}}
+
+\hypertarget{need-more-room-for-zero-pointers-in-scriptreplaceglobalsindata}{%
+\subparagraph{"Need more room for zero pointers in
+Script::ReplaceGlobalsInData"}\label{need-more-room-for-zero-pointers-in-scriptreplaceglobalsindata}}
+
+as soon as you click the button to acknowledge the error, CTD. (That
+script name wasn't any script of mine; it's something internal to the
+game.)
+
+Six variables in a Set statement work fine. Don't know the maximum
+number, but it's obviously at least six and definitely less than eleven.
+
+There isn't much in the way of dedicated mathematical functions in TES
+script. There is the 'Random' function and Tribunal added the
+'GetSquareRoot' function (see below). If you need more complex
+functions, I suggest downloading Soralis' Math Mod (available from
+Planet Elder Scrolls). It's a collection of scripts that allow you to do
+complex calculations. Here is a short excerpt from the readme to give
+you an idea:
+
+\emph{"This mod adds the ability to use various math functions within
+Morrowind's scripts.}
+
+Specifically, these are the scripts that are added:"
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.20}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.22}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.32}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.12}}@{}}
+\toprule
+\endhead
+Name & Check/Done & Inputs & Outputs & Accuracy \\
+MathScripts & N/A & N/A & N/A & N/A \\
+MathConstants & N/A & N/A & N/A & N/A \\
+SquareRoot & 1 & math\_sqrt & math\_result, math\_imag & 7 \\
+SineScript & 2 & math\_angle & math\_sin, math\_cos, math\_tan & 7 \\
+ArcsineScript & 3 & math\_arc & math\_sin, math\_cos & 6-7 \\
+NaturalLog & 4 & math\_log & math\_result, math\_imag & 4-5 \\
+LogScript & 5 & math\_log, math\_base & math\_result, math\_imag &
+3-4 \\
+intPower & 6 & math\_value, math\_power & math\_result & 7 \\
+intRoot & 7 & math\_value, math\_root & math\_result, math\_imag &
+6-7 \\
+Modulus & 8 & math\_value, math\_mod & math\_result & 6-7 \\
+Antiln & 9 & math\_log & math\_result & 4-5 \\
+Antilog & 10 & math\_log, math\_base & math\_result & 2-3 \\
+AbsoluteValue & 11* & math\_abs & math\_abs & 7 \\
+PowerScript & 12 & math\_value, math\_power & math\_result, math\_imag &
+2-3 \\
+\bottomrule
+\end{longtable}
+
+Unfortunately many of these functions are rather slow, and not suited
+for real time calculations. For sine and cosine in particular, check out
+JDGBOLT's script in the tips and tricks section, which uses
+pre-calculated values for a very rapid calculation. You can also find
+more information on UESP Wiki.
+
+MWSE (Morrowind Script Extender) also adds trig functions to Morrowind.
+
+\protect\hypertarget{_Toc182634504}{}{}
+
+\hypertarget{testing-conditions}{%
+\subsection{Testing conditions}\label{testing-conditions}}
+
+\hypertarget{use-of-if-elseif-conditions}{%
+\subsubsection{Use of if\ldots{} elseif
+conditions}\label{use-of-if-elseif-conditions}}
+
+If (condition)
+
+Elseif (condition)
+
+Else
+
+Endif
+
+Much of TES scripting relies on the use of \emph{if\ldots{} elseif}
+conditions and variations thereof. It is very important to fully
+understand these, and the conditions that can be used in them to test
+conditions of the game world to trigger events.
+
+In general a condition is "true" when it has the value of 1 (or simply
+"not 0" (e.g. -1 is "true" in TES Script too) and "false" when the value
+is 0. There are thus certain functions in the game that return "true"
+under certain conditions. For example see the GetAIPackageDone function
+further down. It returns "true" (= 1) for one frame when an AIPackage
+has finished. All lines of code between the if-statement and endif
+(which concludes a so-called "if block") will be executed only when the
+condition is true.
+
+Thus:
+
+\textbf{If} ( GetAIPackageDone )
+
+;{[}do something here{]}
+
+\textbf{endif}
+
+will be only executed when the GetAIPackageDone function currently
+returns the value 1.
+
+In addition to just a value, a condition can also be a more explicit
+test of conditions. The conditions, such as "A equals B" or "A is
+greater than B" will be evaluated, and the whole expression will be true
+(equals 1) when the condition is fulfilled. E.g.:
+
+\textbf{if} ( GetAIPackageDone == 1 )
+
+;{[}do something here{]}
+
+\textbf{endif}
+
+Is equivalent to the example above. This second syntax tests a condition
+and returns "true" if the condition is met. You can check for the
+following conditions:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.54}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.46}}@{}}
+\toprule
+\endhead
+\textbf{Verbose} & \textbf{Conditional operator} \\
+"Equal to": & == \\
+"not equal to" & != \\
+"Greater than" & \textgreater{} \\
+"Smaller than" & \textless{} \\
+"Greater than or equal to" & \textgreater= \\
+"Smaller than or equal to" & \textless= \\
+\bottomrule
+\end{longtable}
+
+If you have several independent if blocks each will be evaluated
+separately. If, e.g. the following if blocks are in your script:
+
+if ( timer \textgreater= 2 )
+
+;{[}Block A,do something here{]}
+
+endif
+
+if ( timer \textless= 3 )
+
+;{[}Block B, do something else here{]}
+
+endif
+
+Both will be true and the code in the blocks will be executed when timer
+is between 2 and 3.
+
+You can nest if-blocks if you want to make sure that two conditions are
+fulfilled simultaneously:
+
+if ( timer \textgreater= 2 )
+
+if ( controlvar == 0
+
+;{[}do something here{]}
+
+endif
+
+endif
+
+The code in the inner if block will only be executed when both
+conditions (timer \textgreater= 2 and controlvar == 0 ) are fulfilled at
+the same time.
+
+For more elaborate constructions you can use Else and Elseif. Elseif
+tests for a separate condition if the preceding condition has failed
+(but not if the previous condition was fulfilled)
+
+if ( timer \textgreater= 2 )
+
+;{[}Block A,do something here{]}
+
+elseif ( timer \textless= 3 )
+
+; {[}Block B, do something else here{]}
+
+endif
+
+unlike the example above, both blocks can not be true at the same time
+now. Either timer is \textgreater= 2, then block A gets executed, or
+timer is not \textgreater= 2 but \textless= 3, meaning effectively timer
+is \textless{} 2, then block B gets executed. In all other cases,
+neither block will be executed. You can have several elseifs behind each
+other:
+
+if ( counter == 1 )
+
+;{[}Block A,do something here{]}
+
+elseif ( counter == 2 )
+
+; {[}Block B, do something else here{]}
+
+elseif ( counter == 3 )
+
+; {[}Block C, do something else here{]}
+
+endif
+
+An else creates a "default condition". The code following else will be
+executed if all previously tested conditions are false:
+
+\textbf{If} ( foo\_var == 1 )
+
+{[}Block A: do something{]}
+
+\textbf{elseif} ( foo\_var == 2 )
+
+{[}Block B: do something else{]}
+
+\textbf{else}
+
+{[}Block C: do something completely different{]}
+
+\textbf{endif}
+
+In this example Block C will be executed it foo\_var is neither 1 nor 2.
+
+\hypertarget{notes-and-cautions}{%
+\subparagraph{Notes and cautions:}\label{notes-and-cautions}}
+
+In my experience it is safest to use \emph{elseif} instead of multiple
+separate \emph{if} statements if you test different states of one
+variable.
+
+Be careful using a function in a conditional ('If' statement); simple
+functions seem to be OK, but ones with numeric parameters don't seem to
+be reliable.
+
+For example:\\
+"If ( NewType != OldType )" worked correctly, but "If ( (
+Player-\textgreater GetArmorType 0 ) != OldType )" always registered as
+'Not equal', even if the variable 'OldType' had the same value as the
+armor type that should have been returned by 'Get ArmorType 0'
+function.\\
+So use "Set NewType to ( Player-\textgreater GetArmorType 0 )", followed
+by a separate 'If' statement to compare 'NewType' to 'OldType'.
+-(DinkumThinkum)
+
+\hypertarget{while-conditions}{%
+\subsubsection{While conditions}\label{while-conditions}}
+
+While ( condition )
+
+; things to do
+
+EndWhile
+
+The while command differs from the if command in that it is repeated
+within one frame until the condition is fulfilled. This is best
+explained with an example:
+
+Short desiredAmnt
+
+SetStrength 0
+
+\textbf{while}( GetStrength \textless{} desiredAmnt ) ; non-literal
+value to match
+
+modStrength 1
+
+\textbf{endwhile}
+
+This will set strength to the value in variable desiredAmnt after one
+frame. The following script however would need an undetermined amount of
+frames to do this, because the if condition is only called once each
+frame:
+
+if(getStrength \textless{} desiredAmnt) ; non-literal value to match
+
+modStrength 1
+
+endif
+
+On the other hand the first example can potentially cause "freezing" (if
+the value would be very high) while the second won't.
+
+Note that this is a workaround for some functions to the problem of
+functions not accepting non-literal values (variables) as arguments.
+
+\hypertarget{constructing-boolean-operations-in-tes-script}{%
+\subsubsection{Constructing Boolean operations in TES
+Script}\label{constructing-boolean-operations-in-tes-script}}
+
+Unfortunately there are no Boolean operators (AND, OR, NOT, XOR, \ldots)
+in the scripting language. Thus you need to construct these yourself
+using if\ldots{} elseif structures.
+
+Instead of AND:
+
+if ( variable1 AND variable2 ); does \textbf{not} exist
+
+{[}do something{]}
+
+endif
+
+you have to use:
+
+If ( variable1 )
+
+If ( variable2 )
+
+{[}do something{]}
+
+endif
+
+endif
+
+For OR constructs:
+
+if ( variable1 OR variable2 )
+
+{[}do this{]}
+
+endif
+
+you can use elseif constructions:
+
+If ( variable1 )
+
+{[}do this{]}
+
+elseif ( variable2 )
+
+{[}do this{]}
+
+endif
