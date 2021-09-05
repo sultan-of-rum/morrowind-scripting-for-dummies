@@ -11,3 +11,14 @@ Some conditions to this work, as stated by Yacoby:
 > * Ideally keep the 9th edition forward as well (I'm not that bothered, but you'd need to get sign off from melian if you wanted to remove it)
 >
 > I'd also be supportive if you wanted to add some form of open licence to allow a more community owned model (as long as you kept the above conditions in any licence unless you get sign off from GhanBuriGhan)
+
+## Building the PDF
+
+Required dependencies:
+texlive
+
+Optional dependencies:
+latexmk
+
+To compile, run:
+$ latexmk or pdflatex MSFD9.tex
