@@ -14,7 +14,7 @@ We start by opening the script editor: \textbf{Start up the TES Construction Set
 
 You enter the script editor either by \textbf{selecting Gameplay -- Edit Scripts from the menu}, by clicking the edit script button (the pencil) in the taskbar or by accessing it from an Object or NPC dialogue, by clicking the button with the ellipses {[}\ldots{]} next to the script field. The editor window is pretty basic:
 
-\includegraphics{media/image2.jpg}
+\includegraphics{media/script-abebaal-attack.png}
 
 Let's have a look at the buttons in the taskbar, from left to right: \emph{Open} lets you select a script to edit. \emph{Save} error checks the current script and compiles it or gives out error messages -- note, however, that the plugin and thus the script is not really saved to disk at this time. When programming large scripts frequently use the save command in the main TESCS window after you have saved the script here, just in case the TESCS crashes.
 
@@ -252,7 +252,7 @@ Our chest will put a curse on the player if he fails to answer the riddle.
 
 First go to the spellmaking tab in the editor, right click and select "new". Give the spell the ID "Frost\_Curse", name it "Frost Curse" and make it type "curse" then give it a magnitude of e.g. 1-5. It should look like in the picture below.
 
-\includegraphics{media/image4.jpg}
+\includegraphics{media/frost-curse.png}
 
 Now, we need to put this curse on the player. For this we use the \emph{AddSpell} function. After some time we will remove the curse again using the \emph{RemoveSpell} function, for this we need to make a timer. Edit your script again:
 
