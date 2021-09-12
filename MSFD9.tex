@@ -99,8 +99,8 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\author{}
-\date{}
+%\author{}
+%\date{}
 
 \begin{document}
 
@@ -784,10 +784,17 @@
 %
 %\protect\hyperlink{index}{Index 226}
 
+\hypertarget{foreword-to-the-tenth-edition}{%
+\subsubsection{\texorpdfstring{\hfill\break
+Foreword to the tenth edition}{Foreword to the ninth edition}}\label{foreword-to-the-tenth-edition}}
+
+This community edition is a port to LaTeX for easy and open collaboration. Development is at https://github.com/sultan-of-rum/morrowind-scripting-for-dummies. Please send all bug reports to this repository.
+
+The primary focus for this project is to incorporate corrections and updates by the Tamriel Rebuilt team. Special thanks goes to them for allowing free use of their information. It also uses default OpenMW-CS syntax highlighting, and a main goal is to move towards an open license.
+
 \hypertarget{foreword-to-the-ninth-edition}{%
 \subsubsection{\texorpdfstring{\hfill\break
-Foreword to the ninth
-edition}{ Foreword to the ninth edition}}\label{foreword-to-the-ninth-edition}}
+Foreword to the ninth edition}{Foreword to the ninth edition}}\label{foreword-to-the-ninth-edition}}
 
 Another update, this time by more than one person, now you can get really confused when it mentions that ``I'' did something or found something *grins*. Although this update was intended as a bugfix, a huge amount of new information has been added - since much of it concerns the bugs and pitfalls of the scripting language that have been discovered since version 8, you will find changes and additions scattered throughout.
 
@@ -802,8 +809,7 @@ Yacoby and melian
 
 \hypertarget{foreword-to-eighth-edition}{%
 \subsubsection{\texorpdfstring{\hfill\break
-Foreword to eighth
-edition}{ Foreword to eighth edition}}\label{foreword-to-eighth-edition}}
+Foreword to eighth edition}{ Foreword to eighth edition}}\label{foreword-to-eighth-edition}}
 
 Oh no, MSFD updates again! Quite a few changes this time. I have continued to reorder functions to achieve a more consistent classification. In the course of this restructuring of the text, Tribunal and Bloodmoon functions are now also sorted among the rest of the functions (but clearly marked), and the same applies for Get/Set/ModStat type functions - the ones that affect magic are now in the Magic section, the ones that affect combat are in the combat chapter, and so on. I reformatted all the function entries for better visibility. There are also a good number of corrections and additions: check out the corrected list of idles in AIWander, more detailed info on functions such as OnDeath, OnActivate, or the revelation that some functions, like PositionCell use a different unit for the angle setting (minutes instead of degrees). There is a lot of interesting new detail on the intricacies of RemoveItem, OnPCEquip, and SkipEquip. Throughout, I have added a couple more sample scripts. I have assembled a tips list on Dialogue from the information from a once-pinned thread on the official forums. To make your mod-testing easier, I now have a much more complete list of console commands, and you may find that some of these may actually be useful script functions as well. A nice collection of new tips and tricks have also been added, e.g. on how to detect savegame loading, alternative script editors, a fast sine and cosine calculator and more.
 
