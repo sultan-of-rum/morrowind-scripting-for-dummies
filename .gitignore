@@ -6,6 +6,6 @@
 MSFD9.fdb_latexmk
 MSFD9.fls
 MSFD9.log
-MSFD9.pdf
+*.pdf
 MSFD9.synctex.gz
 MSFD9.toc
