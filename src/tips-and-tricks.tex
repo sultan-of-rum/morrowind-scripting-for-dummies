@@ -882,83 +882,85 @@ a companion I'm working on. Most of the time the spell-switching is
 barely noticeable (just a moment of hesitation), and the companion
 quickly re-enters combat.
 
-;CombatStyle is set from dialogue when the player gives combat orders
-
-if ( CombatStyle == 1 ) ;switch between targeted and touch spells
-
-if ( player-\textgreater GetSpellReadied == 1 )
-
-set CombatMage to 1
-
-elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
-
-set CombatMage to 1
-
-elseif ( player-\textgreater GetWeaponType \textless= 8 )
-
-set CombatMage to 2
-
-endif
-
-elseif ( CombatStyle == 2 ) ;switch between targeted spells and weapons
-
-if ( player-\textgreater GetSpellReadied == 1 )
-
-set CombatMage to 1
-
-elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
-
-set CombatMage to 1
-
-elseif ( player-\textgreater GetWeaponType \textless= 8 )
-
-set CombatMage to 3
-
-endif
-
-elseif ( CombatStyle \textgreater= 3 ) ;no combat magic
-
-set CombatMage to 3
-
-elseif ( CombatStyle == 0 ) ;AI choose
-
-set CombatMage to 0
-
-endif
-
-if ( CombatMage != MageState ) ;MageState is a doonce for spell
-switching
-
-if ( MageState != 3 ) ;don't remove spells that aren't there
-
-if ( CombatMage != 0 ) ;don't remove spells just to add them back
-
-;remove unwanted spells here
-
-endif
-
-endif
-
-if ( CombatMage == 0 )
-
-;add all combat spells here
-
-elseif ( CombatMage == 1 )
-
-;add targeted spells here
-
-elseif ( CombatMage == 2 )
-
-;add touch spells here
-
-endif
-
-set MageState to CombatMage
-
-AIFollow player 0 0 0 0 ;this ensures that changes take effect
-immediately
-
-endif
+\begin{lstlisting}
+	;CombatStyle is set from dialogue when the player gives combat orders
+	
+	if ( CombatStyle == 1 ) ;switch between targeted and touch spells
+	
+	if ( player-\textgreater GetSpellReadied == 1 )
+	
+	set CombatMage to 1
+	
+	elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
+	
+	set CombatMage to 1
+	
+	elseif ( player-\textgreater GetWeaponType \textless= 8 )
+	
+	set CombatMage to 2
+	
+	endif
+	
+	elseif ( CombatStyle == 2 ) ;switch between targeted spells and weapons
+	
+	if ( player-\textgreater GetSpellReadied == 1 )
+	
+	set CombatMage to 1
+	
+	elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
+	
+	set CombatMage to 1
+	
+	elseif ( player-\textgreater GetWeaponType \textless= 8 )
+	
+	set CombatMage to 3
+	
+	endif
+	
+	elseif ( CombatStyle \textgreater= 3 ) ;no combat magic
+	
+	set CombatMage to 3
+	
+	elseif ( CombatStyle == 0 ) ;AI choose
+	
+	set CombatMage to 0
+	
+	endif
+	
+	if ( CombatMage != MageState ) ;MageState is a doonce for spell
+	switching
+	
+	if ( MageState != 3 ) ;don't remove spells that aren't there
+	
+	if ( CombatMage != 0 ) ;don't remove spells just to add them back
+	
+	;remove unwanted spells here
+	
+	endif
+	
+	endif
+	
+	if ( CombatMage == 0 )
+	
+	;add all combat spells here
+	
+	elseif ( CombatMage == 1 )
+	
+	;add targeted spells here
+	
+	elseif ( CombatMage == 2 )
+	
+	;add touch spells here
+	
+	endif
+	
+	set MageState to CombatMage
+	
+	AIFollow player 0 0 0 0 ;this ensures that changes take effect
+	immediately
+	
+	endif
+\end{lstlisting}
 
 \hypertarget{making-actors-lie-down}{%
 \subsection{Making Actors lie down}\label{making-actors-lie-down}}

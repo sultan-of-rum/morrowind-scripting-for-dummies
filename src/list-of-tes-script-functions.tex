@@ -8,8 +8,8 @@ format}\label{explanation-of-the-format}}
 
 First I will list the function and the arguments it takes:
 
-{[}no fix{]} Code "string", arg\_enum, arg\_float, {[}optional{]}
-(returns short)
+	{[}no fix{]} Code "string", arg\_enum, arg\_float, {[}optional{]}
+	(returns short)
 
 {[}no fix{]} Indicates this function can never be used with a "fix"
 meaning it can not be called by a specified actor. Functions without
@@ -28,15 +28,19 @@ although the game strictly speaking still uses a float)
 
 Examples of usage follow in italics and are indented:
 
-\emph{Code "ID", var\_enum, var\_float}
-
+\begin{lstlisting}
+	\emph{Code "ID", var\_enum, var\_float}
+\end{lstlisting}
+	
 Example scripts are set in frames:
 
-Begin script
-
-{[}Script functions{]}
-
-End script
+\begin{lstlisting}	
+	Begin script
+	
+	{[}Script functions{]}
+	
+	End script
+\end{lstlisting}
 
 From the 8\textsuperscript{th} edition onward the functions added with
 Tribunal and Bloodmoon have been moved into the suitable sections of the
@@ -63,13 +67,15 @@ items}\label{working-with-inventory-items}}
 \subsubsection{Adding and removing items from the
 inventory}\label{adding-and-removing-items-from-the-inventory}}
 
-AddItem, "ObjectID", count\_enum
+	AddItem, "ObjectID", count\_enum
+	
+	RemoveItem, "ObjectID", count\_enum
 
-RemoveItem, "ObjectID", count\_enum
-
-Actor-\textgreater AddItem, "item\_ID", 1
-
-Container-\textgreater RemoveItem, "itme\_ID", 5
+\begin{lstlisting}	
+	Actor-\textgreater AddItem, "item\_ID", 1
+	
+	Container-\textgreater RemoveItem, "itme\_ID", 5
+\end{lstlisting}
 
 These functions are simple enough, adding or removing items from the
 player's or any other inventory, including containers. A
@@ -103,15 +109,17 @@ That way, the items will be added before the inventory window opens.\\
 \strut \\
 Here's the code I used for this in the Potion Saver:
 
-If ( GetHealth \textless{} 1 )\\
-Set DTNPS\_HandlePotions to 0\\
-ElseIf ( GetFatigue \textless{} 1 )\\
-Set DTNPS\_HandlePotions to 0\\
-ElseIf ( MenuMode == 1 )\\
-Set DTNPS\_HandlePotions to 0\\
-Else\\
-Set DTNPS\_HandlePotions to 1\\
-EndIf
+\begin{lstlisting}
+	If ( GetHealth \textless{} 1 )\\
+	Set DTNPS\_HandlePotions to 0\\
+	ElseIf ( GetFatigue \textless{} 1 )\\
+	Set DTNPS\_HandlePotions to 0\\
+	ElseIf ( MenuMode == 1 )\\
+	Set DTNPS\_HandlePotions to 0\\
+	Else\\
+	Set DTNPS\_HandlePotions to 1\\
+	EndIf
+\end{lstlisting}
 
 \hypertarget{usage-with-containers}{%
 \subparagraph{Usage with containers:}\label{usage-with-containers}}
@@ -126,33 +134,37 @@ The workaround is to attach a script to the container that always adds
 and removes a dummy item in the same frame that the player activated it.
 So, my ingredients chest has a script that looks like:
 
-; Open the chest
-
-Activate
-
-; Always add and remove a dummy (this hack keeps the "AddItem" calls
-working)
-
-AddItem, "misc\_de\_cloth10", 1
-
-RemoveItem, "misc\_de\_cloth10", 1
+\begin{lstlisting}
+	; Open the chest
+	
+	Activate
+	
+	; Always add and remove a dummy (this hack keeps the "AddItem" calls
+	working)
+	
+	AddItem, "misc\_de\_cloth10", 1
+	
+	RemoveItem, "misc\_de\_cloth10", 1
+\end{lstlisting}
 
 Furthermore, we make the chest with "references persist". Now we can
 reference it from an ingredients sorter using code like:
 
-set count to ( player-\textgreater GetItemCount,
-"ingred\_dreugh\_wax\_01" )
-
-while ( count \textgreater{} 0 )
-
-set count to ( count - 1 )
-
-player-\textgreater RemoveItem, "ingred\_dreugh\_wax\_01", 1
-
-"\_tm\_ingredients\_chest"-\textgreater AddItem,
-"ingred\_dreugh\_wax\_01", 1
-
-endwhile
+\begin{lstlisting}
+	set count to ( player-\textgreater GetItemCount,
+	"ingred\_dreugh\_wax\_01" )
+	
+	while ( count \textgreater{} 0 )
+	
+	set count to ( count - 1 )
+	
+	player-\textgreater RemoveItem, "ingred\_dreugh\_wax\_01", 1
+	
+	"\_tm\_ingredients\_chest"-\textgreater AddItem,
+	"ingred\_dreugh\_wax\_01", 1
+	
+	endwhile
+\end{lstlisting}
 
 Another (probably better) workaround suggested by Enmesharra: Add a
 non-carryable light with no world or inventory art associated with it to
@@ -206,9 +218,11 @@ that the variable in question doesn't change in the same box. Say,
 var\_a equals 3 at the moment when the line is selected in dialogue. If
 the result field looks like this:
 
-set var\_a to var\_a + 10 ;
-
-AddItem gold\_001, var\_a
+\begin{lstlisting}
+	set var\_a to var\_a + 10 ;
+	
+	AddItem gold\_001, var\_a
+\end{lstlisting}
 
 three drakes will be added to NPC's inventory, and not thirteen. If such
 need arises, put all calculating operators into one dialogue response's
@@ -236,9 +250,11 @@ handled via a global script.
 \subsubsection{Dropping items to the
 floor}\label{dropping-items-to-the-floor}}
 
-Drop, "ObjectID", count\_enum
+	Drop, "ObjectID", count\_enum
 
-"Actor\_ID"-\textgreater Drop, "ITEM\_ID", 1
+\begin{lstlisting}	
+	"Actor\_ID"-\textgreater Drop, "ITEM\_ID", 1
+\end{lstlisting}
 
 This function is supposed to drop the item from the inventory "to the
 calling Actor's feet". This seems to work correctly only for the player
@@ -263,11 +279,13 @@ in an inactive cell, nothing will happen. -(DinkumThinkum)
 and using soul
 gems}\label{monitoring-inventory-activities-adding-dropping-items-and-using-soul-gems}}
 
-{[}no fix{]} OnPCAdd (is local short variable)
+	{[}no fix{]} OnPCAdd (is local short variable)
 
-Short OnPCAdd
-
-If ( OnPCAdd == 1 )
+\begin{lstlisting}	
+	Short OnPCAdd
+	
+	If ( OnPCAdd == 1 )
+\end{lstlisting}
 
 This variable is set to 1 when the PC added the object to inventory.
 Must be reset manually for multiple use (set OnPCAdd to 0 ).
@@ -275,37 +293,43 @@ Must be reset manually for multiple use (set OnPCAdd to 0 ).
 \textbf{Example:} This is an excerpt from the script attached to
 Fargoth's ring, that gives you the magic menu during character creation:
 
-if ( \textbf{OnPCAdd} == 1 ); Player has added the item to the inventory
-
-if ( State == 0 )
-
-EnableMagicMenu
-
-MessageBox "You now have a Magic Menu, where you can see all your
-powers, spells, and magic items." "Ok"
-
-set state to 10
-
-return
-
-endif
-
-endif
-
+\begin{lstlisting}
+	if ( \textbf{OnPCAdd} == 1 ); Player has added the item to the inventory
+	
+	if ( State == 0 )
+	
+	EnableMagicMenu
+	
+	MessageBox "You now have a Magic Menu, where you can see all your
+	powers, spells, and magic items." "Ok"
+	
+	set state to 10
+	
+	return
+	
+	endif
+	
+	endif
+\end{lstlisting}
+	
 {[}no fix{]} OnPCDrop (is local short variable)
 
-Short OnPCDrop
-
-If ( OnPCDrop == 1 )
+\begin{lstlisting}	
+	Short OnPCDrop
+	
+	If ( OnPCDrop == 1 )
+\end{lstlisting}
 
 This variable gets set to one when the PC drops the object. Must be
 reset manually for multiple use (set OnPCDrop to 0 ).
 
 {[}no fix{]} OnPCSoulGemUse (is local short variable)
 
-Short OnPCSoulGemUse
-
-If (OnPCSoulGemUse == 1 )
+\begin{lstlisting}	
+	Short OnPCSoulGemUse
+	
+	If (OnPCSoulGemUse == 1 )
+\end{lstlisting}
 
 This gets set to one if the calling Object is a soulgem and it has been
 used in either recharging or item making. Must be reset manually for
@@ -322,7 +346,9 @@ Force-equipping an Item
 
 Equip, "Object\_ID" {[}count\_enum{]}
 
-"Actor\_ID"-\textgreater Equip, "iron dagger"
+\begin{lstlisting}
+	"Actor\_ID"-\textgreater Equip, "iron dagger"
+\end{lstlisting}
 
 (Also see OnPCEquip function below)
 
@@ -380,9 +406,11 @@ equipped}\label{detecting-if-an-item-has-been-equipped}}
 
 {[}no fix{]} OnPCEquip (is local short variable)
 
-Short OnPCEquip
-
-If ( OnPCEquip == 1 )
+\begin{lstlisting}
+	Short OnPCEquip
+	
+	If ( OnPCEquip == 1 )
+\end{lstlisting}
 
 The PC has the object equipped (remains true while object is equipped)
 
@@ -391,48 +419,54 @@ player is equipping the calling object. It will remain "true" while the
 item is still equipped, but gets reset to 0 if the item is unequipped.
 So, in some cases you might want to manually reset it:
 
-if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
-
-{[}do something{]}
-
-set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
-
-endif
+\begin{lstlisting}
+	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	
+	{[}do something{]}
+	
+	set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
+	
+	endif
+\end{lstlisting}
 
 The next time the item is unequipped and equipped again, the functions
 in {[}do something{]} will be performed again. You can also use a status
 variable to control when an effect will be executed. Note that this can
 also be processed while in Menu mode:
 
-If ( MenuMode == 1 )
-
-if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
-
-{[}do something{]}
-
-set OnPCEquip to 0 ; do this once per equip event\ldots{}
-
-endif
-
-endif
+\begin{lstlisting}
+	If ( MenuMode == 1 )
+	
+	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	
+	{[}do something{]}
+	
+	set OnPCEquip to 0 ; do this once per equip event\ldots{}
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 This script will execute while you are in the menu, as soon as the item
 is equipped, while the following will be executed only after you leave
 the menu:
 
-If ( MenuMode == 1 )
-
-Return
-
-Endif
-
-if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
-
-{[}do something{]}
-
-set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
-
-endif
+\begin{lstlisting}
+	If ( MenuMode == 1 )
+	
+	Return
+	
+	Endif
+	
+	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	
+	{[}do something{]}
+	
+	set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
+	
+	endif
+\end{lstlisting}
 
 An additional \textbf{Sample Script} can be found above with the Equip
 function.
@@ -469,11 +503,13 @@ tricks section on this issue.
 \subsubsection{Disabling ability to equip an
 item}\label{disabling-ability-to-equip-an-item}}
 
-{[}no fix{]} PCSkipEquip (is short variable)
+	{[}no fix{]} PCSkipEquip (is short variable)
 
-Short PCSkipEquip
-
-Set PcSkipEquip to 1
+\begin{lstlisting}	
+	Short PCSkipEquip
+	
+	Set PcSkipEquip to 1
+\end{lstlisting}
 
 Set this to 1 to skip equipping object. Good for popping up messages for
 breaking seals on books and such. For an extended example look at the
@@ -507,13 +543,15 @@ mod, it makes an item non-equippable under certain conditions:
 \subsubsection{Checking for presence of items in
 inventory}\label{checking-for-presence-of-items-in-inventory}}
 
-GetItemCount, "ObjectID" (returns short)
+	GetItemCount, "ObjectID" (returns short)
 
-Short objectcount
-
-Set objectcount to ( "Mob\_ID"-\textgreater GetItemCount, "Object\_ID" )
-
-If ( GetItemCount, "Object\_ID" \textgreater= 1 )
+\begin{lstlisting}	
+	Short objectcount
+	
+	Set objectcount to ( "Mob\_ID"-\textgreater GetItemCount, "Object\_ID" )
+	
+	If ( GetItemCount, "Object\_ID" \textgreater= 1 )
+\end{lstlisting}
 
 This function checks the inventory of the calling object and returns the
 number of objects of type "Object\_ID" it owns.
@@ -524,19 +562,23 @@ number of objects of type "Object\_ID" it owns.
 \hypertarget{repairing-objects}{%
 \subsubsection{Repairing objects}\label{repairing-objects}}
 
-{[}no fix{]} OnPCRepair (is short variable)
+	{[}no fix{]} OnPCRepair (is short variable)
 
-Short OnPCRepair
-
-If ( OnPCRepair == 1 )
+\begin{lstlisting}	
+	Short OnPCRepair
+	
+	If ( OnPCRepair == 1 )
+\end{lstlisting}
 
 A game variable that gets set to 1 when the PC repairs the object with
 the script. Requires manual reset.
 
-RepairedOnMe, "Object ID" (returns Boolean/short)
+	RepairedOnMe, "Object ID" (returns Boolean/short)
 
-if ( "daedric\_mace"-\textgreater RepairedOnMe, "repair\_journeyman\_01"
-== 1 )
+\begin{lstlisting}	
+	if ( "daedric\_mace"-\textgreater RepairedOnMe, "repair\_journeyman\_01"
+	== 1 )
+\end{lstlisting}
 
 This function returns 1 if the calling item is repaired by an item of
 type "Object ID". Object ID has to be of type "Repair Item" and the
@@ -554,17 +596,21 @@ information}\label{worn-equipped-object-information}}
 
 \includegraphics{media/image6.png}
 
-GetWeaponType (returns short)
+	GetWeaponType (returns short)
 
-If ( Player-\textgreater GetWeaponType == 0 )
+\begin{lstlisting}	
+	If ( Player-\textgreater GetWeaponType == 0 )
+	
+	;Player uses a short blade
+\end{lstlisting}
+	
+	GetArmorType, armorPart\_enum (returns short, -1 to 2)
 
-;Player uses a short blade
-
-GetArmorType, armorPart\_enum (returns short, -1 to 2)
-
-If ( Player-\textgreater GetArmorType, 0 == 2 )
-
-;Player wears a heavy helmet
+\begin{lstlisting}	
+	If ( Player-\textgreater GetArmorType, 0 == 2 )
+	
+	;Player wears a heavy helmet
+\end{lstlisting}
 
 These functions are called on an Actor to gather information regarding
 what the Actor has equipped. GetWeaponType returns the weapon type (see
@@ -643,11 +689,13 @@ Heavy Armor & 2 \\
 \bottomrule
 \end{longtable}
 
-HasItemEquipped "item\_ID" (returns short)
+	HasItemEquipped "item\_ID" (returns short)
 
-If ( Player-\textgreater HasItemEquipped "chitin club" == 1 )
-
-;you poor dolt!
+\begin{lstlisting}	
+	If ( Player-\textgreater HasItemEquipped "chitin club" == 1 )
+	
+	;you poor dolt!
+\end{lstlisting}
 
 \textbf{Sample Script:}
 
@@ -658,16 +706,16 @@ object is fully damaged in one hit. When the object is fully damaged, it
 explodes sending shards into the PC's face unless he has a shield or a
 helmet equipped.
 
-% Bug here? no end
-
 \lstinputlisting{scripts/breakme.txt}
 
 \hypertarget{usedonme-function}{%
 \subsubsection{UsedOnMe function}\label{usedonme-function}}
 
-UsedOnMe, ``Object ID'' (returns Boolean/short)
+	UsedOnMe, ``Object ID'' (returns Boolean/short)
 
-if ( UsedOnMe, Misc\_pot\_redware\_01 )
+\begin{lstlisting}	
+	if ( UsedOnMe, Misc\_pot\_redware\_01 )
+\end{lstlisting}
 
 According to helpfile:
 
@@ -695,11 +743,13 @@ tricks section on ridable objects by MadMax).
 \subsubsection{Moving along an objects
 axis}\label{moving-along-an-objects-axis}}
 
-Move axis(x/y/z), units/sec\_enum
+	Move axis(x/y/z), units/sec\_enum
 
-Move x, 100
-
-Object\_ID-\textgreater Move Z, 30
+\begin{lstlisting}	
+	Move x, 100
+	
+	Object\_ID-\textgreater Move Z, 30
+\end{lstlisting}
 
 Moves the object along the selected axis (x, y, or z) at the speed
 selected. This speed is in units per second (21.3 units per foot). Thus,
@@ -708,29 +758,37 @@ while the distance moved in a unit time will not. This movement is based
 on the object's local coordinate system. Thus, a positive y movement
 will always move the object along its local forward vector:
 
+% Missing math image.
+
 \textbf{Note:} Move will not work on Actors, including the player.
 However, it will work on dead actors (Forum info / Argent). As with all
 functions using a "fix", move requires that the object is placed into
 the game world in the editor, before you can use it in a script:
 
-PlaceAtPC "My\_Object", 1,1,1
-
-My\_Object-\textgreater Move x, 10
+\begin{lstlisting}
+	PlaceAtPC "My\_Object", 1,1,1
+	
+	My\_Object-\textgreater Move x, 10
+\end{lstlisting}
 
 will not work if "My Object" has not already been placed, but you can
 have a local script running on "MyObject" that just uses
 
-Move x, 10
+\begin{lstlisting}
+	Move x, 10
+\end{lstlisting}
 
 \hypertarget{moving-along-the-world-axis}{%
 \subsubsection{Moving along the world
 axis}\label{moving-along-the-world-axis}}
 
-MoveWorld axis(x/y/z), units/sec\_enum
+	MoveWorld axis(x/y/z), units/sec\_enum
 
-MoveWorld z, 100
-
-Object\_ID-\textgreater MoveWorld Z, 30
+\begin{lstlisting}	
+	MoveWorld z, 100
+	
+	Object\_ID-\textgreater MoveWorld Z, 30
+\end{lstlisting}
 
 Moves the object along the selected world axis (x, y, or z) at the speed
 selected. This speed is in units per second (21.3 units per foot). This
@@ -738,6 +796,8 @@ movement is based on the world axis, thus a positive z movement will
 always move the object up, regardless of its local rotation: In world
 coordinates Z is always up / down (increasing upwards), X is east / west
 (increasing to east) and Y is north / south (increasing to north).
+
+% Missing math image.
 
 \textbf{Note:} MoveWorld will not work on Actors, including the player.
 Use SetPos for actors.
@@ -751,7 +811,7 @@ stands on it:
 \hypertarget{cellupdate}{%
 \subsubsection{CellUpdate}\label{cellupdate}}
 
-CellUpdate
+	CellUpdate
 
 \textbf{Broken!} According to Bethesda: Updates the current object's
 cell position. This should be called when moving objects over large
@@ -777,11 +837,13 @@ cell it was created in.
 \subsubsection{Setting position (the other way to do
 movement)}\label{setting-position-the-other-way-to-do-movement}}
 
-SetPos, axis, float\_enum\_pos (float\_var with Tribunal/Bloodmoon)
+	SetPos, axis, float\_enum\_pos (float\_var with Tribunal/Bloodmoon)
 
-SetPos, z, 477
-
-Object\_ID-\textgreater SetPos X, 466
+\begin{lstlisting}	
+	SetPos, z, 477
+	
+	Object\_ID-\textgreater SetPos X, 466
+\end{lstlisting}
 
 This function (unlike the move and moveworld functions) also works with
 Actors, including the player. Axis is x, y, or z. The float value sets
@@ -809,21 +871,24 @@ Mournhold sewer (Tribunal). It demonstrates how \emph{SetPos} and
 \subsubsection{Positioning an object in the world or in an interior
 cell}\label{positioning-an-object-in-the-world-or-in-an-interior-cell}}
 
-\textbf{Position, float\_enum\_x, float\_enum\_y, float\_enum\_z,
-float\_enum\_zRot}
+	\textbf{Position, float\_enum\_x, float\_enum\_y, float\_enum\_z,
+		float\_enum\_zRot}
 
 (for outdoors)(floats accepted with expansions)
 
-\textbf{PositionCell, float\_enum\_x, float\_enum\_y, float\_enum\_z,
-float\_enum\_zRot, ``cellID''\\
-}(for interior / exterior cells) (floats accepted with expansions)
+	\textbf{PositionCell, float\_enum\_x, float\_enum\_y, float\_enum\_z,
+		float\_enum\_zRot, ``cellID''\\
+	}(for interior / exterior cells) (floats accepted with expansions)
 
-position -23515, -15355, 3355, 90
 
-Player-\textgreater position -23515, -15355, 3355, 90
-
-"Actor\_ID"-\textgreater PositionCell, -254, 475, -376, 360, "Balmora,
-Council Club"
+\begin{lstlisting}	
+	position -23515, -15355, 3355, 90
+	
+	Player-\textgreater position -23515, -15355, 3355, 90
+	
+	"Actor\_ID"-\textgreater PositionCell, -254, 475, -376, 360, "Balmora,
+	Council Club"
+\end{lstlisting}
 
 The classic application for this function is the teleport ring,
 transporting the player to certain locations. However, it can also be
@@ -869,12 +934,16 @@ out in the void), you will instead be placed at the next safe location.
 Sometimes the PositionCell format given above won't work (even though it
 should): If there are no errors but nothing happens, try replacing, e.g.
 
-Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora (-3,
--3)"
+\begin{lstlisting}
+	Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora (-3,
+	-3)"
+\end{lstlisting}
 
 with
 
-Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora"
+\begin{lstlisting}
+	Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora"
+\end{lstlisting}
 
 I've found that sometimes one method works and sometimes the other.
 
@@ -884,9 +953,11 @@ position}\label{resetting-an-object-to-its-original-position}}
 
 SetAtStart
 
-SetAtStart
-
-Object\_ID-\textgreater SetAtStart
+\begin{lstlisting}
+	SetAtStart
+	
+	Object\_ID-\textgreater SetAtStart
+\end{lstlisting}
 
 This resets the object to the original position it was given in the
 editor, before any movement or rotation occurred. For an example, see
@@ -900,9 +971,11 @@ PC}\label{placing-an-item-near-the-pc}}
 {[}no fix{]} PlaceAtPC, "Object\_ID", count\_enum, distance\_enum,
 direction\_enum
 
-PlaceAtPC, "Secret Message", 0, 30, 1
-
-PlaceAtPC, "ancestor\_ghost", 1, 256, 1
+\begin{lstlisting}
+	PlaceAtPC, "Secret Message", 0, 30, 1
+	
+	PlaceAtPC, "ancestor\_ghost", 1, 256, 1
+\end{lstlisting}
 
 This function places a new reference of "Object\_ID" near the player.
 The function lets you define a direction relative to the player where
@@ -951,8 +1024,10 @@ object}\label{place-items-near-an-object}}
 
 PlaceAtMe "Item\_ID" count\_enum, distance\_enum, direction\_enum
 
-Object-\textgreater PlaceAtMe `Item\_ID' count\_enum distance\_enum
-direction\_enum
+\begin{lstlisting}
+	Object-\textgreater PlaceAtMe `Item\_ID' count\_enum distance\_enum
+	direction\_enum
+\end{lstlisting}
 
 The PlaceAtMe function works the same as PlaceAtPC without it being
 centered on the PC. Bloodmoon uses this to place attackers in different
@@ -960,37 +1035,39 @@ places depending on the player's distance at the time. This allows the
 script to make it appear as though there is a large number of opponents
 that just keep coming, among other things.
 
-;THIS POPS IN A HUNTER AT APPROPRIATE SPOT, INCREMENTS HUNTERCOUNT, AND
-RESETS TIMER
-
-if ( popA == 1 )
-
-"active\_BM\_hunter1"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
-1
-
-set huntercount to ( huntercount + 1 )
-
-set timer to 0
-
-elseif ( popB == 1 )
-
-"active\_BM\_hunter2"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
-1
-
-set huntercount to ( huntercount + 1 )
-
-set timer to 0
-
-elseif ( popC == 1 )
-
-"active\_BM\_hunter3"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
-1
-
-set huntercount to ( huntercount + 1 )
-
-set timer to 0
-
-endif
+\begin{lstlisting}
+	;THIS POPS IN A HUNTER AT APPROPRIATE SPOT, INCREMENTS HUNTERCOUNT, AND
+	RESETS TIMER
+	
+	if ( popA == 1 )
+	
+	"active\_BM\_hunter1"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	1
+	
+	set huntercount to ( huntercount + 1 )
+	
+	set timer to 0
+	
+	elseif ( popB == 1 )
+	
+	"active\_BM\_hunter2"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	1
+	
+	set huntercount to ( huntercount + 1 )
+	
+	set timer to 0
+	
+	elseif ( popC == 1 )
+	
+	"active\_BM\_hunter3"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	1
+	
+	set huntercount to ( huntercount + 1 )
+	
+	set timer to 0
+	
+	endif
+\end{lstlisting}
 
 \hypertarget{creating-new-object-references-with-placeitem}{%
 \subsubsection{Creating new object-references with
@@ -1002,6 +1079,8 @@ PlaceItem}\label{creating-new-object-references-with-placeitem}}
 float\_Zrot
 
 {[}no fix{]} PlaceItemCell "object ID", "cellID", X, Y, Z, Zrot
+
+% Degree symbol here. °
 
 These functions are used to create new references to objects. PlaceItem
 will create a reference to object "Object ID" at coordinate (X, Y, Z)
@@ -1056,17 +1135,16 @@ and rotation in the cell ``key room'' rather than the current cell.
 \subsection{\texorpdfstring{Rotation and angles
 }{Rotation and angles }}\label{rotation-and-angles}}
 
-Bethesda uses both degrees and minutes (1° degree = 60 minutes) as units
-in scripting functions:
+Bethesda uses both degrees and minutes (1° degree = 60 minutes) as units in scripting functions:
 
-GetAngle {[}°{]} (-180 to 180 °)\\
-Setangle {[}°{]}\\
-Position {[} min {]}\\
-PositionCell {[}min{]} \emph{except for the player {[}°{]}}\\
-PlaceItem {[}min{]}\\
-PlaceItemCell {[}min{]}\\
-Rotate {[} ° / second {]}\\
-RotateWorld {[} ° / second {]}
+	GetAngle {[}\textdegree{]} (-180 to 180 \textdegree)\\
+	Setangle {[}\textdegree{]}\\
+	Position {[} min \textdegree{]}\\
+	PositionCell {[}min{]} \emph{except for the player {[}\textdegree{]}}\\
+	PlaceItem {[}min{]}\\
+	PlaceItemCell {[}min{]}\\
+	Rotate {[} \textdegree / second {]}\\
+	RotateWorld {[} \textdegree / second {]}
 
 \hypertarget{making-an-object-spin}{%
 \subsubsection{Making an object spin}\label{making-an-object-spin}}
@@ -1075,14 +1153,18 @@ Similar to the movements described above, you can also rotate objects,
 around either their local or the world axis and determine the current
 angle:
 
-Rotate , axis, angle/sec\_enum
+% Degree symbols not working in listings environment.
 
-RotateWorld, axis, angle/sec\_enum
+	Rotate , axis, angle/sec\_enum
+	
+	RotateWorld, axis, angle/sec\_enum
 
-Rotate, z, -30; rotate counterclockwise, 30° per second, around objects
-z axis
-
-Object\_ID-\textgreater Rotate, Y, 100
+\begin{lstlisting}	
+	Rotate, z, -30; rotate counterclockwise, 30\textdegree per second, around objects
+	z axis
+	
+	Object\_ID-\textgreater Rotate, Y, 100
+\end{lstlisting}
 
 Axis can be x, y, or z. Notice that like the move functions the value
 you are giving Rotate or RotateWorld is a speed setting (not an angle),
@@ -1104,9 +1186,11 @@ Just using rotate does not cause this problem.
 
 SetAngle, axis, float\_enum\_angle
 
-SetAngle, z, 30
-
-Object\_ID-\textgreater Setangle, z, 25
+\begin{lstlisting}
+	SetAngle, z, 30
+	
+	Object\_ID-\textgreater Setangle, z, 25
+\end{lstlisting}
 
 This function sets the object to a specific world angle. Axis is x, y,
 or z. The float value sets the angle (in degrees) of the calling object
@@ -1171,19 +1255,21 @@ Scale Functions}{ Scale Functions}}\label{scale-functions}}
 
 \includegraphics{media/image6.png}
 
-GetScale (float)
+	GetScale (float)
+	
+	SetScale newScale\_float
+	
+	ModScale scaleChange\_float
 
-SetScale newScale\_float
-
-ModScale scaleChange\_float
-
-If ( doonce == 0 )
-
-Object\_ID-\textgreater SetScale 0.1
-
-Set doonce to 1
-
-endif
+\begin{lstlisting}	
+	If ( doonce == 0 )
+	
+	Object\_ID-\textgreater SetScale 0.1
+	
+	Set doonce to 1
+	
+	endif
+\end{lstlisting}
 
 These functions are used to determine or modify the scale of a
 reference. Any scale you can set must be within (exclusively) 0 and 10
@@ -1200,9 +1286,11 @@ reload. So don't use a done-flag to call it only once. Either call it
 regularly (about all 10 frames) or test for "getscale" and reset the
 scale when it doesn't fit:
 
-if ( GetScale != 5 )\\
-SetScale, 5\\
-endif
+\begin{lstlisting}
+	if ( GetScale != 5 )\\
+	SetScale, 5\\
+	endif
+\end{lstlisting}
 
 Another way is to set it in a Tribunal or Bloodmoon start script. This
 can be done once, and will make sure the scale is set each time you load
@@ -1229,7 +1317,9 @@ outdoors}\label{detecting-if-player-is-indoors-or-outdoors}}
 
 {[}no fix{]} GetInterior (returns Boolean/short)
 
-If ( GetInterior == 1 )
+\begin{lstlisting}
+	If ( GetInterior == 1 )
+\end{lstlisting}
 
 \textbf{Undocumented function!} (Thanks XP-Cagey and Killgore)
 
@@ -1249,11 +1339,13 @@ cell}\label{determining-the-players-cell}}
 
 {[}no fix{]} GetPCCell, "Cell\_ID" (returns Boolean/short)
 
-if ( GetPCCell "Balmora" == 1 )
-
-Set dream to 1
-
-endif
+\begin{lstlisting}
+	if ( GetPCCell "Balmora" == 1 )
+	
+	Set dream to 1
+	
+	endif
+\end{lstlisting}
 
 The GetPCCell function tests for the player's presence in the specified
 cell. It returns 1 if the player is in the specified cell, 0 if not.
@@ -1274,7 +1366,9 @@ another}\label{distance-of-one-object-to-another}}
 
 GetDistance, "ObjectID" (returns float)
 
-"ObjectID1"-\textgreater GetDistance, "ObjectID2"
+\begin{lstlisting}
+	"ObjectID1"-\textgreater GetDistance, "ObjectID2"
+\end{lstlisting}
 
 This function returns the distance (in units) of one object to another.
 In syntax one, that is the distance between the calling object (to which
@@ -1284,27 +1378,29 @@ whereabouts for use in a script.
 
 Here is a snippet from an original Morrowind script:
 
-; From a script attached to an NPC Ashamanu:
-
-; Ashamanu will give journal entry 60 when player is near
-
-if ( GetDisabled != 1 )
-
-if ( \textbf{GetDistance} Player \textless= 256 )
-
-if ( \textbf{GetDistance} "guar\_white\_unique" \textless= 256 )
-
-if ( GetJournalIndex "MS\_WhiteGuar" \textless= 50 )
-
-Journal "MS\_WhiteGuar" 60
-
-endif
-
-endif
-
-endif
-
-endif
+\begin{lstlisting}
+	; From a script attached to an NPC Ashamanu:
+	
+	; Ashamanu will give journal entry 60 when player is near
+	
+	if ( GetDisabled != 1 )
+	
+	if ( \textbf{GetDistance} Player \textless= 256 )
+	
+	if ( \textbf{GetDistance} "guar\_white\_unique" \textless= 256 )
+	
+	if ( GetJournalIndex "MS\_WhiteGuar" \textless= 50 )
+	
+	Journal "MS\_WhiteGuar" 60
+	
+	endif
+	
+	endif
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 Limitations:
 
@@ -1339,7 +1435,9 @@ facing}\label{determining-an-objects-position-and-facing}}
 
 GetPos, axis(x/y/z)
 
-Object\_ID-\textgreater GetPos, z
+\begin{lstlisting}
+	Object\_ID-\textgreater GetPos, z
+\end{lstlisting}
 
 When you are moving objects with the Move/MoveWorld functions described
 above, you might want to obtain information on its current whereabouts.
@@ -1353,7 +1451,9 @@ position is 511:
 
 GetAngle , axis(x/y/z) (returns float)
 
-If ( Object\_Id-\textgreater GetAngle, z == 180 )
+\begin{lstlisting}
+	If ( Object\_Id-\textgreater GetAngle, z == 180 )
+\end{lstlisting}
 
 The GetAngle function returns the world angle, not the local angle.
 World angles are from 0 to 180 and 0 to -180 (see figure for z axis).
@@ -1362,12 +1462,16 @@ World angles are from 0 to 180 and 0 to -180 (see figure for z axis).
 (and I assume other actors) only the z axis is relevant - GetAngle, x or
 y always return 0.
 
+% Missing math image here.
+
 \hypertarget{line-of-sight}{%
 \subsubsection{Line of Sight}\label{line-of-sight}}
 
 GetLOS, ObjectID (returns Boolean/short)
 
-Actor\_ID-\textgreater GetLOS, Player
+\begin{lstlisting}
+	Actor\_ID-\textgreater GetLOS, Player
+\end{lstlisting}
 
 Undocumented:
 
@@ -1398,7 +1502,9 @@ an Actor is detected by another Actor}}
 
 {[}no fix{]} GetDetected, "Actor ID" (returns Boolean/short)
 
-If ( GetDetected, Player == 1 )
+\begin{lstlisting}
+	If ( GetDetected, Player == 1 )
+\end{lstlisting}
 
 Returns true if \textbf{any} calling Actor can detect "Actor ID" (thanks
 for the correction, ThePal!). This function will return 0 if the Actor
@@ -1415,16 +1521,22 @@ if not he is "caught"
 GetDetected calling an NPC's ID if there's more than one reference in
 the game will return nothing. For example:
 
-getDetected, "fargoth"
+\begin{lstlisting}
+	getDetected, "fargoth"
+\end{lstlisting}
 
 will return 1, but:
 
-GetDetected "Imperial Guard"
+\begin{lstlisting}
+	GetDetected "Imperial Guard"
+\end{lstlisting}
 
 Returns nothing. (Not 0, it doesn't return a value). However if you
 reference an exact NPC:
 
-GetDetected "Imperial Guard00000002"
+\begin{lstlisting}
+	GetDetected "Imperial Guard00000002"
+\end{lstlisting}
 
 A value is returned.
 
@@ -1436,7 +1548,9 @@ cell}\label{determining-when-the-pc-leaves-a-cell}}
 
 {[}no fix{]} CellChanged
 
-If ( CellChanged == 1 )
+\begin{lstlisting}
+	If ( CellChanged == 1 )
+\end{lstlisting}
 
 CellChanged returns 1 for one frame when player changes cells. It
 doesn't return 1 for scripted teleporting or magic teleporting.
@@ -1473,30 +1587,34 @@ comes back just when you are not watching:
 
 {[}no fix{]} GetPCTraveling (returns boolean)
 
-if ( GetPCTraveling == 1 )
+\begin{lstlisting}
+	if ( GetPCTraveling == 1 )
+\end{lstlisting}
 
 Bloodmoon adds a functions to check whether the PC is traveling (i.e. on
 a Silt Strider). Will return 1 if traveling/in jail, zero otherwise.
 This is used in the werewolf change script to stop the PC from changing
 if either of these are true:
 
-if ( PCWerewolf != 1 ) ; DON' RUN IF PLAYER ISN'T WEREWOLF
-
-return
-
-endif
-
-if ( \textbf{GetPCinJail} == 1 )
-
-return
-
-endif
-
-if ( \textbf{GetPCTraveling} == 1 )
-
-return
-
-endif
+\begin{lstlisting}
+	if ( PCWerewolf != 1 ) ; DON' RUN IF PLAYER ISN'T WEREWOLF
+	
+	return
+	
+	endif
+	
+	if ( \textbf{GetPCinJail} == 1 )
+	
+	return
+	
+	endif
+	
+	if ( \textbf{GetPCTraveling} == 1 )
+	
+	return
+	
+	endif
+\end{lstlisting}
 
 \hypertarget{triggers-for-actors-standing-on-an-object}{%
 \subsubsection{Triggers for Actors standing on an
@@ -1510,11 +1628,13 @@ GetStandingActor (returns Boolean/short)
 
 returns 1 if ANY Actor (including PC) is standing on it.
 
-If ( Object\_Id-\textgreater GetStandingPC == 1)
-
-{[}\ldots{} trigger horrible trap{]}
-
-endif
+\begin{lstlisting}
+	If ( Object\_Id-\textgreater GetStandingPC == 1)
+	
+	{[}\ldots{} trigger horrible trap{]}
+	
+	endif
+\end{lstlisting}
 
 These are great functions to trigger events, especially for interior
 cells. It is also an excellent function to build traps. You can make an
@@ -1538,13 +1658,15 @@ object}\label{hurting-an-actor-standing-on-an-object}}
 
 HurtStandingActor, float\_HP/s
 
-HurtStandingActor -3
-
-Object\_ID-\textgreater HurtStandingActor 1
-
-Float hurt\_variable
-
-HurtStandingActor, hurt\_variable
+\begin{lstlisting}
+	HurtStandingActor -3
+	
+	Object\_ID-\textgreater HurtStandingActor 1
+	
+	Float hurt\_variable
+	
+	HurtStandingActor, hurt\_variable
+\end{lstlisting}
 
 This function affects the health of an Actor (including the PC) that
 stands on the object. Positive values will reduce health, negative
@@ -1568,13 +1690,17 @@ GetCollidingPC (returns Boolean/short)
 
 GetCollidingActor (returns Boolean/short)
 
-if ( GetCollidingPC == 1 )
+\begin{lstlisting}
+	if ( GetCollidingPC == 1 )
+\end{lstlisting}
 
 HurtCollidingActor, damage\_enum
 
-HurtCollidingActor, 100
-
-Object\_ID-\textgreater HurtCollidingActor, 100
+\begin{lstlisting}
+	HurtCollidingActor, 100
+	
+	Object\_ID-\textgreater HurtCollidingActor, 100
+\end{lstlisting}
 
 These functions go on an object to allow it to interact with Actors
 colliding with it. GetCollidingPC returns 1 if the PC is currently
@@ -1612,8 +1738,9 @@ dialogue etc. The OnActivate function allows you to intercept the
 standard action and do something else or check a condition first:
 
 OnActivate
-
-If ( OnActivate == 1 )
+\begin{lstlisting}
+	If ( OnActivate == 1 )
+\end{lstlisting}
 
 This get set to one for one frame when the object is activated.
 OnActivate resets itself as soon as the function is called, so only one
@@ -1625,7 +1752,9 @@ command:
 
 Activate
 
-activate (if script is on the object to activate)
+\begin{lstlisting}
+	activate (if script is on the object to activate)
+\end{lstlisting}
 
 Activate can be used to trigger the standard action of an object, after
 OnActivate has been called.
@@ -1700,15 +1829,19 @@ Lock, short\_enum\_locklevel
 
 Unlock
 
-My\_Door-\textgreater Lock, 50
+\begin{lstlisting}
+	My\_Door-\textgreater Lock, 50
+\end{lstlisting}
 
 GetLocked (returns Boolean/short)
 
+\begin{lstlisting}
 If ( GetLocked == 1 )
 
 Unlock
 
 Endif
+\end{lstlisting}
 
 (only Door and container objects)
 
@@ -6791,4 +6924,3 @@ level. It also will make the object stop bobbing if the PC is standing
 on it.
 
 \lstinputlisting{scripts/NewFloat.txt}
-

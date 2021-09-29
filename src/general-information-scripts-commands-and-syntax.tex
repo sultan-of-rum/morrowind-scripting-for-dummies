@@ -26,16 +26,18 @@ is no default object for a global script to work on, so objects must
 always be specified: while the following will work in a local script
 attached to an NPC:
 
-AITravel 1150, 8899, 1110
+\begin{lstlisting}
+	AITravel 1150, 8899, 1110
+\end{lstlisting}
 
 You will have to specify the NPC in a global script:
 
-"NPC\_ID"-\textgreater AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
-unique identifier for
-
-\begin{quote}
-;each object in the editor
-\end{quote}
+\begin{lstlisting}
+	"NPC\_ID"-\textgreater AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
+	unique identifier for
+	
+	;each object in the editor
+\end{lstlisting}
 
 Global scripts are active all the time once they have been activated and
 until they are specifically terminated. Thus, once activated, they will
@@ -45,7 +47,9 @@ global scripts can easily slow the game down a lot.
 
 The command to start a non-active script is:
 
-StartScript, "Script ID"
+\begin{lstlisting}
+	StartScript, "Script ID"
+\end{lstlisting}
 
 With Tribunal and Bloodmoon you also have the option to make a script
 start automatically with the game. In the TESCS under the menu
@@ -54,7 +58,9 @@ automatically started scripts.
 
 The function to terminate a global script is:
 
+\begin{lstlisting}
 StopScript, "Script ID"
+\end{lstlisting}
 
 Variables local to a global script will be saved temporarily when the
 script is stopped and restarted. In order to ensure that variables are
@@ -66,45 +72,19 @@ A simple way to ensure variables are saved is to use a startscript (only
 available with expansions); so for example the startscript might look
 something like this:
 
-begin KeepVarsScript
+\lstinputlisting{scripts/KeepVarsScript.txt}
 
-if ( ScriptRunning, MyScript == 0 )
+...and the script "MyScript" might look like this:
 
-set MyScript.KeepVars to 1
-
-StartScript MyScript
-
-endif
-
-StopScript KeepVarsScript
-
-end
-
-\ldots and the script "MyScript" might look like this:
-
-begin MyScript
-
-short KeepVars
-
-if ( KeepVars == 1 )
-
-set KeepVars to 0
-
-StopScript MyScript
-
-return
-
-endif
-
-;main body of script goes here
-
-end
+\lstinputlisting{scripts/MyScript.txt}
 
 It is possible to use the StartScript function to run global scripts
 that are tied to an object or Actor. These are called "targeted
 scripts".
 
-"Object\_ID"-\textgreater StartScript "Script\_ ID"
+\begin{lstlisting}
+	"Object\_ID"-\textgreater StartScript "Script\_ ID"
+\end{lstlisting}
 
 These scripts resemble both local scripts (in that the functions called
 always default to the object or Actor the script targets) and global
@@ -125,11 +105,13 @@ before we go into more detail.
 \subsubsection{Beginning and ending
 scripts}\label{beginning-and-ending-scripts}}
 
-Begin Script\_ID
-
-End
-
-End Script\_ID
+\begin{lstlisting}
+	Begin Script\_ID
+	
+	End
+	
+	End Script\_ID
+\end{lstlisting}
 
 Every script must have the Begin and End tags. The specified name will
 also be the ID you will reference the script by (be it from other
@@ -155,7 +137,9 @@ Functions are not case sensitive, but using the case sensitive form as
 suggested by Bethesda (e.g. GetSpellEffects instead of getspelleffects)
 makes scripts easier to read, so it's recommended to keep it that way.
 
-"Object\_ID"-\textgreater Function, {[}parameters{]}
+\begin{lstlisting}
+	"Object\_ID"-\textgreater Function, {[}parameters{]}
+\end{lstlisting}
 
 This is the format for all functions that act on or refer to a
 specifiable object in the game world. The "arrow" or "fix" designates
@@ -169,7 +153,9 @@ attached to.
 This is not to say that there might not be another object referenced as
 a parameter:
 
-"Object\_ID1"-\textgreater Function, "Object\_ID2"
+\begin{lstlisting}
+	"Object\_ID1"-\textgreater Function, "Object\_ID2"
+\end{lstlisting}
 
 \textbf{Notes:}
 
@@ -181,12 +167,16 @@ then delete all references, the game will give errors on load and CTD.
 More than one function may be used in a \emph{set} expression, but the
 functions always apply to the same reference. For example:
 
-set SomeVar to ( player-\textgreater GetStrength ) + (
-player-\textgreater GetEndurance )
+\begin{lstlisting}
+	set SomeVar to ( player-\textgreater GetStrength ) + (
+	player-\textgreater GetEndurance )
+\end{lstlisting}
 
 and
 
-set SomeVar to ( player-\textgreater GetStrength ) + ( GetEndurance )
+\begin{lstlisting}
+	set SomeVar to ( player-\textgreater GetStrength ) + ( GetEndurance )
+\end{lstlisting}
 
 will both have the same effect, and specifying different references will
 not work.
@@ -195,12 +185,16 @@ Referencing non-unique items with the "fix" will usually perform the
 function only on the first reference of the object! So using this in a
 global script:
 
-"cliff racer"-\textgreater ModCurrentHealth -1000
+\begin{lstlisting}
+	"cliff racer"-\textgreater ModCurrentHealth -1000
+\end{lstlisting}
 
 will not have the desired effect, it will only kill one of the annoying
 bastards. However attaching a script to the creature with just
 
-ModCurrentHealth -1000
+\begin{lstlisting}
+	ModCurrentHealth -1000
+\end{lstlisting}
 
 Would do the trick, because every reference of the cliff racer will have
 the script running, and apply the function to itself. Note that this
@@ -211,11 +205,13 @@ A number of functions refer only to the player or not to an object at
 all, and are therefore using the fix is meaningless or may produce
 errors. E.g.:
 
-If ( GetPCRank == 0 )
-
-If ( CellChanged == 0 )
-
-FadeOut, 2
+\begin{lstlisting}
+	If ( GetPCRank == 0 )
+	
+	If ( CellChanged == 0 )
+	
+	FadeOut, 2
+\end{lstlisting}
 
 \hypertarget{general-syntax-commas-parentheses-and-spaces}{%
 \subsubsection{General syntax: Commas, parentheses and
@@ -261,14 +257,16 @@ fine in all cases).
 \subsubsection{Comments}\label{comments}}
 
 Comments are marked by a semicolon ;. Comments can be added in their own
-lines or behind lines with code
+lines or behind lines with code.
 
-\textbf{;} enter sneak mode
-
-Fargoth-\textgreater ForceSneak
-
-Fargoth-\textgreater AiTravel -11468.595,-71511.531,173.728
-\textbf{;}goes to tree
+\begin{lstlisting}
+	\textbf{;} enter sneak mode
+	
+	Fargoth-\textgreater ForceSneak
+	
+	Fargoth-\textgreater AiTravel -11468.595,-71511.531,173.728
+	\textbf{;}goes to tree
+\end{lstlisting}
 
 \hypertarget{indentation-using-tabstops}{%
 \subsubsection{Indentation / using
@@ -276,31 +274,35 @@ tabstops}\label{indentation-using-tabstops}}
 
 For your own sake, use proper indentation (tabstops) for if-elseif
 constructs -- makes it much easier to keep track of them, so you don't
-forget an endif at the end. In the tips and tricks section you will find
-a link to an external EMACS editor mode for TES script that will do
-automatic indentation.
+forget an endif at the end.
 
-If ( variable1 )
+% In the tips and tricks section you will find a link to an external EMACS editor mode for TES script that will do automatic indentation.
 
-If ( variable2 )
-
-{[}do something{]}
-
-endif
-
-endif
-
+\begin{lstlisting}
+	If ( variable1 )
+	
+	If ( variable2 )
+	
+	{[}do something{]}
+	
+	endif
+	
+	endif
+\end{lstlisting}
+	
 is better than
 
-If ( variable1 )
-
-If ( variable2 )
-
-{[}do something{]}
-
-endif
-
-endif
+\begin{lstlisting}
+	If ( variable1 )
+	
+	If ( variable2 )
+	
+	{[}do something{]}
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 \hypertarget{variables}{%
 \subsection{Variables}\label{variables}}
@@ -312,11 +314,11 @@ There are three types of variables in the TES script language: short,
 long and float. According to the manual these cover the following data
 ranges:
 
-Short -32,768 to 32,767 (signed integer)
-
-Long -2,147,483,648 to 2,147,483,647 ( long signed integer)
-
-Float 3.4E +/- 38 (float, 7 digits)
+	Short -32,768 to 32,767 (signed integer)
+	
+	Long -2,147,483,648 to 2,147,483,647 ( long signed integer)
+	
+	Float 3.4E +/- 38 (float, 7 digits)
 
 Apparently the boundaries for Long given here are only partly correct,
 in the TES-CS you can assign a maximum value of 2147483520 (Forum info /
@@ -374,49 +376,55 @@ count.
 An example by BungaDunga shows that when doing math with floats, the
 answer isn't always what you expect:
 
-\textbf{Float num1}
-
-\textbf{Float num2}
-
-\textbf{Float num3}
-
-\textbf{Set num1 to ( 1 / 3 )}
-
-\textbf{;num1 is now 0.3333333}
-
-\textbf{Set num2 to 3}
-
-\textbf{;num2 is now 3\\
-\strut \\
-set num3 to num1 * num2}
-
-\textbf{;num3 is now 0.9999999, rather than what you would expect, 1.\\
-\strut \\
-if ( num3 == 1 )\\
-; Never happens.\\
-endif}
+\begin{lstlisting}
+	\textbf{Float num1}
+	
+	\textbf{Float num2}
+	
+	\textbf{Float num3}
+	
+	\textbf{Set num1 to ( 1 / 3 )}
+	
+	\textbf{;num1 is now 0.3333333}
+	
+	\textbf{Set num2 to 3}
+	
+	\textbf{;num2 is now 3\\
+		\strut \\
+		set num3 to num1 * num2}
+	
+	\textbf{;num3 is now 0.9999999, rather than what you would expect, 1.\\
+		\strut \\
+		if ( num3 == 1 )\\
+		; Never happens.\\
+		endif}
+\end{lstlisting}
 
 A lot of functions return float values (e.g. GetDistance, GetScale,
 GetSecondsPassed\ldots): the same thing applies. Test a range, not an
 exact value! E.g.:
 
-if ( ( GetPos x ) == 500 )
-
-;will be false if it's 499.9999, or 500.0001, etc
-
-endif
-
+\begin{lstlisting}
+	if ( ( GetPos x ) == 500 )
+	
+	;will be false if it's 499.9999, or 500.0001, etc
+	
+	endif
+\end{lstlisting}
+	
 but this will work:
 
-if ( ( GetPos x ) \textgreater{} 499.5 )
-
-if ( ( GetPos x ) \textless{} 500.5 )
-
-;it's close enough for me
-
-endif
-
-endif
+\begin{lstlisting}	
+	if ( ( GetPos x ) \textgreater{} 499.5 )
+	
+	if ( ( GetPos x ) \textless{} 500.5 )
+	
+	;it's close enough for me
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 \protect\hypertarget{_Toc182634499}{}{}
 
@@ -432,11 +440,11 @@ or equal to a value.
 
 Local variables these have to be declared in the script:
 
-Float floatvarname
-
-Short shortvarname
-
-Long longvarname
+	Float floatvarname
+	
+	Short shortvarname
+	
+	Long longvarname
 
 Local variables are unique to a specific instance of a local script.
 This means that the local variables in multiple objects with the same
@@ -472,11 +480,15 @@ Set \ldots{} to
 If a unique object has a local script running on it you can change
 variables from outside the script in the following way:
 
-Set MyObject.variable to 100
+\begin{lstlisting}
+	Set MyObject.variable to 100
+\end{lstlisting}
 
 or
 
-Set MyObject.variable to local\_variable
+\begin{lstlisting}
+	Set MyObject.variable to local\_variable
+\end{lstlisting}
 
 This method changes a local variable in the object's script. The object
 must have a script on it for this to be valid. The object does not have
@@ -488,19 +500,27 @@ in the database, thus you should only reference objects that are unique
 
 Note that the reverse does \textbf{not} work:
 
-Set local\_variable to MyObject.variable ;this doesn't work!
+\begin{lstlisting}
+	Set local\_variable to MyObject.variable ;this doesn't work!
+\end{lstlisting}
 
 Use a global variable to transfer information in this way, or set
 local\_variable from the \textbf{other} script using the syntax above.
 
-if ( anotherobject.x \textgreater{} 0 )
+\begin{lstlisting}
+	if ( anotherobject.x \textgreater{} 0 )
+\end{lstlisting}
 
 apparently works.
 
 Furthermore I realized only recently that this syntax also works for
 global scripts:\\
 \strut \\
-set Global\_script\_name.variable to 1\\
+
+\begin{lstlisting}
+	set Global\_script\_name.variable to 1
+\end{lstlisting}
+
 \strut \\
 This is useful to avoid using more global variables then necessary or
 also as a console command to debug global scripts.
@@ -508,10 +528,12 @@ also as a console command to debug global scripts.
 \textbf{Note:} If your object or global script starts with a number, you
 need to put quotes around it.
 
-"11NPC01".RemoteVar ;-\/-\/-Good\\
-"11NPC01.RemoteVar" ;-\/-\/-BAD
-
-11NPC01.RemoteVar ;-\/-\/-BAD
+\begin{lstlisting}
+	"11NPC01".RemoteVar ;-\/-\/-Good\\
+	"11NPC01.RemoteVar" ;-\/-\/-BAD
+	
+	11NPC01.RemoteVar ;-\/-\/-BAD
+\end{lstlisting}
 
 A caution when setting variables from outside the script
 (DinkumThinkum):
@@ -586,7 +608,9 @@ standard operator precedence applies ( * and / are calculated before +/-
 parentheses to be on the safe side. You can use parentheses according to
 standard mathematical rules:
 
-set ln to ( ln + ( k10 * math\_ln10 ) + ( k2 * math\_ln2 ) )
+\begin{lstlisting}
+	set ln to ( ln + ( k10 * math\_ln10 ) + ( k2 * math\_ln2 ) )
+\end{lstlisting}
 
 A warning: There are different opinions on the forums on the use of
 several operators in one line. Some people report a lot of problems with
@@ -675,13 +699,13 @@ MWSE (Morrowind Script Extender) also adds trig functions to Morrowind.
 \subsubsection{Use of if\ldots{} elseif
 conditions}\label{use-of-if-elseif-conditions}}
 
-If (condition)
-
-Elseif (condition)
-
-Else
-
-Endif
+	If (condition)
+	
+	Elseif (condition)
+	
+	Else
+	
+	Endif
 
 Much of TES scripting relies on the use of \emph{if\ldots{} elseif}
 conditions and variations thereof. It is very important to fully
@@ -699,11 +723,13 @@ condition is true.
 
 Thus:
 
-\textbf{If} ( GetAIPackageDone )
-
-;{[}do something here{]}
-
-\textbf{endif}
+\begin{lstlisting}
+	\textbf{If} ( GetAIPackageDone )
+	
+	;{[}do something here{]}
+	
+	\textbf{endif}
+\end{lstlisting}
 
 will be only executed when the GetAIPackageDone function currently
 returns the value 1.
@@ -713,11 +739,13 @@ test of conditions. The conditions, such as "A equals B" or "A is
 greater than B" will be evaluated, and the whole expression will be true
 (equals 1) when the condition is fulfilled. E.g.:
 
-\textbf{if} ( GetAIPackageDone == 1 )
-
-;{[}do something here{]}
-
-\textbf{endif}
+\begin{lstlisting}
+	\textbf{if} ( GetAIPackageDone == 1 )
+	
+	;{[}do something here{]}
+	
+	\textbf{endif}
+\end{lstlisting}
 
 Is equivalent to the example above. This second syntax tests a condition
 and returns "true" if the condition is met. You can check for the
@@ -741,17 +769,19 @@ following conditions:
 If you have several independent if blocks each will be evaluated
 separately. If, e.g. the following if blocks are in your script:
 
-if ( timer \textgreater= 2 )
-
-;{[}Block A,do something here{]}
-
-endif
-
-if ( timer \textless= 3 )
-
-;{[}Block B, do something else here{]}
-
-endif
+\begin{lstlisting}
+	if ( timer \textgreater= 2 )
+	
+	;{[}Block A,do something here{]}
+	
+	endif
+	
+	if ( timer \textless= 3 )
+	
+	;{[}Block B, do something else here{]}
+	
+	endif
+\end{lstlisting}
 
 Both will be true and the code in the blocks will be executed when timer
 is between 2 and 3.
@@ -759,15 +789,17 @@ is between 2 and 3.
 You can nest if-blocks if you want to make sure that two conditions are
 fulfilled simultaneously:
 
-if ( timer \textgreater= 2 )
-
-if ( controlvar == 0
-
-;{[}do something here{]}
-
-endif
-
-endif
+\begin{lstlisting}
+	if ( timer \textgreater= 2 )
+	
+	if ( controlvar == 0
+	
+	;{[}do something here{]}
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 The code in the inner if block will only be executed when both
 conditions (timer \textgreater= 2 and controlvar == 0 ) are fulfilled at
@@ -777,15 +809,17 @@ For more elaborate constructions you can use Else and Elseif. Elseif
 tests for a separate condition if the preceding condition has failed
 (but not if the previous condition was fulfilled)
 
-if ( timer \textgreater= 2 )
-
-;{[}Block A,do something here{]}
-
-elseif ( timer \textless= 3 )
-
-; {[}Block B, do something else here{]}
-
-endif
+\begin{lstlisting}
+	if ( timer \textgreater= 2 )
+	
+	;{[}Block A,do something here{]}
+	
+	elseif ( timer \textless= 3 )
+	
+	; {[}Block B, do something else here{]}
+	
+	endif
+\end{lstlisting}
 
 unlike the example above, both blocks can not be true at the same time
 now. Either timer is \textgreater= 2, then block A gets executed, or
@@ -794,36 +828,40 @@ is \textless{} 2, then block B gets executed. In all other cases,
 neither block will be executed. You can have several elseifs behind each
 other:
 
-if ( counter == 1 )
-
-;{[}Block A,do something here{]}
-
-elseif ( counter == 2 )
-
-; {[}Block B, do something else here{]}
-
-elseif ( counter == 3 )
-
-; {[}Block C, do something else here{]}
-
-endif
+\begin{lstlisting}
+	if ( counter == 1 )
+	
+	;{[}Block A,do something here{]}
+	
+	elseif ( counter == 2 )
+	
+	; {[}Block B, do something else here{]}
+	
+	elseif ( counter == 3 )
+	
+	; {[}Block C, do something else here{]}
+	
+	endif
+\end{lstlisting}
 
 An else creates a "default condition". The code following else will be
 executed if all previously tested conditions are false:
 
-\textbf{If} ( foo\_var == 1 )
-
-{[}Block A: do something{]}
-
-\textbf{elseif} ( foo\_var == 2 )
-
-{[}Block B: do something else{]}
-
-\textbf{else}
-
-{[}Block C: do something completely different{]}
-
-\textbf{endif}
+\begin{lstlisting}
+	\textbf{If} ( foo\_var == 1 )
+	
+	{[}Block A: do something{]}
+	
+	\textbf{elseif} ( foo\_var == 2 )
+	
+	{[}Block B: do something else{]}
+	
+	\textbf{else}
+	
+	{[}Block C: do something completely different{]}
+	
+	\textbf{endif}
+\end{lstlisting}
 
 In this example Block C will be executed it foo\_var is neither 1 nor 2.
 
@@ -851,37 +889,41 @@ by a separate 'If' statement to compare 'NewType' to 'OldType'.
 \hypertarget{while-conditions}{%
 \subsubsection{While conditions}\label{while-conditions}}
 
-While ( condition )
-
-; things to do
-
-EndWhile
+	While ( condition )
+	
+	; things to do
+	
+	EndWhile
 
 The while command differs from the if command in that it is repeated
 within one frame until the condition is fulfilled. This is best
 explained with an example:
 
-Short desiredAmnt
-
-SetStrength 0
-
-\textbf{while}( GetStrength \textless{} desiredAmnt ) ; non-literal
-value to match
-
-modStrength 1
-
-\textbf{endwhile}
+\begin{lstlisting}
+	Short desiredAmnt
+	
+	SetStrength 0
+	
+	\textbf{while}( GetStrength \textless{} desiredAmnt ) ; non-literal
+	value to match
+	
+	modStrength 1
+	
+	\textbf{endwhile}
+\end{lstlisting}
 
 This will set strength to the value in variable desiredAmnt after one
 frame. The following script however would need an undetermined amount of
 frames to do this, because the if condition is only called once each
 frame:
 
-if(getStrength \textless{} desiredAmnt) ; non-literal value to match
-
-modStrength 1
-
-endif
+\begin{lstlisting}
+	if(getStrength \textless{} desiredAmnt) ; non-literal value to match
+	
+	modStrength 1
+	
+	endif
+\end{lstlisting}
 
 On the other hand the first example can potentially cause "freezing" (if
 the value would be very high) while the second won't.
@@ -899,40 +941,48 @@ using if\ldots{} elseif structures.
 
 Instead of AND:
 
-if ( variable1 AND variable2 ); does \textbf{not} exist
-
-{[}do something{]}
-
-endif
-
+\begin{lstlisting}
+	if ( variable1 AND variable2 ); does \textbf{not} exist
+	
+	{[}do something{]}
+	
+	endif
+\end{lstlisting}
+	
 you have to use:
 
-If ( variable1 )
-
-If ( variable2 )
-
-{[}do something{]}
-
-endif
-
-endif
-
+\begin{lstlisting}	
+	If ( variable1 )
+	
+	If ( variable2 )
+	
+	{[}do something{]}
+	
+	endif
+	
+	endif
+\end{lstlisting}
+	
 For OR constructs:
 
-if ( variable1 OR variable2 )
-
-{[}do this{]}
-
-endif
-
+\begin{lstlisting}	
+	if ( variable1 OR variable2 )
+	
+	{[}do this{]}
+	
+	endif
+\end{lstlisting}
+	
 you can use elseif constructions:
 
-If ( variable1 )
-
-{[}do this{]}
-
-elseif ( variable2 )
-
-{[}do this{]}
-
-endif
+\begin{lstlisting}	
+	If ( variable1 )
+	
+	{[}do this{]}
+	
+	elseif ( variable2 )
+	
+	{[}do this{]}
+	
+	endif
+\end{lstlisting}

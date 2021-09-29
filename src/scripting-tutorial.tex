@@ -14,6 +14,8 @@ We start by opening the script editor: \textbf{Start up the TES Construction Set
 
 You enter the script editor either by \textbf{selecting Gameplay -- Edit Scripts from the menu}, by clicking the edit script button (the pencil) in the taskbar or by accessing it from an Object or NPC dialogue, by clicking the button with the ellipses {[}\ldots{]} next to the script field. The editor window is pretty basic:
 
+% Graphic here is on another page because the margins are different than the .doc
+
 \includegraphics{media/script-abebaal-attack.png}
 
 Let's have a look at the buttons in the taskbar, from left to right: \emph{Open} lets you select a script to edit. \emph{Save} error checks the current script and compiles it or gives out error messages -- note, however, that the plugin and thus the script is not really saved to disk at this time. When programming large scripts frequently use the save command in the main TESCS window after you have saved the script here, just in case the TESCS crashes.
@@ -171,24 +173,26 @@ All other values of button mean that the player has selected a wrong answer, so 
 
 Now look at the little addition at the top of the script:
 
-% Excerpt from external script.
+% Excerpt from external script. my_first_script03 [firstline=6, lastline=13]
 
-If ( OnActivate == 1 )
-
-If ( controlvar == 0)
-
-MessageBox "Voiceless it cries, wingless flutters, toothless bites,
-mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
-
-Set controlvar to 1
-
-elseif controlvar \textgreater{} 1
-
-activate
-
-endif
-
-endif
+\begin{lstlisting}
+	If ( OnActivate == 1 )
+	
+	If ( controlvar == 0)
+	
+	MessageBox "Voiceless it cries, wingless flutters, toothless bites,
+	mouthless mutters. What is it?", "Bat", "Old woman", "Wind", "Wraith"
+	
+	Set controlvar to 1
+	
+	elseif controlvar \textgreater{} 1
+	
+	activate
+	
+	endif
+	
+	endif
+\end{lstlisting}
 
 This means that, whenever the chest is activated in the future, it will only open if controlvar is greater than 1. Check above: when the player provides the wrong answer in the riddle, controlvar is set to --1, so he will never be able to open the chest. But if he knew the right answer, \emph{controlvar} is set to 2, and from now on the player can open the chest as often as he likes. Save and run your plugin, and test as described above.
 
@@ -197,49 +201,53 @@ This means that, whenever the chest is activated in the future, it will only ope
 
 Now, you will probably have noticed that the script does almost -- but not quite -- what we wanted. After clicking the correct answer, the chests inventory doesn't open as intended. Now, the logic above seemed fine, so what is wrong? \textbf{Let's try the following (change the corresponding part of your script according to the fragment below):}
 
-% Excerpt from external script.
+% Excerpt from external script. [firstline=, lastline=]
 
-if (controlvar == 1)
-
-set button to GetButtonPressed
-
-if ( button == -1 )
-
-return
-
-elseif ( button == 2 )
-
-MessageBox "The answer was correct"
-
-set controlvar to 2
-
-else
-
-MessageBox "The answer was wrong"
-
-set controlvar to -1
-
-endif
-
-elseif ( controlvar == 2 )
-
-Activate
-
-endif
+\begin{lstlisting}
+	if (controlvar == 1)
+	
+	set button to GetButtonPressed
+	
+	if ( button == -1 )
+	
+	return
+	
+	elseif ( button == 2 )
+	
+	MessageBox "The answer was correct"
+	
+	set controlvar to 2
+	
+	else
+	
+	MessageBox "The answer was wrong"
+	
+	set controlvar to -1
+	
+	endif
+	
+	elseif ( controlvar == 2 )
+	
+	Activate
+	
+	endif
+\end{lstlisting}
 
 See how I moved the activate command to the section that tests for controlvar == 2? This provides a cleaner sequence of events, and as I mentioned above, this can be very important when scripting for Morrowind -- always try to avoid doing too many things at once! \textbf{Well, run and test it.}
 
 Great, now the inventory opens as we wanted, but what is this? The cursor is real slow, and we can't close the inventory! Look above -- \emph{controlvar} was set to two, and remains there, we do not change it again -- therefore the game now gets continuous "\emph{Activate}" commands each time the script is processed (every frame)! That's why we can't close the inventory -- it gets reopened immediately. \textbf{So change the following part of the script:}
 
-% Excerpt from external script.
+% Excerpt from external script. [firstline=, lastline=]
 
-elseif ( controlvar == 2 )
-
-Activate
-
-Set controlvar to 3
-
-endif
+\begin{lstlisting}
+	elseif ( controlvar == 2 )
+	
+	Activate
+	
+	Set controlvar to 3
+	
+	endif
+\end{lstlisting}
 
 \textbf{Test again}: now everything works the way we wanted. I hope I have not confused you with the above excursion into the process of debugging, but it is a very important thing to know about -- you will constantly have to rethink your scripts and try different ways of doing it to be successful.
 
@@ -260,29 +268,39 @@ Now, we need to put this curse on the player. For this we use the \emph{AddSpell
 
 Let's go over this. Player-\textgreater AddSpell, "Frost\_Curse" puts the curse we created earlier on the player. Note how we need to use "Player-\textgreater" to make sure the effect really targets the player. Otherwise we would curse the chest (which is the default object, because the script is attached to it), which wouldn't make a lot of sense\ldots{}
 
-% Excerpt from external script.
+% Excerpt from external script. [firstline=, lastline=]
 
 This bit:
 
-Float timer
-
-Set timer to ( timer + GetSecondsPassed )
-
-if timer \textgreater{} 10
+\begin{lstlisting}
+	Float timer
+	
+	Set timer to ( timer + GetSecondsPassed )
+	
+	if timer \textgreater{} 10
+\end{lstlisting}
 
 \ldots that is how you make a timer in Morrowind. \emph{GetSecondsPassed} is a function that returns the time in seconds that has passed since the last frame. Since this is usually a fraction of a second (as the script gets called every frame), it is only natural that we need a float variable for this purpose -- a variable that can store numbers with decimals. So when the timer has been running for 10 seconds we remove the curse again, and make sure we do this only once:
 
-Player-\textgreater RemoveSpell, "Frost\_Curse"
+% Excerpt from external script. [firstline=, lastline=]
 
-set controlvar to -2
+\begin{lstlisting}
+	Player-\textgreater RemoveSpell, "Frost\_Curse"
+	
+	set controlvar to -2
+\end{lstlisting}
 
 Ok, save and test your mod. Works fine now, doesn't it? Well, almost. Try the following: let yourself be cursed, and then open your inventory. Wait. See how the curse terminates after some time, without hurting you? Of course: the script is still running, but spell effects are only calculated while in game, not while you are in the menu. We don't want the player to get off the hook so easily, so we need to put something in our script that stops it from processing when we are in menu mode. Luckily there is the \emph{MenuMode} function, which returns 1 when you enter the menu. So we can put this at the start of our script:
 
-If ( MenuMode == 1 )
+% Excerpt from external script. [firstline=, lastline=]
 
-Return
-
-Endif
+\begin{lstlisting}
+	If ( MenuMode == 1 )
+	
+	Return
+	
+	Endif
+\end{lstlisting}
 
 Remember, return tells the game to stop processing the script for this frame.
 
