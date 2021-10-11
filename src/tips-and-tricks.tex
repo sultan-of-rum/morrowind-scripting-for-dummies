@@ -293,13 +293,13 @@ encountered the object.
 
 If a script uses a specific reference to an object such as
 
-RefObject-\textgreater Enable
+RefObject-> Enable
 
 Then "RefObject" should have References persist checked.
 
 Indirect referencing such as;\\
 PlaceAtMe my\_object 1 1 1\\
-Player-\textgreater AddItem my\_object 1
+Player-> AddItem my\_object 1
 
 do not usually require references persist. Some functions may be
 exceptional in this respect. For example;
@@ -440,15 +440,15 @@ not, but the inconsistent use of commas can cause difficulties:
 
 This will work:
 
-Player-\textgreater PositionCell, -1396, 124, 3312, 90, "Cell ID"
+Player-> PositionCell, -1396, 124, 3312, 90, "Cell ID"
 
 and this will work:
 
-Player-\textgreater PositionCell -1396 124 3312 90 "Cell ID"
+Player-> PositionCell -1396 124 3312 90 "Cell ID"
 
 but this will sometimes have problems:
 
-Player-\textgreater PositionCell -1396, 124, 3312, 90 "Cell ID"
+Player-> PositionCell -1396, 124, 3312, 90 "Cell ID"
 
 \hypertarget{object-names}{%
 \subparagraph{Object Names}\label{object-names}}
@@ -458,17 +458,17 @@ operations will fail.
 
 This will cause runtime error.
 
-\_wr\_testNPC-\textgreater forceGreeting
+\_wr\_testNPC-> forceGreeting
 
 This will work fine
 
-wr\_testNPC-\textgreater forceGreeting~;-\/-Okay.
+wr\_testNPC-> forceGreeting~;-\/-Okay.
 
 \hypertarget{fractional-numbers}{%
 \subparagraph{Fractional Numbers}\label{fractional-numbers}}
 
 A constant float specified without digit before the decimal point will
-cause a runtime error. Floats in the range: -1 \textless{} 0 \textless{}
+cause a runtime error. Floats in the range: -1 < 0 <
 1 should be specified with a leading '0'. Otherwise you'll experience a
 runtime error.
 
@@ -523,7 +523,7 @@ scripted a fancy magic bouncing ball, or basically anything that is a
 visible effect, there is no reason to run the script if the player
 cannot see it. So put something like this on top of your script:
 
-If ( GetDistance, player \textless{} 5000 )
+If ( GetDistance, player < 5000 )
 
 Return
 
@@ -543,7 +543,7 @@ Return
 
 Endif
 
-If ( GetHealth \textless= 0 )
+If ( GetHealth <= 0 )
 
 Return
 
@@ -594,7 +594,7 @@ variable values).
 Targeted scripts: running "global" scripts tied to an
 object}{ Targeted scripts: running "global" scripts tied to an object}}\label{targeted-scripts-running-global-scripts-tied-to-an-object}}
 
-"Object\_ID"-\textgreater StartScript "Script\_ ID"
+"Object\_ID"-> StartScript "Script\_ ID"
 
 \emph{(Credit for discovery of this technique and much of the following
 information goes to FreshFish. Further information supplied by Riiak,
@@ -613,7 +613,7 @@ script:}\label{to-start-a-script-as-a-targeted-script}}
 
 \begin{itemize}
 \item
-  Object\_ID-\textgreater StartScript Script\_ID (may be used from
+  Object\_ID-> StartScript Script\_ID (may be used from
   script, but does not work from dialogue results).
 \item
   Start the script from the intended target's local script or another
@@ -680,7 +680,7 @@ limitations:}\label{cautions-and-limitations}}
   game will CTD. If the target is not necessary but is merely a
   consequence of the way the script was started, you can usually target
   the script on the player instead to avoid this:
-  "player-\textgreater StartScript ScriptName". Otherwise, the script
+  "player-> StartScript ScriptName". Otherwise, the script
   must be stopped before deleting the object.
 \item
   Scripts will detach from non-persistent targets when the game is saved
@@ -711,7 +711,7 @@ restart it if necessary. As a safety check for targeted scripts on
 actors, GetHealth may be used before any functions that may cause
 problems (returns 0 in an untargeted script):
 
-if ( GetHealth \textless= 0 )
+if ( GetHealth <= 0 )
 
 StopScript ScriptName
 
@@ -887,15 +887,15 @@ quickly re-enters combat.
 	
 	if ( CombatStyle == 1 ) ;switch between targeted and touch spells
 	
-	if ( player-\textgreater GetSpellReadied == 1 )
+	if ( player-> GetSpellReadied == 1 )
 	
 	set CombatMage to 1
 	
-	elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
+	elseif ( player-> GetWeaponType >= 9 )
 	
 	set CombatMage to 1
 	
-	elseif ( player-\textgreater GetWeaponType \textless= 8 )
+	elseif ( player-> GetWeaponType <= 8 )
 	
 	set CombatMage to 2
 	
@@ -903,21 +903,21 @@ quickly re-enters combat.
 	
 	elseif ( CombatStyle == 2 ) ;switch between targeted spells and weapons
 	
-	if ( player-\textgreater GetSpellReadied == 1 )
+	if ( player-> GetSpellReadied == 1 )
 	
 	set CombatMage to 1
 	
-	elseif ( player-\textgreater GetWeaponType \textgreater= 9 )
+	elseif ( player-> GetWeaponType >= 9 )
 	
 	set CombatMage to 1
 	
-	elseif ( player-\textgreater GetWeaponType \textless= 8 )
+	elseif ( player-> GetWeaponType <= 8 )
 	
 	set CombatMage to 3
 	
 	endif
 	
-	elseif ( CombatStyle \textgreater= 3 ) ;no combat magic
+	elseif ( CombatStyle >= 3 ) ;no combat magic
 	
 	set CombatMage to 3
 	
@@ -1059,11 +1059,11 @@ crashes. One solution was suggested by Aftershock\_81:
 
 COE 0 0
 
-Player-\textgreater SetPos x xpos
+Player-> SetPos x xpos
 
-Player-\textgreater SetPos x ypos
+Player-> SetPos x ypos
 
-Player-\textgreater SetPos x zpos
+Player-> SetPos x zpos
 
 FixMe
 
@@ -1238,7 +1238,7 @@ action like casting a spell or swinging a weapon. I used it in my
 spellcasting mod to determine when the PC is casting a spell and what
 school of magic the spell is in. the format is as follows:\\
 \strut \\
-}if ( player-\textgreater GetSoundPlaying, "Sound ID" == 1 )\\
+}if ( player-> GetSoundPlaying, "Sound ID" == 1 )\\
 ;do something cool here\\
 endif\\
 \emph{\hfill\break
@@ -1333,7 +1333,7 @@ you can use:
 
 ;-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-
 
-if ( player-\textgreater CellChanged == 1 )
+if ( player-> CellChanged == 1 )
 
 Startscript, "Create\_obj\_script" ; this is the global script
 
@@ -1365,7 +1365,7 @@ have a heavy area loading. To fix this problem, delay the deletion.
 Introduce a time delay ( I personally find the 1.5seconds to be OK so
 far ). Here's how the object script will looks like now.
 
-if ( player-\textgreater CellChanged == 1 )
+if ( player-> CellChanged == 1 )
 
 Startscript, "Create\_obj\_script" ; this is the global script
 
@@ -1379,7 +1379,7 @@ if ( timer\_flag == 1 )
 
 set timer to ( timer + GetSecondsPassed )
 
-if ( timer \textgreater{} 1.5 )
+if ( timer > 1.5 )
 
 set obj\_count to ( obj\_count - 1 )
 
@@ -1399,7 +1399,7 @@ during the 1.5 seconds delay. You must make sure that the object gets
 deleted before it gets out of the processing parameter or it will come
 back and haunt you later. Now the script looks like this.
 
-if ( player-\textgreater CellChanged == 1 )
+if ( player-> CellChanged == 1 )
 
 if ( timer\_flag == 1 )
 
@@ -1421,7 +1421,7 @@ if ( timer\_flag == 1 )
 
 set timer to ( timer + GetSecondsPassed )
 
-if ( timer \textgreater{} 1.5 )
+if ( timer > 1.5 )
 
 SetDelete, 1
 
@@ -1586,59 +1586,59 @@ return\\
 endif\\
 \strut \\
 if doOnce==0\\
-"Collision wall2"-\textgreater disable\\
-"Collision wall3"-\textgreater disable\\
-"Collision wall4"-\textgreater disable\\
+"Collision wall2"-> disable\\
+"Collision wall3"-> disable\\
+"Collision wall4"-> disable\\
 set doOnce to 1\\
 endif\\
 \strut \\
 if doOnce==1\\
-"Collision wall1"-\textgreater moveworld X 800\\
+"Collision wall1"-> moveworld X 800\\
 messagebox "moving"\\
-if ( "Player"-\textgreater getPos Z \textless{} 570 )\\
+if ( "Player"-> getPos Z < 570 )\\
 set doOnce to 2\\
-set playxx to "Player"-\textgreater getPos X\\
-set playyy to "Player"-\textgreater getPos Y\\
-set playzz to "Player"-\textgreater getPos Z\\
-"Collision wall2"-\textgreater enable\\
-"Player"-\textgreater position -114679 -4119 590 90\\
+set playxx to "Player"-> getPos X\\
+set playyy to "Player"-> getPos Y\\
+set playzz to "Player"-> getPos Z\\
+"Collision wall2"-> enable\\
+"Player"-> position -114679 -4119 590 90\\
 endif\\
 endif\\
 \strut \\
 if doOnce==2\\
-"Collision wall2"-\textgreater moveworld X 800\\
+"Collision wall2"-> moveworld X 800\\
 messagebox "moving"\\
-if ( "Player"-\textgreater getPos Z \textless{} 570 )\\
-set playxx to "Player"-\textgreater getPos X\\
-set playyy to "Player"-\textgreater getPos Y\\
-set playzz to "Player"-\textgreater getPos Z\\
-"Collision wall3"-\textgreater enable\\
-°Player°-\textgreater position -112634 -4119 590 90\\
+if ( "Player"-> getPos Z < 570 )\\
+set playxx to "Player"-> getPos X\\
+set playyy to "Player"-> getPos Y\\
+set playzz to "Player"-> getPos Z\\
+"Collision wall3"-> enable\\
+°Player°-> position -112634 -4119 590 90\\
 set doOnce to 3\\
 endif\\
 endif\\
 \strut \\
 if doOnce==3\\
-"Collision wall3"-\textgreater moveworld X 200\\
-"Collision wall3"-\textgreater moveworld Y -800\\
-if ( "Player"-\textgreater getPos Z \textless{} 570 )\\
+"Collision wall3"-> moveworld X 200\\
+"Collision wall3"-> moveworld Y -800\\
+if ( "Player"-> getPos Z < 570 )\\
 set doOnce to 4\\
-set playxx to "Player"-\textgreater getPos X\\
-set playyy to "Player"-\textgreater getPos Y\\
-set playzz to "Player"-\textgreater getPos Z\\
-"Collision Wall4"-\textgreater enable\\
-°Player"-\textgreater position -112126 -6150 590 90\\
+set playxx to "Player"-> getPos X\\
+set playyy to "Player"-> getPos Y\\
+set playzz to "Player"-> getPos Z\\
+"Collision Wall4"-> enable\\
+°Player"-> position -112126 -6150 590 90\\
 endif\\
 endif\\
 \strut \\
 if doOnce==4\\
-"Collision wall4"-\textgreater moveworld X 600\\
-"Collision wall4"-\textgreater moveworld Y -450\\
-if ( "Player"-\textgreater getPos Z \textless{} 570 )\\
+"Collision wall4"-> moveworld X 600\\
+"Collision wall4"-> moveworld Y -450\\
+if ( "Player"-> getPos Z < 570 )\\
 set doOnce to 5\\
-set playxx to "Player"-\textgreater getPos X\\
-set playyy to "Player"-\textgreater getPos Y\\
-set playzz to "Player"-\textgreater getPos Z\\
+set playxx to "Player"-> getPos X\\
+set playyy to "Player"-> getPos Y\\
+set playzz to "Player"-> getPos Z\\
 endif\\
 endif\\
 \strut \\

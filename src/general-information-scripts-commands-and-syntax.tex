@@ -33,7 +33,7 @@ attached to an NPC:
 You will have to specify the NPC in a global script:
 
 \begin{lstlisting}
-	"NPC\_ID"-\textgreater AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
+	"NPC\_ID"-> AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
 	unique identifier for
 	
 	;each object in the editor
@@ -83,7 +83,7 @@ that are tied to an object or Actor. These are called "targeted
 scripts".
 
 \begin{lstlisting}
-	"Object\_ID"-\textgreater StartScript "Script\_ ID"
+	"Object\_ID"-> StartScript "Script\_ ID"
 \end{lstlisting}
 
 These scripts resemble both local scripts (in that the functions called
@@ -138,7 +138,7 @@ suggested by Bethesda (e.g. GetSpellEffects instead of getspelleffects)
 makes scripts easier to read, so it's recommended to keep it that way.
 
 \begin{lstlisting}
-	"Object\_ID"-\textgreater Function, {[}parameters{]}
+	"Object\_ID"-> Function, {[}parameters{]}
 \end{lstlisting}
 
 This is the format for all functions that act on or refer to a
@@ -154,7 +154,7 @@ This is not to say that there might not be another object referenced as
 a parameter:
 
 \begin{lstlisting}
-	"Object\_ID1"-\textgreater Function, "Object\_ID2"
+	"Object\_ID1"-> Function, "Object\_ID2"
 \end{lstlisting}
 
 \textbf{Notes:}
@@ -168,14 +168,14 @@ More than one function may be used in a \emph{set} expression, but the
 functions always apply to the same reference. For example:
 
 \begin{lstlisting}
-	set SomeVar to ( player-\textgreater GetStrength ) + (
-	player-\textgreater GetEndurance )
+	set SomeVar to ( player-> GetStrength ) + (
+	player-> GetEndurance )
 \end{lstlisting}
 
 and
 
 \begin{lstlisting}
-	set SomeVar to ( player-\textgreater GetStrength ) + ( GetEndurance )
+	set SomeVar to ( player-> GetStrength ) + ( GetEndurance )
 \end{lstlisting}
 
 will both have the same effect, and specifying different references will
@@ -186,7 +186,7 @@ function only on the first reference of the object! So using this in a
 global script:
 
 \begin{lstlisting}
-	"cliff racer"-\textgreater ModCurrentHealth -1000
+	"cliff racer"-> ModCurrentHealth -1000
 \end{lstlisting}
 
 will not have the desired effect, it will only kill one of the annoying
@@ -237,13 +237,13 @@ would advise adhering to the following principles:
   almost untraceable errors sometimes, so you are much better off always
   leaving a space.
 \item
-  The fix (-\textgreater) is a little more complicated. If IDs are
+  The fix (->) is a little more complicated. If IDs are
   contained in quotes, you should \textbf{not} leave spaces around the
   fix:
 \end{itemize}
 
 \begin{quote}
-"Sirollus Saccus"-\textgreater GetItemCount netch\_leather\_greaves
+"Sirollus Saccus"-> GetItemCount netch\_leather\_greaves
 \end{quote}
 
 The above will work, but spaces around the fix would cause problems.
@@ -262,9 +262,9 @@ lines or behind lines with code.
 \begin{lstlisting}
 	\textbf{;} enter sneak mode
 	
-	Fargoth-\textgreater ForceSneak
+	Fargoth-> ForceSneak
 	
-	Fargoth-\textgreater AiTravel -11468.595,-71511.531,173.728
+	Fargoth-> AiTravel -11468.595,-71511.531,173.728
 	\textbf{;}goes to tree
 \end{lstlisting}
 
@@ -415,9 +415,9 @@ exact value! E.g.:
 but this will work:
 
 \begin{lstlisting}	
-	if ( ( GetPos x ) \textgreater{} 499.5 )
+	if ( ( GetPos x ) > 499.5 )
 	
-	if ( ( GetPos x ) \textless{} 500.5 )
+	if ( ( GetPos x ) < 500.5 )
 	
 	;it's close enough for me
 	
@@ -508,7 +508,7 @@ Use a global variable to transfer information in this way, or set
 local\_variable from the \textbf{other} script using the syntax above.
 
 \begin{lstlisting}
-	if ( anotherobject.x \textgreater{} 0 )
+	if ( anotherobject.x > 0 )
 \end{lstlisting}
 
 apparently works.
@@ -759,10 +759,10 @@ following conditions:
 \textbf{Verbose} & \textbf{Conditional operator} \\
 "Equal to": & == \\
 "not equal to" & != \\
-"Greater than" & \textgreater{} \\
-"Smaller than" & \textless{} \\
-"Greater than or equal to" & \textgreater= \\
-"Smaller than or equal to" & \textless= \\
+"Greater than" & > \\
+"Smaller than" & < \\
+"Greater than or equal to" & >= \\
+"Smaller than or equal to" & <= \\
 \bottomrule
 \end{longtable}
 
@@ -770,13 +770,13 @@ If you have several independent if blocks each will be evaluated
 separately. If, e.g. the following if blocks are in your script:
 
 \begin{lstlisting}
-	if ( timer \textgreater= 2 )
+	if ( timer >= 2 )
 	
 	;{[}Block A,do something here{]}
 	
 	endif
 	
-	if ( timer \textless= 3 )
+	if ( timer <= 3 )
 	
 	;{[}Block B, do something else here{]}
 	
@@ -790,7 +790,7 @@ You can nest if-blocks if you want to make sure that two conditions are
 fulfilled simultaneously:
 
 \begin{lstlisting}
-	if ( timer \textgreater= 2 )
+	if ( timer >= 2 )
 	
 	if ( controlvar == 0
 	
@@ -802,7 +802,7 @@ fulfilled simultaneously:
 \end{lstlisting}
 
 The code in the inner if block will only be executed when both
-conditions (timer \textgreater= 2 and controlvar == 0 ) are fulfilled at
+conditions (timer >= 2 and controlvar == 0 ) are fulfilled at
 the same time.
 
 For more elaborate constructions you can use Else and Elseif. Elseif
@@ -810,11 +810,11 @@ tests for a separate condition if the preceding condition has failed
 (but not if the previous condition was fulfilled)
 
 \begin{lstlisting}
-	if ( timer \textgreater= 2 )
+	if ( timer >= 2 )
 	
 	;{[}Block A,do something here{]}
 	
-	elseif ( timer \textless= 3 )
+	elseif ( timer <= 3 )
 	
 	; {[}Block B, do something else here{]}
 	
@@ -822,9 +822,9 @@ tests for a separate condition if the preceding condition has failed
 \end{lstlisting}
 
 unlike the example above, both blocks can not be true at the same time
-now. Either timer is \textgreater= 2, then block A gets executed, or
-timer is not \textgreater= 2 but \textless= 3, meaning effectively timer
-is \textless{} 2, then block B gets executed. In all other cases,
+now. Either timer is >= 2, then block A gets executed, or
+timer is not >= 2 but <= 3, meaning effectively timer
+is < 2, then block B gets executed. In all other cases,
 neither block will be executed. You can have several elseifs behind each
 other:
 
@@ -878,11 +878,11 @@ be reliable.
 
 For example:\\
 "If ( NewType != OldType )" worked correctly, but "If ( (
-Player-\textgreater GetArmorType 0 ) != OldType )" always registered as
+Player-> GetArmorType 0 ) != OldType )" always registered as
 'Not equal', even if the variable 'OldType' had the same value as the
 armor type that should have been returned by 'Get ArmorType 0'
 function.\\
-So use "Set NewType to ( Player-\textgreater GetArmorType 0 )", followed
+So use "Set NewType to ( Player-> GetArmorType 0 )", followed
 by a separate 'If' statement to compare 'NewType' to 'OldType'.
 -(DinkumThinkum)
 
@@ -904,7 +904,7 @@ explained with an example:
 	
 	SetStrength 0
 	
-	\textbf{while}( GetStrength \textless{} desiredAmnt ) ; non-literal
+	\textbf{while}( GetStrength < desiredAmnt ) ; non-literal
 	value to match
 	
 	modStrength 1
@@ -918,7 +918,7 @@ frames to do this, because the if condition is only called once each
 frame:
 
 \begin{lstlisting}
-	if(getStrength \textless{} desiredAmnt) ; non-literal value to match
+	if(getStrength < desiredAmnt) ; non-literal value to match
 	
 	modStrength 1
 	

@@ -72,9 +72,9 @@ inventory}\label{adding-and-removing-items-from-the-inventory}}
 	RemoveItem, "ObjectID", count\_enum
 
 \begin{lstlisting}	
-	Actor-\textgreater AddItem, "item\_ID", 1
+	Actor-> AddItem, "item\_ID", 1
 	
-	Container-\textgreater RemoveItem, "itme\_ID", 5
+	Container-> RemoveItem, "itme\_ID", 5
 \end{lstlisting}
 
 These functions are simple enough, adding or removing items from the
@@ -110,9 +110,9 @@ That way, the items will be added before the inventory window opens.\\
 Here's the code I used for this in the Potion Saver:
 
 \begin{lstlisting}
-	If ( GetHealth \textless{} 1 )\\
+	If ( GetHealth < 1 )\\
 	Set DTNPS\_HandlePotions to 0\\
-	ElseIf ( GetFatigue \textless{} 1 )\\
+	ElseIf ( GetFatigue < 1 )\\
 	Set DTNPS\_HandlePotions to 0\\
 	ElseIf ( MenuMode == 1 )\\
 	Set DTNPS\_HandlePotions to 0\\
@@ -151,16 +151,16 @@ Furthermore, we make the chest with "references persist". Now we can
 reference it from an ingredients sorter using code like:
 
 \begin{lstlisting}
-	set count to ( player-\textgreater GetItemCount,
+	set count to ( player-> GetItemCount,
 	"ingred\_dreugh\_wax\_01" )
 	
-	while ( count \textgreater{} 0 )
+	while ( count > 0 )
 	
 	set count to ( count - 1 )
 	
-	player-\textgreater RemoveItem, "ingred\_dreugh\_wax\_01", 1
+	player-> RemoveItem, "ingred\_dreugh\_wax\_01", 1
 	
-	"\_tm\_ingredients\_chest"-\textgreater AddItem,
+	"\_tm\_ingredients\_chest"-> AddItem,
 	"ingred\_dreugh\_wax\_01", 1
 	
 	endwhile
@@ -253,7 +253,7 @@ floor}\label{dropping-items-to-the-floor}}
 	Drop, "ObjectID", count\_enum
 
 \begin{lstlisting}	
-	"Actor\_ID"-\textgreater Drop, "ITEM\_ID", 1
+	"Actor\_ID"-> Drop, "ITEM\_ID", 1
 \end{lstlisting}
 
 This function is supposed to drop the item from the inventory "to the
@@ -347,7 +347,7 @@ Force-equipping an Item
 Equip, "Object\_ID" {[}count\_enum{]}
 
 \begin{lstlisting}
-	"Actor\_ID"-\textgreater Equip, "iron dagger"
+	"Actor\_ID"-> Equip, "iron dagger"
 \end{lstlisting}
 
 (Also see OnPCEquip function below)
@@ -548,9 +548,9 @@ inventory}\label{checking-for-presence-of-items-in-inventory}}
 \begin{lstlisting}	
 	Short objectcount
 	
-	Set objectcount to ( "Mob\_ID"-\textgreater GetItemCount, "Object\_ID" )
+	Set objectcount to ( "Mob\_ID"-> GetItemCount, "Object\_ID" )
 	
-	If ( GetItemCount, "Object\_ID" \textgreater= 1 )
+	If ( GetItemCount, "Object\_ID" >= 1 )
 \end{lstlisting}
 
 This function checks the inventory of the calling object and returns the
@@ -576,7 +576,7 @@ the script. Requires manual reset.
 	RepairedOnMe, "Object ID" (returns Boolean/short)
 
 \begin{lstlisting}	
-	if ( "daedric\_mace"-\textgreater RepairedOnMe, "repair\_journeyman\_01"
+	if ( "daedric\_mace"-> RepairedOnMe, "repair\_journeyman\_01"
 	== 1 )
 \end{lstlisting}
 
@@ -599,7 +599,7 @@ information}\label{worn-equipped-object-information}}
 	GetWeaponType (returns short)
 
 \begin{lstlisting}	
-	If ( Player-\textgreater GetWeaponType == 0 )
+	If ( Player-> GetWeaponType == 0 )
 	
 	;Player uses a short blade
 \end{lstlisting}
@@ -607,7 +607,7 @@ information}\label{worn-equipped-object-information}}
 	GetArmorType, armorPart\_enum (returns short, -1 to 2)
 
 \begin{lstlisting}	
-	If ( Player-\textgreater GetArmorType, 0 == 2 )
+	If ( Player-> GetArmorType, 0 == 2 )
 	
 	;Player wears a heavy helmet
 \end{lstlisting}
@@ -646,8 +646,9 @@ Axe, 2 close & 8 \\
 Bow & 9 \\
 Crossbow & 10 \\
 Thrown weapon & 11 \\
-Arrow\textless?\textgreater{} & 12 \\
-Bolt\textless?\textgreater{} & 13 \\
+% ? after <
+Arrow<?> & 12 \\
+Bolt<?> & 13 \\
 \bottomrule
 \end{longtable}
 
@@ -692,7 +693,7 @@ Heavy Armor & 2 \\
 	HasItemEquipped "item\_ID" (returns short)
 
 \begin{lstlisting}	
-	If ( Player-\textgreater HasItemEquipped "chitin club" == 1 )
+	If ( Player-> HasItemEquipped "chitin club" == 1 )
 	
 	;you poor dolt!
 \end{lstlisting}
@@ -748,7 +749,7 @@ axis}\label{moving-along-an-objects-axis}}
 \begin{lstlisting}	
 	Move x, 100
 	
-	Object\_ID-\textgreater Move Z, 30
+	Object\_ID-> Move Z, 30
 \end{lstlisting}
 
 Moves the object along the selected axis (x, y, or z) at the speed
@@ -768,7 +769,7 @@ the game world in the editor, before you can use it in a script:
 \begin{lstlisting}
 	PlaceAtPC "My\_Object", 1,1,1
 	
-	My\_Object-\textgreater Move x, 10
+	My\_Object-> Move x, 10
 \end{lstlisting}
 
 will not work if "My Object" has not already been placed, but you can
@@ -787,7 +788,7 @@ axis}\label{moving-along-the-world-axis}}
 \begin{lstlisting}	
 	MoveWorld z, 100
 	
-	Object\_ID-\textgreater MoveWorld Z, 30
+	Object\_ID-> MoveWorld Z, 30
 \end{lstlisting}
 
 Moves the object along the selected world axis (x, y, or z) at the speed
@@ -842,7 +843,7 @@ movement)}\label{setting-position-the-other-way-to-do-movement}}
 \begin{lstlisting}	
 	SetPos, z, 477
 	
-	Object\_ID-\textgreater SetPos X, 466
+	Object\_ID-> SetPos X, 466
 \end{lstlisting}
 
 This function (unlike the move and moveworld functions) also works with
@@ -884,9 +885,9 @@ cell}\label{positioning-an-object-in-the-world-or-in-an-interior-cell}}
 \begin{lstlisting}	
 	position -23515, -15355, 3355, 90
 	
-	Player-\textgreater position -23515, -15355, 3355, 90
+	Player-> position -23515, -15355, 3355, 90
 	
-	"Actor\_ID"-\textgreater PositionCell, -254, 475, -376, 360, "Balmora,
+	"Actor\_ID"-> PositionCell, -254, 475, -376, 360, "Balmora,
 	Council Club"
 \end{lstlisting}
 
@@ -935,14 +936,14 @@ Sometimes the PositionCell format given above won't work (even though it
 should): If there are no errors but nothing happens, try replacing, e.g.
 
 \begin{lstlisting}
-	Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora (-3,
+	Player-> PositionCell -21278, -17613, 534, 0, "Balmora (-3,
 	-3)"
 \end{lstlisting}
 
 with
 
 \begin{lstlisting}
-	Player-\textgreater PositionCell -21278, -17613, 534, 0, "Balmora"
+	Player-> PositionCell -21278, -17613, 534, 0, "Balmora"
 \end{lstlisting}
 
 I've found that sometimes one method works and sometimes the other.
@@ -956,7 +957,7 @@ SetAtStart
 \begin{lstlisting}
 	SetAtStart
 	
-	Object\_ID-\textgreater SetAtStart
+	Object\_ID-> SetAtStart
 \end{lstlisting}
 
 This resets the object to the original position it was given in the
@@ -1025,7 +1026,7 @@ object}\label{place-items-near-an-object}}
 PlaceAtMe "Item\_ID" count\_enum, distance\_enum, direction\_enum
 
 \begin{lstlisting}
-	Object-\textgreater PlaceAtMe `Item\_ID' count\_enum distance\_enum
+	Object-> PlaceAtMe `Item\_ID' count\_enum distance\_enum
 	direction\_enum
 \end{lstlisting}
 
@@ -1041,7 +1042,7 @@ that just keep coming, among other things.
 	
 	if ( popA == 1 )
 	
-	"active\_BM\_hunter1"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active\_BM\_hunter1"->\textbf{PlaceAtMe} skaal\_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1050,7 +1051,7 @@ that just keep coming, among other things.
 	
 	elseif ( popB == 1 )
 	
-	"active\_BM\_hunter2"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active\_BM\_hunter2"->\textbf{PlaceAtMe} skaal\_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1059,7 +1060,7 @@ that just keep coming, among other things.
 	
 	elseif ( popC == 1 )
 	
-	"active\_BM\_hunter3"-\textgreater{}\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active\_BM\_hunter3"->\textbf{PlaceAtMe} skaal\_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1163,7 +1164,7 @@ angle:
 	Rotate, z, -30; rotate counterclockwise, 30\textdegree per second, around objects
 	z axis
 	
-	Object\_ID-\textgreater Rotate, Y, 100
+	Object\_ID-> Rotate, Y, 100
 \end{lstlisting}
 
 Axis can be x, y, or z. Notice that like the move functions the value
@@ -1189,7 +1190,7 @@ SetAngle, axis, float\_enum\_angle
 \begin{lstlisting}
 	SetAngle, z, 30
 	
-	Object\_ID-\textgreater Setangle, z, 25
+	Object\_ID-> Setangle, z, 25
 \end{lstlisting}
 
 This function sets the object to a specific world angle. Axis is x, y,
@@ -1264,7 +1265,7 @@ Scale Functions}{ Scale Functions}}\label{scale-functions}}
 \begin{lstlisting}	
 	If ( doonce == 0 )
 	
-	Object\_ID-\textgreater SetScale 0.1
+	Object\_ID-> SetScale 0.1
 	
 	Set doonce to 1
 	
@@ -1367,7 +1368,7 @@ another}\label{distance-of-one-object-to-another}}
 GetDistance, "ObjectID" (returns float)
 
 \begin{lstlisting}
-	"ObjectID1"-\textgreater GetDistance, "ObjectID2"
+	"ObjectID1"-> GetDistance, "ObjectID2"
 \end{lstlisting}
 
 This function returns the distance (in units) of one object to another.
@@ -1385,11 +1386,11 @@ Here is a snippet from an original Morrowind script:
 	
 	if ( GetDisabled != 1 )
 	
-	if ( \textbf{GetDistance} Player \textless= 256 )
+	if ( \textbf{GetDistance} Player <= 256 )
 	
-	if ( \textbf{GetDistance} "guar\_white\_unique" \textless= 256 )
+	if ( \textbf{GetDistance} "guar\_white\_unique" <= 256 )
 	
-	if ( GetJournalIndex "MS\_WhiteGuar" \textless= 50 )
+	if ( GetJournalIndex "MS\_WhiteGuar" <= 50 )
 	
 	Journal "MS\_WhiteGuar" 60
 	
@@ -1436,7 +1437,7 @@ facing}\label{determining-an-objects-position-and-facing}}
 GetPos, axis(x/y/z)
 
 \begin{lstlisting}
-	Object\_ID-\textgreater GetPos, z
+	Object\_ID-> GetPos, z
 \end{lstlisting}
 
 When you are moving objects with the Move/MoveWorld functions described
@@ -1452,7 +1453,7 @@ position is 511:
 GetAngle , axis(x/y/z) (returns float)
 
 \begin{lstlisting}
-	If ( Object\_Id-\textgreater GetAngle, z == 180 )
+	If ( Object\_Id-> GetAngle, z == 180 )
 \end{lstlisting}
 
 The GetAngle function returns the world angle, not the local angle.
@@ -1470,7 +1471,7 @@ y always return 0.
 GetLOS, ObjectID (returns Boolean/short)
 
 \begin{lstlisting}
-	Actor\_ID-\textgreater GetLOS, Player
+	Actor\_ID-> GetLOS, Player
 \end{lstlisting}
 
 Undocumented:
@@ -1629,7 +1630,7 @@ GetStandingActor (returns Boolean/short)
 returns 1 if ANY Actor (including PC) is standing on it.
 
 \begin{lstlisting}
-	If ( Object\_Id-\textgreater GetStandingPC == 1)
+	If ( Object\_Id-> GetStandingPC == 1)
 	
 	{[}\ldots{} trigger horrible trap{]}
 	
@@ -1661,7 +1662,7 @@ HurtStandingActor, float\_HP/s
 \begin{lstlisting}
 	HurtStandingActor -3
 	
-	Object\_ID-\textgreater HurtStandingActor 1
+	Object\_ID-> HurtStandingActor 1
 	
 	Float hurt\_variable
 	
@@ -1699,7 +1700,7 @@ HurtCollidingActor, damage\_enum
 \begin{lstlisting}
 	HurtCollidingActor, 100
 	
-	Object\_ID-\textgreater HurtCollidingActor, 100
+	Object\_ID-> HurtCollidingActor, 100
 \end{lstlisting}
 
 These functions go on an object to allow it to interact with Actors
@@ -1761,34 +1762,34 @@ OnActivate has been called.
 
 \textbf{Standard actions called by Activate are:}
 
-Doors -\textgreater{} Open (Possibly broken in Original MW, with
+Doors -> Open (Possibly broken in Original MW, with
 v1.6.1820 it definitely works).
 
-LoadDoors -\textgreater{} Open (If used with OnActivate)
+LoadDoors -> Open (If used with OnActivate)
 
-Containers -\textgreater{} Open (show contents)
+Containers -> Open (show contents)
 
-Books/scrolls -\textgreater{} Display text to read.
+Books/scrolls -> Display text to read.
 
-Activators -\textgreater{} Nothing
+Activators -> Nothing
 
-Actors -\textgreater{} Dialogue
+Actors -> Dialogue
 
-Weapon -\textgreater{} Pick up
+Weapon -> Pick up
 
-Armor -\textgreater{} Pick up
+Armor -> Pick up
 
-Miscellaneous -\textgreater{} Pick up
+Miscellaneous -> Pick up
 
 Not tested, but I assume:
 
-Equip. Lights -\textgreater{} Pick up
+Equip. Lights -> Pick up
 
-Other Lights -\textgreater{} Nothing
+Other Lights -> Nothing
 
-Probes -\textgreater{} Pick up
+Probes -> Pick up
 
-Apparatus -\textgreater{} Pick up
+Apparatus -> Pick up
 
 Example script:
 
@@ -1830,7 +1831,7 @@ Lock, short\_enum\_locklevel
 Unlock
 
 \begin{lstlisting}
-	My\_Door-\textgreater Lock, 50
+	My\_Door-> Lock, 50
 \end{lstlisting}
 
 GetLocked (returns Boolean/short)
@@ -1915,7 +1916,7 @@ the new animation will start at the beginning of its loop cycle.
 \textbf{Note:} With Bloodmoon installed (not necessarily Bloodmoon.esm
 selected) some of NPC animations are crosswired. When called from
 console, they may look correct, but if you insert
-NPC-\textgreater PlayGroup, group, 1 into the script, you may be
+NPC-> PlayGroup, group, 1 into the script, you may be
 unpleasantly surprised to see a different animation than you expected
 (Forum info / Kir). You may have to experiment to find the correct
 animation (Check out the info in the section on AIWander for a list of
@@ -1947,7 +1948,7 @@ Enable
 
 Disable
 
-"ObjectID"-\textgreater enable
+"ObjectID"-> enable
 
 GetDisabled (returns Boolean/short)
 
@@ -2070,7 +2071,7 @@ Disable
 
 endif
 
-if ( deletetimer \textless{} 10 )
+if ( deletetimer < 10 )
 
 set deletetimer to ( deletetimer + 1 )
 
@@ -2087,7 +2088,7 @@ Return
 endif
 
 Always call SetDelete from a local script assigned to the object you
-want to remove. Never use Object-\textgreater SetDelete 1 as this
+want to remove. Never use Object-> SetDelete 1 as this
 usually causes crashes when Morrowind is running. However, starting a
 targeted script on the object and then using SetDelete in that script
 works fine.
@@ -2144,7 +2145,7 @@ location}\label{make-an-npc-walk-to-a-new-location}}
 
 AiTravel, float\_enum\_x, float\_enum\_y, float\_enum\_z, {[}reset{]}
 
-Actor-\textgreater AITravel, 1359, 2700, 1045
+Actor-> AITravel, 1359, 2700, 1045
 
 To make an NPC walk between different defined places in the game world
 you use the AITravel function.
@@ -2213,14 +2214,14 @@ script)
 ; *************** Stalled Script rescue - recovers script after leaving
 a cell or resting
 
-If ( Player-\textgreater GetDistance, HB\_adros\_darani \textless{} 5000
+If ( Player-> GetDistance, HB\_adros\_darani < 5000
 )
 
 if ( GetCurrentAIPackage == -1 ) ; check for idleness
 
 set timeout to ( timeout + GetSecondsPassed )
 
-if ( timeout \textgreater= 3 ) ; wait some time.
+if ( timeout >= 3 ) ; wait some time.
 
 ; Short instances of idleness always occur
 
@@ -2245,7 +2246,7 @@ direction}\label{make-an-actor-turn-or-face-a-certain-direction}}
 
 Face x\_enum, y\_enum
 
-"ActorID"-\textgreater Face, -1334, 334
+"ActorID"-> Face, -1334, 334
 
 To my knowledge this function does not accept variables (at least under
 version 1.6.1820), but there have been reports that it did - possibly
@@ -2262,7 +2263,7 @@ movement}\label{define-random-actor-movement}}
 AiWander, range\_enum, duration\_enum, time\_enum, {[}idle1{]},
 {[}idle2{]}, {[}idle3{]}, \ldots{[}idle9{]}, {[}reset{]}
 
-"Actor\_ID"-\textgreater AIWander, 512, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0,
+"Actor\_ID"-> AIWander, 512, 5, 0, 0, 20, 0, 0, 10, 30, 0, 0,
 0
 
 This is the random movement algorithm that most of the NPCs in the game
@@ -2323,7 +2324,7 @@ AiActivate "Object ID"
 
 AiActivate ObjectID {[}reset{]}
 
-Actor-\textgreater AIActivate "Object"
+Actor-> AIActivate "Object"
 
 In the words of Bethesda: "This package tells the Actor to activate the
 specified ObjectID. A powerful and admittedly underutilized and
@@ -2361,7 +2362,7 @@ Container & Opens \\
 Door & Opens \\
 Load door & Opens/teleports (same cell only) \\
 Weapon, armor, misc., etc & Picks up \\
-Book/Scroll & Reads \textless meaning what to an NPC?\textgreater{} \\
+Book/Scroll & Reads < meaning what to an NPC?> \\
 Activators & Execute as defined by script. If the activator doesn't have
 an OnActivate block (or doesn't have a script), the Actor will try to
 activate it anyway, in much the same way as 'activating' NPCs (approach
@@ -2393,7 +2394,7 @@ z\_f\_enum, {[}reset{]}
 AiFollowCell, "Actor ID", "Cell ID", duration\_f\_enum, x\_f\_enum,
 y\_f\_enum, z\_f\_enum, {[}reset{]}
 
-Actor-\textgreater AIFollow, "Mob2ID", 0, 0, 0, 0
+Actor-> AIFollow, "Mob2ID", 0, 0, 0, 0
 
 The "Follow" AI-package makes an Actor closely follow another. You can
 use this to make an NPC or creature follow the player, but you can also
@@ -2402,7 +2403,7 @@ from one of my own scripts shows the unconditional use of the function:
 
 elseif ( state == 20 )
 
-HB\_guar\_pack\_adros\_-\textgreater{}\textbf{AIFollow},
+HB\_guar\_pack\_adros\_->\textbf{AIFollow},
 HB\_adros\_darani, 0, 0, 0, 0
 
 AITravel -8144, -19409, 728 ;new coords point 1
@@ -2574,11 +2575,11 @@ ForceSneak
 
 ClearForceSneak
 
-"Actor\_ID"-\textgreater ForceSneak
+"Actor\_ID"-> ForceSneak
 
 GetForceSneak ( returns Boolean/short)
 
-If ( "actor\_ID"-\textgreater GetForceSneak == 1 )
+If ( "actor\_ID"-> GetForceSneak == 1 )
 
 The \emph{ForceSneak} command puts the Actor in sneak mode, all movement
 will be performed in sneaking. \emph{ClearForceSneak} terminates
@@ -2590,18 +2591,18 @@ a snippet:
 
 elseif ( walkstate == 2 )
 
-Fargoth-\textgreater ForceSneak ; enter sneak mode
+Fargoth-> ForceSneak ; enter sneak mode
 
-Fargoth-\textgreater AiTravel -11468.595,-71511.531,173.728 ;goes to
+Fargoth-> AiTravel -11468.595,-71511.531,173.728 ;goes to
 tree
 
 set walkstate to 3
 
 elseif ( walkstate == 3 )
 
-if ( Fargoth-\textgreater GetAiPackageDone == 1 )
+if ( Fargoth-> GetAiPackageDone == 1 )
 
-;Fargoth-\textgreater Equip "torch\_infinite\_time\_unique"
+;Fargoth-> Equip "torch\_infinite\_time\_unique"
 
 set walkstate to 4
 
@@ -2613,15 +2614,15 @@ elseif ( walkstate == 4 )
 
 set timer to timer + GetSecondsPassed
 
-Fargoth-\textgreater{}\textbf{ClearForceSneak} ; terminate sneak mode
+Fargoth->\textbf{ClearForceSneak} ; terminate sneak mode
 
-Fargoth-\textgreater AiWander 0 0 0 0 0 0 0 0 0
+Fargoth-> AiWander 0 0 0 0 0 0 0 0 0
 
-if ( timer \textgreater{} 3 )
+if ( timer > 3 )
 
-Fargoth-\textgreater{}\textbf{ForceSneak} ; reenter sneak mode
+Fargoth->\textbf{ForceSneak} ; reenter sneak mode
 
-Fargoth-\textgreater AiTravel -11410.590,-72057.188,133.644 ;goes to
+Fargoth-> AiTravel -11410.590,-72057.188,133.644 ;goes to
 wall
 
 set walkstate to 5
@@ -2660,8 +2661,8 @@ always jump when they are moving. The Get versions of the functions
 return one if the specified NPC currently is forced into the given
 action and zero otherwise. The Clear functions are used to turn forced
 movement modes off. An NPC can only be forced to do one movement at a
-time. The priority for forced movement is Sneak \textgreater{} Running
-\textgreater{} Jump \textgreater{} MoveJump.
+time. The priority for forced movement is Sneak > Running
+> Jump > MoveJump.
 
 Sample Script:
 
@@ -2708,7 +2709,7 @@ GetWeaponDrawn (short)
 
 GetSpellReadied (short)
 
-if ( player-\textgreater GetWeaponDrawn )
+if ( player-> GetWeaponDrawn )
 
 These functions can be used to determine whether or not an Actor has
 their weapon out or whether or not they have a spell readied for
@@ -2734,7 +2735,7 @@ Thanks to Björn and DinkumThinkum respectively for pointing this out.
 
 Fall
 
-Actor-\textgreater Fall
+Actor-> Fall
 
 Seems to give an NPC the extra nudge they may need even after you yank
 the floor out from under them. It also brings down flying creatures.
@@ -2764,7 +2765,7 @@ mercenaries and for pack animals.
 
 Float minimumprofit
 
-If ( minimumprofit \textless{} 0 )
+If ( minimumprofit < 0 )
 
 Seems to be another variable set by the game, it is probably the
 difference between current value of all goods and gold minus starting
@@ -2776,13 +2777,13 @@ Calvus leaves a contract, either because the contract expires, or
 because the player has taken Calvus' stuff. The sharing is initiated
 from dialogue (setting companion to 1), not in the script itself
 
-if ( GetJournalIndex Merc\_Calvus\_Quit \textless{} 1 ) ;if Calvus has
+if ( GetJournalIndex Merc\_Calvus\_Quit < 1 ) ;if Calvus has
 already quit, don't do this
 
 if ( Contract\_Calvus == 1 ) ;if Calvus doesn't have a contract, don't
 do this
 
-if ( \textbf{minimumProfit} \textless{} 0 ) ;Calvus is quitting because
+if ( \textbf{minimumProfit} < 0 ) ;Calvus is quitting because
 player took his stuff
 
 AiWander 128 6 0 40 30 20 0 0 0 0 0 0
@@ -2805,7 +2806,7 @@ AiWander 128 6 0 40 30 20 0 0 0 0 0 0
 
 \textbf{Set Companion to 0;} stop sharing
 
-if ( GetJournalIndex Merc\_Calvus \textless{} 10 )
+if ( GetJournalIndex Merc\_Calvus < 10 )
 
 Journal Merc\_Calvus 10 ;first contract expired
 
@@ -2844,7 +2845,7 @@ Rank}{ Race, Faction and Rank}}\label{race-faction-and-rank}}
 
 GetRace, ``RaceID'' (returns Boolean/short)
 
-Player-\textgreater GetRace "Dark Elf"
+Player-> GetRace "Dark Elf"
 
 Returns 1 if the object is of the race indicated by RaceID.
 
@@ -2901,7 +2902,7 @@ RaiseRank, {[}"FactionID"{]}
 Raises or lowers the object's rank in its current faction. This function
 doesn't work in global scripts, but works in targeted and local scripts.
 It also works in dialogue. You can use the fix to raise a different
-NPC's rank (NPC\_ID-\textgreater RaiseRank) in dialogue results
+NPC's rank (NPC\_ID-> RaiseRank) in dialogue results
 \textbf{only} - in scripts this function will only work on the actor the
 script is attached to.
 
@@ -2966,17 +2967,17 @@ factions to react particularly to this change:
 
 Journal "A2\_6\_Incarnate" 50
 
-player-\textgreater modReputation 5
+player-> modReputation 5
 
 \textbf{PCJoinFaction}, Nerevarine
 
-if ( GetPCRank, Redoran \textgreater= 0 )
+if ( GetPCRank, Redoran >= 0 )
 
 \textbf{modFactionReaction}, "Redoran", "Nerevarine", 4
 
 endif
 
-if ( GetPCRank, Temple \textgreater= 0 )
+if ( GetPCRank, Temple >= 0 )
 
 \textbf{modFactionReaction}, "Temple", "Nerevarine", 4
 
@@ -2998,11 +2999,11 @@ from a global "myRealDisp" (can be a short, it doesn't need to be a
 float unless you want to change disposition by float values), the NPC's
 local script could include something like this:
 
-if ( myRealDisp \textgreater{} 100 )
+if ( myRealDisp > 100 )
 
 set myRealDisp to 100
 
-elseif ( myRealDisp \textless{} 0 )
+elseif ( myRealDisp < 0 )
 
 set myRealDisp to 0
 
@@ -3029,18 +3030,18 @@ attributes}\label{set-the-werewolf-attributes}}
 
 SetWerewolfAcrobatics
 
-Actor-\textgreater SetWerewolfAcrobatics
+Actor-> SetWerewolfAcrobatics
 
 This function set the attributes of the object to those of a werewolf.
 This sets the targets skills and attributes to match the fWerewolfxxxx
 gameplay settings. In most cases, this means a high strength, agility,
 acrobatics etc, and 0 in most other things.
 
-Player-\textgreater AddSpell "werewolf vision"
+Player-> AddSpell "werewolf vision"
 
-Player-\textgreater AddSpell "werewolf regeneration"
+Player-> AddSpell "werewolf regeneration"
 
-Player-\textgreater SetWereWolfAcrobatics
+Player-> SetWereWolfAcrobatics
 
 \hypertarget{change-the-color-of-secunda}{%
 \subsubsection{Change the color of
@@ -3079,7 +3080,7 @@ form. Each time an NPC is killed while the PC is a werewolf, one is
 added to this count. It is reset automatically when the PC changes back
 into human form.
 
-if ( GetWerewolfKills \textgreater{} 0 )
+if ( GetWerewolfKills > 0 )
 
 ; Do code to stop the PC from being affected by the hunger.
 
@@ -3093,12 +3094,12 @@ form}\label{check-to-see-if-the-creature-is-in-werewolf-form}}
 
 IsWerewolf
 
-If ( Actor-\textgreater IsWerewolf )
+If ( Actor-> IsWerewolf )
 
 This function allows to determines if the target is a werewolf or not.
 It can be used on the PC or other creatures.
 
-if ( Player-\textgreater IsWerewolf != 1 ) ;DON'T RUN IF PLAYER ISN'T
+if ( Player-> IsWerewolf != 1 ) ;DON'T RUN IF PLAYER ISN'T
 WEREWOLF
 
 return
@@ -3114,9 +3115,9 @@ BecomeWerewolf
 
 UndoWerewolf
 
-Actor-\textgreater BecomeWerewolf
+Actor-> BecomeWerewolf
 
-Actor-\textgreater UndoWerewolf
+Actor-> UndoWerewolf
 
 These functions change the target object to a Werewolf or change them
 back to their original form. IMPORTANT: Using Becomewerewolf and
@@ -3136,7 +3137,7 @@ object you want to detect the activation of.
 
 if ( OnPCEquip == 1 )
 
-Player-\textgreater BecomeWereWolf
+Player-> BecomeWereWolf
 
 Set OnPCEquip to 0
 
@@ -3144,9 +3145,9 @@ Endif
 
 Set timer to ( timer + GetSecondsPassed )
 
-If ( timer \textgreater{} 10 )
+If ( timer > 10 )
 
-Player-\textgreater UndoWereWolf
+Player-> UndoWereWolf
 
 Endif
 
@@ -3356,10 +3357,10 @@ responses for that topic, it does the following:
   conditions for that response are met, which means \textbf{all}
   conditions that have been defined for that response return "true".
 \item
-  If not -\textgreater{} Game moves on to the next item in the list and
+  If not -> Game moves on to the next item in the list and
   checks again.
 \item
-  If yes -\textgreater{} this entry is used and printed to the dialogue
+  If yes -> this entry is used and printed to the dialogue
   window.
 \end{itemize}
 
@@ -3515,7 +3516,7 @@ dialogue that is filtered solely for that cell (usually not a desirable
 outcome). If possible, you may want add a nolore filter to prevent this
 (preferable to using the companion variable as some still use
 Morrowind-only companions, and almost all companions and other followers
-are nolore'd - but "not local companion \textgreater= 0" will still rule
+are nolore'd - but "not local companion >= 0" will still rule
 out the vast majority of companions). You can also filter dialogue for
 an otherwise-unrelated selection of NPCs from your own mod by using a
 uniquely-named local variable as a filter (but all those NPCs will need
@@ -3642,10 +3643,10 @@ lists these useful and frequently used commands for the result box:
 
 \begin{itemize}
 \item
-  Player-\textgreater AddItem "my item" 1 (a specific item is added to
+  Player-> AddItem "my item" 1 (a specific item is added to
   players inventory)
 \item
-  Player-\textgreater RemoveItem "my item" 1 (a specific item is removed
+  Player-> RemoveItem "my item" 1 (a specific item is removed
   from players inventory)
 \item
   ModDisposition 5 (npc will like player 5 points better)
@@ -3899,7 +3900,7 @@ ensure that it appears in the speaker's topics list anyway.
 
 AddTopic adds the topic to the \textbf{player's} "known topics" list. So
 using\\
-"Actor\_ID"-\textgreater AddTopic "blabla" is wrong: an NPC's known
+"Actor\_ID"-> AddTopic "blabla" is wrong: an NPC's known
 topics are entirely predefined by speaker conditions.
 
 You can not remove a topic via script; you can however set a speaker
@@ -3970,9 +3971,9 @@ after the ForceGreeting.
 
 This script will print the messagebox:
 
-if ( ( Actor\_ID-\textgreater GetDisposition ) \textgreater= 80 )
+if ( ( Actor\_ID-> GetDisposition ) >= 80 )
 
-Actor\_ID-\textgreater{}\textbf{ForceGreeting}
+Actor\_ID->\textbf{ForceGreeting}
 
 else
 
@@ -3982,9 +3983,9 @@ endif
 
 Here is the corrected version:
 
-if ( ( Actor\_ID-\textgreater GetDisposition ) \textgreater= 80 )
+if ( ( Actor\_ID-> GetDisposition ) >= 80 )
 
-Actor\_ID-\textgreater{}\textbf{ForceGreeting~}
+Actor\_ID->\textbf{ForceGreeting~}
 
 \textbf{return}
 
@@ -4213,7 +4214,7 @@ The return values are:
 
 Friend hit will reset if the player hits a different actor. It also
 appears to reset if the actor starts combat, even if there are no hits
-(I tried "ActorID-\textgreater StartCombat ActorID" - i.e. "start combat
+(I tried "ActorID-> StartCombat ActorID" - i.e. "start combat
 with yourself" - in dialogue results, and this seemed to reset friend
 hit).
 
@@ -4304,11 +4305,11 @@ Set\emph{Stat}, var\_float
 
 Mod\emph{Stat}, var\_float
 
-Set floatvar to ( Player-\textgreater GetHealth )
+Set floatvar to ( Player-> GetHealth )
 
-Player-\textgreater SetWillpower, 20
+Player-> SetWillpower, 20
 
-Player-\textgreater ModHealth, floatvar
+Player-> ModHealth, floatvar
 
 This is really a whole family of functions that can alter player and
 Actor stats, AI settings and more. Replace \emph{Stat} with any of the
@@ -4441,11 +4442,11 @@ Float MaxHealth
 
 Float CurrentHealthRatio
 
-Set CurrentHealthRatio to ( "Actor ID"-\textgreater GetHealthGetRatio )
+Set CurrentHealthRatio to ( "Actor ID"-> GetHealthGetRatio )
 
-if ( CurrentHealthRatio \textgreater{} 0 )
+if ( CurrentHealthRatio > 0 )
 
-Set MaxHealth to ( ("Actor ID"-\textgreater GetHealth ) /
+Set MaxHealth to ( ("Actor ID"-> GetHealth ) /
 CurrentHealthRatio )
 
 else
@@ -4578,7 +4579,7 @@ the amount of fortification or damage on the stat.
 E.g. for a player with strength 50(base) + 10(fortification) =
 60(current)
 
-Player-\textgreater ModStrength 10 will give 60(b.) + 10(f.) = 70(c.),
+Player-> ModStrength 10 will give 60(b.) + 10(f.) = 70(c.),
 just as you'd expect.
 
 Limitations: ModStat can never decrease a stat below zero. It also
@@ -4812,11 +4813,11 @@ and safely, so long as you're very careful.
 
 To set a stat to e.g. 50 damaged from 70, you can do the following:
 
-Player-\textgreater SetStat, -20 {[}Base and current are now both -20{]}
+Player-> SetStat, -20 {[}Base and current are now both -20{]}
 
-Player-\textgreater ModStat, 0 {[}Necessary: sets the base to 0{]}
+Player-> ModStat, 0 {[}Necessary: sets the base to 0{]}
 
-Player-\textgreater ModStat, 70 {[}Base = 70, current = 50 (red){]}
+Player-> ModStat, 70 {[}Base = 70, current = 50 (red){]}
 
 This level of precision is not possible in general using e.g. damage
 stat curse effects, but it's not usually necessary either. The above can
@@ -4828,11 +4829,11 @@ unnecessary.
 
 To set a stat to e.g. 120 fortified from 90, you can do the following:
 
-Player-\textgreater SetStat 130 {[}Base and current are now both 130{]}
+Player-> SetStat 130 {[}Base and current are now both 130{]}
 
-Player-\textgreater ModStat, 0 {[}Necessary: sets the base to 100{]}
+Player-> ModStat, 0 {[}Necessary: sets the base to 100{]}
 
-Player-\textgreater ModStat, -10 {[}Base = 90, current = 120 (white){]}
+Player-> ModStat, -10 {[}Base = 90, current = 120 (white){]}
 
 \hypertarget{combat}{%
 \section{Combat}\label{combat}}
@@ -4845,9 +4846,9 @@ StartCombat, "ActorID"
 
 StopCombat
 
-"Actor\_ID1"-\textgreater StartCombat, "ActorID2"
+"Actor\_ID1"-> StartCombat, "ActorID2"
 
-"Actor\_ID1"-\textgreater StopCombat
+"Actor\_ID1"-> StopCombat
 
 StartCombat and StopCombat are used to set an Actor into combat mode or
 back into normal mode. Start combat will make the calling Actor attack
@@ -4865,7 +4866,7 @@ the Actor has a high flee setting, he will flee despite the StartCombat
 command. For this reason, you will often see that the Fight rating is
 also changed when initiating combat in many scripts:
 
-If ( GetDeadCount, "My Friend" \textgreater{} 0 )
+If ( GetDeadCount, "My Friend" > 0 )
 
 \textbf{StartCombat}, Player
 
@@ -4911,7 +4912,7 @@ this to the guar:
 
 GetAttacked (returns Boolean/short)
 
-If ( Actor-\textgreater GetAttacked == 1 )
+If ( Actor-> GetAttacked == 1 )
 
 Returns 0 if the Actor has never been attacked and 1 if he has ever been
 attacked.
@@ -4922,7 +4923,7 @@ attacked.
 
 GetTarget, "Actor ID" (returns Boolean/short)
 
-If ( Actor-\textgreater GetTarget, Player == 1 )
+If ( Actor-> GetTarget, Player == 1 )
 
 GetTarget tests to see if the target is in focus. For the player, it's
 the test to see if the target is currently in the crosshair and can be
@@ -4935,7 +4936,7 @@ you would have to combine it with GetWeaponDrawn and GetSpellReadied.
 short temp\\
 set temp to GetWeaponDrawn\\
 set temp to ( temp + GetSpellReadied )\\
-if ( temp \textgreater{} 0 )\\
+if ( temp > 0 )\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}if (
 \textbf{GetTarget}, Player == 1 )\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}
@@ -5027,7 +5028,7 @@ knockouts}\label{keeping-track-of-kills-and-knockouts}}
 
 OnDeath (returns Boolean/short)
 
-If ( Actor-\textgreater OnDeath == 1 )
+If ( Actor-> OnDeath == 1 )
 
 Returns 1 for 1 frame when the Actor is killed. OnDeath seems to reset
 itself once it is used. This also means that only one script can
@@ -5041,7 +5042,7 @@ Argent, ThePal):
 
 OnMurder (returns Boolean/short)
 
-If ( Actor-\textgreater OnMurder == 1 )
+If ( Actor-> OnMurder == 1 )
 
 Returns 1 for 1 frame when the Actor is murdered. The conditions for
 \emph{OnMurder} are not entirely clear to me -- from the context of its
@@ -5057,14 +5058,14 @@ a councilor:
 
 OnKnockout (returns Boolean/short)
 
-If ( Actor-\textgreater OnKnockout == 1 )
+If ( Actor-> OnKnockout == 1 )
 
 Returns true for one frame when the Actor is knocked unconscious (e.g.
 in hand-to-hand combat)
 
 {[}no fix{]} GetDeadCount, "Actor ID" (returns short)
 
-If ( GetDeadCount "divayth fyr" \textgreater{} 0)
+If ( GetDeadCount "divayth fyr" > 0)
 
 The function returns the number of references (individuals) of type
 "Actor ID" that have been killed. A useful function for quest scripting
@@ -5076,7 +5077,7 @@ instead of fighting after you killed more than 100 of them, etc.
 Sample Script:
 
 GetDeadCount is often used to check if a certain NPC is dead. It is
-advisable to use "\textgreater{} 0" in such cases, as you never know if
+advisable to use "> 0" in such cases, as you never know if
 another mod might add another instance of that ID, so it's better to
 play it safe.
 
@@ -5089,7 +5090,7 @@ Actor}{ Resurrecting a dead Actor}}\label{resurrecting-a-dead-actor}}
 
 Resurrect
 
-gateway\_haunt-\textgreater Resurrect
+gateway\_haunt-> Resurrect
 
 This function brings an Actor back to life. His stats and inventory will
 be reset, basically he "respawns". There is a bug when you use this
@@ -5097,7 +5098,7 @@ function on the player -- it will stop the PC (and all Actors) from
 casting magic. After saving and reloading this side effect goes away.
 
 \textbf{Note:} The Puzzle Canal Script shows an alternative: it simply
-uses GetHealth \textless10 to determine when player is "nearly" dead and
+uses GetHealth <10 to determine when player is "nearly" dead and
 then "resurrects" him by giving him his health back -- so the player
 actually never really dies.
 
@@ -5252,7 +5253,7 @@ the reduced crime fee that is charged when turning yourself in.
 \textbf{Example:} A \textbf{dialogue result field} for the topic "price
 on your head", for paying a fine at the thieves guild:
 
-Player-\textgreater RemoveItem Gold\_001 \textbf{CrimeGoldDiscount}
+Player-> RemoveItem Gold\_001 \textbf{CrimeGoldDiscount}
 
 \textbf{SetPCCrimeLevel} 0
 
@@ -5262,7 +5263,7 @@ For comparison, this is the result fields that guards use when you have
 a price on your head and turn yourself in (you find this under Greeting
 0):
 
-Player-\textgreater RemoveItem Gold\_001 \textbf{CrimeGoldTurnIn}
+Player-> RemoveItem Gold\_001 \textbf{CrimeGoldTurnIn}
 
 \textbf{SetPCCrimeLevel} 0
 
@@ -5271,7 +5272,7 @@ Player-\textgreater RemoveItem Gold\_001 \textbf{CrimeGoldTurnIn}
 Or if you get caught and have to pay the normal "fines and
 compensation":
 
-Player-\textgreater RemoveItem Gold\_001 \textbf{GetPCCrimeLevel}
+Player-> RemoveItem Gold\_001 \textbf{GetPCCrimeLevel}
 
 \textbf{SetPCCrimeLevel} 0
 
@@ -5367,7 +5368,7 @@ soulgems}\label{checking-and-managing-souls-and-soulgems}}
 
 HasSoulgem, "CreatureID"
 
-If ( Actor-\textgreater HasSoulGem, "golden saint" )
+If ( Actor-> HasSoulGem, "golden saint" )
 
 This function checks if the player has a soul gem containing the
 specified soul in his inventory. A little used function that could allow
@@ -5375,13 +5376,13 @@ some fun quests and new uses for soulgems.
 
 \textbf{Sample:} This is part of the StrongSoulCheck script:
 
-if ( Player-\textgreater{}\textbf{HasSoulGem} "atronach\_storm"
-\textgreater{} 1 )
+if ( Player->\textbf{HasSoulGem} "atronach\_storm"
+> 1 )
 
 Set counter to ( counter + 2 )
 
-elseif ( Player-\textgreater{}\textbf{HasSoulGem} "atronach\_storm"
-\textgreater{} 0 )
+elseif ( Player->\textbf{HasSoulGem} "atronach\_storm"
+> 0 )
 
 Set counter to ( counter + 1 )
 
@@ -5389,18 +5390,18 @@ endif
 
 RemoveSoulgem, "CreatureID", number\_enum
 
-Actor-\textgreater RemoveSoulGem, "golden saint", 1
+Actor-> RemoveSoulGem, "golden saint", 1
 
 Removes a soulgem with the specified soul from the players inventory.
 
 Sample: this is the complementary part from RemoveStrongSoul script to
 the example above:
 
-if ( counter \textgreater{} 0 )
+if ( counter > 0 )
 
-if ( Player-\textgreater HasSoulGem "atronach\_storm" \textgreater{} 0 )
+if ( Player-> HasSoulGem "atronach\_storm" > 0 )
 
-Player-\textgreater{}\textbf{RemoveSoulGem} "atronach\_storm" 1
+Player->\textbf{RemoveSoulGem} "atronach\_storm" 1
 
 Set counter to ( counter - 1 )
 
@@ -5415,22 +5416,22 @@ short StarCount ;They could have more than one I guess.
 
 if ( OnActivate )
 
-if ( Player-\textgreater{}\textbf{HasSoulGem} "Golden Saint"
-\textgreater{} 0 )
+if ( Player->\textbf{HasSoulGem} "Golden Saint"
+> 0 )
 
-set StarCount to ( Player-\textgreater GetItemCount
+set StarCount to ( Player-> GetItemCount
 "Misc\_Soulgem\_Azura" )
 
-Player-\textgreater RemoveSoulGem "Golden Saint" 1
+Player-> RemoveSoulGem "Golden Saint" 1
 
-if ( ( Player-\textgreater GetItemCount "Misc\_Soulgem\_Azura" )
-\textless{} StarCount )
+if ( ( Player-> GetItemCount "Misc\_Soulgem\_Azura" )
+< StarCount )
 
-Player-\textgreater AddItem "Misc\_Soulgem\_Azura" 1
+Player-> AddItem "Misc\_Soulgem\_Azura" 1
 
 endif
 
-Player-\textgreater AddItem Gold\_001, 10000
+Player-> AddItem Gold\_001, 10000
 
 MessageBox "Thank You, Come Again."
 
@@ -5489,7 +5490,7 @@ AddSpell, "SpellID"
 
 RemoveSpell, "SpellID"
 
-"Actor\_ID"-\textgreater AddSpell "Absorb Speed"
+"Actor\_ID"-> AddSpell "Absorb Speed"
 
 The AddSpell function will add the spell to the calling object. This can
 mean two things: normal spells are added to the actor's spell list.
@@ -5545,7 +5546,7 @@ Casting spells}{ Casting spells}}\label{casting-spells}}
 
 Cast, SpellID, "TargetID"
 
-Object\_ID-\textgreater Cast, "flame", Player
+Object\_ID-> Cast, "flame", Player
 
 The Cast function makes the calling object cast the spell "SpellID" on
 the target "TargetID", and Target will suffer or benefit from the
@@ -5633,7 +5634,7 @@ spells}\label{managing-and-testing-for-spells}}
 
 GetSpell, "Spell\_ID" (returns Boolean/short)
 
-If ( Player-\textgreater GetSpell, "heal companion" == 1 )
+If ( Player-> GetSpell, "heal companion" == 1 )
 
 Returns true if object has Spell\_ID in inventory. However, this does
 not work for abilities or powers associated with race or birthsign.
@@ -5641,13 +5642,13 @@ Sample script see below.
 
 GetSpellEffects, "Spell\_ID" (returns Boolean/short)
 
-if ( Player-\textgreater GetSpellEffects, "flame" == 1 )
+if ( Player-> GetSpellEffects, "flame" == 1 )
 
 Returns true if Spell\_ID is affecting calling object. The following
 could be added to the "trap\_script" discussed under "casting spells"
 above:
 
-if ( Player-\textgreater{}\textbf{GetSpellEffects}, "flame" == 1 )
+if ( Player->\textbf{GetSpellEffects}, "flame" == 1 )
 
 MessageBox "You have been flamed"
 
@@ -5665,14 +5666,14 @@ the calling object).
 
 RemoveSpellEffects, "Spell\_ID"
 
-Player-\textgreater RemoveSpellEffects, "flame"
+Player-> RemoveSpellEffects, "flame"
 
 Removes the effects of Spell\_ID from the player. This makes it even
 more useful for scripted spells.
 
-if ( Player-\textgreater GetSpellEffects, "flame" == 1 )
+if ( Player-> GetSpellEffects, "flame" == 1 )
 
-player-\textgreater{}\textbf{RemoveSpellEffects}, "flame"
+player->\textbf{RemoveSpellEffects}, "flame"
 
 ;do what you want here
 
@@ -5705,7 +5706,7 @@ GetWaterBreathing function.
 
 RemoveEffects, Effect\_ID\#\_enum
 
-Player-\textgreater RemoveEffects, 75
+Player-> RemoveEffects, 75
 
 Removes all spells on the Actor that include the Effect. For this
 function you need the \textbf{number} of the effect-ID unlike the
@@ -5730,7 +5731,7 @@ GetBlightDisease (returns Boolean/short)
 
 GetCommonDisease (returns Boolean/short)
 
-If ( Actor-\textgreater GetBlightDisease == 1 )
+If ( Actor-> GetBlightDisease == 1 )
 
 Both functions return 1 if the calling Actor has the appropriate type of
 disease, otherwise 0. These are used in the disease scripts that give
@@ -5864,8 +5865,8 @@ corresponds to shield effect
 
 \emph{Get/Mod/Set}CastPenalty
 
-corresponds to "Sound" effect? (\textless0 makes casting harder,
-\textgreater0, easier)
+corresponds to "Sound" effect? (<0 makes casting harder,
+>0, easier)
 
 \emph{Get/Mod/Set}Silence
 
@@ -5913,7 +5914,7 @@ file}\label{make-actors-speak-an-audio-file}}
 
 Say, ``file name'', ``text''
 
-Actor-\textgreater say,
+Actor-> say,
 "vo\textbackslash Misc\textbackslash CharGenBoat1.wav", "This is where
 they want you."
 
@@ -5957,7 +5958,7 @@ PlaySound3D, ``sound ID''
 
 PlaySound3DVP, ``sound ID'', volume\_enum, pitch\_enum
 
-"ex\_gg\_portcullis\_02"-\textgreater Playsound3DVP "Dwemer Door Open"
+"ex\_gg\_portcullis\_02"-> Playsound3DVP "Dwemer Door Open"
 1.0 1.0
 
 The PlaySound function plays a sound without any modification. It does
@@ -5988,7 +5989,7 @@ if you don't hear a sound in game.
 
 StopSound, "Sound ID"
 
-Object\_ID-\textgreater StopSound "Lava Layer"
+Object\_ID-> StopSound "Lava Layer"
 
 stops the sound "SoundID" if it is currently playing in the calling
 object.
@@ -6282,7 +6283,7 @@ if ( getInterior == 0 )
 
 ;outside
 
-elseif ( getWindSpeed \textgreater{} 0.01 )
+elseif ( getWindSpeed > 0.01 )
 
 ;Interior acting like exterior
 
@@ -6368,9 +6369,9 @@ AddTopic "Disturbing Dreams"
 
 ;THE FIRST DREAM...
 
-if ( GetJournalIndex A1\_2\_AntabolisInformant \textgreater= 10 )
+if ( GetJournalIndex A1\_2\_AntabolisInformant >= 10 )
 
-if ( GetJournalIndex A1\_Dreams \textless{} 1 )
+if ( GetJournalIndex A1\_Dreams < 1 )
 
 \textbf{WakeUpPC}
 
@@ -6642,7 +6643,7 @@ savegame". (Forum info / DinkumThinkum).
 
 To my knowledge these functions do not work with local scripts attached
 to objects, you can however start and stop "targeted scripts" by using
-an object "fix": "ObjectID-\textgreater StartScript" (for more info see
+an object "fix": "ObjectID-> StartScript" (for more info see
 the Tips and Tricks section on targeted scripts).
 
 StartScript, "ScriptName"
@@ -6692,7 +6693,7 @@ out}\label{fading-the-screen-in-and-out}}
 FadeTo 50 2.0 ;(Fades screen to 50\% in 2 seconds)
 
 FadeIn and Fadeout fades the screen (not an object) to blackness in the
-time specified (in seconds). Time is \textgreater{} 0 and \textless=
+time specified (in seconds). Time is > 0 and <=
 10.0. FadeTo fades only to a certain percentage: 0 is full transparency.
 100 is black.
 

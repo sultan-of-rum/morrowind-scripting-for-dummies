@@ -212,27 +212,27 @@ MenuTest
 Functions which are \textbf{spelled differently than documented
 (XPCagey):}
 
-getHealthRatio -\textgreater{} getHealthGetRatio
+getHealthRatio -> getHealthGetRatio
 
-getInvisible -\textgreater{} getInvisibile
+getInvisible -> getInvisibile
 
-setInvisible -\textgreater{} setInvisibile
+setInvisible -> setInvisibile
 
-modInvisible -\textgreater{} modInvisibile
+modInvisible -> modInvisibile
 
-getSecundusPhase -\textgreater{} getSecundaPhase
+getSecundusPhase -> getSecundaPhase
 
 \textbf{(actual syntax on the right)}
 
 And those which don't work:
 
-getPlayerViewSwitch -\textgreater{} (can't be used)
+getPlayerViewSwitch -> (can't be used)
 
-OnRepair -\textgreater{} not in string tables
+OnRepair -> not in string tables
 
-UsedOnMe -\textgreater{} not in string tables
+UsedOnMe -> not in string tables
 
-name -\textgreater{} not in string tables
+name -> not in string tables
 
 Also be aware that most console commands can be compiled as functions by
 the Construction Set (see list below). These are also to a large part
@@ -418,143 +418,143 @@ For the function GetEffect, you need the ID-string itself (e.g.
 GetEffect sEffectWaterBreathing). For the RemoveEffects function, the
 effect number is used (e.g. RemoveEffects, 0)
 
-0 =\textgreater{} sEffectWaterBreathing\\
-1 =\textgreater{} sEffectSwiftSwim\\
-2 =\textgreater{} sEffectWaterWalking\\
-3 =\textgreater{} sEffectShield\\
-4 =\textgreater{} sEffectFireShield\\
-5 =\textgreater{} sEffectLightningShield\\
-6 =\textgreater{} sEffectFrostShield\\
-7 =\textgreater{} sEffectBurden\\
-8 =\textgreater{} sEffectFeather\\
-9 =\textgreater{} sEffectJump\\
-10 =\textgreater{} sEffectLevitate\\
-11 =\textgreater{} sEffectSlowFall\\
-12 =\textgreater{} sEffectLock\\
-13 =\textgreater{} sEffectOpen\\
-14 =\textgreater{} sEffectFireDamage\\
-15 =\textgreater{} sEffectShockDamage\\
-16 =\textgreater{} sEffectFrostDamage\\
-17 =\textgreater{} sEffectDrainAttribute\\
-18 =\textgreater{} sEffectDrainHealth\\
-19 =\textgreater{} sEffectDrainSpellpoints\\
-20 =\textgreater{} sEffectDrainFatigue\\
-21 =\textgreater{} sEffectDrainSkill\\
-22 =\textgreater{} sEffectDamageAttribute\\
-23 =\textgreater{} sEffectDamageHealth\\
-24 =\textgreater{} sEffectDamageMagicka\\
-25 =\textgreater{} sEffectDamageFatigue\\
-26 =\textgreater{} sEffectDamageSkill\\
-27 =\textgreater{} sEffectPoison\\
-28 =\textgreater{} sEffectWeaknessToFire\\
-29 =\textgreater{} sEffectWeaknessToFrost\\
-30 =\textgreater{} sEffectWeaknessToShock\\
-31 =\textgreater{} sEffectWeaknessToMagicka\\
-32 =\textgreater{} sEffectWeaknessToCommonDisease\\
-33 =\textgreater{} sEffectWeaknessToBlightDisease\\
-34 =\textgreater{} sEffectWeaknessToCorprusDisease\\
-35 =\textgreater{} sEffectWeaknessToPoison\\
-36 =\textgreater{} sEffectWeaknessToNormalWeapons\\
-37 =\textgreater{} sEffectDisintegrateWeapon\\
-38 =\textgreater{} sEffectDisintegrateArmor\\
-39 =\textgreater{} sEffectInvisibility\\
-40 =\textgreater{} sEffectChameleon\\
-41 =\textgreater{} sEffectLight\\
-42 =\textgreater{} sEffectSanctuary\\
-43 =\textgreater{} sEffectNightEye\\
-44 =\textgreater{} sEffectCharm\\
-45 =\textgreater{} sEffectParalyze\\
-46 =\textgreater{} sEffectSilence\\
-47 =\textgreater{} sEffectBlind\\
-48 =\textgreater{} sEffectSound\\
-49 =\textgreater{} sEffectCalmHumanoid\\
-50 =\textgreater{} sEffectCalmCreature\\
-51 =\textgreater{} sEffectFrenzyHumanoid\\
-52 =\textgreater{} sEffectFrenzyCreature\\
-53 =\textgreater{} sEffectDemoralizeHumanoid\\
-54 =\textgreater{} sEffectDemoralizeCreature\\
-55 =\textgreater{} sEffectRallyHumanoid\\
-56 =\textgreater{} sEffectRallyCreature\\
-57 =\textgreater{} sEffectDispel\\
-58 =\textgreater{} sEffectSoultrap\\
-59 =\textgreater{} sEffectTelekinesis\\
-60 =\textgreater{} sEffectMark\\
-61 =\textgreater{} sEffectRecall\\
-62 =\textgreater{} sEffectDivineIntervention\\
-63 =\textgreater{} sEffectAlmsiviIntervention\\
-64 =\textgreater{} sEffectDetectAnimal\\
-65 =\textgreater{} sEffectDetectEnchantment\\
-66 =\textgreater{} sEffectDetectKey\\
-67 =\textgreater{} sEffectSpellAbsorption\\
-68 =\textgreater{} sEffectReflect\\
-69 =\textgreater{} sEffectCureCommonDisease\\
-70 =\textgreater{} sEffectCureBlightDisease\\
-71 =\textgreater{} sEffectCureCorprusDisease\\
-72 =\textgreater{} sEffectCurePoison\\
-73 =\textgreater{} sEffectCureParalyzation\\
-74 =\textgreater{} sEffectRestoreAttribute\\
-75 =\textgreater{} sEffectRestoreHealth\\
-76 =\textgreater{} sEffectRestoreSpellPoints\\
-77 =\textgreater{} sEffectRestoreFatigue\\
-78 =\textgreater{} sEffectRestoreSkill\\
-79 =\textgreater{} sEffectFortifyAttribute\\
-80 =\textgreater{} sEffectFortifyHealth\\
-81 =\textgreater{} sEffectFortifySpellpoints\\
-82 =\textgreater{} sEffectFortifyFatigue\\
-83 =\textgreater{} sEffectFortifySkill\\
-84 =\textgreater{} sEffectFortifyMagickaMultiplier\\
-85 =\textgreater{} sEffectAbsorbAttribute\\
-86 =\textgreater{} sEffectAbsorbHealth\\
-87 =\textgreater{} sEffectAbsorbSpellPoints\\
-88 =\textgreater{} sEffectAbsorbFatigue\\
-89 =\textgreater{} sEffectAbsorbSkill\\
-90 =\textgreater{} sEffectResistFire\\
-91 =\textgreater{} sEffectResistFrost\\
-92 =\textgreater{} sEffectResistShock\\
-93 =\textgreater{} sEffectResistMagicka\\
-94 =\textgreater{} sEffectResistCommonDisease\\
-95 =\textgreater{} sEffectResistBlightDisease\\
-96 =\textgreater{} sEffectResistCorprusDisease\\
-97 =\textgreater{} sEffectResistPoison\\
-98 =\textgreater{} sEffectResistNormalWeapons\\
-99 =\textgreater{} sEffectResistParalysis\\
-100 =\textgreater{} sEffectRemoveCurse\\
-101 =\textgreater{} sEffectTurnUndead\\
-102 =\textgreater{} sEffectSummonScamp\\
-103 =\textgreater{} sEffectSummonClannfear\\
-104 =\textgreater{} sEffectSummonDaedroth\\
-105 =\textgreater{} sEffectSummonDremora\\
-106 =\textgreater{} sEffectSummonAncestralGhost\\
-107 =\textgreater{} sEffectSummonSkeletalMinion\\
-108 =\textgreater{} sEffectSummonLeastBonewalker\\
-109 =\textgreater{} sEffectSummonGreaterBonewalker\\
-110 =\textgreater{} sEffectSummonBonelord\\
-111 =\textgreater{} sEffectSummonWingedTwilight\\
-112 =\textgreater{} sEffectSummonHunger\\
-113 =\textgreater{} sEffectSummonGoldensaint\\
-114 =\textgreater{} sEffectSummonFlameAtronach\\
-115 =\textgreater{} sEffectSummonFrostAtronach\\
-116 =\textgreater{} sEffectSummonStormAtronach\\
-117 =\textgreater{} sEffectFortifyAttackBonus\\
-118 =\textgreater{} sEffectCommandCreatures\\
-119 =\textgreater{} sEffectCommandHumanoids\\
-120 =\textgreater{} sEffectBoundDagger\\
-121 =\textgreater{} sEffectBoundLongsword\\
-122 =\textgreater{} sEffectBoundMace\\
-123 =\textgreater{} sEffectBoundBattleAxe\\
-124 =\textgreater{} sEffectBoundSpear\\
-125 =\textgreater{} sEffectBoundLongbow\\
-126 =\textgreater{} sEffectExtraSpell\\
-127 =\textgreater{} sEffectBoundCuirass\\
-128 =\textgreater{} sEffectBoundHelm\\
-129 =\textgreater{} sEffectBoundBoots\\
-130 =\textgreater{} sEffectBoundShield\\
-131 =\textgreater{} sEffectBoundGloves\\
-132 =\textgreater{} sEffectCorpus\\
-133 =\textgreater{} sEffectVampirism\\
-134 =\textgreater{} sEffectSummonCenturionSphere\\
-135 =\textgreater{} sEffectSunDamage\\
-136 =\textgreater{} sEffectStuntedMagicka
+0 => sEffectWaterBreathing\\
+1 => sEffectSwiftSwim\\
+2 => sEffectWaterWalking\\
+3 => sEffectShield\\
+4 => sEffectFireShield\\
+5 => sEffectLightningShield\\
+6 => sEffectFrostShield\\
+7 => sEffectBurden\\
+8 => sEffectFeather\\
+9 => sEffectJump\\
+10 => sEffectLevitate\\
+11 => sEffectSlowFall\\
+12 => sEffectLock\\
+13 => sEffectOpen\\
+14 => sEffectFireDamage\\
+15 => sEffectShockDamage\\
+16 => sEffectFrostDamage\\
+17 => sEffectDrainAttribute\\
+18 => sEffectDrainHealth\\
+19 => sEffectDrainSpellpoints\\
+20 => sEffectDrainFatigue\\
+21 => sEffectDrainSkill\\
+22 => sEffectDamageAttribute\\
+23 => sEffectDamageHealth\\
+24 => sEffectDamageMagicka\\
+25 => sEffectDamageFatigue\\
+26 => sEffectDamageSkill\\
+27 => sEffectPoison\\
+28 => sEffectWeaknessToFire\\
+29 => sEffectWeaknessToFrost\\
+30 => sEffectWeaknessToShock\\
+31 => sEffectWeaknessToMagicka\\
+32 => sEffectWeaknessToCommonDisease\\
+33 => sEffectWeaknessToBlightDisease\\
+34 => sEffectWeaknessToCorprusDisease\\
+35 => sEffectWeaknessToPoison\\
+36 => sEffectWeaknessToNormalWeapons\\
+37 => sEffectDisintegrateWeapon\\
+38 => sEffectDisintegrateArmor\\
+39 => sEffectInvisibility\\
+40 => sEffectChameleon\\
+41 => sEffectLight\\
+42 => sEffectSanctuary\\
+43 => sEffectNightEye\\
+44 => sEffectCharm\\
+45 => sEffectParalyze\\
+46 => sEffectSilence\\
+47 => sEffectBlind\\
+48 => sEffectSound\\
+49 => sEffectCalmHumanoid\\
+50 => sEffectCalmCreature\\
+51 => sEffectFrenzyHumanoid\\
+52 => sEffectFrenzyCreature\\
+53 => sEffectDemoralizeHumanoid\\
+54 => sEffectDemoralizeCreature\\
+55 => sEffectRallyHumanoid\\
+56 => sEffectRallyCreature\\
+57 => sEffectDispel\\
+58 => sEffectSoultrap\\
+59 => sEffectTelekinesis\\
+60 => sEffectMark\\
+61 => sEffectRecall\\
+62 => sEffectDivineIntervention\\
+63 => sEffectAlmsiviIntervention\\
+64 => sEffectDetectAnimal\\
+65 => sEffectDetectEnchantment\\
+66 => sEffectDetectKey\\
+67 => sEffectSpellAbsorption\\
+68 => sEffectReflect\\
+69 => sEffectCureCommonDisease\\
+70 => sEffectCureBlightDisease\\
+71 => sEffectCureCorprusDisease\\
+72 => sEffectCurePoison\\
+73 => sEffectCureParalyzation\\
+74 => sEffectRestoreAttribute\\
+75 => sEffectRestoreHealth\\
+76 => sEffectRestoreSpellPoints\\
+77 => sEffectRestoreFatigue\\
+78 => sEffectRestoreSkill\\
+79 => sEffectFortifyAttribute\\
+80 => sEffectFortifyHealth\\
+81 => sEffectFortifySpellpoints\\
+82 => sEffectFortifyFatigue\\
+83 => sEffectFortifySkill\\
+84 => sEffectFortifyMagickaMultiplier\\
+85 => sEffectAbsorbAttribute\\
+86 => sEffectAbsorbHealth\\
+87 => sEffectAbsorbSpellPoints\\
+88 => sEffectAbsorbFatigue\\
+89 => sEffectAbsorbSkill\\
+90 => sEffectResistFire\\
+91 => sEffectResistFrost\\
+92 => sEffectResistShock\\
+93 => sEffectResistMagicka\\
+94 => sEffectResistCommonDisease\\
+95 => sEffectResistBlightDisease\\
+96 => sEffectResistCorprusDisease\\
+97 => sEffectResistPoison\\
+98 => sEffectResistNormalWeapons\\
+99 => sEffectResistParalysis\\
+100 => sEffectRemoveCurse\\
+101 => sEffectTurnUndead\\
+102 => sEffectSummonScamp\\
+103 => sEffectSummonClannfear\\
+104 => sEffectSummonDaedroth\\
+105 => sEffectSummonDremora\\
+106 => sEffectSummonAncestralGhost\\
+107 => sEffectSummonSkeletalMinion\\
+108 => sEffectSummonLeastBonewalker\\
+109 => sEffectSummonGreaterBonewalker\\
+110 => sEffectSummonBonelord\\
+111 => sEffectSummonWingedTwilight\\
+112 => sEffectSummonHunger\\
+113 => sEffectSummonGoldensaint\\
+114 => sEffectSummonFlameAtronach\\
+115 => sEffectSummonFrostAtronach\\
+116 => sEffectSummonStormAtronach\\
+117 => sEffectFortifyAttackBonus\\
+118 => sEffectCommandCreatures\\
+119 => sEffectCommandHumanoids\\
+120 => sEffectBoundDagger\\
+121 => sEffectBoundLongsword\\
+122 => sEffectBoundMace\\
+123 => sEffectBoundBattleAxe\\
+124 => sEffectBoundSpear\\
+125 => sEffectBoundLongbow\\
+126 => sEffectExtraSpell\\
+127 => sEffectBoundCuirass\\
+128 => sEffectBoundHelm\\
+129 => sEffectBoundBoots\\
+130 => sEffectBoundShield\\
+131 => sEffectBoundGloves\\
+132 => sEffectCorpus\\
+133 => sEffectVampirism\\
+134 => sEffectSummonCenturionSphere\\
+135 => sEffectSunDamage\\
+136 => sEffectStuntedMagicka
 
 \hypertarget{list-of-console-commands}{%
 \subsection{\texorpdfstring{\hfill\break
@@ -862,8 +862,9 @@ Base time that a character can remain underwater before incurring
 suffocation damage \\
 "969" & "fHoldBreathEndMult" & 0.5000 & How Endurance affects the time
 you can hold your breath. I believe this is a flat-out multiplier to
-End, added as seconds to HoldBreathTime.\textless Doesn't seem to
-work.\textgreater{} \\
+% note - < and >
+End, added as seconds to HoldBreathTime.< Doesn't seem to
+work.> \\
 "970" & "fSuffocationDamage" & 3.0000 & The amount of health damage you
 take each second you suffocate \\
 "971" & "fMinFlySpeed" & 5.0000 & Exactly as it says -- minimum flying
@@ -1378,11 +1379,11 @@ it, chances are as follows:
 
 Enter/Leave inventory:
 
-Player.Sneak \textgreater{} d100 + Victim.Sneak
+Player.Sneak > d100 + Victim.Sneak
 
 Take items:
 
-Player.Security \textgreater{} d100 + fPickPocketMod * item Weight
+Player.Security > d100 + fPickPocketMod * item Weight
 
 In the moment you successfully take an item, the inventory is reloaded
 (this is why sometimes items vanish or appear) and you have to make

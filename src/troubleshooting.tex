@@ -73,7 +73,7 @@ PlaceatPC "My\_Object" 1,1,1
 
 This will drop the object directly at your feet.
 
-Player-\textgreater AddItem "My\_Object" 1
+Player-> AddItem "My\_Object" 1
 
 This will drop the item into your inventory
 
@@ -137,7 +137,7 @@ variables functions or other typing errors.
 
 This error indicates that the object in question e.g.
 
-Foobject-\textgreater GetDistance Player
+Foobject-> GetDistance Player
 
 Does not exist. When you write a script and then create a new object to
 be thus referenced you will also get this error. Close the editor window
@@ -205,11 +205,11 @@ very rarely, but it sometimes does, trust me.
 Usually indicates bad syntax. Can be caused by bad set commands using
 the "fix" arrow:
 
-set somevar to ActorID-\textgreater GetHealth
+set somevar to ActorID-> GetHealth
 
 should be changed to:
 
-set somevar to ( ActorID-\textgreater GetHealth )
+set somevar to ( ActorID-> GetHealth )
 
 An alternative is again a forgotten variable declaration of variable
 type functions, e.g. of OnPCEquip, etc. (Thanks Horatio and Ragnar\_GD)

@@ -69,9 +69,9 @@ Next, we need a way to determine whether the player tries to open the chest. In 
 
 \textbf{Commands} are those "words" that structure the scripting language, but do not operate on any Game objects -- an example is the word "Begin" we used to tell the script editor about the name of our script.
 
-To tell the game which object it is supposed to perform a given function on we can use the "arrow", or "fix" : -\textgreater{} (really just a hyphen and a greater-than sign). You specify the object for the function on the left (we also call this the calling object) and the function to be performed on the right:
+To tell the game which object it is supposed to perform a given function on we can use the "arrow", or "fix" : -> (really just a hyphen and a greater-than sign). You specify the object for the function on the left (we also call this the calling object) and the function to be performed on the right:
 
-Object\_ID-\textgreater function, {[}parameters{]}
+Object\_ID-> function, {[}parameters{]}
 
 A function may or may not have parameters. Parameters could be other object ID's, numbers and in some cases, variables.
 
@@ -185,7 +185,7 @@ Now look at the little addition at the top of the script:
 	
 	Set controlvar to 1
 	
-	elseif controlvar \textgreater{} 1
+	elseif controlvar > 1
 	
 	activate
 	
@@ -266,7 +266,7 @@ Now, we need to put this curse on the player. For this we use the \emph{AddSpell
 
 \lstinputlisting{scripts/my_first_script04.txt}
 
-Let's go over this. Player-\textgreater AddSpell, "Frost\_Curse" puts the curse we created earlier on the player. Note how we need to use "Player-\textgreater" to make sure the effect really targets the player. Otherwise we would curse the chest (which is the default object, because the script is attached to it), which wouldn't make a lot of sense\ldots{}
+Let's go over this. Player-> AddSpell, "Frost\_Curse" puts the curse we created earlier on the player. Note how we need to use "Player->" to make sure the effect really targets the player. Otherwise we would curse the chest (which is the default object, because the script is attached to it), which wouldn't make a lot of sense\ldots{}
 
 % Excerpt from external script. [firstline=, lastline=]
 
@@ -277,7 +277,7 @@ This bit:
 	
 	Set timer to ( timer + GetSecondsPassed )
 	
-	if timer \textgreater{} 10
+	if timer > 10
 \end{lstlisting}
 
 \ldots that is how you make a timer in Morrowind. \emph{GetSecondsPassed} is a function that returns the time in seconds that has passed since the last frame. Since this is usually a fraction of a second (as the script gets called every frame), it is only natural that we need a float variable for this purpose -- a variable that can store numbers with decimals. So when the timer has been running for 10 seconds we remove the curse again, and make sure we do this only once:
@@ -285,7 +285,7 @@ This bit:
 % Excerpt from external script. [firstline=, lastline=]
 
 \begin{lstlisting}
-	Player-\textgreater RemoveSpell, "Frost\_Curse"
+	Player-> RemoveSpell, "Frost\_Curse"
 	
 	set controlvar to -2
 \end{lstlisting}
