@@ -33,7 +33,7 @@ attached to an NPC:
 You will have to specify the NPC in a global script:
 
 \begin{lstlisting}
-	"NPC\_ID"-> AITravel 1150, 8899, 1110 ;NPC\_ID is the ID, the
+	"NPC_ID"-> AITravel 1150, 8899, 1110 ;NPC_ID is the ID, the
 	unique identifier for
 	
 	;each object in the editor
@@ -83,7 +83,7 @@ that are tied to an object or Actor. These are called "targeted
 scripts".
 
 \begin{lstlisting}
-	"Object\_ID"-> StartScript "Script\_ ID"
+	"Object_ID"-> StartScript "Script_ ID"
 \end{lstlisting}
 
 These scripts resemble both local scripts (in that the functions called
@@ -106,11 +106,11 @@ before we go into more detail.
 scripts}\label{beginning-and-ending-scripts}}
 
 \begin{lstlisting}
-	Begin Script\_ID
+	Begin Script_ID
 	
 	End
 	
-	End Script\_ID
+	End Script_ID
 \end{lstlisting}
 
 Every script must have the Begin and End tags. The specified name will
@@ -138,7 +138,7 @@ suggested by Bethesda (e.g. GetSpellEffects instead of getspelleffects)
 makes scripts easier to read, so it's recommended to keep it that way.
 
 \begin{lstlisting}
-	"Object\_ID"-> Function, {[}parameters{]}
+	"Object_ID"-> Function, [parameters]
 \end{lstlisting}
 
 This is the format for all functions that act on or refer to a
@@ -154,7 +154,7 @@ This is not to say that there might not be another object referenced as
 a parameter:
 
 \begin{lstlisting}
-	"Object\_ID1"-> Function, "Object\_ID2"
+	"Object_ID1"-> Function, "Object_ID2"
 \end{lstlisting}
 
 \textbf{Notes:}
@@ -487,7 +487,7 @@ variables from outside the script in the following way:
 or
 
 \begin{lstlisting}
-	Set MyObject.variable to local\_variable
+	Set MyObject.variable to local_variable
 \end{lstlisting}
 
 This method changes a local variable in the object's script. The object
@@ -501,7 +501,7 @@ in the database, thus you should only reference objects that are unique
 Note that the reverse does \textbf{not} work:
 
 \begin{lstlisting}
-	Set local\_variable to MyObject.variable ;this doesn't work!
+	Set local_variable to MyObject.variable ;this doesn't work!
 \end{lstlisting}
 
 Use a global variable to transfer information in this way, or set
@@ -518,7 +518,7 @@ global scripts:\\
 \strut \\
 
 \begin{lstlisting}
-	set Global\_script\_name.variable to 1
+	set Global_script_name.variable to 1
 \end{lstlisting}
 
 \strut \\
@@ -609,7 +609,7 @@ parentheses to be on the safe side. You can use parentheses according to
 standard mathematical rules:
 
 \begin{lstlisting}
-	set ln to ( ln + ( k10 * math\_ln10 ) + ( k2 * math\_ln2 ) )
+	set ln to ( ln + ( k10 * math_ln10 ) + ( k2 * math_ln2 ) )
 \end{lstlisting}
 
 A warning: There are different opinions on the forums on the use of
@@ -848,17 +848,17 @@ An else creates a "default condition". The code following else will be
 executed if all previously tested conditions are false:
 
 \begin{lstlisting}
-	\textbf{If} ( foo\_var == 1 )
+	\textbf{If} ( foo_var == 1 )
 	
-	{[}Block A: do something{]}
+	[Block A: do something]
 	
-	\textbf{elseif} ( foo\_var == 2 )
+	\textbf{elseif} ( foo_var == 2 )
 	
-	{[}Block B: do something else{]}
+	[Block B: do something else]
 	
 	\textbf{else}
 	
-	{[}Block C: do something completely different{]}
+	[Block C: do something completely different]
 	
 	\textbf{endif}
 \end{lstlisting}

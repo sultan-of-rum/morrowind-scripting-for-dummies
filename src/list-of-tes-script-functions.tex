@@ -29,7 +29,7 @@ although the game strictly speaking still uses a float)
 Examples of usage follow in italics and are indented:
 
 \begin{lstlisting}
-	\emph{Code "ID", var\_enum, var\_float}
+	\emph{Code "ID", var_enum, var_float}
 \end{lstlisting}
 	
 Example scripts are set in frames:
@@ -72,9 +72,9 @@ inventory}\label{adding-and-removing-items-from-the-inventory}}
 	RemoveItem, "ObjectID", count\_enum
 
 \begin{lstlisting}	
-	Actor-> AddItem, "item\_ID", 1
+	Actor-> AddItem, "item_ID", 1
 	
-	Container-> RemoveItem, "itme\_ID", 5
+	Container-> RemoveItem, "itme_ID", 5
 \end{lstlisting}
 
 These functions are simple enough, adding or removing items from the
@@ -110,14 +110,14 @@ That way, the items will be added before the inventory window opens.\\
 Here's the code I used for this in the Potion Saver:
 
 \begin{lstlisting}
-	If ( GetHealth < 1 )\\
-	Set DTNPS\_HandlePotions to 0\\
-	ElseIf ( GetFatigue < 1 )\\
-	Set DTNPS\_HandlePotions to 0\\
-	ElseIf ( MenuMode == 1 )\\
-	Set DTNPS\_HandlePotions to 0\\
-	Else\\
-	Set DTNPS\_HandlePotions to 1\\
+	If ( GetHealth < 1 )
+	Set DTNPS_HandlePotions to 0
+	ElseIf ( GetFatigue < 1 )
+	Set DTNPS_HandlePotions to 0
+	ElseIf ( MenuMode == 1 )
+	Set DTNPS_HandlePotions to 0
+	Else
+	Set DTNPS_HandlePotions to 1
 	EndIf
 \end{lstlisting}
 
@@ -142,9 +142,9 @@ So, my ingredients chest has a script that looks like:
 	; Always add and remove a dummy (this hack keeps the "AddItem" calls
 	working)
 	
-	AddItem, "misc\_de\_cloth10", 1
+	AddItem, "misc_de_cloth10", 1
 	
-	RemoveItem, "misc\_de\_cloth10", 1
+	RemoveItem, "misc_de_cloth10", 1
 \end{lstlisting}
 
 Furthermore, we make the chest with "references persist". Now we can
@@ -152,16 +152,16 @@ reference it from an ingredients sorter using code like:
 
 \begin{lstlisting}
 	set count to ( player-> GetItemCount,
-	"ingred\_dreugh\_wax\_01" )
+	"ingred_dreugh_wax_01" )
 	
 	while ( count > 0 )
 	
 	set count to ( count - 1 )
 	
-	player-> RemoveItem, "ingred\_dreugh\_wax\_01", 1
+	player-> RemoveItem, "ingred_dreugh_wax_01", 1
 	
-	"\_tm\_ingredients\_chest"-> AddItem,
-	"ingred\_dreugh\_wax\_01", 1
+	"_tm_ingredients_chest"-> AddItem,
+	"ingred_dreugh_wax_01", 1
 	
 	endwhile
 \end{lstlisting}
@@ -219,9 +219,9 @@ var\_a equals 3 at the moment when the line is selected in dialogue. If
 the result field looks like this:
 
 \begin{lstlisting}
-	set var\_a to var\_a + 10 ;
+	set var_a to var_a + 10 ;
 	
-	AddItem gold\_001, var\_a
+	AddItem gold_001, var_a
 \end{lstlisting}
 
 three drakes will be added to NPC's inventory, and not thirteen. If such
@@ -253,7 +253,7 @@ floor}\label{dropping-items-to-the-floor}}
 	Drop, "ObjectID", count\_enum
 
 \begin{lstlisting}	
-	"Actor\_ID"-> Drop, "ITEM\_ID", 1
+	"Actor_ID"-> Drop, "ITEM_ID", 1
 \end{lstlisting}
 
 This function is supposed to drop the item from the inventory "to the
@@ -347,7 +347,7 @@ Force-equipping an Item
 Equip, "Object\_ID" {[}count\_enum{]}
 
 \begin{lstlisting}
-	"Actor\_ID"-> Equip, "iron dagger"
+	"Actor_ID"-> Equip, "iron dagger"
 \end{lstlisting}
 
 (Also see OnPCEquip function below)
@@ -422,9 +422,9 @@ So, in some cases you might want to manually reset it:
 \begin{lstlisting}
 	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
 	
-	{[}do something{]}
+	[}o something]
 	
-	set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
+	set \textbf{OnPCEquip} to 0 ; do this once per equip event...
 	
 	endif
 \end{lstlisting}
@@ -439,9 +439,9 @@ also be processed while in Menu mode:
 	
 	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
 	
-	{[}do something{]}
+	[do something]
 	
-	set OnPCEquip to 0 ; do this once per equip event\ldots{}
+	set OnPCEquip to 0 ; do this once per equip event...
 	
 	endif
 	
@@ -461,9 +461,9 @@ the menu:
 	
 	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
 	
-	{[}do something{]}
+	[do something]
 	
-	set \textbf{OnPCEquip} to 0 ; do this once per equip event\ldots{}
+	set \textbf{OnPCEquip} to 0 ; do this once per equip event...
 	
 	endif
 \end{lstlisting}
@@ -503,7 +503,7 @@ tricks section on this issue.
 \subsubsection{Disabling ability to equip an
 item}\label{disabling-ability-to-equip-an-item}}
 
-	{[}no fix{]} PCSkipEquip (is short variable)
+{[}no fix{]} PCSkipEquip (is short variable)
 
 \begin{lstlisting}	
 	Short PCSkipEquip
@@ -548,9 +548,9 @@ inventory}\label{checking-for-presence-of-items-in-inventory}}
 \begin{lstlisting}	
 	Short objectcount
 	
-	Set objectcount to ( "Mob\_ID"-> GetItemCount, "Object\_ID" )
+	Set objectcount to ( "Mob_ID"-> GetItemCount, "Object_ID" )
 	
-	If ( GetItemCount, "Object\_ID" >= 1 )
+	If ( GetItemCount, "Object_ID" >= 1 )
 \end{lstlisting}
 
 This function checks the inventory of the calling object and returns the
@@ -576,7 +576,7 @@ the script. Requires manual reset.
 	RepairedOnMe, "Object ID" (returns Boolean/short)
 
 \begin{lstlisting}	
-	if ( "daedric\_mace"-> RepairedOnMe, "repair\_journeyman\_01"
+	if ( "daedric_mace"-> RepairedOnMe, "repair_journeyman_01"
 	== 1 )
 \end{lstlisting}
 
@@ -715,7 +715,7 @@ helmet equipped.
 	UsedOnMe, ``Object ID'' (returns Boolean/short)
 
 \begin{lstlisting}	
-	if ( UsedOnMe, Misc\_pot\_redware\_01 )
+	if ( UsedOnMe, Misc_pot_redware_01 )
 \end{lstlisting}
 
 According to helpfile:
@@ -749,7 +749,7 @@ axis}\label{moving-along-an-objects-axis}}
 \begin{lstlisting}	
 	Move x, 100
 	
-	Object\_ID-> Move Z, 30
+	Object_ID-> Move Z, 30
 \end{lstlisting}
 
 Moves the object along the selected axis (x, y, or z) at the speed
@@ -767,9 +767,9 @@ functions using a "fix", move requires that the object is placed into
 the game world in the editor, before you can use it in a script:
 
 \begin{lstlisting}
-	PlaceAtPC "My\_Object", 1,1,1
+	PlaceAtPC "My_Object", 1,1,1
 	
-	My\_Object-> Move x, 10
+	My_Object-> Move x, 10
 \end{lstlisting}
 
 will not work if "My Object" has not already been placed, but you can
@@ -788,7 +788,7 @@ axis}\label{moving-along-the-world-axis}}
 \begin{lstlisting}	
 	MoveWorld z, 100
 	
-	Object\_ID-> MoveWorld Z, 30
+	Object_ID-> MoveWorld Z, 30
 \end{lstlisting}
 
 Moves the object along the selected world axis (x, y, or z) at the speed
@@ -812,7 +812,7 @@ stands on it:
 \hypertarget{cellupdate}{%
 \subsubsection{CellUpdate}\label{cellupdate}}
 
-	CellUpdate
+CellUpdate
 
 \textbf{Broken!} According to Bethesda: Updates the current object's
 cell position. This should be called when moving objects over large
@@ -838,12 +838,12 @@ cell it was created in.
 \subsubsection{Setting position (the other way to do
 movement)}\label{setting-position-the-other-way-to-do-movement}}
 
-	SetPos, axis, float\_enum\_pos (float\_var with Tribunal/Bloodmoon)
+SetPos, axis, float\_enum\_pos (float\_var with Tribunal/Bloodmoon)
 
 \begin{lstlisting}	
 	SetPos, z, 477
 	
-	Object\_ID-> SetPos X, 466
+	Object_ID-> SetPos X, 466
 \end{lstlisting}
 
 This function (unlike the move and moveworld functions) also works with
@@ -887,7 +887,7 @@ cell}\label{positioning-an-object-in-the-world-or-in-an-interior-cell}}
 	
 	Player-> position -23515, -15355, 3355, 90
 	
-	"Actor\_ID"-> PositionCell, -254, 475, -376, 360, "Balmora,
+	"Actor_ID"-> PositionCell, -254, 475, -376, 360, "Balmora,
 	Council Club"
 \end{lstlisting}
 
@@ -957,7 +957,7 @@ SetAtStart
 \begin{lstlisting}
 	SetAtStart
 	
-	Object\_ID-> SetAtStart
+	Object_ID-> SetAtStart
 \end{lstlisting}
 
 This resets the object to the original position it was given in the
@@ -975,7 +975,7 @@ direction\_enum
 \begin{lstlisting}
 	PlaceAtPC, "Secret Message", 0, 30, 1
 	
-	PlaceAtPC, "ancestor\_ghost", 1, 256, 1
+	PlaceAtPC, "ancestor_ghost", 1, 256, 1
 \end{lstlisting}
 
 This function places a new reference of "Object\_ID" near the player.
@@ -1026,8 +1026,8 @@ object}\label{place-items-near-an-object}}
 PlaceAtMe "Item\_ID" count\_enum, distance\_enum, direction\_enum
 
 \begin{lstlisting}
-	Object-> PlaceAtMe `Item\_ID' count\_enum distance\_enum
-	direction\_enum
+	Object-> PlaceAtMe `Item_ID' count_enum distance_enum
+	direction_enum
 \end{lstlisting}
 
 The PlaceAtMe function works the same as PlaceAtPC without it being
@@ -1042,7 +1042,7 @@ that just keep coming, among other things.
 	
 	if ( popA == 1 )
 	
-	"active\_BM\_hunter1"->\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active_BM_hunter1"->\textbf{PlaceAtMe} skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1051,7 +1051,7 @@ that just keep coming, among other things.
 	
 	elseif ( popB == 1 )
 	
-	"active\_BM\_hunter2"->\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active_BM_hunter2"->\textbf{PlaceAtMe} skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1060,7 +1060,7 @@ that just keep coming, among other things.
 	
 	elseif ( popC == 1 )
 	
-	"active\_BM\_hunter3"->\textbf{PlaceAtMe} skaal\_hunter 1 1
+	"active_BM_hunter3"->\textbf{PlaceAtMe} skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1164,7 +1164,7 @@ angle:
 	Rotate, z, -30; rotate counterclockwise, 30\textdegree per second, around objects
 	z axis
 	
-	Object\_ID-> Rotate, Y, 100
+	Object_ID-> Rotate, Y, 100
 \end{lstlisting}
 
 Axis can be x, y, or z. Notice that like the move functions the value
@@ -1190,7 +1190,7 @@ SetAngle, axis, float\_enum\_angle
 \begin{lstlisting}
 	SetAngle, z, 30
 	
-	Object\_ID-> Setangle, z, 25
+	Object_ID-> Setangle, z, 25
 \end{lstlisting}
 
 This function sets the object to a specific world angle. Axis is x, y,
@@ -1265,7 +1265,7 @@ Scale Functions}{ Scale Functions}}\label{scale-functions}}
 \begin{lstlisting}	
 	If ( doonce == 0 )
 	
-	Object\_ID-> SetScale 0.1
+	Object_ID-> SetScale 0.1
 	
 	Set doonce to 1
 	
@@ -1288,8 +1288,8 @@ regularly (about all 10 frames) or test for "getscale" and reset the
 scale when it doesn't fit:
 
 \begin{lstlisting}
-	if ( GetScale != 5 )\\
-	SetScale, 5\\
+	if ( GetScale != 5 )
+	SetScale, 5
 	endif
 \end{lstlisting}
 
@@ -1388,11 +1388,11 @@ Here is a snippet from an original Morrowind script:
 	
 	if ( \textbf{GetDistance} Player <= 256 )
 	
-	if ( \textbf{GetDistance} "guar\_white\_unique" <= 256 )
+	if ( \textbf{GetDistance} "guar_white_unique" <= 256 )
 	
-	if ( GetJournalIndex "MS\_WhiteGuar" <= 50 )
+	if ( GetJournalIndex "MS_WhiteGuar" <= 50 )
 	
-	Journal "MS\_WhiteGuar" 60
+	Journal "MS_WhiteGuar" 60
 	
 	endif
 	
@@ -1437,7 +1437,7 @@ facing}\label{determining-an-objects-position-and-facing}}
 GetPos, axis(x/y/z)
 
 \begin{lstlisting}
-	Object\_ID-> GetPos, z
+	Object_ID-> GetPos, z
 \end{lstlisting}
 
 When you are moving objects with the Move/MoveWorld functions described
@@ -1453,7 +1453,7 @@ position is 511:
 GetAngle , axis(x/y/z) (returns float)
 
 \begin{lstlisting}
-	If ( Object\_Id-> GetAngle, z == 180 )
+	If ( Object_Id-> GetAngle, z == 180 )
 \end{lstlisting}
 
 The GetAngle function returns the world angle, not the local angle.
@@ -1471,7 +1471,7 @@ y always return 0.
 GetLOS, ObjectID (returns Boolean/short)
 
 \begin{lstlisting}
-	Actor\_ID-> GetLOS, Player
+	Actor_ID-> GetLOS, Player
 \end{lstlisting}
 
 Undocumented:
@@ -1630,9 +1630,9 @@ GetStandingActor (returns Boolean/short)
 returns 1 if ANY Actor (including PC) is standing on it.
 
 \begin{lstlisting}
-	If ( Object\_Id-> GetStandingPC == 1)
+	If ( Object_Id-> GetStandingPC == 1)
 	
-	{[}\ldots{} trigger horrible trap{]}
+	[... trigger horrible trap]
 	
 	endif
 \end{lstlisting}
@@ -1662,11 +1662,11 @@ HurtStandingActor, float\_HP/s
 \begin{lstlisting}
 	HurtStandingActor -3
 	
-	Object\_ID-> HurtStandingActor 1
+	Object_ID-> HurtStandingActor 1
 	
-	Float hurt\_variable
+	Float hurt_variable
 	
-	HurtStandingActor, hurt\_variable
+	HurtStandingActor, hurt_variable
 \end{lstlisting}
 
 This function affects the health of an Actor (including the PC) that
@@ -1700,7 +1700,7 @@ HurtCollidingActor, damage\_enum
 \begin{lstlisting}
 	HurtCollidingActor, 100
 	
-	Object\_ID-> HurtCollidingActor, 100
+	Object_ID-> HurtCollidingActor, 100
 \end{lstlisting}
 
 These functions go on an object to allow it to interact with Actors
@@ -1831,7 +1831,7 @@ Lock, short\_enum\_locklevel
 Unlock
 
 \begin{lstlisting}
-	My\_Door-> Lock, 50
+	My_Door-> Lock, 50
 \end{lstlisting}
 
 GetLocked (returns Boolean/short)
@@ -2062,6 +2062,8 @@ GetDisabled and Return to safely delete the object:
 
 Another solution was proposed by Soralis, using a local variable
 "deletobj" as a flag:
+
+% Put in listlistings?
 
 if ( deleteobj = 1 ) ;Local variable, set when you want to delete
 
@@ -2776,6 +2778,8 @@ value. If this gets negative, the mercenary can be scripted to quit.
 Calvus leaves a contract, either because the contract expires, or
 because the player has taken Calvus' stuff. The sharing is initiated
 from dialogue (setting companion to 1), not in the script itself
+
+% Put in listlistings?
 
 if ( GetJournalIndex Merc\_Calvus\_Quit < 1 ) ;if Calvus has
 already quit, don't do this
