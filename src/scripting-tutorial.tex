@@ -104,7 +104,7 @@ Every script that is attached to an Object or an NPC (local script) is executed 
 \begin{lstlisting}
 while (Object is in active Cell)
 
-{[}Your script code{]}
+[Your script code]
 
 endwhile
 \end{lstlisting}
@@ -141,6 +141,7 @@ Now our script is already capable of being run, so lets test it:
 \item
   \textbf{Now bring down the console (usually the \textasciitilde{} key,
   or whatever you have to the left of the "1" on the main keyboard) and
+  % Note.
   in the console window, type:}\\
   PlaceAtPC tutorial\_chest 1,1,1\\
   \textbf{and hit return.}
@@ -285,7 +286,7 @@ This bit:
 % Excerpt from external script. [firstline=, lastline=]
 
 \begin{lstlisting}
-	Player-> RemoveSpell, "Frost\_Curse"
+	Player-> RemoveSpell, "Frost_Curse"
 	
 	set controlvar to -2
 \end{lstlisting}
