@@ -3,10 +3,10 @@
 # For a project mostly in C, the following would be a good set of
 # exclude patterns (uncomment them if you want to use them):
 *.aux
-MSFD9.fdb_latexmk
-MSFD9.fls
-MSFD9.log
+MSFD.fdb_latexmk
+MSFD.fls
+MSFD.log
 *.pdf
-MSFD9.synctex.gz
-MSFD9.synctex(busy)
-MSFD9.toc
+MSFD.synctex.gz
+MSFD.synctex(busy)
+MSFD.toc
