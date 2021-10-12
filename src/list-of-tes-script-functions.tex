@@ -28,6 +28,7 @@ although the game strictly speaking still uses a float)
 
 Examples of usage follow in italics and are indented:
 
+% \emph{ here
 \begin{lstlisting}
 	\emph{Code "ID", var_enum, var_float}
 \end{lstlisting}
@@ -419,12 +420,13 @@ player is equipping the calling object. It will remain "true" while the
 item is still equipped, but gets reset to 0 if the item is unequipped.
 So, in some cases you might want to manually reset it:
 
+% \textbf{ here
 \begin{lstlisting}
-	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	if ( OnPCEquip == 1 ) ; when the item is equipped
 	
-	[}o something]
+	[do something]
 	
-	set \textbf{OnPCEquip} to 0 ; do this once per equip event...
+	set OnPCEquip to 0 ; do this once per equip event...
 	
 	endif
 \end{lstlisting}
@@ -434,10 +436,11 @@ in {[}do something{]} will be performed again. You can also use a status
 variable to control when an effect will be executed. Note that this can
 also be processed while in Menu mode:
 
+% \textbf{ here
 \begin{lstlisting}
 	If ( MenuMode == 1 )
 	
-	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	if ( OnPCEquip == 1 ) ; when the item is equipped
 	
 	[do something]
 	
@@ -452,6 +455,7 @@ This script will execute while you are in the menu, as soon as the item
 is equipped, while the following will be executed only after you leave
 the menu:
 
+% \textbf{ here
 \begin{lstlisting}
 	If ( MenuMode == 1 )
 	
@@ -459,11 +463,11 @@ the menu:
 	
 	Endif
 	
-	if ( \textbf{OnPCEquip} == 1 ) ; when the item is equipped
+	if ( OnPCEquip == 1 ) ; when the item is equipped
 	
 	[do something]
 	
-	set \textbf{OnPCEquip} to 0 ; do this once per equip event...
+	set OnPCEquip to 0 ; do this once per equip event...
 	
 	endif
 \end{lstlisting}
@@ -1036,13 +1040,14 @@ places depending on the player's distance at the time. This allows the
 script to make it appear as though there is a large number of opponents
 that just keep coming, among other things.
 
+% \textbf{ here
 \begin{lstlisting}
 	;THIS POPS IN A HUNTER AT APPROPRIATE SPOT, INCREMENTS HUNTERCOUNT, AND
 	RESETS TIMER
 	
 	if ( popA == 1 )
 	
-	"active_BM_hunter1"->\textbf{PlaceAtMe} skaal_hunter 1 1
+	"active_BM_hunter1"-> PlaceAtMe skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1051,7 +1056,7 @@ that just keep coming, among other things.
 	
 	elseif ( popB == 1 )
 	
-	"active_BM_hunter2"->\textbf{PlaceAtMe} skaal_hunter 1 1
+	"active_BM_hunter2"-> PlaceAtMe skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1060,7 +1065,7 @@ that just keep coming, among other things.
 	
 	elseif ( popC == 1 )
 	
-	"active_BM_hunter3"->\textbf{PlaceAtMe} skaal_hunter 1 1
+	"active_BM_hunter3"-> PlaceAtMe skaal_hunter 1 1
 	1
 	
 	set huntercount to ( huntercount + 1 )
@@ -1379,6 +1384,7 @@ whereabouts for use in a script.
 
 Here is a snippet from an original Morrowind script:
 
+% \textbf{ here
 \begin{lstlisting}
 	; From a script attached to an NPC Ashamanu:
 	
@@ -1386,9 +1392,9 @@ Here is a snippet from an original Morrowind script:
 	
 	if ( GetDisabled != 1 )
 	
-	if ( \textbf{GetDistance} Player <= 256 )
+	if ( GetDistance Player <= 256 )
 	
-	if ( \textbf{GetDistance} "guar_white_unique" <= 256 )
+	if ( GetDistance "guar_white_unique" <= 256 )
 	
 	if ( GetJournalIndex "MS_WhiteGuar" <= 50 )
 	
@@ -1498,6 +1504,7 @@ it every frame.
 
 getLOS and getLineOfSight suffer from the same problem with generic NPCs
 as getDetected (see below)\\
+% link?
 \protect\hypertarget{_Toc182634542}{}{}\emph{\textbf{Determine whether
 an Actor is detected by another Actor}}
 
@@ -6721,8 +6728,7 @@ on the world map:
 Also see "FillMap" console command.
 
 \hypertarget{assigning-random-values-to-variables}{%
-\subsection{Assigning random values to
-variables}\label{assigning-random-values-to-variables}}
+\subsection{Assigning random values to variables}\label{assigning-random-values-to-variables}}
 
 {[}no fix{]} Random, value\_enum
 

@@ -376,28 +376,29 @@ count.
 An example by BungaDunga shows that when doing math with floats, the
 answer isn't always what you expect:
 
+% \textbf{ here
 \begin{lstlisting}
-	\textbf{Float num1}
+	Float num1
 	
-	\textbf{Float num2}
+	Float num2
 	
-	\textbf{Float num3}
+	Float num3
 	
-	\textbf{Set num1 to ( 1 / 3 )}
+	Set num1 to ( 1 / 3 )
 	
-	\textbf{;num1 is now 0.3333333}
+	;num1 is now 0.3333333
 	
-	\textbf{Set num2 to 3}
+	Set num2 to 3
 	
-	\textbf{;num2 is now 3\\
-		\strut \\
+	;num2 is now 3
+		
 		set num3 to num1 * num2}
 	
-	\textbf{;num3 is now 0.9999999, rather than what you would expect, 1.\\
-		\strut \\
-		if ( num3 == 1 )\\
-		; Never happens.\\
-		endif}
+	;num3 is now 0.9999999, rather than what you would expect, 1.
+		
+		if ( num3 == 1 )
+		; Never happens.
+		endif
 \end{lstlisting}
 
 A lot of functions return float values (e.g. GetDistance, GetScale,
@@ -723,12 +724,13 @@ condition is true.
 
 Thus:
 
+% \textbf{ here
 \begin{lstlisting}
-	\textbf{If} ( GetAIPackageDone )
+	If ( GetAIPackageDone )
 	
-	;{[}do something here{]}
+	;[do something here]
 	
-	\textbf{endif}
+	endif
 \end{lstlisting}
 
 will be only executed when the GetAIPackageDone function currently
@@ -739,12 +741,13 @@ test of conditions. The conditions, such as "A equals B" or "A is
 greater than B" will be evaluated, and the whole expression will be true
 (equals 1) when the condition is fulfilled. E.g.:
 
+% \textbf{ here
 \begin{lstlisting}
-	\textbf{if} ( GetAIPackageDone == 1 )
+	if ( GetAIPackageDone == 1 )
 	
-	;{[}do something here{]}
+	;[do something here]
 	
-	\textbf{endif}
+	endif
 \end{lstlisting}
 
 Is equivalent to the example above. This second syntax tests a condition
@@ -772,13 +775,13 @@ separately. If, e.g. the following if blocks are in your script:
 \begin{lstlisting}
 	if ( timer >= 2 )
 	
-	;{[}Block A,do something here{]}
+	;[Block A,do something here]
 	
 	endif
 	
 	if ( timer <= 3 )
 	
-	;{[}Block B, do something else here{]}
+	;[Block B, do something else here]
 	
 	endif
 \end{lstlisting}
@@ -794,7 +797,7 @@ fulfilled simultaneously:
 	
 	if ( controlvar == 0
 	
-	;{[}do something here{]}
+	;[do something here]
 	
 	endif
 	
@@ -812,11 +815,11 @@ tests for a separate condition if the preceding condition has failed
 \begin{lstlisting}
 	if ( timer >= 2 )
 	
-	;{[}Block A,do something here{]}
+	;[Block A,do something here]
 	
 	elseif ( timer <= 3 )
 	
-	; {[}Block B, do something else here{]}
+	; [Block B, do something else here]
 	
 	endif
 \end{lstlisting}
@@ -831,15 +834,15 @@ other:
 \begin{lstlisting}
 	if ( counter == 1 )
 	
-	;{[}Block A,do something here{]}
+	;[Block A,do something here]
 	
 	elseif ( counter == 2 )
 	
-	; {[}Block B, do something else here{]}
+	; [Block B, do something else here]
 	
 	elseif ( counter == 3 )
 	
-	; {[}Block C, do something else here{]}
+	; [Block C, do something else here]
 	
 	endif
 \end{lstlisting}
@@ -847,20 +850,21 @@ other:
 An else creates a "default condition". The code following else will be
 executed if all previously tested conditions are false:
 
+% \textbf{ here
 \begin{lstlisting}
-	\textbf{If} ( foo_var == 1 )
+	If ( foo_var == 1 )
 	
 	[Block A: do something]
 	
-	\textbf{elseif} ( foo_var == 2 )
+	elseif ( foo_var == 2 )
 	
 	[Block B: do something else]
 	
-	\textbf{else}
+	else
 	
 	[Block C: do something completely different]
 	
-	\textbf{endif}
+	endif
 \end{lstlisting}
 
 In this example Block C will be executed it foo\_var is neither 1 nor 2.
@@ -899,17 +903,18 @@ The while command differs from the if command in that it is repeated
 within one frame until the condition is fulfilled. This is best
 explained with an example:
 
+% \textbf{ here
 \begin{lstlisting}
 	Short desiredAmnt
 	
 	SetStrength 0
 	
-	\textbf{while}( GetStrength < desiredAmnt ) ; non-literal
+	while ( GetStrength < desiredAmnt ) ; non-literal
 	value to match
 	
 	modStrength 1
 	
-	\textbf{endwhile}
+	endwhile
 \end{lstlisting}
 
 This will set strength to the value in variable desiredAmnt after one
@@ -941,10 +946,11 @@ using if\ldots{} elseif structures.
 
 Instead of AND:
 
+% \textbf{ here
 \begin{lstlisting}
-	if ( variable1 AND variable2 ); does \textbf{not} exist
+	if ( variable1 AND variable2 ); does not exist
 	
-	{[}do something{]}
+	[do something]
 	
 	endif
 \end{lstlisting}
@@ -956,7 +962,7 @@ you have to use:
 	
 	If ( variable2 )
 	
-	{[}do something{]}
+	[do something]
 	
 	endif
 	
@@ -968,7 +974,7 @@ For OR constructs:
 \begin{lstlisting}	
 	if ( variable1 OR variable2 )
 	
-	{[}do this{]}
+	[do this]
 	
 	endif
 \end{lstlisting}
@@ -978,11 +984,11 @@ you can use elseif constructions:
 \begin{lstlisting}	
 	If ( variable1 )
 	
-	{[}do this{]}
+	[do this]
 	
 	elseif ( variable2 )
 	
-	{[}do this{]}
+	[do this]
 	
 	endif
 \end{lstlisting}
