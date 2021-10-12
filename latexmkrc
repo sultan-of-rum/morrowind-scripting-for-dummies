@@ -1,4 +1,4 @@
-@default_files = ("MSFD9.tex"); # compile only MSFD9.tex
+@default_files = ("MSFD.tex"); # compile only MSFD.tex
 $recorder = 1;
 $pdf_mode = 1; # tex -> PDF
 $bibtex_use = 2;
