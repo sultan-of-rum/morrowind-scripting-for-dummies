@@ -30,7 +30,7 @@ Examples of usage follow in italics and are indented:
 
 % \emph{ here
 \begin{lstlisting}
-	\emph{Code "ID", var_enum, var_float}
+	Code "ID", var_enum, var_float
 \end{lstlisting}
 	
 Example scripts are set in frames:
@@ -38,7 +38,7 @@ Example scripts are set in frames:
 \begin{lstlisting}	
 	Begin script
 	
-	{[}Script functions{]}
+	[Script functions]
 	
 	End script
 \end{lstlisting}
@@ -294,8 +294,9 @@ Must be reset manually for multiple use (set OnPCAdd to 0 ).
 \textbf{Example:} This is an excerpt from the script attached to
 Fargoth's ring, that gives you the magic menu during character creation:
 
+% \textbf{ here
 \begin{lstlisting}
-	if ( \textbf{OnPCAdd} == 1 ); Player has added the item to the inventory
+	if ( OnPCAdd == 1 ); Player has added the item to the inventory
 	
 	if ( State == 0 )
 	
@@ -475,8 +476,9 @@ the menu:
 An additional \textbf{Sample Script} can be found above with the Equip
 function.
 
-\textbf{Notes:} OnPCEquip was successfully tested with the following
-item types:
+\textbf{Notes:} OnPCEquip was successfully tested with the following item types:
+
+% Itemize?
 
 Clothing
 
@@ -1166,7 +1168,7 @@ angle:
 	RotateWorld, axis, angle/sec\_enum
 
 \begin{lstlisting}	
-	Rotate, z, -30; rotate counterclockwise, 30\textdegree per second, around objects
+	Rotate, z, -30; rotate counterclockwise, 30 per second, around objects
 	z axis
 	
 	Object_ID-> Rotate, Y, 100
