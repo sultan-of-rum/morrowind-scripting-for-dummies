@@ -3,11 +3,17 @@
 \section{\texorpdfstring{\hfill\break
 Index}{ Index}}\label{index}}
 
-""Equal to", 32"Greater than or equal to", 32"Greater than", 32"Smaller
-than or equal to", 32"Smaller than", 32"Unequal to", 32{[}{[}no fix{]},
-35\^{}\^{}Cell, 105\^{}Class, 106\^{}Faction, 106\^{}Gamehour,
+""Equal to", 32
+"Greater than or equal to", 32
+"Greater than", 32
+"Smaller than or equal to", 32
+"Smaller than", 32
+"Unequal to", 32
+
+{[}{[}no fix{]},35\^{}\^{}Cell, 105\^{}Class, 106\^{}Faction, 106\^{}Gamehour,
 106\^{}Global, 106\^{}Name, 106\^{}NextPCRank, 105\^{}PCClass,
 105\^{}PCName, 105\^{}PCRace, 105\^{}PCRank, 105\^{}Race, 106\^{}Rank,
+
 106AActivate, 66AddItem, 36Addition, 30AddSoulGem, 132AddSpell,
 133AddToLevCreature, 156AddToLevItem, 156AddTopic, 106AiActivate,
 79AIEscort, 81AIEscortCell, 81AiFollow, 80AiFollowCell, 80AiTravel,
@@ -36,7 +42,9 @@ commands, 216cosine, 189CreateMaps, 216CrimeGoldDiscount,
 205FFace, 77FadeIn, 154FadeOut, 154FadeTo, 154Fall, 88FixMe, 216Float,
 27ForceGreeting, 107ForceJump, 85ForceMoveJump, 85ForceRun,
 85ForceSneak, 83Friend Hit (dialogue), 112\textbf{Functions}, 15Ggame
-settings, 219GameHour, 144\emph{Get/Mod/Set}Acrobatics,
+settings, 219GameHour, 
+
+144\emph{Get/Mod/Set}Acrobatics,
 115\emph{Get/Mod/Set}Agility, 114\emph{Get/Mod/Set}Alarm,
 123\emph{Get/Mod/Set}Alchemy, 115\emph{Get/Mod/Set}Alteration,
 115\emph{Get/Mod/Set}ArmorBonus, 139\emph{Get/Mod/Set}Armorer,
@@ -72,6 +80,7 @@ settings, 219GameHour, 144\emph{Get/Mod/Set}Acrobatics,
 114\emph{Get/Mod/Set}SuperJump, 139\emph{Get/Mod/Set}SwimSpeed,
 139\emph{Get/Mod/Set}Unarmored, 115\emph{Get/Mod/Set}WaterBreathing,
 138\emph{Get/Mod/Set}WaterWalking, 139\emph{Get/Mod/Set}Willpower,
+
 114GetAIPackageDone, 75GetAngle, 60GetArmorType, 43GetAttacked,
 121GetBlightDisease, 137GetButtonPressed, 105GetCollidingActor,
 65GetCollidingPC, 65GetCommonDisease, 137GetCurrentAIPackage,
