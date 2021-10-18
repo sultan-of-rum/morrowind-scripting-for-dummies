@@ -32,6 +32,8 @@
 	breaklines=true, % wrap lines if they don't fit
 	frame=trbl, % draw a frame at the top, right, left and bottom of the listing
 }
+\usepackage{makeidx}
+\makeindex
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -129,7 +131,7 @@
 
 \vspace{5mm}
 
-\includegraphics{media/image1.jpg}
+\includegraphics{media/image1.png}
 
 \clearpage
 
@@ -148,10 +150,9 @@ The primary focus for this project is to incorporate corrections and updates by 
 \subsubsection{\texorpdfstring{\hfill\break
 Foreword to the ninth edition}{Foreword to the ninth edition}}\label{foreword-to-the-ninth-edition}}
 
-Another update, this time by more than one person, now you can get really confused when it mentions that ``I'' did something or found something *grins*. Although this update was intended as a bugfix, a huge amount of new information has been added - since much of it concerns the bugs and pitfalls of the scripting language that have been discovered since version 8, you will find changes and additions scattered throughout.
+Another update, this time by more than one person, now you can get really confused when it mentions that  "I" did something or found something *grins*. Although this update was intended as a bugfix, a huge amount of new information has been added - since much of it concerns the bugs and pitfalls of the scripting language that have been discovered since version 8, you will find changes and additions scattered throughout.
 
-I have also added a couple more functions that were missing from the last version, and there is a small section on script extenders to give a brief overview of what can be done with each which should hopefully prove informative to anyone wanting to know more about what they do. Galsiah provided a large section on the failings of get/mod/set stat; there is a lot more info on dialog and how it works, which should be very useful; a short explanation of float values and how they work has
-been added; some sections have been rearranged for clarity; and I \emph{think} I've removed all the en dashes and typographer's quotes from code blocks, so it should be safe to copy-paste most of the example scripts now.
+I have also added a couple more functions that were missing from the last version, and there is a small section on script extenders to give a brief overview of what can be done with each which should hopefully prove informative to anyone wanting to know more about what they do. Galsiah provided a large section on the failings of get/mod/set stat; there is a lot more info on dialog and how it works, which should be very useful; a short explanation of float values and how they work has been added; some sections have been rearranged for clarity; and I \emph{think} I've removed all the en dashes and typographer's quotes from code blocks, so it should be safe to copy-paste most of the example scripts now.
 
 Special thanks go to GhanBuriGhan, who gave me permission to update his indispensable guide. Also thanks to Dave Humphrey for his permission to use the information on UESP wiki, and everyone who contributed to that wiki. I would like to thank exclusiveor77, DinkumThinkum, Björn, abot, Galsiah, Casey Tucker, cyran0 and JOG for the huge amount of information they gave me on the forums.
 
@@ -173,8 +174,7 @@ GhanBuriGhan
 
 Disclaimer \& Copyright Statement: The Elder Scrolls, Morrowind, Daggerfall, Arena, Tribunal, Bloodmoon the TES Construction Set etc. are property of Bethesda Softworks, a ZeniMax Media company. The authors and editors of this manual make no claims to these names and trademarks. In all other respects I (GhanBuriGhan) maintain the copyright for this document. This guide is fully unofficial and in no way am I, any other authors or editors, or Bethesda responsible for any damages or loss of data, patience, hair, or sanity inflicted through the use of this manual. You can freely distribute this document as long as you keep it intact and unmodified.
 
-\emph{\textbf{If you find older versions of this document on the web for
-download, please inform the webmaster about the new version.}}
+\emph{\textbf{If you find older versions of this document on the web for download, please inform the webmaster about the new version.}}
 
 % Chapter sectioning
 %\protect\hypertarget{_Toc53412549}{}{}
@@ -186,8 +186,7 @@ download, please inform the webmaster about the new version.}}
 
 If you are new to scripting, you should probably start by reading this introduction and especially do the tutorial. It is my best attempt at explaining scripts, what they do, and how to program one, in simple terms.
 
-Secondly this is a manual, a reference, a handbook. The bulk of this document is a documentation of the available functions. This part is not written for the beginner, you are expected to know the basics of scripting already. I have however tried to provide a lot more info, explanations and sample scripts than the original helpfile, to make it easier to use these functions correctly in your scripts. Use the index at the end of the document to find info on a specific function, or the table of contents to find functions related to a general area of
-interest. If you run into errors, the Troubleshooting section may help you a bit. In the Appendix you find lists that may also come in handy as a reference.
+Secondly this is a manual, a reference, a handbook. The bulk of this document is a documentation of the available functions. This part is not written for the beginner, you are expected to know the basics of scripting already. I have however tried to provide a lot more info, explanations and sample scripts than the original helpfile, to make it easier to use these functions correctly in your scripts. Use the index at the end of the document to find info on a specific function, or the table of contents to find functions related to a general area of interest. If you run into errors, the Troubleshooting section may help you a bit. In the Appendix you find lists that may also come in handy as a reference.
 
 Thirdly, as an advanced scripter you may find the Tips and Tricks section interesting that covers both basic advice and advanced scripting techniques.
 
@@ -228,5 +227,6 @@ The TES script language is limited in its capabilities -- there are only so many
 \include{src/tips-and-tricks.tex}
 \include{src/troubleshooting.tex}
 \include{src/appendix.tex}
+\printindex
 
 \end{document}
