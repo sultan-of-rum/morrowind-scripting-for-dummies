@@ -1,548 +1,550 @@
+# \index{}
+
 "
 
-"Equal to", 32
-"Greater than or equal to", 32
-"Greater than", 32
-"Smaller than or equal to", 32
-"Smaller than", 32
-"Unequal to", 32
+"Equal to"} 32
+"Greater than or equal to"} 32
+"Greater than"} 32
+"Smaller than or equal to"} 32
+"Smaller than"} 32
+"Unequal to"} 32
 
 [
 
-[no fix], 35
+[no fix]} 35
 
 ^
 
-^Cell, 105
-^Class, 106
-^Faction, 106
-^Gamehour,106
-^Global, 106
-^Name, 106
-^NextPCRank, 105
-^PCClass,105
-^PCName, 105
-^PCRace, 105
-^PCRank, 105
-^Race, 106
-^Rank, 106
+^Cell} 105
+^Class} 106
+^Faction} 106
+^Gamehour}106
+^Global} 106
+^Name} 106
+^NextPCRank} 105
+^PCClass}105
+^PCName} 105
+^PCRace} 105
+^PCRank} 105
+^Race} 106
+^Rank} 106
 
 A
 
-Activate, 66
-AddItem, 36
-Addition, 30
-AddSoulGem, 132
-AddSpell, 133
-AddToLevCreature, 156
-AddToLevItem, 156
-AddTopic, 106
-AiActivate, 79
-AIEscort, 81
-AIEscortCell, 81
-AiFollow, 80
-AiFollowCell, 80
-AiTravel, 75
-AiWander, 77
-AllowWereWolfForceGreeting, 109, 209
-AND, 34
+\index{Activate} 66
+\index{AddItem} 36
+\index{Addition} 30
+\index{AddSoulGem} 132
+\index{AddSpell} 133
+\index{AddToLevCreature} 156
+\index{AddToLevItem} 156
+\index{AddTopic} 106
+\index{AiActivate} 79
+\index{AIEscort} 81
+\index{AIEscortCell} 81
+\index{AiFollow} 80
+\index{AiFollowCell} 80
+\index{AiTravel} 75
+\index{AiWander} 77
+\index{AllowWereWolfForceGreeting} 109} 209
+\index{AND} 34
 
 B
 
-BecomeWerewolf, 95
-Bloodmoon Script Functions, 209
-Boolean operators, 34
+\index{BecomeWerewolf} 95
+\index{Bloodmoon Script Functions} 209
+\index{Boolean operators} 34
 
 C
 
-Cast, 134
-CellChanged, 62
-CellUpdate, 48
-CenterOnCell, 216
-CenterOnExterior, 216
-ChangeWeather, 146
-character creation, 150
-Choice, 109
-Cleaning, 163
-ClearForceJump, 85
-ClearForceMoveJump, 85
-ClearForceRun, 85
-ClearForceSneak, 83
-ClearInfoActor, 110
-coc, 216
-coe, 216
-Commands, 15
-Comments, 26
-companion, 88
-Console, 204
-console commands, 216
-cosine, 189
-CreateMaps, 216
-CrimeGoldDiscount, 128
-CrimeGoldTurnIn, 128
-ctrl-c, 14
-ctrl-v, 14
-ctrl-x, 14
+\index{Cast} 134
+\index{CellChanged} 62
+\index{CellUpdate} 48
+\index{CenterOnCell} 216
+\index{CenterOnExterior} 216
+\index{ChangeWeather} 146
+\index{character creation} 150
+\index{Choice} 109
+\index{Cleaning} 163
+\index{ClearForceJump} 85
+\index{ClearForceMoveJump} 85
+\index{ClearForceRun} 85
+\index{ClearForceSneak} 83
+\index{ClearInfoActor} 110
+\index{coc} 216
+\index{coe} 216
+\index{Commands} 15
+\index{Comments} 26
+\index{companion} 88
+\index{Console} 204
+\index{console commands} 216
+\index{cosine} 189
+\index{CreateMaps} 216
+\index{CrimeGoldDiscount} 128
+\index{CrimeGoldTurnIn} 128
+\index{ctrl-c} 14
+\index{ctrl-v} 14
+\index{ctrl-x} 14
 
 D
 
-Day, 144
-DaysPassed, 144
-Disable, 71
-DisableLevitation, 130
-DisablePlayerControls, 149
-DisablePlayerFighting, 149
-DisablePlayerJumping, 149
-DisablePlayerLooking, 149
-DisablePlayerMagic, 149
-DisablePlayerViewSwitch, 149
-DisableTeleporting, 129
-DisableVanityMode, 149
-Division, 30
-DontSaveObject, 74
-Drop, 38
-DropSoulgem, 132
+\index{Day} 144
+\index{DaysPassed} 144
+\index{Disable} 71
+\index{DisableLevitation} 130
+\index{DisablePlayerControls} 149
+\index{DisablePlayerFighting} 149
+\index{DisablePlayerJumping} 149
+\index{DisablePlayerLooking} 149
+\index{DisablePlayerMagic} 149
+\index{DisablePlayerViewSwitch} 149
+\index{DisableTeleporting} 129
+\index{DisableVanityMode} 149
+\index{Division} 30
+\index{DontSaveObject} 74
+\index{Drop} 38
+\index{DropSoulgem} 132
 
 E
 
-Else, 31
-Elseif, 31
-Enable, 71
-EnableBirthMenu, 150
-EnableClassMenu, 150
-EnableInventoryMenu, 150
-EnableLevelUpMenu, 149
-EnableLevitation, 130
-EnableMagicMenu, 150
-EnableMapMenu, 150
-EnableNameMenu, 150
-EnablePlayerControls, 150
-EnablePlayerFighting, 150
-EnablePlayerJumping, 150
-EnablePlayerLooking, 150
-EnablePlayerMagic, 150
-EnablePlayerViewSwitch, 150
-EnableRaceMenu, 150
-EnableRest, 150
-EnableStatsMenu, 150
-EnableTeleporting, 129
-EnableVanityMode, 150
-Endif, 31
-EndWhile, 33
-Equip, 40
-Error messages, 205
-ExplodeSpell, 138
-EXPRESSION, 205
+\index{Else} 31
+\index{Elseif} 31
+\index{Enable} 71
+\index{EnableBirthMenu} 150
+\index{EnableClassMenu} 150
+\index{EnableInventoryMenu} 150
+\index{EnableLevelUpMenu} 149
+\index{EnableLevitation} 130
+\index{EnableMagicMenu} 150
+\index{EnableMapMenu} 150
+\index{EnableNameMenu} 150
+\index{EnablePlayerControls} 150
+\index{EnablePlayerFighting} 150
+\index{EnablePlayerJumping} 150
+\index{EnablePlayerLooking} 150
+\index{EnablePlayerMagic} 150
+\index{EnablePlayerViewSwitch} 150
+\index{EnableRaceMenu} 150
+\index{EnableRest} 150
+\index{EnableStatsMenu} 150
+\index{EnableTeleporting} 129
+\index{EnableVanityMode} 150
+\index{Endif} 31
+\index{EndWhile} 33
+\index{Equip} 40
+\index{Error messages} 205
+\index{ExplodeSpell} 138
+\index{EXPRESSION} 205
 
 F
 
-Face, 77
-FadeIn, 154
-FadeOut, 154
-FadeTo, 154
-Fall, 88
-FixMe, 216
-Float, 27
-ForceGreeting, 107
-ForceJump, 85
-ForceMoveJump, 85
-ForceRun, 85
-ForceSneak, 83
-Friend Hit (dialogue), 112
-Functions, 15
+\index{Face} 77
+\index{FadeIn} 154
+\index{FadeOut} 154
+\index{FadeTo} 154
+\index{Fall} 88
+\index{FixMe} 216
+\index{Float} 27
+\index{ForceGreeting} 107
+\index{ForceJump} 85
+\index{ForceMoveJump} 85
+\index{ForceRun} 85
+\index{ForceSneak} 83
+\index{Friend Hit (dialogue)} 112
+\index{Functions} 15
 
 G
 
-game settings, 219
-GameHour, 144
-Get/Mod/SetAcrobatics, 115
-Get/Mod/SetAgility, 114
-Get/Mod/SetAlarm, 123
-Get/Mod/SetAlchemy, 115
-Get/Mod/SetAlteration, 115
-Get/Mod/SetArmorBonus, 139
-Get/Mod/SetArmorer, 115
-Get/Mod/SetAthletics, 115
-Get/Mod/SetAttackBonus, 139
-Get/Mod/SetAxe, 115
-Get/Mod/SetBlindness, 139
-Get/Mod/SetBlock, 115
-Get/Mod/SetBluntWeapon, 115
-Get/Mod/SetCastPenalty, 139
-Get/Mod/SetConjuration, 115
-Get/Mod/SetDefendBonus, 139
-Get/Mod/SetDestruction, 115
-Get/Mod/SetDisposition, 93
-Get/Mod/SetEnchant, 115
-Get/Mod/SetEndurance, 114
-Get/Mod/SetFatigue, 114
-Get/Mod/SetFight, 122
-Get/Mod/SetFlee, 122
-Get/Mod/SetFlying, 139
-Get/Mod/SetHandToHand, 115
-Get/Mod/SetHealth, 114
-Get/Mod/SetHeavyArmor, 115
-Get/Mod/SetHello, 112
-Get/Mod/SetIllusion, 115
-Get/Mod/SetIntelligence, 114
-Get/Mod/SetInvisibile, 139
-Get/Mod/SetInvisible, 139
-Get/Mod/SetLevel, 115
-Get/Mod/SetLightArmor, 115
-Get/Mod/SetLongBlade, 115
-Get/Mod/SetLuck, 114
-Get/Mod/SetMagicka, 114
-Get/Mod/SetMarksman, 115
-Get/Mod/SetMediumArmor, 115
-Get/Mod/SetMercantile, 115
-Get/Mod/SetMysticism, 115
-Get/Mod/SetPCCrimeLevel, 126
-Get/Mod/SetPersonality, 114
-Get/Mod/SetReputation, 93
-Get/Mod/SetResistBlight, 138
-Get/Mod/SetResistCorprus, 138
-Get/Mod/SetResistDisease, 138
-Get/Mod/SetResistFire, 138
-Get/Mod/SetResistFrost, 138
-Get/Mod/SetResistMagicka, 138
-Get/Mod/SetResistNormalWeapons, 138
-Get/Mod/SetResistParalysis, 138
-Get/Mod/SetResistPoison, 138
-Get/Mod/SetResistShock, 138
-Get/Mod/SetRestoration, 115
-Get/Mod/SetSecurity, 115
-Get/Mod/SetShortBlade, 115
-Get/Mod/SetSilence, 139
-Get/Mod/SetSneak, 115
-Get/Mod/SetSpear, 115
-Get/Mod/SetSpeechcraft, 115
-Get/Mod/SetSpeed, 114
-Get/Mod/SetStrength, 114
-Get/Mod/SetSuperJump, 139
-Get/Mod/SetSwimSpeed, 139
-Get/Mod/SetUnarmored, 115
-Get/Mod/SetWaterBreathing, 138
-Get/Mod/SetWaterWalking, 139
-Get/Mod/SetWillpower, 114
-GetAIPackageDone, 75
-GetAngle, 60
-GetArmorType, 43
-GetAttacked, 121
-GetBlightDisease, 137
-GetButtonPressed, 105
-GetCollidingActor, 65
-GetCollidingPC, 65
-GetCommonDisease, 137
-GetCurrentAIPackage, 81
-GetCurrentTime, 143
-GetCurrentWeather, 147
-GetDeadCount, 124
-GetDetected, 62
-GetDisabled, 71
-GetDistance, 59
-GetEffect, 136
-GetFactionReaction, 216
-GetForceJump, 85
-GetForceMoveJump, 85
-GetForceRun, 85
-GetForceSneak, 83
-GetHealthGetRatio, 114
-GetInterior, 58
-GetItemCount, 43
-GetJournalIndex, 110
-GetLineOfSight, 61
-GetLocked, 69
-GetLOS, 60
-GetMasserPhase, 144
-GetPCCell, 58
-GetPCCrimeLevel, 127
-GetPCFacRep, 91
-GetPCInJail, 127
-GetPCJumping, 86
-GetPCRank, 90
-GetPCRunning, 86
-GetPCSleep, 148
-GetPCSneaking, 86
-GetPCTraveling, 63
-GetPlayerControlsDisabled, 150
-GetPlayerFightingDisabled, 150
-GetPlayerJumpingDisabled, 150
-GetPlayerLookingDisabled, 150
-GetPlayerMagicDisabled, 150
-GetPlayerViewSwitch, 150
-GetPos, 59
-GetRace, 90
-GetScale, 56
-GetSecondsPassed, 143
-GetSecundaPhase, 144
-GetSoundPlaying, 141
-GetSpell, 135
-GetSpellEffects, 135
-GetSpellReadied, 87
-GetSquareRoot, 157
-GetStandingActor, 64
-GetStandingPC, 64
-GetStat, 113
-GetTarget, 121
-GetVanityModeDisabled, 150
-GetWaterLevel, 157
-GetWeaponDrawn, 87
-GetWeaponType, 43
-GetWerewolfKills, 94
-GetWindSpeed, 147
-Global scripts, 23
-global variables, 29
-Goodbye, 108
-GotoJail, 126
+\index{game settings} 219
+\index{GameHour} 144
+\index{Get/Mod/SetAcrobatics} 115
+\index{Get/Mod/SetAgility} 114
+\index{Get/Mod/SetAlarm} 123
+\index{Get/Mod/SetAlchemy} 115
+\index{Get/Mod/SetAlteration} 115
+\index{Get/Mod/SetArmorBonus} 139
+\index{Get/Mod/SetArmorer} 115
+\index{Get/Mod/SetAthletics} 115
+\index{Get/Mod/SetAttackBonus} 139
+\index{Get/Mod/SetAxe} 115
+\index{Get/Mod/SetBlindness} 139
+\index{Get/Mod/SetBlock} 115
+\index{Get/Mod/SetBluntWeapon} 115
+\index{Get/Mod/SetCastPenalty} 139
+\index{Get/Mod/SetConjuration} 115
+\index{Get/Mod/SetDefendBonus} 139
+\index{Get/Mod/SetDestruction} 115
+\index{Get/Mod/SetDisposition} 93
+\index{Get/Mod/SetEnchant} 115
+\index{Get/Mod/SetEndurance} 114
+\index{Get/Mod/SetFatigue} 114
+\index{Get/Mod/SetFight} 122
+\index{Get/Mod/SetFlee} 122
+\index{Get/Mod/SetFlying} 139
+\index{Get/Mod/SetHandToHand} 115
+\index{Get/Mod/SetHealth} 114
+\index{Get/Mod/SetHeavyArmor} 115
+\index{Get/Mod/SetHello} 112
+\index{Get/Mod/SetIllusion} 115
+\index{Get/Mod/SetIntelligence} 114
+\index{Get/Mod/SetInvisibile} 139
+\index{Get/Mod/SetInvisible} 139
+\index{Get/Mod/SetLevel} 115
+\index{Get/Mod/SetLightArmor} 115
+\index{Get/Mod/SetLongBlade} 115
+\index{Get/Mod/SetLuck} 114
+\index{Get/Mod/SetMagicka} 114
+\index{Get/Mod/SetMarksman} 115
+\index{Get/Mod/SetMediumArmor} 115
+\index{Get/Mod/SetMercantile} 115
+\index{Get/Mod/SetMysticism} 115
+\index{Get/Mod/SetPCCrimeLevel} 126
+\index{Get/Mod/SetPersonality} 114
+\index{Get/Mod/SetReputation} 93
+\index{Get/Mod/SetResistBlight} 138
+\index{Get/Mod/SetResistCorprus} 138
+\index{Get/Mod/SetResistDisease} 138
+\index{Get/Mod/SetResistFire} 138
+\index{Get/Mod/SetResistFrost} 138
+\index{Get/Mod/SetResistMagicka} 138
+\index{Get/Mod/SetResistNormalWeapons} 138
+\index{Get/Mod/SetResistParalysis} 138
+\index{Get/Mod/SetResistPoison} 138
+\index{Get/Mod/SetResistShock} 138
+\index{Get/Mod/SetRestoration} 115
+\index{Get/Mod/SetSecurity} 115
+\index{Get/Mod/SetShortBlade} 115
+\index{Get/Mod/SetSilence} 139
+\index{Get/Mod/SetSneak} 115
+\index{Get/Mod/SetSpear} 115
+\index{Get/Mod/SetSpeechcraft} 115
+\index{Get/Mod/SetSpeed} 114
+\index{Get/Mod/SetStrength} 114
+\index{Get/Mod/SetSuperJump} 139
+\index{Get/Mod/SetSwimSpeed} 139
+\index{Get/Mod/SetUnarmored} 115
+\index{Get/Mod/SetWaterBreathing} 138
+\index{Get/Mod/SetWaterWalking} 139
+\index{Get/Mod/SetWillpower} 114
+\index{GetAIPackageDone} 75
+\index{GetAngle} 60
+\index{GetArmorType} 43
+\index{GetAttacked} 121
+\index{GetBlightDisease} 137
+\index{GetButtonPressed} 105
+\index{GetCollidingActor} 65
+\index{GetCollidingPC} 65
+\index{GetCommonDisease} 137
+\index{GetCurrentAIPackage} 81
+\index{GetCurrentTime} 143
+\index{GetCurrentWeather} 147
+\index{GetDeadCount} 124
+\index{GetDetected} 62
+\index{GetDisabled} 71
+\index{GetDistance} 59
+\index{GetEffect} 136
+\index{GetFactionReaction} 216
+\index{GetForceJump} 85
+\index{GetForceMoveJump} 85
+\index{GetForceRun} 85
+\index{GetForceSneak} 83
+\index{GetHealthGetRatio} 114
+\index{GetInterior} 58
+\index{GetItemCount} 43
+\index{GetJournalIndex} 110
+\index{GetLineOfSight} 61
+\index{GetLocked} 69
+\index{GetLOS} 60
+\index{GetMasserPhase} 144
+\index{GetPCCell} 58
+\index{GetPCCrimeLevel} 127
+\index{GetPCFacRep} 91
+\index{GetPCInJail} 127
+\index{GetPCJumping} 86
+\index{GetPCRank} 90
+\index{GetPCRunning} 86
+\index{GetPCSleep} 148
+\index{GetPCSneaking} 86
+\index{GetPCTraveling} 63
+\index{GetPlayerControlsDisabled} 150
+\index{GetPlayerFightingDisabled} 150
+\index{GetPlayerJumpingDisabled} 150
+\index{GetPlayerLookingDisabled} 150
+\index{GetPlayerMagicDisabled} 150
+\index{GetPlayerViewSwitch} 150
+\index{GetPos} 59
+\index{GetRace} 90
+\index{GetScale} 56
+\index{GetSecondsPassed} 143
+\index{GetSecundaPhase} 144
+\index{GetSoundPlaying} 141
+\index{GetSpell} 135
+\index{GetSpellEffects} 135
+\index{GetSpellReadied} 87
+\index{GetSquareRoot} 157
+\index{GetStandingActor} 64
+\index{GetStandingPC} 64
+\index{GetStat} 113
+\index{GetTarget} 121
+\index{GetVanityModeDisabled} 150
+\index{GetWaterLevel} 157
+\index{GetWeaponDrawn} 87
+\index{GetWeaponType} 43
+\index{GetWerewolfKills} 94
+\index{GetWindSpeed} 147
+\index{Global scripts} 23
+\index{global variables} 29
+\index{Goodbye} 108
+\index{GotoJail} 126
 
 H
 
-HasItemEquipped, 45
-HasSoulgem, 131
-Help, 216
-HitAttemptOnMe, 122
-HitOnMe, 122
-HurtCollidingActor, 65
-HurtStandingActor, 65
+\index{HasItemEquipped} 45
+\index{HasSoulgem} 131
+\index{Help} 216
+\index{HitAttemptOnMe} 122
+\index{HitOnMe} 122
+\index{HurtCollidingActor} 65
+\index{HurtStandingActor} 65
 
 I
 
-If, 31
-indentation, 26
-INFIX to POSTFIX, 206
-IsWerewolf, 95
+\index{If} 31
+\index{indentation} 26
+\index{INFIX to POSTFIX} 206
+\index{IsWerewolf} 95
 
 J
 
-Journal, 110
+\index{Journal} 110
 
 L
 
-LeftEval, 206
-Local scripts, 23
-local variables, 28
-Lock, 69
-Long, 27
-LoopGroup, 70
-LowerRank, 91
+\index{LeftEval} 206
+\index{Local scripts} 23
+\index{local variables} 28
+\index{Lock} 69
+\index{Long} 27
+\index{LoopGroup} 70
+\index{LowerRank} 91
 
 M
 
-Mathematical calculations, 30
-maximum health, 114
-MenuMode, 88, 151
-MenuTest, 152
-MessageBox, 103
-minimumprofit, 88
-ModCurrentFatigue, 114
-ModCurrentHealth, 114
-ModCurrentMagicka, 114
-ModFactionReaction, 93
-ModHealth, 113
-ModPCFacRep, 93
-ModRegion, 146
-ModScale, 56
-ModStat, 113
-ModWaterLevel, 157
-Morrowind Enhanced, 161
-Morrowind Graphics Extender, 161
-Morrowind Script Extender, 161
-moto, 216
-Move, 46
-MoveOneToOne, 216
-MoveWorld, 47
-Multiplication, 30
+\index{Mathematical calculations} 30
+\index{maximum health} 114
+\index{MenuMode} 88} 151
+\index{MenuTest} 152
+\index{MessageBox} 103
+\index{minimumprofit} 88
+\index{ModCurrentFatigue} 114
+\index{ModCurrentHealth} 114
+\index{ModCurrentMagicka} 114
+\index{ModFactionReaction} 93
+\index{ModHealth} 113
+\index{ModPCFacRep} 93
+\index{ModRegion} 146
+\index{ModScale} 56
+\index{ModStat} 113
+\index{ModWaterLevel} 157
+\index{Morrowind Enhanced} 161
+\index{Morrowind Graphics Extender} 161
+\index{Morrowind Script Extender} 161
+\index{moto} 216
+\index{Move} 46
+\index{MoveOneToOne} 216
+\index{MoveWorld} 47
+\index{Multiplication} 30
 
 O
 
-Objects, 15
-OnActivate, 66
-OnDeath, 123
-OnKnockout, 124
-OnMurder, 123
-OnPCAdd, 39
-OnPCDrop, 39
-OnPCEquip, 41
-OnPCHitMe, 120, 127
-OnPCRepair, 43
-OnPCSoulGemUse, 39, 132
-OnRepair, 43
-operators, 30
-OR, 34
+\index{Objects} 15
+\index{OnActivate} 66
+\index{OnDeath} 123
+\index{OnKnockout} 124
+\index{OnMurder} 123
+\index{OnPCAdd} 39
+\index{OnPCDrop} 39
+\index{OnPCEquip} 41
+\index{OnPCHitMe} 120} 127
+\index{OnPCRepair} 43
+\index{OnPCSoulGemUse} 39} 132
+\index{OnRepair} 43
+\index{operators} 30
+\index{OR} 34
 
 P
 
-PayFine, 126
-PayFineThief, 126
-PC Clothing Modifier (dialogue), 111
-PC Sex (dialogue), 111
-PCClearExpelled, 92
-PCExpell, 92
-PCExpelled, 91
-PCForce1stPerson, 150
-PCForce3rdPerson, 150
-PCGet3rdPerson, 150
-PCHasGoldDiscount, 128
-PCJoinFaction, 91
-PCLowerRank, 91
-PCRaiseRank, 91
-PCSkipEquip, 42
-PlaceAtMe, 52
-PlaceAtPC, 51
-PlaceItem, 52
-PlaceItemCell, 52
-PlayBink, 155
-PlayGroup, 69
-PlaySound, 141
-PlaySound3D, 141
-PlaySound3DVP, 141
-PlaySoundVP, 141
-Position, 50
-PositionCell, 50
-PT, 216
-Purge textures, 216
+\index{PayFine} 126
+\index{PayFineThief} 126
+\index{PC Clothing Modifier (dialogue)} 111
+\index{PC Sex (dialogue)} 111
+\index{PCClearExpelled} 92
+\index{PCExpell} 92
+\index{PCExpelled} 91
+\index{PCForce1stPerson} 150
+\index{PCForce3rdPerson} 150
+\index{PCGet3rdPerson} 150
+\index{PCHasGoldDiscount} 128
+\index{PCJoinFaction} 91
+\index{PCLowerRank} 91
+\index{PCRaiseRank} 91
+\index{PCSkipEquip} 42
+\index{PlaceAtMe} 52
+\index{PlaceAtPC} 51
+\index{PlaceItem} 52
+\index{PlaceItemCell} 52
+\index{PlayBink} 155
+\index{PlayGroup} 69
+\index{PlaySound} 141
+\index{PlaySound3D} 141
+\index{PlaySound3DVP} 141
+\index{PlaySoundVP} 141
+\index{Position} 50
+\index{PositionCell} 50
+\index{PT} 216
+\index{Purge textures} 216
 
 R
 
-RaiseRank, 91
-Random, 154
-Rank Requirement (dialogue), 111
-References persist, 165
-RemoveEffects, 136
-RemoveFromLevCreature, 156
-RemoveFromLevItem, 156
-RemoveItem, 36
-RemoveSoulgem, 131
-RemoveSpell, 133
-RepairedOnMe, 43
-Resurrect, 125
-Return, 153
-RightEval, 206
-Rotate, 54
-RotateWorld, 54
+\index{RaiseRank} 91
+\index{Random} 154
+\index{Rank Requirement (dialogue)} 111
+\index{References persist} 165
+\index{RemoveEffects} 136
+\index{RemoveFromLevCreature} 156
+\index{RemoveFromLevItem} 156
+\index{RemoveItem} 36
+\index{RemoveSoulgem} 131
+\index{RemoveSpell} 133
+\index{RepairedOnMe} 43
+\index{Resurrect} 125
+\index{Return} 153
+\index{RightEval} 206
+\index{Rotate} 54
+\index{RotateWorld} 54
 
 S
 
-SA, 218
-SameFaction, 91
-Say, 140
-SayDone, 140
-scripting window, 13
-ScriptRunning, 153
-SCT, 216
-Set ... to, 29
-SetAngle, 54
-SetAtStart, 51
-SetDelete, 72
-SetFactionReaction, 93
-SetJournalIndex, 110
-SetPCFacRep, 93
-SetPos, 48
-SetScale, 56
-SetStat, 113
-SetWaterLevel, 157
-SetWerewolfAcrobatics, 94
-SetWillpower, 113
-SG, 218
-Short, 27
-Show, 216
-Show Animation, 218
-Show target group, 218
-ShowGroup, 218
-ShowMap, 154
-ShowRestMenu, 148
-ShowScenegraph, 218
-ShowVars, 216
-sine, 189
-SkipAnim, 71
-SSG, 218
-ST, 218
-StartCombat, 120
-StartScript, 153
-StayOutside, 89
-StopCellTest, 216
-StopCombat, 120
-StopScript, 153
-StopSound, 141
-StreamMusic, 140
-string variables, 27
-Subtraction, 30
-sv, 216
-Syntax, 25
+\index{SA} 218
+\index{SameFaction} 91
+\index{Say} 140
+\index{SayDone} 140
+\index{scripting window} 13
+\index{ScriptRunning} 153
+\index{SCT} 216
+\index{Set ... to} 29
+\index{SetAngle} 54
+\index{SetAtStart} 51
+\index{SetDelete} 72
+\index{SetFactionReaction} 93
+\index{SetJournalIndex} 110
+\index{SetPCFacRep} 93
+\index{SetPos} 48
+\index{SetScale} 56
+\index{SetStat} 113
+\index{SetWaterLevel} 157
+\index{SetWerewolfAcrobatics} 94
+\index{SetWillpower} 113
+\index{SG} 218
+\index{Short} 27
+\index{Show} 216
+\index{Show Animation} 218
+\index{Show target group} 218
+\index{ShowGroup} 218
+\index{ShowMap} 154
+\index{ShowRestMenu} 148
+\index{ShowScenegraph} 218
+\index{ShowVars} 216
+\index{sine} 189
+\index{SkipAnim} 71
+\index{SSG} 218
+\index{ST} 218
+\index{StartCombat} 120
+\index{StartScript} 153
+\index{StayOutside} 89
+\index{StopCellTest} 216
+\index{StopCombat} 120
+\index{StopScript} 153
+\index{StopSound} 141
+\index{StreamMusic} 140
+\index{string variables} 27
+\index{Subtraction} 30
+\index{sv} 216
+\index{Syntax} 25
 
 T
 
-T3D, 217
-TA, 217
-Talked to PC (dialogue), 111
-TB, 217
-TCB, 217
-TCG, 217
-TCL, 217
-TCS, 217
-TDS, 217
-TDT, 217
-TESAME, 163
-TestCells, 217
-TestInteriorCells, 217
-TestModels, 217
-Text defines, 105
-TFH, 217
-TFOW, 217
-TG, 217
-TGM, 217
-TKS, 217
-TM, 217
-TMS, 217
-ToggleAI, 217
-ToggleBorders, 217
-ToggleCollision, 217
-ToggleCollisionBoxes, 217
-ToggleCollisionGrid, 217
-ToggleCombatStats, 217
-ToggleDebugText, 217
-ToggleDialogueStats, 217
-ToggleFogOfWar, 217
-ToggleFullHelp, 217
-ToggleGodMode, 217
-ToggleGrid, 217
-ToggleKillStats, 217
-ToggleLights, 217
-ToggleLoadFade, 217
-ToggleMagicStats, 217
-ToggleMenus, 217
-TogglePathGrid, 218
-ToggleScriptOutput, 217
-ToggleScripts, 217
-ToggleSky, 217
-ToggleStats, 217
-ToggleTextureString, 217
-ToggleVanityMode, 218
-ToggleWater, 217
-ToggleWireframe, 218
-ToggleWorld, 217
-TPG, 218
-Tribunal Script
-Functions, 208
-Troubleshooting, 204
-TS, 217
-TSO, 217
-TST, 217
-TTS, 217
-TurnMoonRed, 94
-TurnMoonWhite, 94
-tutorial, 13
-TVM, 218
-TW, 217
-TWF, 218
+\index{T3D} 217
+\index{TA} 217
+\index{Talked to PC (dialogue)} 111
+\index{TB} 217
+\index{TCB} 217
+\index{TCG} 217
+\index{TCL} 217
+\index{TCS} 217
+\index{TDS} 217
+\index{TDT} 217
+\index{TESAME} 163
+\index{TestCells} 217
+\index{TestInteriorCells} 217
+\index{TestModels} 217
+\index{Text defines} 105
+\index{TFH} 217
+\index{TFOW} 217
+\index{TG} 217
+\index{TGM} 217
+\index{TKS} 217
+\index{TM} 217
+\index{TMS} 217
+\index{ToggleAI} 217
+\index{ToggleBorders} 217
+\index{ToggleCollision} 217
+\index{ToggleCollisionBoxes} 217
+\index{ToggleCollisionGrid} 217
+\index{ToggleCombatStats} 217
+\index{ToggleDebugText} 217
+\index{ToggleDialogueStats} 217
+\index{ToggleFogOfWar} 217
+\index{ToggleFullHelp} 217
+\index{ToggleGodMode} 217
+\index{ToggleGrid} 217
+\index{ToggleKillStats} 217
+\index{ToggleLights} 217
+\index{ToggleLoadFade} 217
+\index{ToggleMagicStats} 217
+\index{ToggleMenus} 217
+\index{TogglePathGrid} 218
+\index{ToggleScriptOutput} 217
+\index{ToggleScripts} 217
+\index{ToggleSky} 217
+\index{ToggleStats} 217
+\index{ToggleTextureString} 217
+\index{ToggleVanityMode} 218
+\index{ToggleWater} 217
+\index{ToggleWireframe} 218
+\index{ToggleWorld} 217
+\index{TPG} 218
+\index{Tribunal Script
+\index{Functions} 208
+\index{Troubleshooting} 204
+\index{TS} 217
+\index{TSO} 217
+\index{TST} 217
+\index{TTS} 217
+\index{TurnMoonRed} 94
+\index{TurnMoonWhite} 94
+\index{tutorial} 13
+\index{TVM} 218
+\index{TW} 217
+\index{TWF} 218
 
 U
 
-UndoWerewolf, 95
-Unlock, 69
-UsedOnMe, 46
+\index{UndoWerewolf} 95
+\index{Unlock} 69
+\index{UsedOnMe} 46
 
 W
 
-WakeUpPC, 148
-While, 33
+\index{WakeUpPC} 148
+\index{While} 33

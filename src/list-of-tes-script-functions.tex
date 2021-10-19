@@ -11,6 +11,8 @@ First I will list the function and the arguments it takes:
 	{[}no fix{]} Code "string", arg\_enum, arg\_float, {[}optional{]}
 	(returns short)
 
+\index{{[}no fix{]}}
+
 {[}no fix{]} Indicates this function can never be used with a "fix"
 meaning it can not be called by a specified actor. Functions without
 this tag can be called by an actor, an object, or both.
@@ -562,8 +564,8 @@ inventory}\label{checking-for-presence-of-items-in-inventory}}
 This function checks the inventory of the calling object and returns the
 number of objects of type "Object\_ID" it owns.
 
-\hypertarget{section-1}{%
-\subsubsection{}\label{section-1}}
+%\hypertarget{section-1}{%
+%\subsubsection{}\label{section-1}}
 
 \hypertarget{repairing-objects}{%
 \subsubsection{Repairing objects}\label{repairing-objects}}
@@ -1499,8 +1501,8 @@ it every frame.
 
 \lstinputlisting{scripts/balynScript.txt}
 
-\hypertarget{section-2}{%
-\subsubsection{}\label{section-2}}
+%\hypertarget{section-2}{%
+%\subsubsection{}\label{section-2}}
 
 \textbf{Note:}
 
@@ -1731,11 +1733,11 @@ Actor is the PC or someone else.
 
 \lstinputlisting{scripts/hurtActor.txt}
 
-\hypertarget{section-3}{%
-\subsection{}\label{section-3}}
-
-\hypertarget{section-4}{%
-\subsection{}\label{section-4}}
+%\hypertarget{section-3}{%
+%\subsection{}\label{section-3}}
+%
+%\hypertarget{section-4}{%
+%\subsection{}\label{section-4}}
 
 \hypertarget{checking-activation-of-an-item-and-activating-it}{%
 \subsection{Checking activation of an item and activating
@@ -2027,8 +2029,8 @@ reset for the cell FixMe reloads so is a way to immediately fix
 collision on script enabled/disabled objects. (Forum info /
 \href{http://www.bethsoft.com/bgsforums/index.php?showuser=370208}{Rougetet})
 
-\hypertarget{section-5}{%
-\subsubsection{}\label{section-5}}
+%\hypertarget{section-5}{%
+%\subsubsection{}\label{section-5}}
 
 \hypertarget{deleting-a-reference-completely}{%
 \subsubsection{Deleting a reference
@@ -2478,8 +2480,8 @@ Pursue & 5 \\
 \bottomrule
 \end{longtable}
 
-\hypertarget{section-6}{%
-\paragraph{}\label{section-6}}
+%\hypertarget{section-6}{%
+%\paragraph{}\label{section-6}}
 
 Casey Tucker wrote a few interesting notes about Morrowind's AI system:
 
@@ -2738,8 +2740,8 @@ Hand-to-Hand. When fighting Hand to Hand, when you equip or remove a
 piece of armor or clothing, GetWeaponDrawn will return 0 briefly.\\
 Thanks to Björn and DinkumThinkum respectively for pointing this out.
 
-\hypertarget{section-7}{%
-\subsection{}\label{section-7}}
+%\hypertarget{section-7}{%
+%\subsection{}\label{section-7}}
 
 \hypertarget{making-someone-fall}{%
 \subsection{Making someone fall}\label{making-someone-fall}}
@@ -3164,14 +3166,14 @@ Player-> UndoWereWolf
 
 Endif
 
-\hypertarget{section-8}{%
-\subsubsection{}\label{section-8}}
-
-\hypertarget{section-9}{%
-\subsubsection{}\label{section-9}}
-
-\hypertarget{section-10}{%
-\subsubsection{}\label{section-10}}
+%\hypertarget{section-8}{%
+%\subsubsection{}\label{section-8}}
+%
+%\hypertarget{section-9}{%
+%\subsubsection{}\label{section-9}}
+%
+%\hypertarget{section-10}{%
+%\subsubsection{}\label{section-10}}
 
 \hypertarget{special-werewolf-global-variables}{%
 \subsubsection{Special werewolf global
@@ -3833,6 +3835,15 @@ boxes but do NOT use \%: for text defines --In scripts it's \^{}instead
 
 Text defines:
 
+\index{\^{}PCName}
+\index{\^{}PCClass}
+\index{\^{}PCRace}
+\index{\^{}PCRank}
+\index{\^{}NextPCRank}
+\index{\^{}Cell}
+\index{\^{}Global}
+\index{\^{}Gamehour}
+
 \^{}PCName The player's name.
 
 \^{}PCClass The player's class.
@@ -3853,6 +3864,11 @@ the above syntax such as \%.1f, which would yield the same result. If
 you use the \^{}Global text define in a book, Morrowind will usually
 crash if you access or change the global variable while the book is
 open. This should be avoided at all costs! (Forum Info/Chris\_K)
+
+\index{\^{}Name}
+\index{\^{}Race}
+\index{\^{}Faction}
+\index{\^{}Rank}
 
 \^{}Name The speaker's name.
 
@@ -4052,8 +4068,8 @@ script, if the dialogue window is open. If the same resultbox/script
 contains more than one choice call, the choices are presented to the
 player as a single list (unlike MessageBoxes).
 
-\hypertarget{section-11}{%
-\subparagraph{}\label{section-11}}
+%\hypertarget{section-11}{%
+%\subparagraph{}\label{section-11}}
 
 The limit of choices per result or per call may well be version
 dependent. It has been reported that there is a limit of 5 choices per
