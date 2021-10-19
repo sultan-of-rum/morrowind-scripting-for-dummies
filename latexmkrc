@@ -1,4 +1,5 @@
 @default_files = ("MSFD.tex"); # compile only MSFD.tex
+$makeindex = "makeindex -s stylefile.ist MSFD.idx";
 $recorder = 1;
 $pdf_mode = 1; # tex -> PDF
 $bibtex_use = 2;
