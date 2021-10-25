@@ -70,9 +70,11 @@ items}\label{working-with-inventory-items}}
 \subsubsection{Adding and removing items from the
 inventory}\label{adding-and-removing-items-from-the-inventory}}
 
-	AddItem, "ObjectID", count\_enum
+\index{AddItem}
+
+AddItem, "ObjectID", count\_enum
 	
-	RemoveItem, "ObjectID", count\_enum
+RemoveItem, "ObjectID", count\_enum
 
 \begin{lstlisting}	
 	Actor-> AddItem, "item_ID", 1
@@ -1763,6 +1765,8 @@ object once OnActivate has been called, you have to use the activate
 command:
 
 Activate
+
+\index{Activate}
 
 \begin{lstlisting}
 	activate (if script is on the object to activate)
@@ -5405,6 +5409,7 @@ some fun quests and new uses for soulgems.
 
 \textbf{Sample:} This is part of the StrongSoulCheck script:
 
+\begin{lstlisting}
 if ( Player->\textbf{HasSoulGem} "atronach\_storm"
 > 1 )
 
@@ -5416,6 +5421,7 @@ elseif ( Player->\textbf{HasSoulGem} "atronach\_storm"
 Set counter to ( counter + 1 )
 
 endif
+\end{lstlisting}
 
 RemoveSoulgem, "CreatureID", number\_enum
 
@@ -5426,6 +5432,7 @@ Removes a soulgem with the specified soul from the players inventory.
 Sample: this is the complementary part from RemoveStrongSoul script to
 the example above:
 
+\begin{lstlisting}
 if ( counter > 0 )
 
 if ( Player-> HasSoulGem "atronach\_storm" > 0 )
@@ -5437,10 +5444,12 @@ Set counter to ( counter - 1 )
 endif
 
 endif
+\end{lstlisting}
 
 Note, the player will not be happy if they get Azura's Star taken away
 by this. Here's a sample solution:
 
+\begin{lstlisting}
 short StarCount ;They could have more than one I guess.
 
 if ( OnActivate )
@@ -5471,6 +5480,7 @@ MessageBox "You have no Golden Saint souls."
 endif
 
 endif
+\end{lstlisting}
 
 AddSoulGem "creature ID", "soulgem ID"
 
