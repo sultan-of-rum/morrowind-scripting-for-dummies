@@ -1,34 +1,5 @@
 # \index{}
 
-"
-
-"Equal to"} 32
-"Greater than or equal to"} 32
-"Greater than"} 32
-"Smaller than or equal to"} 32
-"Smaller than"} 32
-"Unequal to"} 32
-
-[
-
-[no fix]} 35
-
-^
-
-^Cell} 105
-^Class} 106
-^Faction} 106
-^Gamehour}106
-^Global} 106
-^Name} 106
-^NextPCRank} 105
-^PCClass}105
-^PCName} 105
-^PCRace} 105
-^PCRank} 105
-^Race} 106
-^Rank} 106
-
 A
 
 \index{Activate} 66
@@ -110,6 +81,7 @@ E
 \index{Else} 31
 \index{Elseif} 31
 \index{Enable} 71
+
 \index{EnableBirthMenu} 150
 \index{EnableClassMenu} 150
 \index{EnableInventoryMenu} 150
