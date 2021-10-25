@@ -6479,6 +6479,13 @@ status}\label{check-player-control-status}}
 All of these functions return 1 if the corresponding "Disable" function
 has been called and is active, 0 if control is with the player.
 
+\index{GetPlayerControlsDisabled}
+\index{GetPlayerFightingDisabled}
+\index{GetPlayerJumpingDisabled}
+\index{GetPlayerLookingDisabled}
+\index{GetPlayerMagicDisabled}
+\index{GetPlayerViewSwitch}
+
 {[}no fix{]} GetPlayerControlsDisabled
 
 {[}no fix{]} GetPlayerFightingDisabled
@@ -6492,6 +6499,8 @@ has been called and is active, 0 if control is with the player.
 GetPlayerViewSwitch
 
 (\textbf{Broken}, function does not work. Instead use: )
+
+\index{GetVanityModeDisabled}
 
 {[}no fix{]} GetVanityModeDisabled
 
@@ -6523,6 +6532,11 @@ enable all the menus that are used during the character creation process
 and enable certain basic features like the inventory, magic menu, stats
 window and the map:
 
+\index{EnableBirthMenu}
+\index{EnableClassMenu}
+\index{EnableRaceMenu}
+\index{EnableNameMenu}
+
 Show character generation menus:
 
 {[}no fix{]} EnableBirthMenu\\
@@ -6532,6 +6546,11 @@ Show character generation menus:
 
 There is no disable command for these. They are disabled by selecting ok
 in the menu.
+
+\index{EnableMagicMenu}
+\index{EnableMapMenu}
+\index{EnableInventoryMenu}
+\index{EnableStatsMenu}
 
 Enabling in-game menus:
 
