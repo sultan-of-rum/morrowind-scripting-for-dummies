@@ -1,0 +1,232 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[oneside]{article}
+\usepackage{listings}
+\lstdefinelanguage{es3}{
+	literate=%
+	{0}{{{\color{black}0}}}1
+	{1}{{{\color{black}1}}}1
+	{2}{{{\color{black}2}}}1
+	{3}{{{\color{black}3}}}1
+	{4}{{{\color{black}4}}}1
+	{5}{{{\color{black}5}}}1
+	{6}{{{\color{black}6}}}1
+	{7}{{{\color{black}7}}}1
+	{8}{{{\color{black}8}}}1
+	{9}{{{\color{black}9}}}1,
+	sensitive = false,
+	breaklines=true,
+	columns=fixed,
+}
+% Set Language
+\lstset{
+	language={es3},
+	basicstyle=\small\ttfamily, % Global Code Style
+	extendedchars=true, % Allows 256 instead of 128 ASCII characters
+	tabsize=2, % number of spaces indented when discovering a tab 
+	columns=fixed, % make all characters equal width
+	keepspaces=true, % does not ignore spaces to fit width, convert tabs to spaces
+	showstringspaces=false, % lets spaces in strings appear as real spaces
+	breaklines=true, % wrap lines if they don't fit
+	frame=trbl, % draw a frame at the top, right, left and bottom of the listing
+}
+\usepackage{makeidx}
+\makeindex
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+%\author{}
+%\date{}
+
+\begin{document}
+
+% frontpage font color from the .doc: orange.
+% frontpage font sizes from the .doc: 36pt, 16pt, 14pt.
+
+\begin{center}
+	{\Huge \textcolor{orange}{\textbf{Morrowind Scripting for Dummies}}}
+	
+	\vspace{5mm}
+	
+	{\LARGE (10\textsuperscript{th} Edition)}
+	
+	\vspace{5mm}
+	
+	{\Large A manual for the TES Construction Set Scripting Language by
+		
+	\vspace{5mm}	
+	
+	\textbf{GhanBuriGhan}
+	
+	\textbf{Updated by Yacoby and melian}}
+
+	{\large \textbf{With help and information from the community}}
+\end{center}
+
+\vspace{5mm}
+
+\includegraphics{media/image1.png}
+
+\clearpage
+
+\tableofcontents
+\addtocontents{toc}
+
+\hypertarget{foreword-to-the-tenth-edition}{%
+\subsubsection{\texorpdfstring{\hfill\break
+Foreword to the tenth edition}{Foreword to the ninth edition}}\label{foreword-to-the-tenth-edition}}
+
+This community edition is a port to LaTeX for easy and open collaboration. Development is at https://github.com/sultan-of-rum/morrowind-scripting-for-dummies. Please send all bug reports to this repository.
+
+The primary focus for this project is to incorporate corrections and updates by the Tamriel Rebuilt team. Special thanks goes to them for allowing free use of their information. A main goal is to move towards an open license. % It also uses default OpenMW-CS syntax highlighting.
+
+\hypertarget{foreword-to-the-ninth-edition}{%
+\subsubsection{\texorpdfstring{\hfill\break
+Foreword to the ninth edition}{Foreword to the ninth edition}}\label{foreword-to-the-ninth-edition}}
+
+Another update, this time by more than one person, now you can get really confused when it mentions that  "I" did something or found something *grins*. Although this update was intended as a bugfix, a huge amount of new information has been added - since much of it concerns the bugs and pitfalls of the scripting language that have been discovered since version 8, you will find changes and additions scattered throughout.
+
+I have also added a couple more functions that were missing from the last version, and there is a small section on script extenders to give a brief overview of what can be done with each which should hopefully prove informative to anyone wanting to know more about what they do. Galsiah provided a large section on the failings of get/mod/set stat; there is a lot more info on dialog and how it works, which should be very useful; a short explanation of float values and how they work has been added; some sections have been rearranged for clarity; and I \emph{think} I've removed all the en dashes and typographer's quotes from code blocks, so it should be safe to copy-paste most of the example scripts now.
+
+Special thanks go to GhanBuriGhan, who gave me permission to update his indispensable guide. Also thanks to Dave Humphrey for his permission to use the information on UESP wiki, and everyone who contributed to that wiki. I would like to thank exclusiveor77, DinkumThinkum, Björn, abot, Galsiah, Casey Tucker, cyran0 and JOG for the huge amount of information they gave me on the forums.
+
+However without the help of the rest of community, everyone who collected all the information, posted their experiences, this guide would have never happened.
+
+Yacoby and melian
+
+\hypertarget{foreword-to-eighth-edition}{%
+\subsubsection{\texorpdfstring{\hfill\break
+Foreword to eighth edition}{ Foreword to eighth edition}}\label{foreword-to-eighth-edition}}
+
+Oh no, MSFD updates again! Quite a few changes this time. I have continued to reorder functions to achieve a more consistent classification. In the course of this restructuring of the text, Tribunal and Bloodmoon functions are now also sorted among the rest of the functions (but clearly marked), and the same applies for Get/Set/ModStat type functions - the ones that affect magic are now in the Magic section, the ones that affect combat are in the combat chapter, and so on. I reformatted all the function entries for better visibility. There are also a good number of corrections and additions: check out the corrected list of idles in AIWander, more detailed info on functions such as OnDeath, OnActivate, or the revelation that some functions, like PositionCell use a different unit for the angle setting (minutes instead of degrees). There is a lot of interesting new detail on the intricacies of RemoveItem, OnPCEquip, and SkipEquip. Throughout, I have added a couple more sample scripts. I have assembled a tips list on Dialogue from the information from a once-pinned thread on the official forums. To make your mod-testing easier, I now have a much more complete list of console commands, and you may find that some of these may actually be useful script functions as well. A nice collection of new tips and tricks have also been added, e.g. on how to detect savegame loading, alternative script editors, a fast sine and cosine calculator and more.
+
+I would like to mention something here, that has become more and more evident in recent discussions. Apparently the different versions of the game (Morrowind, the expansions, various updates, European/American versions), have quite a number of functional differences with respect to scripting. This may explain a lot of the conflicting information I get about some functions. Some functions actually seem to have lost functionality in later versions of the game, some regained functionality, etc. In the absence of a full change log by Bethesda it is unfortunately impossible to really give a final verdict in many of these cases.
+
+Again I can only stress that this guide would never have become what it is without the help and support of the modding community. This time, I would like to say special thanks to Nigedo, DinkumThinkum, ManaUser, ThePal, Erstam, JDGBOLT, Klinn, and MentalElf, for their tireless help in finding and solving many errors or inconsistencies in the last edition, or sharing scripts and information with me. Thanks also to Emma, for all the info she put into that dialogue thread on the forums.
+
+GhanBuriGhan
+
+Disclaimer \& Copyright Statement: The Elder Scrolls, Morrowind, Daggerfall, Arena, Tribunal, Bloodmoon the TES Construction Set etc. are property of Bethesda Softworks, a ZeniMax Media company. The authors and editors of this manual make no claims to these names and trademarks. In all other respects I (GhanBuriGhan) maintain the copyright for this document. This guide is fully unofficial and in no way am I, any other authors or editors, or Bethesda responsible for any damages or loss of data, patience, hair, or sanity inflicted through the use of this manual. You can freely distribute this document as long as you keep it intact and unmodified.
+
+\emph{\textbf{If you find older versions of this document on the web for download, please inform the webmaster about the new version.}}
+
+% Chapter sectioning
+%\protect\hypertarget{_Toc53412549}{}{}
+
+\section{Introduction}
+
+\hypertarget{using-this-guide.}{%
+\subsection{Using this guide.}\label{using-this-guide.}}
+
+If you are new to scripting, you should probably start by reading this introduction and especially do the tutorial. It is my best attempt at explaining scripts, what they do, and how to program one, in simple terms.
+
+Secondly this is a manual, a reference, a handbook. The bulk of this document is a documentation of the available functions. This part is not written for the beginner, you are expected to know the basics of scripting already. I have however tried to provide a lot more info, explanations and sample scripts than the original helpfile, to make it easier to use these functions correctly in your scripts. Use the index at the end of the document to find info on a specific function, or the table of contents to find functions related to a general area of interest. If you run into errors, the Troubleshooting section may help you a bit. In the Appendix you find lists that may also come in handy as a reference.
+
+Thirdly, as an advanced scripter you may find the Tips and Tricks section interesting that covers both basic advice and advanced scripting techniques.
+
+Finally a word of advice: don't take what's written here as gospel. The info in this guide represents the best of my knowledge and forum wisdom, but that doesn't mean that there aren't mistakes and oversights, etc. E.g. if I write that a function doesn't take variables as arguments it \emph{probably} doesn't -- but if it is important for your mod, by all means try anyway. It may have changed with a patch or maybe simply nobody checked before. So run a test, and if you find something new, let me know, and I will add the info in a possible future update.
+
+\hypertarget{what-is-a-script}{%
+\subsection{What is a script?}\label{what-is-a-script}}
+
+Scripts are basically pieces of code written in a special scripting language (I will call it TES script from here on). These little "programs" will run during the game and can perform certain things in the game, lots of things actually: Trigger events, control time and place, make things and creatures vanish, appear or move, give messages to the player, change stats, even change the weather -- the possibilities are great.
+
+TES Script is a unique scripting language, it is not used outside the TES Construction Set. As a scripting language it has certain limitations compared to a "real" programming language, like, e.g. C++:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The scope of TES Script is limited -- don't expect to be able to program anything that is not already in the game in one way or another -- which is not to say you can not achieve new and unusual things with scripting! But you can't use TES script to, say, program a word processor.
+\item
+  TES Script is also not an SDK (software development kit) that lets you actually work with and change (parts of) the games source code. That's why you can't use TES script to, for example, add new weather-effects. Those are hardcoded and you would need to change the actual game .exe to do that.
+\item
+  It's an interpreted language not a compiled one -- the code needs a separate program (in this case Morrowind) to run -- unlike compiled code that could be run by itself, like an .exe application.
+\end{enumerate}
+
+\hypertarget{what-can-scripts-do}{%
+\subsection{What can scripts do?}\label{what-can-scripts-do}}
+
+Scripts for Morrowind are a way to have the game dynamically react to what the player does in the game world. You can use scripts to manage complex quests. You can use scripts to create custom items that perform actions beyond what regular enchantments could. You can use scripts to create traps. You can use scripts to change NPC or creature behavior. Remember the character creation in Morrowind? It's basically controlled by a number of scripts. Seen Fargoth sneak around to his stash in Seyda Neen? That's a script directing his moves. Freed any slaves? That also is handled by a script. So the short answer to the question is: a lot.
+
+\hypertarget{what-scripts-cant-do}{%
+\subsection{What scripts can't do:}\label{what-scripts-cant-do}}
+
+The TES script language is limited in its capabilities -- there are only so many functions that you can use and sometimes the possible uses are not all that you may wish them to be. In fact some functions are buggy or plain broken. In many cases smart scripters can find workarounds for apparent limitations, but don't expect miracles. Many things are hardcoded and can not or only indirectly be influenced by scripts.
+
+% End text.
+
+\include{src/scripting-tutorial.tex}
+\include{src/general-information-scripts-commands-and-syntax.tex}
+\include{src/list-of-tes-script-functions.tex}
+\include{src/tips-and-tricks.tex}
+\include{src/troubleshooting.tex}
+\include{src/appendix.tex}
+\printindex
+
+\end{document}

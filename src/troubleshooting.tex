@@ -1,0 +1,281 @@
+% Chapter sectioning
+\hypertarget{troubleshooting}{%
+\section{Troubleshooting}\label{troubleshooting}}
+
+\hypertarget{general-hints}{%
+\subsection{General hints}\label{general-hints}}
+
+\begin{itemize}
+\item
+  A good way to debug is to insert MessageBox commands at key points in
+  your script.
+\item
+  If you produce error messages and can't find the cause, try to remove
+  suspect lines of codes one by one (using ; to mark them as comments)
+  to pinpoint the error causing line.
+\item
+  Pay attention to the error codes that the editor and the game give
+  you, they usually let you pinpoint the source of the problem to some
+  degree.
+\item
+  When you make changes to a script, it's a very good idea to save the
+  script \textbf{twice} afterwards, to make sure the compiler properly
+  checks it for errors.
+\end{itemize}
+
+For example, if you delete a variable declaration but forget to remove
+the variable from the script, the compiler may not report an error the
+first time you save the script. This also happens when you change the
+name of a script (in the 'Begin' statement), but leave the original name
+in a StopScript statement.
+
+\begin{quote}
+Apparently, the compiler doesn't update its internal list of variables,
+script names, etc. until \textbf{after} it compiles the script. End
+result is that the compiler will use the stored variable declarations
+and script names from its previous pass through the script, rather than
+the current ones.
+
+This probably explains why you have to save a script at least once
+before its name (from the 'Begin' statement) will be recognized in a
+StopScript statement in the same script. -(DinkumThinkum)
+\end{quote}
+
+\hypertarget{the-console}{%
+\subsection{The Console}\label{the-console}}
+
+\hypertarget{using-the-console-to-check-variables}{%
+\subsubsection{Using the Console to check
+variables:}\label{using-the-console-to-check-variables}}
+
+In the game you can use the console to check on the state of variables.
+Bring up the console window (standard key is \textasciitilde{} or
+whatever key is left of the "1" key if you are using a non-US keyboard
+layout) and type "sv" -- this lists all the global variables with their
+values, then all running global scripts (including targeted scripts)
+with their variables. Now find an object that has a script running on
+it. Bring up the console again, left click on the object -- the console
+window title will change. Type "sv" again -- now the local variables for
+the script running on this object will be listed. To check a single
+variable, use "show \emph{var\_name}", however, if trying to get a var
+from a object that doesn't have a script, it can sometimes crash the
+game.
+
+\hypertarget{using-the-console-to-quickly-test-scripts}{%
+\subsubsection{Using the Console to quickly test
+scripts:}\label{using-the-console-to-quickly-test-scripts}}
+
+The console can help you test your scripts. For objects you don't need
+to place them with the editor and then go there. Just write down the ID
+for your object, load any savegame and then, in the console type:
+
+PlaceatPC "My\_Object" 1,1,1
+
+This will drop the object directly at your feet.
+
+Player-> AddItem "My\_Object" 1
+
+This will drop the item into your inventory
+
+To go to a specific location use
+
+coc "cell\_name"
+
+for interior cells or
+
+coe -1,-7
+
+for exterior cells (write down the cell coordinates in the editor). coc
+works for exterior cells too but since most exterior cells have
+non-unique names you may not land quite where you want. It can still be
+useful though, for example coc balmora will take you somewhere in
+Balmora.
+
+tcl
+
+Toggles collision -- float through walls, visit difficult to reach
+places easily.
+
+Tgm
+
+Toggle God mode -- test without worrying about some monster killing you.
+
+Also, the invaluable console commands to run the game in "debug" mode
+allow one to view hard numbers about spell effects, chances to hit, etc
+(thanks to Wakim). Some of these are:
+
+1) press the "\textasciitilde" key to call up the console.
+
+2) type "tcs" into the console and hit return.
+
+3) click (right or left click, can't recall) anywhere on the screen
+outside of the console box to continue game time while leaving the box
+displayed and active.
+
+That's it. There are other variants on the "tcs" command, such as (but
+not limited to) "tks" and "tms" which all stand for "toggle xxxxxx
+statistics" where xxxxx is: c = combat, m = magic, k = kill, or what
+have you.
+
+\hypertarget{error-messages-malfunctions-and-common-causes}{%
+\subsection{Error messages, malfunctions and common
+causes}\label{error-messages-malfunctions-and-common-causes}}
+
+\hypertarget{in-the-editor}{%
+\subsubsection{In the editor}\label{in-the-editor}}
+
+The editor usually indicates the line in which the problem was
+encountered, so often errors reported here are relatively easy to fix.
+
+"Mismatched If/else/endif starting on line..."
+
+One or several if statements are not closed. Use tabs to facilitate
+finding missing endifs. This also happens when wrong names are used for
+variables functions or other typing errors.
+
+"Function reference object "Foobject" not found"
+
+This error indicates that the object in question e.g.
+
+Foobject-> GetDistance Player
+
+Does not exist. When you write a script and then create a new object to
+be thus referenced you will also get this error. Close the editor window
+and reopen it to register the object with the compiler.
+
+"Could not find variable or function "Foobject""
+
+Another syntax error, indicating you have used an undefined variable,
+function or a non-existent object.
+
+"Script command "foofunc" not found on line 3"
+
+A command / function was not recognized by the compiler. Usually results
+from typos.
+
+"You need to end a script with script End scriptname"
+
+Indicates that the compiler did not find the End command. This error can
+also appear when a previous error disrupts the compilation process.
+
+"Syntax error Line 20. Miss matched parenthesis"
+
+Indicates that you do not close all parentheses you opened or vice
+versa.
+
+"You need to enter a value on line 20"
+
+You have not supplied all the arguments needed by a specific function.
+
+\hypertarget{in-game-error-messages}{%
+\subsubsection{In game error messages:}\label{in-game-error-messages}}
+
+"EXPRESSION in script..."
+
+Followed by
+
+"RightEval ..."
+
+This error indicates that Variables are not declared. Most often this
+happens with game variables that are almost used like functions, e.g.
+OnPCEquip.
+
+EXPRESSION in general appears mostly when variables have not been
+declared in the script.
+
+"LeftEval"
+
+This error seems to come up when you have accidentally declared a
+Function as a variable. The following lines e.g. would produce this
+error:
+
+short ScriptRunning
+
+if (ScriptRunning "MyScript" == 1 )
+
+Both of the above can also be caused by not having spaces at the proper
+places. Always leave a space between parentheses and function calls,
+variables etc.
+
+If ( OnActivate == 1 ), not if (OnActivate==1). This only causes errors
+very rarely, but it sometimes does, trust me.
+
+"Infix to Postfix" error
+
+Usually indicates bad syntax. Can be caused by bad set commands using
+the "fix" arrow:
+
+set somevar to ActorID-> GetHealth
+
+should be changed to:
+
+set somevar to ( ActorID-> GetHealth )
+
+An alternative is again a forgotten variable declaration of variable
+type functions, e.g. of OnPCEquip, etc. (Thanks Horatio and Ragnar\_GD)
+
+\hypertarget{aitravel-command-does-not-work}{%
+\subparagraph{AITravel command does not
+work}\label{aitravel-command-does-not-work}}
+
+A common cause is coordinates erroneously set too far away (e.g. by
+omitting a "-" or having a digit too much in there). I once had a very
+nasty one of having typed two "-" which looked like one just slightly
+longer than usual "-" in the editor.
+
+\textbf{Doubled Objects\\
+}There are two reasons why you may get doubled items in your game
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  You changed your mod load order (or added a mod in the middle of the
+  load order) and then continued on from a save. This is very easy to do
+  accidentally by just saving a mod in the CS, which will move the mod
+  in the load order.
+\item
+  You altered a object that had information about it stored in the save
+  or Added/removed a object that is in the same cell as a object with
+  information stored about it in a save.
+\end{enumerate}
+
+The best way to prevent doubling when testing work in progress mods is
+to always test a mod on a save that doesn't have the mod loaded or even
+better a new game.
+
+Wrye has notes on these in much greater detail
+%\url{http://wrye.ufrealms.net/Wrye\%20Matching.html}
+
+\hypertarget{script-fails-to-start-or-stops-unexpectedly}{%
+\subparagraph{Script fails to start, or stops
+unexpectedly}\label{script-fails-to-start-or-stops-unexpectedly}}
+
+This can happen when a variable is not declared but the script was
+nevertheless successfully saved, for example if you deleted a variable
+declaration or changed the variable name after saving and didn't update
+it correctly in the script. It can also be caused by the same thing in
+another (different) script.
+
+\hypertarget{crash-to-desktop-when-executing-the-script}{%
+\subparagraph{Crash to desktop when executing the
+script}\label{crash-to-desktop-when-executing-the-script}}
+
+There are unfortunately a great number of possible causes. Many are
+connected with not having "do once" conditions (e.g. calling certain
+functions every frame). Other known problems: Removing objects with
+running scripts from within their own script. Using Equip on anything
+but potions (fixed with Tribunal). Casting targeted spells from an
+activator (fixed with Tribunal). Using AIActivate on teleport doors that
+lead outside of the active cell. Trying to use PlaceItem with the same
+Object ID the script is running on. Using SetDelete on a non-disabled
+object or an object with a targeted script running on it.
+
+\hypertarget{crash-to-desktop-ctd-upon-loading-the-plugin}{%
+\subparagraph{\texorpdfstring{Crash to Desktop (CTD) upon loading the
+plugin
+}{Crash to Desktop (CTD) upon loading the plugin }}\label{crash-to-desktop-ctd-upon-loading-the-plugin}}
+
+One reported reason is overlong calculations: there appears to be an
+issue with very long additions (e.g. adding up more than 20 variables in
+one line of code) that causes a mod to CTD upon loading. If this
+happens, split the calculations to several lines.
